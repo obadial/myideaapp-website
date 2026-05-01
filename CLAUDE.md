@@ -2,6 +2,14 @@
 
 Site vitrine statique du studio **MyIdeaApp**. Aucun build, aucun framework — HTML/CSS/JS pur déployé sur GitHub Pages.
 
+## TODO
+
+- [ ] **Migrer vers un nom de domaine custom** (ex. `myideaapp.com`)
+  - Ajouter un fichier `CNAME` à la racine du repo
+  - Configurer les DNS : CNAME `www` → `obadial.github.io` + 4 enregistrements A vers les IPs GitHub Pages
+  - Activer "Enforce HTTPS" dans Settings → Pages
+  - Mettre à jour les URLs dans App Store Connect pour Rhythm et LunaRest
+
 ## Architecture
 
 ### Fichiers clés
