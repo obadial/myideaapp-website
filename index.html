@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="studio">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyIdeaApp — App Studio</title>
+  <meta name="description" content="MyIdeaApp est un studio indépendant qui crée des applications mobiles élégantes, inclusives et respectueuses de la vie privée.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="MyIdeaApp — App Studio">
+  <meta property="og:description" content="Rhythm & LunaRest — des apps pensées avec soin.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-theme="studio">
+
+  <!-- ─── Navbar ─────────────────────────────────────────── -->
+  <nav class="navbar">
+    <div class="navbar__logo">
+      <span class="logo-text">myideaapp</span>
+    </div>
+    <div class="navbar__nav">
+      <a href="rhythm/">Rhythm</a>
+      <a href="lunarest/">LunaRest</a>
+      <a href="mailto:hello@myideaapp.com" data-i18n="studio_contact_title">Nous contacter</a>
+    </div>
+    <div class="navbar__right">
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang-btn="fr">FR</button>
+        <button class="lang-btn" data-lang-btn="en">EN</button>
+        <button class="lang-btn" data-lang-btn="es">ES</button>
+      </div>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile nav -->
+  <div class="mobile-nav">
+    <a href="rhythm/">Rhythm</a>
+    <a href="lunarest/">LunaRest</a>
+    <a href="mailto:hello@myideaapp.com" data-i18n="studio_contact_title">Nous contacter</a>
+    <div class="lang-switcher" style="margin-top:1.5rem">
+      <button class="lang-btn" data-lang-btn="fr">FR</button>
+      <button class="lang-btn" data-lang-btn="en">EN</button>
+      <button class="lang-btn" data-lang-btn="es">ES</button>
+    </div>
+  </div>
+
+  <!-- ─── Hero ───────────────────────────────────────────── -->
+  <section class="studio-hero">
+    <div class="studio-hero__bg">
+      <div class="stars"></div>
+      <div class="orb orb--1"></div>
+      <div class="orb orb--2"></div>
+      <div class="orb orb--3"></div>
+    </div>
+    <div class="container">
+      <div class="studio-hero__content">
+        <div class="studio-badge" data-i18n="studio_badge">App Studio</div>
+        <h1 class="studio-hero__title">myideaapp</h1>
+        <p class="studio-hero__tagline" data-i18n="studio_tagline">Des apps pensées avec soin.</p>
+        <p class="studio-hero__description" data-i18n="studio_description">MyIdeaApp est un studio indépendant qui crée des applications mobiles élégantes, inclusives et respectueuses de la vie privée.</p>
+        <div class="hero-scroll-hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Apps ───────────────────────────────────────────── -->
+  <section class="apps-section">
+    <div class="container">
+      <h2 class="section-title fade-up" data-i18n="studio_apps_title">Nos Applications</h2>
+      <p class="section-subtitle fade-up fade-up-delay-1" data-i18n="studio_apps_subtitle">Deux apps, une obsession : des expériences qui comptent vraiment.</p>
+      <div class="apps-grid">
+
+        <!-- Rhythm -->
+        <a href="rhythm/" class="app-card app-card--rhythm fade-up fade-up-delay-2">
+          <div class="app-card__content">
+            <img src="assets/rhythm/icon.png" alt="Rhythm App Icon" class="app-card__icon">
+            <div class="app-card__chip" data-i18n="rhythm_chip">Santé & Bien-être</div>
+            <h3 class="app-card__name">Rhythm</h3>
+            <p class="app-card__subtitle" data-i18n="rhythm_subtitle">Suivi du cycle menstruel inclusif</p>
+            <p class="app-card__description" data-i18n="rhythm_description">Une app de suivi du cycle positive et respectueuse de la vie privée, conçue pour tous les corps. Tes données de santé restent sur ton appareil — toujours.</p>
+            <span class="app-card__cta">
+              <span data-i18n="discover">Découvrir →</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- LunaRest -->
+        <a href="lunarest/" class="app-card app-card--lunarest fade-up fade-up-delay-3">
+          <div class="app-card__content">
+            <img src="assets/lunarest/icon.png" alt="LunaRest App Icon" class="app-card__icon">
+            <div class="app-card__chip" data-i18n="lunarest_chip">Sommeil & Bien-être</div>
+            <h3 class="app-card__name">LunaRest</h3>
+            <p class="app-card__subtitle" data-i18n="lunarest_subtitle">Sons, suivi du sommeil & réveil intelligent</p>
+            <p class="app-card__description" data-i18n="lunarest_description">Endormez-vous plus vite avec des sons d'ambiance, comprenez vos cycles de sommeil et réveillez-vous frais et dispos.</p>
+            <span class="app-card__cta">
+              <span data-i18n="discover">Découvrir →</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── About ──────────────────────────────────────────── -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-text fade-up">
+          <h2 data-i18n="studio_about_title">Le Studio</h2>
+          <p data-i18n="studio_about_text1">Nous concevons des applications qui respectent leurs utilisateurs. Chaque décision — du design à la gestion des données — est prise avec soin.</p>
+          <p data-i18n="studio_about_text2">Basé en France, MyIdeaApp développe des apps mobile iOS-first, soignées et centrées sur la vie privée.</p>
+          <a href="mailto:hello@myideaapp.com" class="btn-ghost" style="margin-top:1.5rem;display:inline-block" data-i18n="studio_contact_title">Nous contacter</a>
+        </div>
+        <div class="values-list fade-up fade-up-delay-1">
+          <div class="value-item">
+            <div class="value-icon">🔒</div>
+            <div class="value-content">
+              <h4 data-i18n="studio_val1_title">Vie privée d'abord</h4>
+              <p data-i18n="studio_val1_desc">Tes données restent les tiennes. Nous concevons des architectures offline-first et ne vendons jamais tes données.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">✨</div>
+            <div class="value-content">
+              <h4 data-i18n="studio_val2_title">Design soigné</h4>
+              <p data-i18n="studio_val2_desc">Chaque détail compte — typographie, animations, accessibilité. Des apps que l'on a envie d'utiliser.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">🌍</div>
+            <div class="value-content">
+              <h4 data-i18n="studio_val3_title">Inclusivité</h4>
+              <p data-i18n="studio_val3_desc">Des apps conçues pour tous les corps, toutes les cultures, disponibles en 9 langues.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <span class="logo-text">myideaapp</span>
+          <p data-i18n="footer_tagline">Applications mobiles élégantes et respectueuses de ta vie privée.</p>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_apps">Applications</h4>
+          <a href="rhythm/">Rhythm</a>
+          <a href="lunarest/">LunaRest</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_legal">Légal</h4>
+          <a href="rhythm/privacy.html" data-i18n="footer_privacy_rhythm">Confidentialité (Rhythm)</a>
+          <a href="rhythm/terms.html" data-i18n="footer_terms_rhythm">Conditions (Rhythm)</a>
+          <a href="lunarest/privacy.html" data-i18n="footer_privacy_lunarest">Confidentialité (LunaRest)</a>
+          <a href="lunarest/terms.html" data-i18n="footer_terms_lunarest">Conditions (LunaRest)</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_contact">Contact</h4>
+          <a href="mailto:hello@myideaapp.com">hello@myideaapp.com</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p data-i18n="footer_rights">© 2026 MyIdeaApp. Tous droits réservés.</p>
+        <div class="footer__bottom-links">
+          <a href="rhythm/privacy.html" data-i18n="privacy_link">Confidentialité</a>
+          <a href="rhythm/terms.html" data-i18n="terms_link">Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
