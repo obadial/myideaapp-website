@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="rhythm">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rhythm — Suivi du cycle menstruel inclusif</title>
+  <meta name="description" content="Rhythm est une app de suivi du cycle menstruel positive, inclusive et respectueuse de la vie privée. Toutes tes données restent sur ton appareil.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Rhythm — Know your rhythm">
+  <meta property="og:description" content="Inclusive menstrual cycle tracking app. Privacy-first, offline-first.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* Rhythm-specific nav colors */
+    .navbar { --bg-raw: 253,250,248; background: rgba(253,250,248,0.85); }
+    .navbar__nav a { color: #7A5F68; }
+    .navbar__nav a:hover, .navbar__nav a.active { color: #2D1B24; }
+    .navbar__back { color: #7A5F68; }
+    .navbar__back:hover { color: #2D1B24; }
+    .hamburger span { background: #2D1B24; }
+    .mobile-nav { background: #FDFAF8; border-top-color: rgba(201,107,138,0.15); }
+    .mobile-nav a { color: #7A5F68; border-bottom-color: rgba(201,107,138,0.15); }
+
+    /* Phase colors strip */
+    .phases-strip {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .phase-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 12px;
+      border-radius: 100px;
+      font-size: 0.8125rem; font-weight: 600;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+    .phase-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+    /* App Store badge placeholder */
+    .store-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 24px;
+      background: #2D1B24;
+      color: #fff;
+      border-radius: 12px;
+      font-size: 0.9375rem; font-weight: 700;
+      text-decoration: none;
+      transition: all 0.22s;
+    }
+    .store-badge:hover { background: #1A0F14; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(45,27,36,0.3); }
+    .store-badge svg { width: 20px; height: 20px; }
+
+    /* Privacy highlight box */
+    .privacy-box {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      background: rgba(201,107,138,0.07);
+      border: 1px solid rgba(201,107,138,0.2);
+      border-radius: 16px;
+      margin-bottom: 2rem;
+    }
+    .privacy-box__icon { font-size: 1.5rem; flex-shrink: 0; }
+    .privacy-box__text h4 { font-size: 0.9375rem; font-weight: 700; color: #2D1B24; margin-bottom: 4px; }
+    .privacy-box__text p { font-size: 0.875rem; color: #7A5F68; line-height: 1.6; }
+  </style>
+</head>
+<body data-theme="rhythm">
+
+  <!-- ─── Navbar ─────────────────────────────────────────── -->
+  <nav class="navbar">
+    <div class="navbar__left">
+      <a href="../" class="navbar__back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        <span data-i18n="back_to_studio">Studio</span>
+      </a>
+      <div class="navbar__logo">
+        <img src="../assets/rhythm/icon.png" alt="Rhythm" class="navbar__app-icon">
+        <span class="logo-text">Rhythm</span>
+      </div>
+    </div>
+    <div class="navbar__nav">
+      <a href="#overview" class="active" data-i18n="nav_overview">Présentation</a>
+      <a href="privacy.html" data-i18n="nav_privacy">Confidentialité</a>
+      <a href="terms.html" data-i18n="nav_terms">Conditions</a>
+    </div>
+    <div class="navbar__right">
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang-btn="fr">FR</button>
+        <button class="lang-btn" data-lang-btn="en">EN</button>
+        <button class="lang-btn" data-lang-btn="es">ES</button>
+      </div>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile nav -->
+  <div class="mobile-nav">
+    <a href="../" data-i18n="back_to_studio">← Studio</a>
+    <a href="#overview" data-i18n="nav_overview">Présentation</a>
+    <a href="privacy.html" data-i18n="nav_privacy">Confidentialité</a>
+    <a href="terms.html" data-i18n="nav_terms">Conditions</a>
+    <div class="lang-switcher" style="margin-top:1.5rem">
+      <button class="lang-btn" data-lang-btn="fr">FR</button>
+      <button class="lang-btn" data-lang-btn="en">EN</button>
+      <button class="lang-btn" data-lang-btn="es">ES</button>
+    </div>
+  </div>
+
+  <!-- ─── Hero ───────────────────────────────────────────── -->
+  <section id="overview" class="app-hero">
+    <div class="app-hero__orb"></div>
+    <div class="container">
+      <div class="app-hero__inner">
+        <div class="app-hero__info">
+          <div class="app-hero__icon-wrap">
+            <img src="../assets/rhythm/icon.png" alt="Rhythm" class="app-hero__icon">
+            <span class="app-hero__app-name">Rhythm</span>
+          </div>
+          <h1 class="app-hero__tagline" data-i18n="rhythm_tagline">Connais ton rythme.</h1>
+          <p class="app-hero__subtitle" data-i18n="rhythm_subtitle">Suivi du cycle menstruel inclusif</p>
+          <p class="app-hero__description" data-i18n="rhythm_description">Une app de suivi du cycle positive et respectueuse de la vie privée, conçue pour tous les corps. Tes données de santé restent sur ton appareil — toujours.</p>
+
+          <!-- Phases -->
+          <div class="phases-strip">
+            <span class="phase-badge"><span class="phase-dot" style="background:#C96B8A"></span>Menstruelle</span>
+            <span class="phase-badge"><span class="phase-dot" style="background:#7AB5A0"></span>Folliculaire</span>
+            <span class="phase-badge"><span class="phase-dot" style="background:#F0B86A"></span>Ovulation</span>
+            <span class="phase-badge"><span class="phase-dot" style="background:#9B7FB5"></span>Lutéale</span>
+          </div>
+
+          <div class="app-hero__actions" style="margin-top:1.5rem">
+            <a href="#" class="store-badge" aria-label="Download Rhythm on App Store">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+              </svg>
+              <span data-i18n="download_ios">Télécharger sur l'App Store</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Screenshots -->
+        <div class="app-hero__screenshots">
+          <div class="phone-frame">
+            <div class="phone-frame__outer">
+              <div class="phone-frame__screen">
+                <img src="../assets/rhythm/screenshots/07_home.png" alt="Rhythm – Home screen" loading="lazy">
+              </div>
+            </div>
+          </div>
+          <div class="phone-frame">
+            <div class="phone-frame__outer">
+              <div class="phone-frame__screen">
+                <img src="../assets/rhythm/screenshots/08_calendar.png" alt="Rhythm – Calendar" loading="lazy">
+              </div>
+            </div>
+          </div>
+          <div class="phone-frame">
+            <div class="phone-frame__outer">
+              <div class="phone-frame__screen">
+                <img src="../assets/rhythm/screenshots/09_log.png" alt="Rhythm – Log" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Features ───────────────────────────────────────── -->
+  <section class="features-section section">
+    <div class="container">
+      <h2 class="section-title fade-up" data-i18n="rhythm_feat_title">Fonctionnalités</h2>
+      <div class="features-grid">
+        <div class="feature-card fade-up fade-up-delay-1">
+          <div class="feature-card__icon">🌸</div>
+          <h3 class="feature-card__title" data-i18n="rhythm_feat1_title">Suivi du cycle</h3>
+          <p class="feature-card__desc" data-i18n="rhythm_feat1_desc">Enregistre tes règles, intensité du flux, symptômes, humeur et énergie — simplement.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-2">
+          <div class="feature-card__icon">🔮</div>
+          <h3 class="feature-card__title" data-i18n="rhythm_feat2_title">Prédictions intelligentes</h3>
+          <p class="feature-card__desc" data-i18n="rhythm_feat2_desc">Des prédictions de cycle qui s'adaptent à ton rythme unique au fil du temps.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-3">
+          <div class="feature-card__icon">🔒</div>
+          <h3 class="feature-card__title" data-i18n="rhythm_feat3_title">Vie privée absolue</h3>
+          <p class="feature-card__desc" data-i18n="rhythm_feat3_desc">Toutes les données de santé stockées uniquement sur ton appareil. Jamais envoyées, jamais partagées.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-1">
+          <div class="feature-card__icon">💊</div>
+          <h3 class="feature-card__title" data-i18n="rhythm_feat4_title">Rappels médicaments</h3>
+          <p class="feature-card__desc" data-i18n="rhythm_feat4_desc">Rappels personnalisés pour la contraception, les compléments et tout médicament.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-2">
+          <div class="feature-card__icon">🩺</div>
+          <h3 class="feature-card__title" data-i18n="rhythm_feat5_title">Apple Health</h3>
+          <p class="feature-card__desc" data-i18n="rhythm_feat5_desc">Synchronisation avec Apple Health pour une vision complète de ton bien-être.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-3">
+          <div class="feature-card__icon">📊</div>
+          <h3 class="feature-card__title" data-i18n="rhythm_feat6_title">Insights par phase</h3>
+          <p class="feature-card__desc" data-i18n="rhythm_feat6_desc">Comprends comment chaque phase de ton cycle affecte ton humeur, énergie et corps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Legal ───────────────────────────────────────────── -->
+  <section class="legal-strip">
+    <div class="container">
+      <div class="legal-strip__inner">
+        <div class="legal-strip__text">
+          <h3 data-i18n="rhythm_legal_title">Documents légaux</h3>
+          <p data-i18n="rhythm_legal_desc">Consulte notre politique de confidentialité et nos conditions d'utilisation.</p>
+        </div>
+        <div class="legal-strip__links">
+          <a href="privacy.html" class="legal-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span data-i18n="privacy_link">Politique de confidentialité</span>
+          </a>
+          <a href="terms.html" class="legal-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            <span data-i18n="terms_link">Conditions d'utilisation</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="../"><span class="logo-text">myideaapp</span></a>
+          <p data-i18n="footer_tagline">Applications mobiles élégantes et respectueuses de ta vie privée.</p>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_apps">Applications</h4>
+          <a href="../rhythm/">Rhythm</a>
+          <a href="../lunarest/">LunaRest</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_legal">Légal</h4>
+          <a href="privacy.html" data-i18n="privacy_link">Politique de confidentialité</a>
+          <a href="terms.html" data-i18n="terms_link">Conditions d'utilisation</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_contact">Contact</h4>
+          <a href="mailto:privacy@rhythm-app.com">privacy@rhythm-app.com</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p data-i18n="footer_rights">© 2026 MyIdeaApp. Tous droits réservés.</p>
+        <div class="footer__bottom-links">
+          <a href="privacy.html" data-i18n="privacy_link">Confidentialité</a>
+          <a href="terms.html" data-i18n="terms_link">Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/i18n.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

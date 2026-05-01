@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="lunarest">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LunaRest — Sleep better, every night</title>
+  <meta name="description" content="LunaRest est une app de sommeil avec sons d'ambiance, suivi du sommeil et réveil intelligent. Privacy-first, offline-first.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="LunaRest — Sleep better, every night">
+  <meta property="og:description" content="Sleep sounds, tracking & smart alarm. Privacy-first sleep app.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* App Store badge */
+    .store-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 24px;
+      background: #6B8DE3;
+      color: #fff;
+      border-radius: 12px;
+      font-size: 0.9375rem; font-weight: 700;
+      text-decoration: none;
+      transition: all 0.22s;
+      box-shadow: 0 4px 20px rgba(107,141,227,0.4);
+    }
+    .store-badge:hover { background: #4A6BC8; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(107,141,227,0.5); }
+    .store-badge svg { width: 20px; height: 20px; }
+
+    /* Sound categories */
+    .sound-chips {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .sound-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 14px;
+      border-radius: 100px;
+      font-size: 0.8125rem; font-weight: 600;
+      background: rgba(107,141,227,0.1);
+      border: 1px solid rgba(107,141,227,0.2);
+      color: #8B9AC4;
+    }
+
+    /* Stats row */
+    .stats-row {
+      display: flex; gap: 2rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(107,141,227,0.12);
+      border-bottom: 1px solid rgba(107,141,227,0.12);
+      margin: 1.5rem 0;
+    }
+    .stat { text-align: center; }
+    .stat__value { font-size: 1.75rem; font-weight: 900; color: #6B8DE3; letter-spacing: -0.03em; }
+    .stat__label { font-size: 0.8125rem; color: #8B9AC4; margin-top: 2px; }
+  </style>
+</head>
+<body data-theme="lunarest">
+
+  <!-- ─── Navbar ─────────────────────────────────────────── -->
+  <nav class="navbar">
+    <div class="navbar__left">
+      <a href="../" class="navbar__back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        <span data-i18n="back_to_studio">Studio</span>
+      </a>
+      <div class="navbar__logo">
+        <img src="../assets/lunarest/icon.png" alt="LunaRest" class="navbar__app-icon">
+        <span class="logo-text">LunaRest</span>
+      </div>
+    </div>
+    <div class="navbar__nav">
+      <a href="#overview" class="active" data-i18n="nav_overview">Présentation</a>
+      <a href="privacy.html" data-i18n="nav_privacy">Confidentialité</a>
+      <a href="terms.html" data-i18n="nav_terms">Conditions</a>
+    </div>
+    <div class="navbar__right">
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang-btn="fr">FR</button>
+        <button class="lang-btn" data-lang-btn="en">EN</button>
+        <button class="lang-btn" data-lang-btn="es">ES</button>
+      </div>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <a href="../" data-i18n="back_to_studio">← Studio</a>
+    <a href="#overview" data-i18n="nav_overview">Présentation</a>
+    <a href="privacy.html" data-i18n="nav_privacy">Confidentialité</a>
+    <a href="terms.html" data-i18n="nav_terms">Conditions</a>
+    <div class="lang-switcher" style="margin-top:1.5rem">
+      <button class="lang-btn" data-lang-btn="fr">FR</button>
+      <button class="lang-btn" data-lang-btn="en">EN</button>
+      <button class="lang-btn" data-lang-btn="es">ES</button>
+    </div>
+  </div>
+
+  <!-- ─── Hero ───────────────────────────────────────────── -->
+  <section id="overview" class="app-hero">
+    <div class="app-hero__orb"></div>
+    <div class="container">
+      <div class="app-hero__inner">
+        <div class="app-hero__info">
+          <div class="app-hero__icon-wrap">
+            <img src="../assets/lunarest/icon.png" alt="LunaRest" class="app-hero__icon">
+            <span class="app-hero__app-name">LunaRest</span>
+          </div>
+          <h1 class="app-hero__tagline" data-i18n="lunarest_tagline">Dormez mieux, chaque nuit.</h1>
+          <p class="app-hero__subtitle" data-i18n="lunarest_subtitle">Sons, suivi du sommeil & réveil intelligent</p>
+          <p class="app-hero__description" data-i18n="lunarest_description">Endormez-vous plus vite avec des sons d'ambiance, comprenez vos cycles de sommeil et réveillez-vous frais et dispos grâce à un réveil intelligent.</p>
+
+          <!-- Sound categories -->
+          <div class="sound-chips">
+            <span class="sound-chip">🌧️ Pluie</span>
+            <span class="sound-chip">🌊 Océan</span>
+            <span class="sound-chip">🌲 Forêt</span>
+            <span class="sound-chip">🔥 Feu</span>
+            <span class="sound-chip">🌙 Bruit blanc</span>
+            <span class="sound-chip">🎵 Musique</span>
+          </div>
+
+          <div class="stats-row">
+            <div class="stat">
+              <div class="stat__value">50+</div>
+              <div class="stat__label">Sons</div>
+            </div>
+            <div class="stat">
+              <div class="stat__value">18</div>
+              <div class="stat__label">Histoires</div>
+            </div>
+            <div class="stat">
+              <div class="stat__value">9</div>
+              <div class="stat__label">Langues</div>
+            </div>
+          </div>
+
+          <div class="app-hero__actions">
+            <a href="#" class="store-badge" aria-label="Download LunaRest on App Store">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+              </svg>
+              <span data-i18n="download_ios">Télécharger sur l'App Store</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Luna visual -->
+        <div class="luna-visual">
+          <div class="luna-ring luna-ring--3"></div>
+          <div class="luna-ring luna-ring--2"></div>
+          <div class="luna-ring luna-ring--1"></div>
+          <div class="luna-circle">
+            <div class="luna-circle__inner">
+              <img src="../assets/lunarest/icon.png" alt="LunaRest" class="luna-circle__icon">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Features ───────────────────────────────────────── -->
+  <section class="features-section section">
+    <div class="container">
+      <h2 class="section-title fade-up" data-i18n="lunarest_feat_title">Fonctionnalités</h2>
+      <div class="features-grid">
+        <div class="feature-card fade-up fade-up-delay-1">
+          <div class="feature-card__icon">🎵</div>
+          <h3 class="feature-card__title" data-i18n="lunarest_feat1_title">Sons du sommeil</h3>
+          <p class="feature-card__desc" data-i18n="lunarest_feat1_desc">50+ sons d'ambiance et scènes naturelles pour vous aider à vous endormir paisiblement.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-2">
+          <div class="feature-card__icon">📖</div>
+          <h3 class="feature-card__title" data-i18n="lunarest_feat2_title">Histoires du soir</h3>
+          <p class="feature-card__desc" data-i18n="lunarest_feat2_desc">Des histoires apaisantes narratées pour vous guider vers un sommeil profond.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-3">
+          <div class="feature-card__icon">📊</div>
+          <h3 class="feature-card__title" data-i18n="lunarest_feat3_title">Suivi du sommeil</h3>
+          <p class="feature-card__desc" data-i18n="lunarest_feat3_desc">Suivez la durée, les scores de qualité et détectez les schémas de ronflement.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-1">
+          <div class="feature-card__icon">⏰</div>
+          <h3 class="feature-card__title" data-i18n="lunarest_feat4_title">Réveil intelligent</h3>
+          <p class="feature-card__desc" data-i18n="lunarest_feat4_desc">Réveillez-vous au moment optimal de votre cycle de sommeil.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-2">
+          <div class="feature-card__icon">🌙</div>
+          <h3 class="feature-card__title" data-i18n="lunarest_feat5_title">Routines du soir</h3>
+          <p class="feature-card__desc" data-i18n="lunarest_feat5_desc">Créez de saines habitudes de sommeil avec des routines guidées personnalisées.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-3">
+          <div class="feature-card__icon">🔒</div>
+          <h3 class="feature-card__title" data-i18n="lunarest_feat6_title">Vie privée</h3>
+          <p class="feature-card__desc" data-i18n="lunarest_feat6_desc">Vos données de sommeil restent sur votre appareil. Vos nuits vous appartiennent.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Legal ───────────────────────────────────────────── -->
+  <section class="legal-strip">
+    <div class="container">
+      <div class="legal-strip__inner">
+        <div class="legal-strip__text">
+          <h3 data-i18n="lunarest_legal_title">Documents légaux</h3>
+          <p data-i18n="lunarest_legal_desc">Consultez notre politique de confidentialité et nos conditions d'utilisation.</p>
+        </div>
+        <div class="legal-strip__links">
+          <a href="privacy.html" class="legal-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span data-i18n="privacy_link">Politique de confidentialité</span>
+          </a>
+          <a href="terms.html" class="legal-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            <span data-i18n="terms_link">Conditions d'utilisation</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="../"><span class="logo-text">myideaapp</span></a>
+          <p data-i18n="footer_tagline">Applications mobiles élégantes et respectueuses de ta vie privée.</p>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_apps">Applications</h4>
+          <a href="../rhythm/">Rhythm</a>
+          <a href="../lunarest/">LunaRest</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_legal">Légal</h4>
+          <a href="privacy.html" data-i18n="privacy_link">Politique de confidentialité</a>
+          <a href="terms.html" data-i18n="terms_link">Conditions d'utilisation</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_contact">Contact</h4>
+          <a href="mailto:support@lunarest.app">support@lunarest.app</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p data-i18n="footer_rights">© 2026 MyIdeaApp. Tous droits réservés.</p>
+        <div class="footer__bottom-links">
+          <a href="privacy.html" data-i18n="privacy_link">Confidentialité</a>
+          <a href="terms.html" data-i18n="terms_link">Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/i18n.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
