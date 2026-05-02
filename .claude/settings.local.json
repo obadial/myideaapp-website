@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/obadia_l/Documents/Dev/**)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(k,'=',v\\) for k,v in d.items\\(\\) if not k.startswith\\('@'\\) and any\\(w in k.lower\\(\\) for w in ['app','tagline','description','subtitle','feature','feat','title','chip']\\)]\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(k,'=',v\\) for k,v in d.items\\(\\) if not k.startswith\\('@'\\) and any\\(w in k.lower\\(\\) for w in ['onboarding','tagline','subtitle','description']\\)]\")",
+      "Bash(python3 -m http.server 8081)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8081/enjoymeal/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8081/enjoymeal/privacy.html)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8081/enjoymeal/terms.html)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8081/assets/enjoymeal/icon.png)",
+      "Bash(xargs sed *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
+    ]
+  }
+}

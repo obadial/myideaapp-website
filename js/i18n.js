@@ -1,5 +1,5 @@
 /* ============================================================
-   MyIdeaApp Website — Internationalization
+   MyIdeApp Website — Internationalization
    Languages: fr (default), en, es
    ============================================================ */
 
@@ -21,12 +21,12 @@ const TRANSLATIONS = {
     // Studio
     studio_badge: 'App Studio',
     studio_tagline: 'Des apps pensées avec soin.',
-    studio_description: "MyIdeaApp est un studio indépendant qui crée des applications mobiles élégantes, inclusives et respectueuses de la vie privée.",
+    studio_description: "MyIdeApp est un studio indépendant qui crée des applications mobiles élégantes, inclusives et respectueuses de la vie privée.",
     studio_apps_title: 'Nos Applications',
-    studio_apps_subtitle: 'Deux apps, une obsession : des expériences qui comptent vraiment.',
+    studio_apps_subtitle: 'Trois apps, une obsession : des expériences qui comptent vraiment.',
     studio_about_title: 'Le Studio',
     studio_about_text1: "Nous concevons des applications qui respectent leurs utilisateurs. Chaque décision — du design à la gestion des données — est prise avec soin.",
-    studio_about_text2: "Basé en France, MyIdeaApp développe des apps mobile iOS-first, soignées et centrées sur la vie privée.",
+    studio_about_text2: "Basé en France, MyIdeApp développe des apps mobile iOS-first, soignées et centrées sur la vie privée.",
     studio_val1_title: 'Vie privée d\'abord',
     studio_val1_desc: 'Tes données restent les tiennes. Nous concevons des architectures offline-first et ne vendons jamais tes données.',
     studio_val2_title: 'Design soigné',
@@ -78,6 +78,27 @@ const TRANSLATIONS = {
     lunarest_legal_title: 'Documents légaux',
     lunarest_legal_desc: 'Consultez notre politique de confidentialité et nos conditions d\'utilisation.',
 
+    // EnjoyMeal
+    enjoymeal_chip: 'Nutrition & Bien-être',
+    enjoymeal_tagline: 'Mange avec plaisir, vis en équilibre.',
+    enjoymeal_subtitle: 'Suivi nutritionnel bienveillant',
+    enjoymeal_description: "EnjoyMeal t'aide à comprendre tes repas sans stress ni culpabilité. Des objectifs doux et réalistes basés sur la science — pas sur la restriction.",
+    enjoymeal_feat_title: 'Fonctionnalités',
+    enjoymeal_feat1_title: 'Journal alimentaire',
+    enjoymeal_feat1_desc: "Enregistre tes repas, calories et macros simplement. Accès à une base de 300 000+ aliments via Open Food Facts.",
+    enjoymeal_feat2_title: 'Objectifs personnalisés',
+    enjoymeal_feat2_desc: 'Des objectifs caloriques et macros basés sur la science (Mifflin-St Jeor, OMS) — adaptés à ton corps et tes activités.',
+    enjoymeal_feat3_title: 'Statistiques',
+    enjoymeal_feat3_desc: 'Visualise tes tendances nutritionnelles, tes progrès et tes patterns alimentaires au fil du temps.',
+    enjoymeal_feat4_title: 'Suivi du poids',
+    enjoymeal_feat4_desc: 'Suis ton poids et ta progression dans le temps, sans jugement et à ton rythme.',
+    enjoymeal_feat5_title: 'Reconnaissance IA',
+    enjoymeal_feat5_desc: "Identifie tes aliments en photo grâce à l'IA (Claude ou Gemini). L'image ne quitte jamais ton appareil vers nos serveurs.",
+    enjoymeal_feat6_title: 'Vie privée absolue',
+    enjoymeal_feat6_desc: 'Toutes tes données nutritionnelles stockées uniquement sur ton appareil. Jamais envoyées, jamais partagées.',
+    enjoymeal_legal_title: 'Documents légaux',
+    enjoymeal_legal_desc: "Consultez notre politique de confidentialité et nos conditions d'utilisation.",
+
     // Legal page
     legal_back: '← Retour',
     legal_updated: 'Dernière mise à jour',
@@ -88,11 +109,13 @@ const TRANSLATIONS = {
     footer_apps: 'Applications',
     footer_legal: 'Légal',
     footer_contact: 'Contact',
-    footer_rights: '© 2026 MyIdeaApp. Tous droits réservés.',
+    footer_rights: '© 2026 MyIdeApp. Tous droits réservés.',
     footer_privacy_rhythm: 'Confidentialité (Rhythm)',
     footer_terms_rhythm: 'Conditions (Rhythm)',
     footer_privacy_lunarest: 'Confidentialité (LunaRest)',
     footer_terms_lunarest: 'Conditions (LunaRest)',
+    footer_privacy_enjoymeal: 'Confidentialité (EnjoyMeal)',
+    footer_terms_enjoymeal: 'Conditions (EnjoyMeal)',
   },
 
   en: {
@@ -109,12 +132,12 @@ const TRANSLATIONS = {
 
     studio_badge: 'App Studio',
     studio_tagline: 'Crafting apps people love.',
-    studio_description: "MyIdeaApp is an independent studio building elegant, inclusive, privacy-first mobile apps.",
+    studio_description: "MyIdeApp is an independent studio building elegant, inclusive, privacy-first mobile apps.",
     studio_apps_title: 'Our Apps',
-    studio_apps_subtitle: 'Two apps, one obsession: experiences that truly matter.',
+    studio_apps_subtitle: 'Three apps, one obsession: experiences that truly matter.',
     studio_about_title: 'The Studio',
     studio_about_text1: "We build apps that respect their users. Every decision — from design to data — is made with care.",
-    studio_about_text2: "Based in France, MyIdeaApp creates thoughtful iOS-first mobile apps centered on privacy and craftsmanship.",
+    studio_about_text2: "Based in France, MyIdeApp creates thoughtful iOS-first mobile apps centered on privacy and craftsmanship.",
     studio_val1_title: 'Privacy First',
     studio_val1_desc: 'Your data stays yours. We design offline-first architectures and never sell your data.',
     studio_val2_title: 'Crafted Design',
@@ -164,6 +187,27 @@ const TRANSLATIONS = {
     lunarest_legal_title: 'Legal Documents',
     lunarest_legal_desc: 'Read our Privacy Policy and Terms of Service.',
 
+    // EnjoyMeal
+    enjoymeal_chip: 'Nutrition & Wellness',
+    enjoymeal_tagline: 'Eat with joy, live in balance.',
+    enjoymeal_subtitle: 'Mindful nutrition tracking',
+    enjoymeal_description: "EnjoyMeal helps you understand your meals without stress or guilt. Gentle, realistic goals based on science — not restriction.",
+    enjoymeal_feat_title: 'Features',
+    enjoymeal_feat1_title: 'Food Diary',
+    enjoymeal_feat1_desc: 'Log your meals, calories and macros effortlessly. Access a database of 300,000+ foods via Open Food Facts.',
+    enjoymeal_feat2_title: 'Personalized Goals',
+    enjoymeal_feat2_desc: 'Science-based calorie and macro goals (Mifflin-St Jeor, WHO) — tailored to your body and lifestyle.',
+    enjoymeal_feat3_title: 'Insights',
+    enjoymeal_feat3_desc: 'Visualize your nutritional trends, progress, and eating patterns over time.',
+    enjoymeal_feat4_title: 'Weight Tracking',
+    enjoymeal_feat4_desc: 'Track your weight and progress over time, without judgment and at your own pace.',
+    enjoymeal_feat5_title: 'AI Recognition',
+    enjoymeal_feat5_desc: 'Identify foods by photo using AI (Claude or Gemini). The image never leaves your device to our servers.',
+    enjoymeal_feat6_title: 'Absolute Privacy',
+    enjoymeal_feat6_desc: 'All your nutritional data stored exclusively on your device. Never uploaded, never shared.',
+    enjoymeal_legal_title: 'Legal Documents',
+    enjoymeal_legal_desc: 'Read our Privacy Policy and Terms of Service.',
+
     legal_back: '← Back',
     legal_updated: 'Last updated',
     legal_available: 'Available in',
@@ -172,11 +216,13 @@ const TRANSLATIONS = {
     footer_apps: 'Apps',
     footer_legal: 'Legal',
     footer_contact: 'Contact',
-    footer_rights: '© 2026 MyIdeaApp. All rights reserved.',
+    footer_rights: '© 2026 MyIdeApp. All rights reserved.',
     footer_privacy_rhythm: 'Privacy (Rhythm)',
     footer_terms_rhythm: 'Terms (Rhythm)',
     footer_privacy_lunarest: 'Privacy (LunaRest)',
     footer_terms_lunarest: 'Terms (LunaRest)',
+    footer_privacy_enjoymeal: 'Privacy (EnjoyMeal)',
+    footer_terms_enjoymeal: 'Terms (EnjoyMeal)',
   },
 
   es: {
@@ -193,12 +239,12 @@ const TRANSLATIONS = {
 
     studio_badge: 'App Studio',
     studio_tagline: 'Apps que la gente ama.',
-    studio_description: "MyIdeaApp es un estudio independiente que crea aplicaciones móviles elegantes, inclusivas y respetuosas con la privacidad.",
+    studio_description: "MyIdeApp es un estudio independiente que crea aplicaciones móviles elegantes, inclusivas y respetuosas con la privacidad.",
     studio_apps_title: 'Nuestras Apps',
-    studio_apps_subtitle: 'Dos apps, una obsesión: experiencias que realmente importan.',
+    studio_apps_subtitle: 'Tres apps, una obsesión: experiencias que realmente importan.',
     studio_about_title: 'El Estudio',
     studio_about_text1: "Creamos apps que respetan a sus usuarios. Cada decisión — del diseño a los datos — se toma con cuidado.",
-    studio_about_text2: "Con sede en Francia, MyIdeaApp desarrolla apps móviles iOS-first, cuidadas y centradas en la privacidad.",
+    studio_about_text2: "Con sede en Francia, MyIdeApp desarrolla apps móviles iOS-first, cuidadas y centradas en la privacidad.",
     studio_val1_title: 'Privacidad primero',
     studio_val1_desc: 'Tus datos son tuyos. Diseñamos arquitecturas offline-first y nunca vendemos tus datos.',
     studio_val2_title: 'Diseño cuidado',
@@ -248,6 +294,27 @@ const TRANSLATIONS = {
     lunarest_legal_title: 'Documentos legales',
     lunarest_legal_desc: 'Consulta nuestra política de privacidad y términos de servicio.',
 
+    // EnjoyMeal
+    enjoymeal_chip: 'Nutrición & Bienestar',
+    enjoymeal_tagline: 'Come con alegría, vive en equilibrio.',
+    enjoymeal_subtitle: 'Seguimiento nutricional amable',
+    enjoymeal_description: "EnjoyMeal te ayuda a entender tus comidas sin estrés ni culpa. Objetivos suaves y realistas basados en la ciencia — no en la restricción.",
+    enjoymeal_feat_title: 'Funcionalidades',
+    enjoymeal_feat1_title: 'Diario alimentario',
+    enjoymeal_feat1_desc: 'Registra tus comidas, calorías y macros fácilmente. Acceso a una base de 300.000+ alimentos via Open Food Facts.',
+    enjoymeal_feat2_title: 'Objetivos personalizados',
+    enjoymeal_feat2_desc: 'Objetivos de calorías y macros basados en la ciencia (Mifflin-St Jeor, OMS) — adaptados a tu cuerpo y actividades.',
+    enjoymeal_feat3_title: 'Estadísticas',
+    enjoymeal_feat3_desc: 'Visualiza tus tendencias nutricionales, progreso y patrones alimentarios a lo largo del tiempo.',
+    enjoymeal_feat4_title: 'Seguimiento del peso',
+    enjoymeal_feat4_desc: 'Sigue tu peso y progresión a lo largo del tiempo, sin juicios y a tu propio ritmo.',
+    enjoymeal_feat5_title: 'Reconocimiento IA',
+    enjoymeal_feat5_desc: 'Identifica alimentos por foto usando IA (Claude o Gemini). La imagen nunca sale de tu dispositivo hacia nuestros servidores.',
+    enjoymeal_feat6_title: 'Privacidad absoluta',
+    enjoymeal_feat6_desc: 'Todos tus datos nutricionales almacenados exclusivamente en tu dispositivo. Nunca enviados, nunca compartidos.',
+    enjoymeal_legal_title: 'Documentos legales',
+    enjoymeal_legal_desc: 'Consulta nuestra política de privacidad y términos de servicio.',
+
     legal_back: '← Volver',
     legal_updated: 'Última actualización',
     legal_available: 'Disponible en',
@@ -256,11 +323,13 @@ const TRANSLATIONS = {
     footer_apps: 'Apps',
     footer_legal: 'Legal',
     footer_contact: 'Contacto',
-    footer_rights: '© 2026 MyIdeaApp. Todos los derechos reservados.',
+    footer_rights: '© 2026 MyIdeApp. Todos los derechos reservados.',
     footer_privacy_rhythm: 'Privacidad (Rhythm)',
     footer_terms_rhythm: 'Términos (Rhythm)',
     footer_privacy_lunarest: 'Privacidad (LunaRest)',
     footer_terms_lunarest: 'Términos (LunaRest)',
+    footer_privacy_enjoymeal: 'Privacidad (EnjoyMeal)',
+    footer_terms_enjoymeal: 'Términos (EnjoyMeal)',
   }
 };
 

@@ -1,63 +1,127 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="lunarest">
+<html lang="fr" data-theme="enjoymeal">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LunaRest — Sleep better, every night</title>
-  <meta name="description" content="LunaRest est une app de sommeil avec sons d'ambiance, suivi du sommeil et réveil intelligent. Privacy-first, offline-first.">
+  <title>EnjoyMeal — Mange avec plaisir, vis en équilibre</title>
+  <meta name="description" content="EnjoyMeal est une app de suivi nutritionnel bienveillante. Suis tes calories et macros sans stress, tes données restent sur ton appareil.">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="LunaRest — Sleep better, every night">
-  <meta property="og:description" content="Sleep sounds, tracking & smart alarm. Privacy-first sleep app.">
+  <meta property="og:title" content="EnjoyMeal — Mange avec plaisir, vis en équilibre">
+  <meta property="og:description" content="Suivi nutritionnel bienveillant. Privacy-first, offline-first.">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <style>
+    /* EnjoyMeal-specific nav colors */
+    .navbar { --bg-raw: 250,250,248; background: rgba(250,250,248,0.85); }
+    .navbar__nav a { color: #7A6050; }
+    .navbar__nav a:hover, .navbar__nav a.active { color: #2D1E14; }
+    .navbar__back { color: #7A6050; }
+    .navbar__back:hover { color: #2D1E14; }
+    .hamburger span { background: #2D1E14; }
+    .mobile-nav { background: #FAFAF8; border-top-color: rgba(255,107,53,0.15); }
+    .mobile-nav a { color: #7A6050; border-bottom-color: rgba(255,107,53,0.15); }
+
     /* App Store badge */
     .store-badge {
       display: inline-flex; align-items: center; gap: 10px;
       padding: 12px 24px;
-      background: #6B8DE3;
+      background: #FF6B35;
       color: #fff;
       border-radius: 12px;
       font-size: 0.9375rem; font-weight: 700;
       text-decoration: none;
       transition: all 0.22s;
-      box-shadow: 0 4px 20px rgba(107,141,227,0.4);
+      box-shadow: 0 4px 20px rgba(255,107,53,0.4);
     }
-    .store-badge:hover { background: #4A6BC8; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(107,141,227,0.5); }
+    .store-badge:hover { background: #E85520; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(255,107,53,0.5); }
     .store-badge svg { width: 20px; height: 20px; }
 
-    /* Sound categories */
-    .sound-chips {
+    /* Meal category chips */
+    .meal-chips {
       display: flex; gap: 8px; flex-wrap: wrap;
       margin-top: 1rem;
     }
-    .sound-chip {
+    .meal-chip {
       display: inline-flex; align-items: center; gap: 6px;
       padding: 5px 14px;
       border-radius: 100px;
       font-size: 0.8125rem; font-weight: 600;
-      background: rgba(107,141,227,0.1);
-      border: 1px solid rgba(107,141,227,0.2);
-      color: #8B9AC4;
+      background: rgba(255,107,53,0.08);
+      border: 1px solid rgba(255,107,53,0.18);
+      color: #8B5E42;
     }
 
     /* Stats row */
     .stats-row {
       display: flex; gap: 2rem;
       padding: 1.5rem 0;
-      border-top: 1px solid rgba(107,141,227,0.12);
-      border-bottom: 1px solid rgba(107,141,227,0.12);
+      border-top: 1px solid rgba(255,107,53,0.1);
+      border-bottom: 1px solid rgba(255,107,53,0.1);
       margin: 1.5rem 0;
     }
     .stat { text-align: center; }
-    .stat__value { font-size: 1.75rem; font-weight: 900; color: #6B8DE3; letter-spacing: -0.03em; }
-    .stat__label { font-size: 0.8125rem; color: #8B9AC4; margin-top: 2px; }
+    .stat__value { font-size: 1.75rem; font-weight: 900; color: #FF6B35; letter-spacing: -0.03em; }
+    .stat__label { font-size: 0.8125rem; color: #8B6A50; margin-top: 2px; }
+
+    /* Food visual (similaire à luna-visual) */
+    .food-visual {
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 380px;
+    }
+    .food-ring {
+      position: absolute; border-radius: 50%;
+      border-style: solid; border-color: transparent;
+      animation: food-spin 20s linear infinite;
+    }
+    .food-ring--1 {
+      width: 320px; height: 320px;
+      border-width: 1px;
+      border-top-color: rgba(255,107,53,0.3);
+      border-right-color: rgba(255,107,53,0.15);
+    }
+    .food-ring--2 {
+      width: 240px; height: 240px;
+      border-width: 1px;
+      border-bottom-color: rgba(76,175,80,0.3);
+      border-left-color: rgba(76,175,80,0.15);
+      animation-direction: reverse;
+      animation-duration: 14s;
+    }
+    .food-ring--3 {
+      width: 160px; height: 160px;
+      border-width: 1px;
+      border-top-color: rgba(255,209,102,0.4);
+      animation-duration: 10s;
+    }
+    @keyframes food-spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .food-circle {
+      width: 110px; height: 110px;
+      background: linear-gradient(135deg, #FF6B35, #FFD166);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 12px 40px rgba(255,107,53,0.35);
+      position: relative; z-index: 1;
+    }
+    .food-circle__inner {
+      width: 90px; height: 90px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .food-circle__icon {
+      width: 64px; height: 64px;
+      border-radius: 14px;
+    }
   </style>
 </head>
-<body data-theme="lunarest">
+<body data-theme="enjoymeal">
 
   <!-- ─── Navbar ─────────────────────────────────────────── -->
   <nav class="navbar">
@@ -69,8 +133,8 @@
         <span data-i18n="back_to_studio">Studio</span>
       </a>
       <div class="navbar__logo">
-        <img src="../assets/lunarest/icon.png" alt="LunaRest" class="navbar__app-icon">
-        <span class="logo-text">LunaRest</span>
+        <img src="../assets/enjoymeal/icon.png" alt="EnjoyMeal" class="navbar__app-icon">
+        <span class="logo-text">EnjoyMeal</span>
       </div>
     </div>
     <div class="navbar__nav">
@@ -90,6 +154,7 @@
     </div>
   </nav>
 
+  <!-- Mobile nav -->
   <div class="mobile-nav">
     <a href="../" data-i18n="back_to_studio">← Studio</a>
     <a href="#overview" data-i18n="nav_overview">Présentation</a>
@@ -109,40 +174,38 @@
       <div class="app-hero__inner">
         <div class="app-hero__info">
           <div class="app-hero__icon-wrap">
-            <img src="../assets/lunarest/icon.png" alt="LunaRest" class="app-hero__icon">
-            <span class="app-hero__app-name">LunaRest</span>
+            <img src="../assets/enjoymeal/icon.png" alt="EnjoyMeal" class="app-hero__icon">
+            <span class="app-hero__app-name">EnjoyMeal</span>
           </div>
-          <h1 class="app-hero__tagline" data-i18n="lunarest_tagline">Dormez mieux, chaque nuit.</h1>
-          <p class="app-hero__subtitle" data-i18n="lunarest_subtitle">Sons, suivi du sommeil & réveil intelligent</p>
-          <p class="app-hero__description" data-i18n="lunarest_description">Endormez-vous plus vite avec des sons d'ambiance, comprenez vos cycles de sommeil et réveillez-vous frais et dispos grâce à un réveil intelligent.</p>
+          <h1 class="app-hero__tagline" data-i18n="enjoymeal_tagline">Mange avec plaisir, vis en équilibre.</h1>
+          <p class="app-hero__subtitle" data-i18n="enjoymeal_subtitle">Suivi nutritionnel bienveillant</p>
+          <p class="app-hero__description" data-i18n="enjoymeal_description">EnjoyMeal t'aide à comprendre tes repas sans stress ni culpabilité. Des objectifs doux et réalistes basés sur la science — pas sur la restriction.</p>
 
-          <!-- Sound categories -->
-          <div class="sound-chips">
-            <span class="sound-chip">🌧️ Pluie</span>
-            <span class="sound-chip">🌊 Océan</span>
-            <span class="sound-chip">🌲 Forêt</span>
-            <span class="sound-chip">🔥 Feu</span>
-            <span class="sound-chip">🌙 Bruit blanc</span>
-            <span class="sound-chip">🎵 Musique</span>
+          <!-- Meal categories -->
+          <div class="meal-chips">
+            <span class="meal-chip">🍳 Petit-déjeuner</span>
+            <span class="meal-chip">🥗 Déjeuner</span>
+            <span class="meal-chip">🍽️ Dîner</span>
+            <span class="meal-chip">🍎 Collation</span>
           </div>
 
           <div class="stats-row">
             <div class="stat">
-              <div class="stat__value">50+</div>
-              <div class="stat__label">Sons</div>
+              <div class="stat__value">300K+</div>
+              <div class="stat__label">Aliments</div>
             </div>
             <div class="stat">
-              <div class="stat__value">18</div>
-              <div class="stat__label">Histoires</div>
+              <div class="stat__value">6</div>
+              <div class="stat__label">Macros</div>
             </div>
             <div class="stat">
-              <div class="stat__value">9</div>
-              <div class="stat__label">Langues</div>
+              <div class="stat__value">100%</div>
+              <div class="stat__label">Offline</div>
             </div>
           </div>
 
           <div class="app-hero__actions">
-            <a href="#" class="store-badge" aria-label="Download LunaRest on App Store">
+            <a href="#" class="store-badge" aria-label="Download EnjoyMeal on App Store">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
               </svg>
@@ -151,14 +214,14 @@
           </div>
         </div>
 
-        <!-- Luna visual -->
-        <div class="luna-visual">
-          <div class="luna-ring luna-ring--3"></div>
-          <div class="luna-ring luna-ring--2"></div>
-          <div class="luna-ring luna-ring--1"></div>
-          <div class="luna-circle">
-            <div class="luna-circle__inner">
-              <img src="../assets/lunarest/icon.png" alt="LunaRest" class="luna-circle__icon">
+        <!-- Food visual -->
+        <div class="food-visual">
+          <div class="food-ring food-ring--1"></div>
+          <div class="food-ring food-ring--2"></div>
+          <div class="food-ring food-ring--3"></div>
+          <div class="food-circle">
+            <div class="food-circle__inner">
+              <img src="../assets/enjoymeal/icon.png" alt="EnjoyMeal" class="food-circle__icon">
             </div>
           </div>
         </div>
@@ -169,37 +232,37 @@
   <!-- ─── Features ───────────────────────────────────────── -->
   <section class="features-section section">
     <div class="container">
-      <h2 class="section-title fade-up" data-i18n="lunarest_feat_title">Fonctionnalités</h2>
+      <h2 class="section-title fade-up" data-i18n="enjoymeal_feat_title">Fonctionnalités</h2>
       <div class="features-grid">
         <div class="feature-card fade-up fade-up-delay-1">
-          <div class="feature-card__icon">🎵</div>
-          <h3 class="feature-card__title" data-i18n="lunarest_feat1_title">Sons du sommeil</h3>
-          <p class="feature-card__desc" data-i18n="lunarest_feat1_desc">50+ sons d'ambiance et scènes naturelles pour vous aider à vous endormir paisiblement.</p>
+          <div class="feature-card__icon">🍽️</div>
+          <h3 class="feature-card__title" data-i18n="enjoymeal_feat1_title">Journal alimentaire</h3>
+          <p class="feature-card__desc" data-i18n="enjoymeal_feat1_desc">Enregistre tes repas, calories et macros simplement. Accès à une base de 300 000+ aliments via Open Food Facts.</p>
         </div>
         <div class="feature-card fade-up fade-up-delay-2">
-          <div class="feature-card__icon">📖</div>
-          <h3 class="feature-card__title" data-i18n="lunarest_feat2_title">Histoires du soir</h3>
-          <p class="feature-card__desc" data-i18n="lunarest_feat2_desc">Des histoires apaisantes narratées pour vous guider vers un sommeil profond.</p>
+          <div class="feature-card__icon">🎯</div>
+          <h3 class="feature-card__title" data-i18n="enjoymeal_feat2_title">Objectifs personnalisés</h3>
+          <p class="feature-card__desc" data-i18n="enjoymeal_feat2_desc">Des objectifs caloriques et macros basés sur la science (Mifflin-St Jeor, OMS) — adaptés à ton corps et tes activités.</p>
         </div>
         <div class="feature-card fade-up fade-up-delay-3">
           <div class="feature-card__icon">📊</div>
-          <h3 class="feature-card__title" data-i18n="lunarest_feat3_title">Suivi du sommeil</h3>
-          <p class="feature-card__desc" data-i18n="lunarest_feat3_desc">Suivez la durée, les scores de qualité et détectez les schémas de ronflement.</p>
+          <h3 class="feature-card__title" data-i18n="enjoymeal_feat3_title">Statistiques</h3>
+          <p class="feature-card__desc" data-i18n="enjoymeal_feat3_desc">Visualise tes tendances nutritionnelles, tes progrès et tes patterns alimentaires au fil du temps.</p>
         </div>
         <div class="feature-card fade-up fade-up-delay-1">
-          <div class="feature-card__icon">⏰</div>
-          <h3 class="feature-card__title" data-i18n="lunarest_feat4_title">Réveil intelligent</h3>
-          <p class="feature-card__desc" data-i18n="lunarest_feat4_desc">Réveillez-vous au moment optimal de votre cycle de sommeil.</p>
+          <div class="feature-card__icon">⚖️</div>
+          <h3 class="feature-card__title" data-i18n="enjoymeal_feat4_title">Suivi du poids</h3>
+          <p class="feature-card__desc" data-i18n="enjoymeal_feat4_desc">Suis ton poids et ta progression dans le temps, sans jugement et à ton rythme.</p>
         </div>
         <div class="feature-card fade-up fade-up-delay-2">
-          <div class="feature-card__icon">🌙</div>
-          <h3 class="feature-card__title" data-i18n="lunarest_feat5_title">Routines du soir</h3>
-          <p class="feature-card__desc" data-i18n="lunarest_feat5_desc">Créez de saines habitudes de sommeil avec des routines guidées personnalisées.</p>
+          <div class="feature-card__icon">📷</div>
+          <h3 class="feature-card__title" data-i18n="enjoymeal_feat5_title">Reconnaissance IA</h3>
+          <p class="feature-card__desc" data-i18n="enjoymeal_feat5_desc">Identifie tes aliments en photo grâce à l'IA (Claude ou Gemini). L'image ne quitte jamais ton appareil vers nos serveurs.</p>
         </div>
         <div class="feature-card fade-up fade-up-delay-3">
           <div class="feature-card__icon">🔒</div>
-          <h3 class="feature-card__title" data-i18n="lunarest_feat6_title">Vie privée</h3>
-          <p class="feature-card__desc" data-i18n="lunarest_feat6_desc">Vos données de sommeil restent sur votre appareil. Vos nuits vous appartiennent.</p>
+          <h3 class="feature-card__title" data-i18n="enjoymeal_feat6_title">Vie privée absolue</h3>
+          <p class="feature-card__desc" data-i18n="enjoymeal_feat6_desc">Toutes tes données nutritionnelles stockées uniquement sur ton appareil. Jamais envoyées, jamais partagées.</p>
         </div>
       </div>
     </div>
@@ -210,8 +273,8 @@
     <div class="container">
       <div class="legal-strip__inner">
         <div class="legal-strip__text">
-          <h3 data-i18n="lunarest_legal_title">Documents légaux</h3>
-          <p data-i18n="lunarest_legal_desc">Consultez notre politique de confidentialité et nos conditions d'utilisation.</p>
+          <h3 data-i18n="enjoymeal_legal_title">Documents légaux</h3>
+          <p data-i18n="enjoymeal_legal_desc">Consultez notre politique de confidentialité et nos conditions d'utilisation.</p>
         </div>
         <div class="legal-strip__links">
           <a href="privacy.html" class="legal-link">
@@ -248,7 +311,7 @@
         </div>
         <div class="footer__col">
           <h4 data-i18n="footer_contact">Contact</h4>
-          <a href="mailto:support@lunarest.app">support@lunarest.app</a>
+          <a href="mailto:privacy@myideapp.com">privacy@myideapp.com</a>
         </div>
       </div>
       <div class="footer__bottom">
@@ -256,6 +319,7 @@
         <div class="footer__bottom-links">
           <a href="privacy.html" data-i18n="privacy_link">Confidentialité</a>
           <a href="terms.html" data-i18n="terms_link">Conditions</a>
+          <a href="../">Studio</a>
         </div>
       </div>
     </div>

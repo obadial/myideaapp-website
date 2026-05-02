@@ -1,10 +1,10 @@
-# CLAUDE.md — MyIdeaApp Website
+# CLAUDE.md — MyIdeApp Website
 
-Site vitrine statique du studio **MyIdeaApp**. Aucun build, aucun framework — HTML/CSS/JS pur déployé sur GitHub Pages.
+Site vitrine statique du studio **MyIdeApp**. Aucun build, aucun framework — HTML/CSS/JS pur déployé sur GitHub Pages.
 
 ## TODO
 
-- [ ] **Migrer vers un nom de domaine custom** (ex. `myideaapp.com`)
+- [ ] **Migrer vers un nom de domaine custom** (ex. `myideapp.com`)
   - Ajouter un fichier `CNAME` à la racine du repo
   - Configurer les DNS : CNAME `www` → `obadial.github.io` + 4 enregistrements A vers les IPs GitHub Pages
   - Activer "Enforce HTTPS" dans Settings → Pages
@@ -34,8 +34,10 @@ Chaque page déclare son thème sur `<body data-theme="...">` :
 | `studio` | Landing page | Fond très sombre `#08091A`, accents rose + bleu |
 | `rhythm` | Page Rhythm | Fond crème `#FDFAF8`, rose `#C96B8A`, lavande `#9B7FB5` |
 | `lunarest` | Page LunaRest | Fond marine `#0A0E1A`, bleu `#6B8DE3`, violet `#9B7FE8` |
+| `enjoymeal` | Page EnjoyMeal | Fond chaud `#FAFAF8`, orange `#FF6B35`, vert `#4CAF50` |
 | `legal-rhythm` | Pages légales Rhythm | Même charte que `rhythm` |
 | `legal-lunarest` | Pages légales LunaRest | Même charte que `lunarest` |
+| `legal-enjoymeal` | Pages légales EnjoyMeal | Même charte que `enjoymeal` |
 
 Toutes les couleurs utilisent des **CSS custom properties** (`--bg`, `--text`, `--primary`, etc.)  
 → Modifier un theme : changer uniquement le bloc `[data-theme="..."]` dans `style.css`.
@@ -112,6 +114,8 @@ Après déploiement GitHub Pages :
 - **Rhythm Terms** : `https://<user>.github.io/myideaapp-website/rhythm/terms.html`
 - **LunaRest Privacy** : `https://<user>.github.io/myideaapp-website/lunarest/privacy.html`
 - **LunaRest Terms** : `https://<user>.github.io/myideaapp-website/lunarest/terms.html`
+- **EnjoyMeal Privacy** : `https://<user>.github.io/myideaapp-website/enjoymeal/privacy.html`
+- **EnjoyMeal Terms** : `https://<user>.github.io/myideaapp-website/enjoymeal/terms.html`
 
 ## Conventions
 

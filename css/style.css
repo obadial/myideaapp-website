@@ -1,5 +1,5 @@
 /* ============================================================
-   MyIdeaApp Website — Global Stylesheet
+   MyIdeApp Website — Global Stylesheet
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
@@ -84,7 +84,36 @@ ul { list-style: none; }
   --hero-grad: linear-gradient(135deg, #0A0E1A 0%, #0F1535 50%, #1A1040 100%);
 }
 
+/* ─── ENJOYMEAL Theme ────────────────────────────────────── */
+[data-theme="enjoymeal"] {
+  --bg: #FAFAF8;
+  --bg2: #FFF3EE;
+  --surface: #FFFFFF;
+  --surface2: #FFF8F5;
+  --border: rgba(255,107,53,0.12);
+  --text: #2D2D2D;
+  --text2: #6B7280;
+  --text3: #B0B7C3;
+  --primary: #FF6B35;
+  --primary-dark: #E85520;
+  --secondary: #4CAF50;
+  --accent: #FFD166;
+  --accent-light: #FFEBB0;
+  --hero-grad: linear-gradient(135deg, #FAFAF8 0%, #FFF3EE 50%, #FFFBEE 100%);
+}
+
 /* ─── LEGAL Theme ────────────────────────────────────────── */
+[data-theme="legal-enjoymeal"] {
+  --bg: #FAFAF8;
+  --bg2: #FFF3EE;
+  --surface: #FFFFFF;
+  --border: rgba(255,107,53,0.12);
+  --text: #2D2D2D;
+  --text2: #6B7280;
+  --text3: #B0B7C3;
+  --primary: #FF6B35;
+  --secondary: #4CAF50;
+}
 [data-theme="legal-rhythm"] {
   --bg: #FDFAF8;
   --bg2: #F7EEF1;
@@ -182,6 +211,12 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
 }
+[data-theme="enjoymeal"] .logo-text,
+[data-theme="legal-enjoymeal"] .logo-text {
+  background: linear-gradient(135deg, #FF6B35, #FFD166);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
 .navbar__nav {
   display: flex; align-items: center; gap: var(--sp-md);
 }
@@ -218,6 +253,8 @@ body {
 [data-theme="lunarest"] .lang-btn.active,
 [data-theme="legal-lunarest"] .lang-btn.active { background: #6B8DE3; color: #fff; }
 [data-theme="studio"] .lang-btn.active { background: linear-gradient(135deg, #C96B8A, #6B8DE3); color: #fff; }
+[data-theme="enjoymeal"] .lang-btn.active,
+[data-theme="legal-enjoymeal"] .lang-btn.active { background: #FF6B35; color: #fff; }
 
 /* ─── HERO — Studio ──────────────────────────────────────── */
 .studio-hero {
@@ -382,6 +419,15 @@ body {
   background: radial-gradient(ellipse at bottom right, rgba(107,141,227,0.25) 0%, transparent 60%);
   pointer-events: none;
 }
+.app-card--enjoymeal {
+  background: linear-gradient(145deg, #1A0D06 0%, #2A1508 50%, #1E0F05 100%);
+}
+.app-card--enjoymeal::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at top right, rgba(255,107,53,0.22) 0%, transparent 60%);
+  pointer-events: none;
+}
 .app-card__content { position: relative; z-index: 1; flex: 1; display: flex; flex-direction: column; }
 .app-card__icon {
   width: 80px; height: 80px;
@@ -401,6 +447,7 @@ body {
 }
 .app-card--rhythm .app-card__chip { background: rgba(201,107,138,0.2); color: #E8A0B8; }
 .app-card--lunarest .app-card__chip { background: rgba(107,141,227,0.2); color: #9AB4F0; }
+.app-card--enjoymeal .app-card__chip { background: rgba(255,107,53,0.2); color: #FF9870; }
 .app-card__name {
   font-size: 2.25rem; font-weight: 900;
   letter-spacing: -0.04em; color: #fff;
@@ -412,6 +459,7 @@ body {
 }
 .app-card--rhythm .app-card__subtitle { color: #D4899F; }
 .app-card--lunarest .app-card__subtitle { color: #8B9AC4; }
+.app-card--enjoymeal .app-card__subtitle { color: #C4956A; }
 .app-card__description {
   font-size: 0.9375rem; line-height: 1.65;
   color: rgba(255,255,255,0.55);
@@ -443,6 +491,15 @@ body {
 .app-card--lunarest:hover .app-card__cta {
   background: #6B8DE3; color: #fff;
   border-color: #6B8DE3;
+}
+.app-card--enjoymeal .app-card__cta {
+  background: rgba(255,107,53,0.15);
+  border: 1px solid rgba(255,107,53,0.3);
+  color: #FF9870;
+}
+.app-card--enjoymeal:hover .app-card__cta {
+  background: #FF6B35; color: #fff;
+  border-color: #FF6B35;
 }
 .app-card__cta svg { width: 16px; height: 16px; transition: transform var(--transition); }
 .app-card:hover .app-card__cta svg { transform: translateX(4px); }
@@ -496,6 +553,7 @@ body {
 }
 [data-theme="rhythm"] .app-hero { background: var(--hero-grad); }
 [data-theme="lunarest"] .app-hero { background: var(--hero-grad); }
+[data-theme="enjoymeal"] .app-hero { background: var(--hero-grad); }
 
 .app-hero__orb {
   position: absolute; border-radius: 50%;
@@ -510,6 +568,11 @@ body {
   width: 700px; height: 700px;
   background: radial-gradient(circle, #6B8DE3, transparent);
   top: -30%; left: -10%;
+}
+[data-theme="enjoymeal"] .app-hero__orb {
+  width: 650px; height: 650px;
+  background: radial-gradient(circle, #FF6B35, transparent);
+  top: -20%; right: -5%;
 }
 .app-hero__inner {
   position: relative; z-index: 1;
