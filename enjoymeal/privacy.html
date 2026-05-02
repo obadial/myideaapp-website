@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="legal-rhythm">
+<html lang="fr" data-theme="legal-enjoymeal">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rhythm — Politique de confidentialité / Privacy Policy</title>
-  <meta name="description" content="Politique de confidentialité de l'application Rhythm — Suivi du cycle menstruel.">
+  <title>EnjoyMeal — Politique de confidentialité / Privacy Policy</title>
+  <meta name="description" content="Politique de confidentialité de l'application EnjoyMeal — Suivi nutritionnel bienveillant.">
   <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <style>
-    .navbar { background: rgba(253,250,248,0.9); border-bottom-color: rgba(201,107,138,0.12); }
-    .navbar__nav a { color: #7A5F68; }
-    .navbar__nav a:hover, .navbar__nav a.active { color: #2D1B24; }
-    .navbar__back { color: #7A5F68; }
-    .navbar__back:hover { color: #C96B8A; }
-    .hamburger span { background: #2D1B24; }
-    .mobile-nav { background: #FDFAF8; border-top-color: rgba(201,107,138,0.15); }
-    .mobile-nav a { color: #7A5F68; border-bottom-color: rgba(201,107,138,0.15); }
+    .navbar { background: rgba(250,250,248,0.9); border-bottom-color: rgba(255,107,53,0.12); }
+    .navbar__nav a { color: #7A6050; }
+    .navbar__nav a:hover, .navbar__nav a.active { color: #2D1E14; }
+    .navbar__back { color: #7A6050; }
+    .navbar__back:hover { color: #FF6B35; }
+    .hamburger span { background: #2D1E14; }
+    .mobile-nav { background: #FAFAF8; border-top-color: rgba(255,107,53,0.15); }
+    .mobile-nav a { color: #7A6050; border-bottom-color: rgba(255,107,53,0.15); }
   </style>
 </head>
-<body data-theme="legal-rhythm">
+<body data-theme="legal-enjoymeal">
 
   <!-- ─── Navbar ─────────────────────────────────────────── -->
   <nav class="navbar">
@@ -30,7 +30,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M19 12H5M12 19l-7-7 7-7"/>
         </svg>
-        <span>Rhythm</span>
+        <span>EnjoyMeal</span>
       </a>
     </div>
     <div class="navbar__nav">
@@ -51,7 +51,7 @@
   </nav>
 
   <div class="mobile-nav">
-    <a href="index.html">← Rhythm</a>
+    <a href="index.html">← EnjoyMeal</a>
     <a href="index.html" data-i18n="nav_overview">Présentation</a>
     <a href="privacy.html" data-i18n="nav_privacy">Confidentialité</a>
     <a href="terms.html" data-i18n="nav_terms">Conditions</a>
@@ -68,9 +68,7 @@
       <div class="container container--narrow">
         <a href="index.html" class="legal-page__back" data-i18n="legal_back">← Retour</a>
         <h1 class="legal-page__title" data-i18n="privacy_link">Politique de confidentialité</h1>
-        <p class="legal-page__meta">Rhythm · <span data-i18n="legal_updated">Dernière mise à jour</span> : Avril 2026</p>
-
-        <!-- Language tabs -->
+        <p class="legal-page__meta">EnjoyMeal · <span data-i18n="legal_updated">Dernière mise à jour</span> : Mai 2026</p>
         <div class="legal-lang-tabs">
           <button class="legal-tab" data-legal-tab="fr">Français</button>
           <button class="legal-tab" data-legal-tab="en">English</button>
@@ -84,31 +82,35 @@
 
         <!-- ── Français ── -->
         <div class="legal-content" data-legal-content="fr">
-          <span class="legal-date">Dernière mise à jour : Avril 2026</span>
+          <span class="legal-date">Dernière mise à jour : Mai 2026</span>
           <div class="legal-text">
             <h2>1. Introduction</h2>
-            <p>Rhythm (« nous ») s'engage à protéger ta vie privée. Cette politique explique comment nous collectons, utilisons et protégeons tes données personnelles lors de l'utilisation de l'application Rhythm.</p>
+            <p>EnjoyMeal ("nous") s'engage à protéger ta vie privée. Cette politique explique comment nous collectons, utilisons et protégeons tes données personnelles lorsque tu utilises l'app EnjoyMeal.</p>
 
             <h2>2. Données collectées</h2>
             <p>Nous collectons les données suivantes pour fournir notre service :</p>
             <ul>
-              <li><strong>Données de santé</strong> : Dates du cycle, intensité du flux, symptômes, humeur et énergie que tu choisis d'enregistrer.</li>
+              <li><strong>Données nutritionnelles</strong> : Entrées alimentaires, calories et macros enregistrées, types de repas et horaires que tu choisis d'enregistrer.</li>
+              <li><strong>Données corporelles</strong> : Entrées de poids, taille, âge et niveau d'activité que tu fournis pour calculer tes objectifs nutritionnels.</li>
               <li><strong>Données de compte</strong> : Adresse e-mail (si tu crées un compte), identifiants d'authentification.</li>
               <li><strong>Données d'utilisation</strong> : Interactions avec l'app et analytiques anonymisées via Firebase Analytics.</li>
+              <li><strong>Caméra et photothèque</strong> (optionnel — reconnaissance photo IA uniquement) : Lorsque tu utilises la reconnaissance photo IA, l'app demande l'accès à ta caméra ou ta photothèque uniquement pour te permettre de photographier ou sélectionner une image de repas. Cette image est envoyée directement depuis ton appareil vers le service IA que tu as configuré (Anthropic Claude ou Google Gemini) en utilisant ta propre clé API. Les photos ne sont jamais envoyées à nos serveurs et ne sont pas stockées par EnjoyMeal.</li>
             </ul>
             <p>Nous ne collectons aucune donnée que tu n'as pas explicitement fournie.</p>
 
             <h2>3. Utilisation de tes données</h2>
             <ul>
-              <li>Pour afficher tes prédictions de cycle et analyses dans l'app.</li>
+              <li>Pour afficher ton récapitulatif nutritionnel quotidien et tes analyses dans l'app.</li>
+              <li>Pour calculer tes objectifs personnalisés de calories et macros (équation Mifflin-St Jeor, recommandations OMS).</li>
               <li>Pour améliorer les performances de l'app via des analytiques anonymisées.</li>
+              <li>Pour analyser les photos de repas via la reconnaissance IA (fonctionnalité premium optionnelle) — les images sont transmises directement depuis ton appareil au service IA choisi (Anthropic ou Google) et ne sont pas conservées par nous.</li>
             </ul>
             <p>Nous ne vendons, partageons ni monétisons jamais tes données de santé personnelles.</p>
 
             <h2>4. Stockage et sécurité</h2>
-            <p>Tes données de santé (cycles, symptômes, journaux, médicaments) sont stockées <strong>exclusivement sur ton appareil</strong> dans une base de données locale. Elles ne sont jamais envoyées vers nos serveurs ni vers un service cloud.</p>
+            <p>Tes données nutritionnelles (journaux alimentaires, poids, profil) sont stockées <strong>exclusivement sur ton appareil</strong> dans une base de données SQLite locale. Elles ne sont jamais envoyées vers nos serveurs.</p>
             <p>La gestion de ton compte est assurée par Firebase Authentication (Google LLC), conforme au RGPD via les Clauses Contractuelles Types. Des analytiques anonymisées sont collectées via Firebase Analytics.</p>
-            <p>Tous les utilisateurs — anonymes ou connectés — ont leurs données de santé stockées uniquement sur leur appareil. La suppression de l'app ou de ton compte efface définitivement toutes les données locales.</p>
+            <p>Si tu saisies une clé API IA (Claude/Gemini) pour la reconnaissance photo, elle est stockée uniquement dans le trousseau sécurisé de ton appareil (Keychain iOS / Keystore Android). Elle n'est jamais envoyée à nos serveurs.</p>
 
             <h2>5. Tes droits (RGPD Art. 15–22)</h2>
             <p>Tu as le droit :</p>
@@ -121,43 +123,47 @@
             </ul>
 
             <h2>6. Conservation des données</h2>
-            <p>Nous conservons tes données tant que ton compte est actif. Tu peux supprimer ton compte et toutes les données associées à tout moment depuis Réglages.</p>
+            <p>Nous conservons tes données tant que ton compte est actif. Tu peux supprimer ton compte et toutes les données associées à tout moment depuis Réglages → Compte.</p>
 
             <h2>7. Enfants</h2>
-            <p>Rhythm n'est pas destiné aux enfants de moins de 13 ans. Nous ne collectons pas sciemment de données d'enfants de moins de 13 ans.</p>
+            <p>EnjoyMeal n'est pas destiné aux enfants de moins de 13 ans. Nous ne collectons pas sciemment de données d'enfants de moins de 13 ans.</p>
 
             <h2>8. Contact</h2>
-            <p>Questions sur ta vie privée ? Contacte-nous : <a href="mailto:privacy@rhythm-app.com">privacy@rhythm-app.com</a></p>
+            <p>Questions sur ta vie privée ? Contacte-nous : <a href="mailto:privacy@myideapp.com">privacy@myideapp.com</a></p>
           </div>
         </div>
 
         <!-- ── English ── -->
         <div class="legal-content" data-legal-content="en">
-          <span class="legal-date">Last updated: April 2026</span>
+          <span class="legal-date">Last updated: May 2026</span>
           <div class="legal-text">
             <h2>1. Introduction</h2>
-            <p>Rhythm ("we", "our", "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal data when you use the Rhythm app.</p>
+            <p>EnjoyMeal ("we", "our", "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal data when you use the EnjoyMeal app.</p>
 
             <h2>2. Data We Collect</h2>
             <p>We collect the following data to provide our service:</p>
             <ul>
-              <li><strong>Health data</strong>: Cycle dates, flow intensity, symptoms, mood, and energy levels you choose to log.</li>
+              <li><strong>Nutritional data</strong>: Food entries, calorie and macro logs, meal types and times you choose to record.</li>
+              <li><strong>Body data</strong>: Weight logs, height, age, and activity level you provide to calculate your nutritional goals.</li>
               <li><strong>Account data</strong>: Email address (if you create an account), authentication identifiers.</li>
               <li><strong>Usage data</strong>: App interactions and anonymized analytics via Firebase Analytics.</li>
+              <li><strong>Camera and photo library</strong> (optional — AI photo recognition only): When you use the AI photo recognition feature, the app requests access to your device camera or photo library solely to let you photograph or select a meal image. This image is sent directly from your device to the AI service you configured (Anthropic Claude or Google Gemini) using your own API key. Photos are never sent to our servers and are not stored by EnjoyMeal.</li>
             </ul>
             <p>We do NOT collect or access any data you do not explicitly provide.</p>
 
             <h2>3. How We Use Your Data</h2>
             <ul>
-              <li>To display your cycle predictions and insights within the app.</li>
+              <li>To display your daily nutritional summary and insights within the app.</li>
+              <li>To calculate your personalized calorie and macro goals (Mifflin-St Jeor equation, WHO recommendations).</li>
               <li>To improve app performance through anonymized analytics.</li>
+              <li>To process meal photos for AI food recognition (optional premium feature) — images are sent directly from your device to the AI service you chose (Anthropic or Google) and are not retained by us.</li>
             </ul>
             <p>We never sell, share, or monetize your personal health data with third parties.</p>
 
             <h2>4. Data Storage and Security</h2>
-            <p>Your health data (cycles, symptoms, logs, medications) is stored <strong>exclusively on your device</strong> in a local database. It is never uploaded to our servers or any cloud storage.</p>
+            <p>Your nutritional data (food logs, weight, profile) is stored <strong>exclusively on your device</strong> in a local SQLite database. It is never uploaded to our servers.</p>
             <p>Your account credentials are managed by Firebase Authentication (Google LLC), which is EU-GDPR compliant via Standard Contractual Clauses. Anonymized usage analytics are collected via Firebase Analytics.</p>
-            <p>All users — whether anonymous or signed in — have their health data stored only on their device. Deleting the app or your account permanently removes all local data.</p>
+            <p>If you optionally enter an AI API key (Claude/Gemini) for photo recognition, it is stored only in your device's secure keychain (iOS Keychain / Android Keystore). It is never sent to our servers.</p>
 
             <h2>5. Your Rights (GDPR Art. 15–22)</h2>
             <p>You have the right to:</p>
@@ -170,43 +176,47 @@
             </ul>
 
             <h2>6. Data Retention</h2>
-            <p>We retain your data as long as your account is active. You can delete your account and all associated data at any time from Settings.</p>
+            <p>We retain your data as long as your account is active. You can delete your account and all associated data at any time from Settings → Account.</p>
 
             <h2>7. Children</h2>
-            <p>Rhythm is not directed to children under 13. We do not knowingly collect data from children under 13.</p>
+            <p>EnjoyMeal is not directed to children under 13. We do not knowingly collect data from children under 13.</p>
 
             <h2>8. Contact</h2>
-            <p>Questions about your privacy? Contact us at: <a href="mailto:privacy@rhythm-app.com">privacy@rhythm-app.com</a></p>
+            <p>Questions about your privacy? Contact us at: <a href="mailto:privacy@myideapp.com">privacy@myideapp.com</a></p>
           </div>
         </div>
 
         <!-- ── Español ── -->
         <div class="legal-content" data-legal-content="es">
-          <span class="legal-date">Última actualización: Abril 2026</span>
+          <span class="legal-date">Última actualización: Mayo 2026</span>
           <div class="legal-text">
             <h2>1. Introducción</h2>
-            <p>Rhythm ("nosotros") se compromete a proteger tu privacidad. Esta política explica cómo recopilamos, usamos y protegemos tus datos personales durante el uso de la aplicación Rhythm.</p>
+            <p>EnjoyMeal ("nosotros") se compromete a proteger tu privacidad. Esta política explica cómo recopilamos, usamos y protegemos tus datos personales durante el uso de la app EnjoyMeal.</p>
 
             <h2>2. Datos que recopilamos</h2>
             <p>Recopilamos los siguientes datos para proporcionar nuestro servicio:</p>
             <ul>
-              <li><strong>Datos de salud</strong>: Fechas del ciclo, intensidad del flujo, síntomas, estado de ánimo y niveles de energía que eliges registrar.</li>
+              <li><strong>Datos nutricionales</strong>: Registros de alimentos, calorías y macros, tipos de comidas y horarios que eliges registrar.</li>
+              <li><strong>Datos corporales</strong>: Registros de peso, altura, edad y nivel de actividad que proporcionas para calcular tus objetivos nutricionales.</li>
               <li><strong>Datos de cuenta</strong>: Dirección de correo electrónico (si creas una cuenta), identificadores de autenticación.</li>
               <li><strong>Datos de uso</strong>: Interacciones con la app y análisis anónimos a través de Firebase Analytics.</li>
+              <li><strong>Cámara y biblioteca de fotos</strong> (opcional — solo reconocimiento de fotos con IA): Cuando usas el reconocimiento de fotos con IA, la app solicita acceso a tu cámara o biblioteca de fotos solo para que puedas fotografiar o seleccionar una imagen de comida. Esta imagen se envía directamente desde tu dispositivo al servicio de IA que configuraste (Anthropic Claude o Google Gemini) usando tu propia clave API. Las fotos nunca se envían a nuestros servidores ni son almacenadas por EnjoyMeal.</li>
             </ul>
             <p>No recopilamos ningún dato que no hayas proporcionado explícitamente.</p>
 
             <h2>3. Cómo usamos tus datos</h2>
             <ul>
-              <li>Para mostrar predicciones e insights de tu ciclo en la app.</li>
+              <li>Para mostrar tu resumen nutricional diario e insights en la app.</li>
+              <li>Para calcular tus objetivos personalizados de calorías y macros (ecuación Mifflin-St Jeor, recomendaciones OMS).</li>
               <li>Para mejorar el rendimiento de la app mediante análisis anónimos.</li>
+              <li>Para analizar fotos de comidas mediante reconocimiento de IA (función premium opcional) — las imágenes se transmiten directamente desde tu dispositivo al servicio de IA elegido (Anthropic o Google) y no son conservadas por nosotros.</li>
             </ul>
-            <p>Nunca vendemos, compartimos ni monetizamos tus datos de salud personales.</p>
+            <p>Nunca vendemos, compartimos ni monetizamos tus datos personales de salud.</p>
 
             <h2>4. Almacenamiento y seguridad</h2>
-            <p>Tus datos de salud (ciclos, síntomas, diarios, medicamentos) se almacenan <strong>exclusivamente en tu dispositivo</strong> en una base de datos local. Nunca se cargan en nuestros servidores ni en ningún almacenamiento en la nube.</p>
+            <p>Tus datos nutricionales (registros de alimentos, peso, perfil) se almacenan <strong>exclusivamente en tu dispositivo</strong> en una base de datos SQLite local. Nunca se cargan en nuestros servidores.</p>
             <p>La gestión de tu cuenta la realiza Firebase Authentication (Google LLC), que cumple con el RGPD de la UE mediante Cláusulas Contractuales Estándar. Se recopilan análisis anónimos mediante Firebase Analytics.</p>
-            <p>Todos los usuarios — anónimos o conectados — tienen sus datos de salud almacenados únicamente en su dispositivo. Eliminar la app o tu cuenta elimina permanentemente todos los datos locales.</p>
+            <p>Si introduces una clave API de IA (Claude/Gemini) para el reconocimiento de fotos, se almacena solo en el llavero seguro de tu dispositivo (Keychain iOS / Keystore Android). Nunca se envía a nuestros servidores.</p>
 
             <h2>5. Tus derechos (RGPD Art. 15–22)</h2>
             <p>Tienes derecho a:</p>
@@ -219,13 +229,13 @@
             </ul>
 
             <h2>6. Conservación de datos</h2>
-            <p>Conservamos tus datos mientras tu cuenta esté activa. Puedes eliminar tu cuenta y todos los datos asociados en cualquier momento desde Ajustes.</p>
+            <p>Conservamos tus datos mientras tu cuenta esté activa. Puedes eliminar tu cuenta y todos los datos asociados en cualquier momento desde Ajustes → Cuenta.</p>
 
             <h2>7. Menores</h2>
-            <p>Rhythm no está dirigido a menores de 13 años. No recopilamos conscientemente datos de menores de 13 años.</p>
+            <p>EnjoyMeal no está dirigido a menores de 13 años. No recopilamos conscientemente datos de menores de 13 años.</p>
 
             <h2>8. Contacto</h2>
-            <p>¿Preguntas sobre tu privacidad? Contáctanos: <a href="mailto:privacy@rhythm-app.com">privacy@rhythm-app.com</a></p>
+            <p>¿Preguntas sobre tu privacidad? Contáctanos: <a href="mailto:privacy@myideapp.com">privacy@myideapp.com</a></p>
           </div>
         </div>
 
@@ -237,7 +247,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__bottom">
-        <p>Rhythm · <span data-i18n="footer_rights">© 2026 MyIdeApp. Tous droits réservés.</span></p>
+        <p>EnjoyMeal · <span data-i18n="footer_rights">© 2026 MyIdeApp. Tous droits réservés.</span></p>
         <div class="footer__bottom-links">
           <a href="privacy.html" data-i18n="privacy_link">Confidentialité</a>
           <a href="terms.html" data-i18n="terms_link">Conditions</a>
