@@ -1,5 +1,5 @@
 /* ============================================================
-   MyIdeaApp Website — Main JS
+   MyIdeApp Website — Main JS
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
