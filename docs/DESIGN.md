@@ -1,4 +1,4 @@
-# Design System — MyIdeaApp Website
+# Design System — MyIdeApp Website
 
 ## Principes
 
