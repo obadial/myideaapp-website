@@ -1,6 +1,6 @@
-# MyIdeaApp Website
+# MyIdeApp Website
 
-Site vitrine du studio **MyIdeaApp** hébergeant les pages légales (RGPD) de Rhythm et LunaRest.  
+Site vitrine du studio **MyIdeApp** hébergeant les pages légales (RGPD) de Rhythm et LunaRest.  
 Déployé sur **GitHub Pages** — aucun build, aucune dépendance.
 
 ## Structure
