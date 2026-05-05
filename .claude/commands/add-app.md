@@ -16,8 +16,7 @@ Avant de commencer, demande à l'utilisateur les informations suivantes si elles
 8. **Description FR/EN/ES** (2-3 phrases)
 9. **6 fonctionnalités** avec emoji, titre et description (FR/EN/ES)
 10. **Chemin vers l'icône** (PNG, ex. `../assets/[slug]/icon.png`)
-11. **Email de contact** pour les pages légales
-12. **Textes légaux** (privacy + terms, FR/EN/ES) — si non fournis, créer des textes génériques adaptés à l'app
+11. **Textes légaux** (privacy + terms, FR/EN/ES) — si non fournis, créer des textes génériques adaptés à l'app
 
 Si l'app est un projet Flutter/Dart voisin, propose de lire automatiquement `lib/core/constants/app_colors.dart` et `lib/core/constants/legal_texts.dart` pour extraire couleurs et textes légaux.
 
@@ -80,6 +79,7 @@ Dans `rhythm/index.html`, `lunarest/index.html`, et toutes les pages `[existinga
 
 ## Notes importantes
 
+- **Email de contact** : toujours utiliser `contact.myideapp@icloud.com` dans les pages légales et le footer. Ne jamais créer d'alias spécifique à l'app.
 - **Textes légaux** : toujours utiliser les textes officiels fournis par l'app. Si aucun texte, créer des CGU et politique de confidentialité génériques mais adaptées au type d'app (tracker de santé, app de bien-être, etc.)
 - **Pas de screenshots** : si aucun screenshot n'est disponible, utiliser un visual animé CSS (anneaux concentriques avec couleurs de l'app + icône centrale), comme dans `lunarest/index.html`
 - **Theme light** : fond clair, overrides navbar/mobile-nav dans le `<style>` inline de la page, comme Rhythm
