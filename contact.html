@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="studio">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyIdeApp — Contact</title>
+  <meta name="description" content="Contactez l'équipe MyIdeApp pour toute question sur Rhythm, LunaRest ou EnjoyMeal.">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .contact-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--sp-xl) var(--sp-md);
+      background: var(--bg);
+    }
+    .contact-card {
+      width: 100%;
+      max-width: 560px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: var(--sp-lg);
+      box-shadow: var(--shadow-lg);
+    }
+    .contact-card h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .contact-card .subtitle {
+      color: var(--text2);
+      font-size: 0.95rem;
+      margin-bottom: var(--sp-lg);
+      line-height: 1.6;
+    }
+    .form-group {
+      margin-bottom: var(--sp-sm);
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text2);
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      padding: 0.85rem 1rem;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color var(--transition);
+      appearance: none;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--text3);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent2);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+    .form-group select option {
+      background: var(--surface2);
+      color: var(--text);
+    }
+    .select-wrapper {
+      position: relative;
+    }
+    .select-wrapper::after {
+      content: '▾';
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text2);
+      pointer-events: none;
+      font-size: 1rem;
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, var(--accent2), var(--accent3));
+      color: white;
+      border: none;
+      border-radius: var(--r-md);
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: var(--sp-sm);
+      transition: opacity var(--transition), transform var(--transition);
+    }
+    .submit-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+    .note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text3);
+      margin-top: var(--sp-sm);
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text2);
+      font-size: 0.9rem;
+      margin-bottom: var(--sp-md);
+      transition: color var(--transition);
+    }
+    .back-link:hover { color: var(--text); }
+  </style>
+</head>
+<body data-theme="studio">
+
+  <main class="contact-section">
+    <div class="contact-card">
+
+      <a href="index.html" class="back-link">
+        ← <span data-i18n="back">Retour</span>
+      </a>
+
+      <h1 data-i18n="contact_title">Nous contacter</h1>
+      <p class="subtitle" data-i18n="contact_subtitle">
+        Une question, un bug, une suggestion ? On vous répond sous 48h.
+      </p>
+
+      <form id="contactForm">
+        <div class="form-group">
+          <label data-i18n="contact_name">Nom</label>
+          <input type="text" id="name" placeholder="Votre nom" required>
+        </div>
+
+        <div class="form-group">
+          <label data-i18n="contact_email">Email</label>
+          <input type="email" id="email" placeholder="votre@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label data-i18n="contact_app">Application concernée</label>
+          <div class="select-wrapper">
+            <select id="app" required>
+              <option value="" disabled selected data-i18n="contact_app_placeholder">Choisir une app...</option>
+              <option value="LunaRest">🌙 LunaRest</option>
+              <option value="Rhythm">🩸 Rhythm</option>
+              <option value="EnjoyMeal">🥗 EnjoyMeal</option>
+              <option value="MyIdeApp" data-i18n="contact_app_other">Autre / Général</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label data-i18n="contact_message">Message</label>
+          <textarea id="message" placeholder="Décrivez votre question ou problème..." required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" data-i18n="contact_send">Envoyer le message</button>
+        <p class="note" data-i18n="contact_note">
+          Votre messagerie s'ouvrira avec le message pré-rempli.
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name    = document.getElementById('name').value.trim();
+      const email   = document.getElementById('email').value.trim();
+      const app     = document.getElementById('app').value;
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !app || !message) return;
+
+      const subject = encodeURIComponent(`[${app}] Support — ${name}`);
+      const body    = encodeURIComponent(
+        `Nom : ${name}\nEmail : ${email}\nApp : ${app}\n\n${message}`
+      );
+
+      window.location.href = `mailto:contact.myideaapp@icloud.com?subject=${subject}&body=${body}`;
+    });
+
+    // i18n minimal
+    const i18n = {
+      fr: {
+        contact_title: 'Nous contacter',
+        contact_subtitle: 'Une question, un bug, une suggestion ? On vous répond sous 48h.',
+        contact_name: 'Nom',
+        contact_email: 'Email',
+        contact_app: 'Application concernée',
+        contact_app_placeholder: 'Choisir une app...',
+        contact_app_other: 'Autre / Général',
+        contact_message: 'Message',
+        contact_send: 'Envoyer le message',
+        contact_note: 'Votre messagerie s\'ouvrira avec le message pré-rempli.',
+        back: 'Retour',
+      },
+      en: {
+        contact_title: 'Contact us',
+        contact_subtitle: 'A question, a bug, a suggestion? We reply within 48h.',
+        contact_name: 'Name',
+        contact_email: 'Email',
+        contact_app: 'App concerned',
+        contact_app_placeholder: 'Choose an app...',
+        contact_app_other: 'Other / General',
+        contact_message: 'Message',
+        contact_send: 'Send message',
+        contact_note: 'Your email client will open with the pre-filled message.',
+        back: 'Back',
+      },
+      es: {
+        contact_title: 'Contáctanos',
+        contact_subtitle: '¿Una pregunta, un error, una sugerencia? Respondemos en 48h.',
+        contact_name: 'Nombre',
+        contact_email: 'Correo',
+        contact_app: 'Aplicación',
+        contact_app_placeholder: 'Elegir una app...',
+        contact_app_other: 'Otro / General',
+        contact_message: 'Mensaje',
+        contact_send: 'Enviar mensaje',
+        contact_note: 'Tu cliente de correo se abrirá con el mensaje predefinido.',
+        back: 'Volver',
+      }
+    };
+
+    function applyLang(lang) {
+      const t = i18n[lang] || i18n['fr'];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key]) el.textContent = t[key];
+      });
+      localStorage.setItem('lang', lang);
+    }
+
+    const savedLang = localStorage.getItem('lang') || navigator.language.slice(0,2) || 'fr';
+    applyLang(['fr','en','es'].includes(savedLang) ? savedLang : 'fr');
+  </script>
+</body>
+</html>
