@@ -117,6 +117,22 @@ Après déploiement GitHub Pages :
 - **EnjoyMeal Privacy** : `https://<user>.github.io/myideaapp-website/enjoymeal/privacy.html`
 - **EnjoyMeal Terms** : `https://<user>.github.io/myideaapp-website/enjoymeal/terms.html`
 
+## Contact & Email
+
+**Email unique du studio : `contact.myideapp@icloud.com`**
+
+- C'est le **seul** email de contact à utiliser dans tout le site (pages légales, footer, formulaire).
+- Ne jamais créer d'alias comme `privacy@myideapp.com`, `support@lunarest.app`, `hello@rhythm-app.com`, etc. — ils n'existent pas.
+- La page `contact.html` à la racine contient un formulaire trilingue (FR/EN/ES) qui génère un `mailto:` vers cette adresse avec le nom de l'app dans le sujet.
+- Toute nouvelle app doit pointer vers `contact.myideapp@icloud.com` dans ses pages `privacy.html` et `terms.html`.
+
+### Formulaire de contact (`contact.html`)
+
+- Trilingue FR/EN/ES avec détection automatique de la langue (`localStorage` + `navigator.language`)
+- Champs : Nom, Email, App concernée (dropdown), Message
+- Soumission : ouvre le client mail avec `mailto:contact.myideapp@icloud.com?subject=[App] Support — Nom&body=...`
+- Aucun backend requis
+
 ## Conventions
 
 - Pas de commentaires dans le code sauf pour les sections majeures
