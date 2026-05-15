@@ -2,8 +2,21 @@
 
 Site vitrine statique du studio **MyIdeApp**. Aucun build, aucun framework — HTML/CSS/JS pur déployé sur GitHub Pages.
 
+## État des apps
+
+| App | Statut | Lien |
+|-----|--------|------|
+| **Rhythm** | ✅ LIVE App Store — 2026-05-15 | https://apps.apple.com/fr/app/rhythm-cycle-wellbeing/id6767194298 |
+| **LunaRest** | 🟠 En review Apple | — |
+| **EnjoyMeal** | 🟠 En review Apple | — |
+| **Inhale** | 🔧 Phase 1 terminée | — |
+
 ## TODO
 
+- [x] Favicon SVG `assets/favicon.svg` ajouté sur toutes les pages
+- [x] Badge "● App Store" sur la carte Rhythm (vert, visible sur fond sombre)
+- [x] Lien App Store Rhythm branché (`rhythm/index.html`)
+- [x] Nom `MyIdeApp` correct sur toute la landing page
 - [ ] **Migrer vers un nom de domaine custom** (ex. `myideapp.com`)
   - Ajouter un fichier `CNAME` à la racine du repo
   - Configurer les DNS : CNAME `www` → `obadial.github.io` + 4 enregistrements A vers les IPs GitHub Pages
