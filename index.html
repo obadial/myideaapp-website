@@ -22,29 +22,24 @@
     <div class="navbar__logo">
       <span class="logo-text">MyIdeApp</span>
     </div>
-    <div class="navbar__nav">
-      <a href="rhythm/">Rhythm</a>
-      <a href="lunarest/">LunaRest</a>
-      <a href="enjoymeal/">EnjoyMeal</a>
-      <a href="contact.html" data-i18n="studio_contact_title">Nous contacter</a>
-    </div>
     <div class="navbar__right">
       <div class="lang-switcher">
         <button class="lang-btn" data-lang-btn="fr">FR</button>
         <button class="lang-btn" data-lang-btn="en">EN</button>
         <button class="lang-btn" data-lang-btn="es">ES</button>
       </div>
-      <button class="hamburger" aria-label="Menu" aria-expanded="false">
+      <button class="hamburger hamburger--always" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- Mobile nav -->
+  <!-- Menu burger -->
   <div class="mobile-nav">
     <a href="rhythm/">Rhythm</a>
     <a href="lunarest/">LunaRest</a>
     <a href="enjoymeal/">EnjoyMeal</a>
+    <a href="inhale/">Inhale</a>
     <a href="contact.html" data-i18n="studio_contact_title">Nous contacter</a>
     <div class="lang-switcher" style="margin-top:1.5rem">
       <button class="lang-btn" data-lang-btn="fr">FR</button>
@@ -81,7 +76,7 @@
     <div class="container">
       <h2 class="section-title fade-up" data-i18n="studio_apps_title">Nos Applications</h2>
       <p class="section-subtitle fade-up fade-up-delay-1" data-i18n="studio_apps_subtitle">Trois apps, une obsession : des expériences qui comptent vraiment.</p>
-      <div class="apps-grid">
+      <div class="apps-carousel">
 
         <!-- Rhythm -->
         <a href="rhythm/" class="app-card app-card--rhythm fade-up fade-up-delay-2">
@@ -157,6 +152,11 @@
         </a>
 
       </div>
+      <!-- Indicateur scroll -->
+      <div class="carousel-hint">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        <span data-i18n="scroll_to_explore">Faites défiler</span>
+      </div>
     </div>
   </section>
 
@@ -214,14 +214,10 @@
         </div>
         <div class="footer__col">
           <h4 data-i18n="footer_legal">Légal</h4>
-          <a href="rhythm/privacy.html" data-i18n="footer_privacy_rhythm">Confidentialité (Rhythm)</a>
-          <a href="rhythm/terms.html" data-i18n="footer_terms_rhythm">Conditions (Rhythm)</a>
-          <a href="lunarest/privacy.html" data-i18n="footer_privacy_lunarest">Confidentialité (LunaRest)</a>
-          <a href="lunarest/terms.html" data-i18n="footer_terms_lunarest">Conditions (LunaRest)</a>
-          <a href="enjoymeal/privacy.html" data-i18n="footer_privacy_enjoymeal">Confidentialité (EnjoyMeal)</a>
-          <a href="enjoymeal/terms.html" data-i18n="footer_terms_enjoymeal">Conditions (EnjoyMeal)</a>
-          <a href="inhale/privacy.html" data-i18n="footer_privacy_inhale">Confidentialité (Inhale)</a>
-          <a href="inhale/terms.html" data-i18n="footer_terms_inhale">Conditions (Inhale)</a>
+          <div class="footer__legal-row"><span>Rhythm</span><a href="rhythm/privacy.html" data-i18n="footer_privacy_short">Confidentialité</a><a href="rhythm/terms.html" data-i18n="footer_terms_short">Conditions</a></div>
+          <div class="footer__legal-row"><span>LunaRest</span><a href="lunarest/privacy.html" data-i18n="footer_privacy_short">Confidentialité</a><a href="lunarest/terms.html" data-i18n="footer_terms_short">Conditions</a></div>
+          <div class="footer__legal-row"><span>EnjoyMeal</span><a href="enjoymeal/privacy.html" data-i18n="footer_privacy_short">Confidentialité</a><a href="enjoymeal/terms.html" data-i18n="footer_terms_short">Conditions</a></div>
+          <div class="footer__legal-row"><span>Inhale</span><a href="inhale/privacy.html" data-i18n="footer_privacy_short">Confidentialité</a><a href="inhale/terms.html" data-i18n="footer_terms_short">Conditions</a></div>
         </div>
         <div class="footer__col">
           <h4 data-i18n="footer_contact">Contact</h4>
