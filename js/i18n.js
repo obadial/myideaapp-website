@@ -124,6 +124,10 @@ const TRANSLATIONS = {
     inhale_legal_title: 'Documents légaux',
     inhale_legal_desc: "Consultez notre politique de confidentialité et nos conditions d'utilisation.",
 
+    scroll_to_explore: 'Faites défiler',
+    footer_privacy_short: 'Confidentialité',
+    footer_terms_short: 'Conditions',
+
     // Legal page
     legal_back: '← Retour',
     legal_updated: 'Dernière mise à jour',
@@ -260,6 +264,10 @@ const TRANSLATIONS = {
     inhale_legal_title: 'Legal Documents',
     inhale_legal_desc: 'Read our Privacy Policy and Terms of Service.',
 
+    scroll_to_explore: 'Scroll to explore',
+    footer_privacy_short: 'Privacy',
+    footer_terms_short: 'Terms',
+
     legal_back: '← Back',
     legal_updated: 'Last updated',
     legal_available: 'Available in',
@@ -393,6 +401,10 @@ const TRANSLATIONS = {
     inhale_feat6_desc: 'Todos tus datos de respiración permanecen en tu dispositivo. Sin ventas, sin rastreo.',
     inhale_legal_title: 'Documentos legales',
     inhale_legal_desc: 'Consulta nuestra política de privacidad y términos de servicio.',
+
+    scroll_to_explore: 'Deslizar',
+    footer_privacy_short: 'Privacidad',
+    footer_terms_short: 'Términos',
 
     legal_back: '← Volver',
     legal_updated: 'Última actualización',

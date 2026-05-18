@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initLegalTabs();
   initNavbarScroll();
+  initCarouselDrag();
 });
 
 /* ─── Scroll Animations ──────────────────────────────────── */
@@ -91,4 +92,24 @@ function initLegalTabs() {
     const firstContent = document.querySelector('.legal-content');
     if (firstContent) firstContent.classList.add('active');
   }
+}
+
+/* ─── Carousel drag-to-scroll ────────────────────────────── */
+function initCarouselDrag() {
+  const carousel = document.querySelector('.apps-carousel');
+  if (!carousel) return;
+  let isDown = false, startX, scrollLeft;
+  carousel.addEventListener('mousedown', e => {
+    isDown = true;
+    startX = e.pageX - carousel.offsetLeft;
+    scrollLeft = carousel.scrollLeft;
+  });
+  carousel.addEventListener('mouseleave', () => { isDown = false; });
+  carousel.addEventListener('mouseup', () => { isDown = false; });
+  carousel.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - carousel.offsetLeft;
+    carousel.scrollLeft = scrollLeft - (x - startX) * 1.2;
+  });
 }
