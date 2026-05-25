@@ -124,6 +124,11 @@ const TRANSLATIONS = {
     inhale_legal_title: 'Documents légaux',
     inhale_legal_desc: "Consultez notre politique de confidentialité et nos conditions d'utilisation.",
 
+    // RunFree
+    runfree_chip: 'Sport & Running',
+    runfree_subtitle: 'Tracker GPS, vie privée d\'abord',
+    runfree_description: 'Un tracker de course GPS conçu autour d\'une idée : vos courses vous appartiennent. Tout reste sur votre appareil — sans cloud, sans réseau social.',
+
     scroll_to_explore: 'Faites défiler',
     footer_privacy_short: 'Confidentialité',
     footer_terms_short: 'Conditions',
@@ -264,6 +269,11 @@ const TRANSLATIONS = {
     inhale_legal_title: 'Legal Documents',
     inhale_legal_desc: 'Read our Privacy Policy and Terms of Service.',
 
+    // RunFree
+    runfree_chip: 'Sport & Running',
+    runfree_subtitle: 'Privacy-first running tracker',
+    runfree_description: 'A GPS running tracker built around one idea: your runs belong to you. Everything stays on your device — no cloud, no social network, no comparisons.',
+
     scroll_to_explore: 'Scroll to explore',
     footer_privacy_short: 'Privacy',
     footer_terms_short: 'Terms',
@@ -401,6 +411,11 @@ const TRANSLATIONS = {
     inhale_feat6_desc: 'Todos tus datos de respiración permanecen en tu dispositivo. Sin ventas, sin rastreo.',
     inhale_legal_title: 'Documentos legales',
     inhale_legal_desc: 'Consulta nuestra política de privacidad y términos de servicio.',
+
+    // RunFree
+    runfree_chip: 'Deporte & Running',
+    runfree_subtitle: 'Rastreador GPS, privacidad ante todo',
+    runfree_description: 'Un rastreador GPS de carrera construido en torno a una idea: tus carreras te pertenecen. Todo se queda en tu dispositivo — sin cloud, sin red social.',
 
     scroll_to_explore: 'Deslizar',
     footer_privacy_short: 'Privacidad',

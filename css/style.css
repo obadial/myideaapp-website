@@ -167,6 +167,35 @@ ul { list-style: none; }
   --secondary: #9B7FE8;
 }
 
+/* ─── RUNFREE Theme ──────────────────────────────────────── */
+[data-theme="runfree"] {
+  --bg: #0D1117;
+  --bg2: #111820;
+  --surface: #161D27;
+  --surface2: #1C2534;
+  --border: rgba(255,107,53,0.12);
+  --text: #F0F4F8;
+  --text2: #8B97A8;
+  --text3: #4A5568;
+  --primary: #FF6B35;
+  --primary-dark: #E8521A;
+  --secondary: #0EA5E9;
+  --accent: #FF6B35;
+  --accent-light: rgba(255,107,53,0.15);
+  --hero-grad: linear-gradient(135deg, #0D1117 0%, #111820 50%, #0D1117 100%);
+}
+[data-theme="legal-runfree"] {
+  --bg: #0D1117;
+  --bg2: #111820;
+  --surface: #161D27;
+  --border: rgba(255,107,53,0.12);
+  --text: #F0F4F8;
+  --text2: #8B97A8;
+  --text3: #4A5568;
+  --primary: #FF6B35;
+  --secondary: #0EA5E9;
+}
+
 /* ─── Base Body ──────────────────────────────────────────── */
 body {
   background-color: var(--bg);
@@ -498,6 +527,15 @@ body {
   background: radial-gradient(ellipse at top right, rgba(107,143,184,0.22) 0%, transparent 60%);
   pointer-events: none;
 }
+.app-card--runfree {
+  background: linear-gradient(145deg, #0D1117 0%, #111820 50%, #0D1117 100%);
+}
+.app-card--runfree::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at bottom right, rgba(255,107,53,0.22) 0%, transparent 60%);
+  pointer-events: none;
+}
 .app-card__content { position: relative; z-index: 1; flex: 1; display: flex; flex-direction: column; }
 .app-card__icon {
   width: 80px; height: 80px;
@@ -519,6 +557,7 @@ body {
 .app-card--lunarest .app-card__chip { background: rgba(107,141,227,0.2); color: #9AB4F0; }
 .app-card--enjoymeal .app-card__chip { background: rgba(255,107,53,0.2); color: #FF9870; }
 .app-card--inhale .app-card__chip { background: rgba(107,143,184,0.2); color: #8BB5D8; }
+.app-card--runfree .app-card__chip { background: rgba(255,107,53,0.2); color: #FF8C5A; }
 .app-card__name {
   font-size: 2.25rem; font-weight: 900;
   letter-spacing: -0.04em; color: #fff;
@@ -532,6 +571,7 @@ body {
 .app-card--lunarest .app-card__subtitle { color: #8B9AC4; }
 .app-card--enjoymeal .app-card__subtitle { color: #C4956A; }
 .app-card--inhale .app-card__subtitle { color: #8BB5D8; }
+.app-card--runfree .app-card__subtitle { color: #FF8C5A; }
 .app-card__description {
   font-size: 0.9375rem; line-height: 1.65;
   color: rgba(255,255,255,0.55);
