@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="nova">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova — Santé sexuelle, confidentialité absolue</title>
+  <meta name="description" content="Nova t'aide à suivre tes vaccinations, dépistages IST et activité intime. Toutes tes données restent sur ton appareil — jamais partagées.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Nova — Santé sexuelle, confidentialité absolue">
+  <meta property="og:description" content="Suivi intime bienveillant. Privacy-first, offline-first.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;1,300&family=DM+Sans:wght@400;500&family=Source+Code+Pro:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <style>
+    /* Nova-specific nav */
+    .navbar { --bg-raw: 15,14,12; background: rgba(15,14,12,0.88); border-bottom-color: rgba(201,164,90,0.15); }
+    .navbar__nav a { color: #A89F88; }
+    .navbar__nav a:hover, .navbar__nav a.active { color: #F2EBD7; }
+    .navbar__back { color: #A89F88; }
+    .navbar__back:hover { color: #C9A45A; }
+    .hamburger span { background: #F2EBD7; }
+    .mobile-nav { background: #0F0E0C; border-top-color: rgba(201,164,90,0.15); }
+    .mobile-nav a { color: #A89F88; border-bottom-color: rgba(201,164,90,0.1); }
+
+    /* Hero orb brass */
+    .app-hero__orb {
+      background: radial-gradient(ellipse at 70% 40%, rgba(201,164,90,0.18) 0%, transparent 65%);
+    }
+
+    /* Pill "Bientôt disponible" */
+    .coming-soon-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 20px;
+      background: rgba(201,164,90,0.1);
+      border: 1px solid rgba(201,164,90,0.3);
+      border-radius: 2px;
+      color: #D9B66B;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .coming-soon-pill__dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #C9A45A;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    /* Tags feature */
+    .nova-tags {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin-top: 1.25rem;
+    }
+    .nova-tag {
+      display: inline-flex; align-items: center;
+      padding: 4px 12px;
+      border-radius: 2px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: rgba(201,164,90,0.08);
+      border: 1px solid rgba(201,164,90,0.2);
+      color: #A89F88;
+    }
+
+    /* Stat row */
+    .nova-stats {
+      display: flex; gap: 2rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(201,164,90,0.12);
+      border-bottom: 1px solid rgba(201,164,90,0.12);
+      margin: 1.75rem 0;
+    }
+    .nova-stat__value {
+      font-size: 1.5rem; font-weight: 700;
+      color: #C9A45A; letter-spacing: -0.02em;
+      font-variant-numeric: tabular-nums;
+    }
+    .nova-stat__label { font-size: 0.8rem; color: #6B6356; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* Brass rings visual */
+    .nova-visual {
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 380px;
+    }
+    .nova-ring {
+      position: absolute; border-radius: 50%;
+      border: 1px solid transparent;
+      animation: nova-spin 24s linear infinite;
+    }
+    .nova-ring--1 {
+      width: 320px; height: 320px;
+      border-top-color: rgba(201,164,90,0.35);
+      border-right-color: rgba(201,164,90,0.12);
+    }
+    .nova-ring--2 {
+      width: 240px; height: 240px;
+      border-bottom-color: rgba(122,140,115,0.3);
+      border-left-color: rgba(122,140,115,0.1);
+      animation-direction: reverse;
+      animation-duration: 18s;
+    }
+    .nova-ring--3 {
+      width: 160px; height: 160px;
+      border-top-color: rgba(201,164,90,0.5);
+      animation-duration: 12s;
+    }
+    @keyframes nova-spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .nova-circle {
+      width: 110px; height: 110px;
+      background: linear-gradient(135deg, #1C1914, #252118);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid rgba(201,164,90,0.3);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.6), 0 0 40px rgba(201,164,90,0.1);
+      position: relative; z-index: 1;
+    }
+    .nova-circle__inner {
+      width: 88px; height: 88px;
+      background: #15130F;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nova-circle__icon {
+      width: 60px; height: 60px;
+      border-radius: 14px;
+    }
+
+    /* Feature cards override for dark theme */
+    .features-section { background: #0F0E0C; }
+    .feature-card {
+      background: #15130F;
+      border: 1px solid rgba(201,164,90,0.12);
+    }
+    .feature-card:hover { border-color: rgba(201,164,90,0.3); }
+    .feature-card__title { color: #F2EBD7; }
+    .feature-card__desc { color: #A89F88; }
+
+    /* Feature icon — brass dot */
+    .feature-card__icon {
+      width: 36px; height: 36px;
+      background: rgba(201,164,90,0.1);
+      border: 1px solid rgba(201,164,90,0.2);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      color: #C9A45A;
+      font-size: 1rem;
+      margin-bottom: 0.875rem;
+    }
+
+    /* RGPD strip */
+    .nova-rgpd {
+      background: #15130F;
+      border-top: 1px solid rgba(201,164,90,0.12);
+      border-bottom: 1px solid rgba(201,164,90,0.12);
+      padding: 3rem 0;
+    }
+    .nova-rgpd__inner {
+      display: flex; gap: 3rem; align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .nova-rgpd__badge {
+      flex-shrink: 0;
+      width: 56px; height: 56px;
+      background: rgba(201,164,90,0.1);
+      border: 1px solid rgba(201,164,90,0.25);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      color: #C9A45A;
+    }
+    .nova-rgpd__text h3 { font-size: 1rem; font-weight: 600; color: #F2EBD7; margin-bottom: 0.5rem; }
+    .nova-rgpd__text p { font-size: 0.9rem; color: #A89F88; line-height: 1.65; }
+    .nova-rgpd__items {
+      flex: 1; min-width: 280px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .nova-rgpd__item {
+      display: flex; gap: 10px; align-items: flex-start;
+    }
+    .nova-rgpd__item-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: #C9A45A; flex-shrink: 0;
+      margin-top: 6px;
+    }
+    .nova-rgpd__item-text { font-size: 0.875rem; color: #A89F88; line-height: 1.5; }
+
+    /* Legal strip override */
+    .legal-strip { background: #15130F; border-top: 1px solid rgba(201,164,90,0.12); }
+    .legal-strip__text h3 { color: #F2EBD7; }
+    .legal-strip__text p { color: #A89F88; }
+    .legal-link { color: #A89F88; border: 1px solid rgba(201,164,90,0.2); background: rgba(201,164,90,0.05); }
+    .legal-link:hover { color: #C9A45A; border-color: rgba(201,164,90,0.4); background: rgba(201,164,90,0.1); }
+
+    /* Section title */
+    .section-title { color: #F2EBD7; }
+
+    /* Footer override */
+    .footer { background: #0F0E0C; border-top: 1px solid rgba(201,164,90,0.1); }
+    .footer .logo-text { color: #A89F88; }
+    .footer p, .footer a { color: #6B6356; }
+    .footer a:hover { color: #C9A45A; }
+    .footer h4 { color: #A89F88; }
+    .footer__bottom { border-top-color: rgba(201,164,90,0.08); }
+    .footer__bottom p { color: #3D3830; }
+  </style>
+</head>
+<body data-theme="nova">
+
+  <!-- ─── Navbar ─────────────────────────────────────────── -->
+  <nav class="navbar">
+    <div class="navbar__left">
+      <a href="../" class="navbar__back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        <span data-i18n="back_to_studio">Studio</span>
+      </a>
+      <div class="navbar__logo">
+        <img src="../assets/nova/icon.png" alt="Nova" class="navbar__app-icon">
+        <span class="logo-text">Nova</span>
+      </div>
+    </div>
+    <div class="navbar__nav">
+      <a href="#overview" class="active" data-i18n="nav_overview">Présentation</a>
+      <a href="privacy.html" data-i18n="nav_privacy">Confidentialité</a>
+      <a href="terms.html" data-i18n="nav_terms">Conditions</a>
+    </div>
+    <div class="navbar__right">
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang-btn="fr">FR</button>
+        <button class="lang-btn" data-lang-btn="en">EN</button>
+        <button class="lang-btn" data-lang-btn="es">ES</button>
+      </div>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile nav -->
+  <div class="mobile-nav">
+    <a href="../" data-i18n="back_to_studio">← Studio</a>
+    <a href="#overview" data-i18n="nav_overview">Présentation</a>
+    <a href="privacy.html" data-i18n="nav_privacy">Confidentialité</a>
+    <a href="terms.html" data-i18n="nav_terms">Conditions</a>
+    <div class="lang-switcher" style="margin-top:1.5rem">
+      <button class="lang-btn" data-lang-btn="fr">FR</button>
+      <button class="lang-btn" data-lang-btn="en">EN</button>
+      <button class="lang-btn" data-lang-btn="es">ES</button>
+    </div>
+  </div>
+
+  <!-- ─── Hero ───────────────────────────────────────────── -->
+  <section id="overview" class="app-hero">
+    <div class="app-hero__orb"></div>
+    <div class="container">
+      <div class="app-hero__inner">
+        <div class="app-hero__info">
+          <div class="app-hero__icon-wrap">
+            <img src="../assets/nova/icon.png" alt="Nova" class="app-hero__icon">
+            <span class="app-hero__app-name">Nova</span>
+          </div>
+
+          <div class="coming-soon-pill">
+            <span class="coming-soon-pill__dot"></span>
+            <span>Bientôt sur l'App Store</span>
+          </div>
+
+          <h1 class="app-hero__tagline" data-i18n="nova_tagline">Ta santé intime, sans jugement.</h1>
+          <p class="app-hero__subtitle" data-i18n="nova_subtitle">Suivi intime, confidentialité absolue</p>
+          <p class="app-hero__description" data-i18n="nova_description">Nova t'aide à suivre tes vaccinations, dépistages IST et journal d'activité intime. Toutes tes données restent sur ton appareil — jamais envoyées, jamais partagées.</p>
+
+          <div class="nova-tags">
+            <span class="nova-tag" data-i18n="nova_tag_vaccines">Vaccinations</span>
+            <span class="nova-tag" data-i18n="nova_tag_sti">Dépistages IST</span>
+            <span class="nova-tag" data-i18n="nova_tag_journal">Journal intime</span>
+            <span class="nova-tag" data-i18n="nova_tag_prep">PrEP / PEP</span>
+          </div>
+
+          <div class="nova-stats">
+            <div>
+              <div class="nova-stat__value">0</div>
+              <div class="nova-stat__label" data-i18n="nova_stat_servers">Serveurs</div>
+            </div>
+            <div>
+              <div class="nova-stat__value">10</div>
+              <div class="nova-stat__label" data-i18n="nova_stat_languages">Langues</div>
+            </div>
+            <div>
+              <div class="nova-stat__value">100%</div>
+              <div class="nova-stat__label" data-i18n="nova_stat_local">Local</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Nova visual -->
+        <div class="nova-visual">
+          <div class="nova-ring nova-ring--1"></div>
+          <div class="nova-ring nova-ring--2"></div>
+          <div class="nova-ring nova-ring--3"></div>
+          <div class="nova-circle">
+            <div class="nova-circle__inner">
+              <img src="../assets/nova/icon.png" alt="Nova" class="nova-circle__icon">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Features ───────────────────────────────────────── -->
+  <section class="features-section section">
+    <div class="container">
+      <h2 class="section-title fade-up" data-i18n="nova_feat_title">Fonctionnalités</h2>
+      <div class="features-grid">
+        <div class="feature-card fade-up fade-up-delay-1">
+          <div class="feature-card__icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="feature-card__title" data-i18n="nova_feat1_title">Vaccinations</h3>
+          <p class="feature-card__desc" data-i18n="nova_feat1_desc">Suis tes doses de vaccins et reçois des rappels pour les prochaines injections. HPV, hépatite B, monkeypox et plus.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-2">
+          <div class="feature-card__icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="feature-card__title" data-i18n="nova_feat2_title">Dépistages IST</h3>
+          <p class="feature-card__desc" data-i18n="nova_feat2_desc">Enregistre tes résultats de tests, configure tes rappels et garde un historique complet de tes dépistages.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-3">
+          <div class="feature-card__icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <h3 class="feature-card__title" data-i18n="nova_feat3_title">Journal intime</h3>
+          <p class="feature-card__desc" data-i18n="nova_feat3_desc">Un journal d'activité sexuelle privé, stocké uniquement sur ton appareil. Aucun serveur ne voit tes données.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-1">
+          <div class="feature-card__icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h3 class="feature-card__title" data-i18n="nova_feat4_title">PrEP &amp; PEP</h3>
+          <p class="feature-card__desc" data-i18n="nova_feat4_desc">Suivi des programmes PrEP et PEP avec rappels quotidiens. Reste en conformité avec ton traitement préventif.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-2">
+          <div class="feature-card__icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3 class="feature-card__title" data-i18n="nova_feat5_title">Statistiques</h3>
+          <p class="feature-card__desc" data-i18n="nova_feat5_desc">Visualise tes tendances de santé, dates de derniers tests, vaccins à jour et rappels à venir.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-3">
+          <div class="feature-card__icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+          <h3 class="feature-card__title" data-i18n="nova_feat6_title">Vie privée absolue</h3>
+          <p class="feature-card__desc" data-i18n="nova_feat6_desc">Toutes tes données de santé sexuelle sont stockées uniquement en local. Conformité RGPD Art. 9 — données de catégorie spéciale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── RGPD highlight ──────────────────────────────────── -->
+  <section class="nova-rgpd">
+    <div class="container">
+      <div class="nova-rgpd__inner">
+        <div>
+          <div class="nova-rgpd__badge">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="nova-rgpd__text" style="margin-top:1rem; max-width:280px;">
+            <h3 data-i18n="nova_rgpd_title">Données de santé sensibles</h3>
+            <p data-i18n="nova_rgpd_desc">Les données de santé sexuelle sont des données de catégorie spéciale selon le RGPD Art. 9. Nova applique les protections les plus strictes.</p>
+          </div>
+        </div>
+        <div class="nova-rgpd__items">
+          <div class="nova-rgpd__item">
+            <div class="nova-rgpd__item-dot"></div>
+            <div class="nova-rgpd__item-text" data-i18n="nova_rgpd1">Zéro donnée envoyée à des serveurs</div>
+          </div>
+          <div class="nova-rgpd__item">
+            <div class="nova-rgpd__item-dot"></div>
+            <div class="nova-rgpd__item-text" data-i18n="nova_rgpd2">Stockage local SQLite chiffré</div>
+          </div>
+          <div class="nova-rgpd__item">
+            <div class="nova-rgpd__item-dot"></div>
+            <div class="nova-rgpd__item-text" data-i18n="nova_rgpd3">Consentement explicite RGPD</div>
+          </div>
+          <div class="nova-rgpd__item">
+            <div class="nova-rgpd__item-dot"></div>
+            <div class="nova-rgpd__item-text" data-i18n="nova_rgpd4">Suppression complète à la demande</div>
+          </div>
+          <div class="nova-rgpd__item">
+            <div class="nova-rgpd__item-dot"></div>
+            <div class="nova-rgpd__item-text" data-i18n="nova_rgpd5">Aucune pub, aucun tracking comportemental</div>
+          </div>
+          <div class="nova-rgpd__item">
+            <div class="nova-rgpd__item-dot"></div>
+            <div class="nova-rgpd__item-text" data-i18n="nova_rgpd6">Open sans jugement, pour tous</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Legal ───────────────────────────────────────────── -->
+  <section class="legal-strip">
+    <div class="container">
+      <div class="legal-strip__inner">
+        <div class="legal-strip__text">
+          <h3 data-i18n="nova_legal_title">Documents légaux</h3>
+          <p data-i18n="nova_legal_desc">Consultez notre politique de confidentialité et nos conditions d'utilisation.</p>
+        </div>
+        <div class="legal-strip__links">
+          <a href="privacy.html" class="legal-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span data-i18n="privacy_link">Politique de confidentialité</span>
+          </a>
+          <a href="terms.html" class="legal-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            <span data-i18n="terms_link">Conditions d'utilisation</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="../"><span class="logo-text">myideapp</span></a>
+          <p data-i18n="footer_tagline">Applications mobiles élégantes et respectueuses de ta vie privée.</p>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_apps">Applications</h4>
+          <a href="../rhythm/">Rhythm</a>
+          <a href="../enjoymeal/">EnjoyMeal</a>
+          <a href="../inhale/">Inhale</a>
+          <a href="../nova/">Nova</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_legal">Légal</h4>
+          <a href="privacy.html" data-i18n="privacy_link">Politique de confidentialité</a>
+          <a href="terms.html" data-i18n="terms_link">Conditions d'utilisation</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_contact">Contact</h4>
+          <a href="mailto:contact.myideapp@icloud.com">contact.myideapp@icloud.com</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p data-i18n="footer_rights">© 2026 MyIdeApp. Tous droits réservés.</p>
+        <div class="footer__bottom-links">
+          <a href="privacy.html" data-i18n="privacy_link">Confidentialité</a>
+          <a href="terms.html" data-i18n="terms_link">Conditions</a>
+          <a href="../">Studio</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/i18n.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
