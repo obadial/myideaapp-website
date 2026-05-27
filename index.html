@@ -7,7 +7,7 @@
   <meta name="description" content="MyIdeApp est un studio indépendant qui crée des applications mobiles élégantes, inclusives et respectueuses de la vie privée.">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="MyIdeApp — App Studio">
-  <meta property="og:description" content="Rhythm, LunaRest & EnjoyMeal — des apps pensées avec soin.">
+  <meta property="og:description" content="Rhythm, EnjoyMeal, Inhale & Nova — des apps pensées avec soin.">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,9 +37,10 @@
   <!-- Menu burger -->
   <div class="mobile-nav">
     <a href="rhythm/">Rhythm</a>
-    <a href="lunarest/">LunaRest</a>
     <a href="enjoymeal/">EnjoyMeal</a>
     <a href="inhale/">Inhale</a>
+    <a href="nova/">Nova</a>
+    <a href="lunarest/">LunaRest</a>
     <a href="runfree/">RunFree</a>
     <a href="contact.html" data-i18n="studio_contact_title">Nous contacter</a>
     <div class="lang-switcher" style="margin-top:1.5rem">
@@ -83,12 +84,10 @@
         <a href="rhythm/" class="app-card app-card--rhythm fade-up fade-up-delay-2">
           <div class="app-card__content">
             <img src="assets/rhythm/icon.png" alt="Rhythm App Icon" class="app-card__icon">
-            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-              <div class="app-card__chip" data-i18n="rhythm_chip">Santé & Bien-être</div>
-              <div style="display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;">
-                <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
-                <span data-i18n="live_on_appstore">App Store</span>
-              </div>
+            <div class="app-card__chip" data-i18n="rhythm_chip">Santé & Bien-être</div>
+            <div style="display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
+              <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
+              <span data-i18n="live_on_appstore">App Store</span>
             </div>
             <h3 class="app-card__name">Rhythm</h3>
             <p class="app-card__subtitle" data-i18n="rhythm_subtitle">Suivi du cycle menstruel inclusif</p>
@@ -123,12 +122,10 @@
         <a href="enjoymeal/" class="app-card app-card--enjoymeal fade-up fade-up-delay-2">
           <div class="app-card__content">
             <img src="assets/enjoymeal/icon.png" alt="EnjoyMeal App Icon" class="app-card__icon">
-            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-              <div class="app-card__chip" data-i18n="enjoymeal_chip">Nutrition & Bien-être</div>
-              <div style="display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;">
-                <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
-                <span data-i18n="live_on_appstore">App Store</span>
-              </div>
+            <div class="app-card__chip" data-i18n="enjoymeal_chip">Nutrition & Bien-être</div>
+            <div style="display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
+              <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
+              <span data-i18n="live_on_appstore">App Store</span>
             </div>
             <h3 class="app-card__name">EnjoyMeal</h3>
             <p class="app-card__subtitle" data-i18n="enjoymeal_subtitle">Suivi nutritionnel bienveillant</p>
@@ -142,17 +139,28 @@
           </div>
         </a>
 
+        <!-- Nova -->
+        <a href="nova/" class="app-card app-card--nova fade-up fade-up-delay-2">
+          <div class="app-card__content">
+            <img src="assets/nova/icon.png" alt="Nova App Icon" class="app-card__icon">
+            <div class="app-card__chip" data-i18n="nova_chip">Santé sexuelle</div>
+            <h3 class="app-card__name">Nova</h3>
+            <p class="app-card__subtitle" data-i18n="nova_subtitle">Suivi intime, vie privée absolue</p>
+            <p class="app-card__description" data-i18n="nova_description">Nova t'aide à suivre tes vaccinations, dépistages IST et activité intime. Bienveillant, sans jugement — toutes tes données restent sur ton appareil.</p>
+            <span class="app-card__cta">
+              <span data-i18n="discover">Découvrir →</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+
         <!-- RunFree -->
-        <a href="runfree/" class="app-card app-card--runfree fade-up fade-up-delay-2">
+        <a href="runfree/" class="app-card app-card--runfree fade-up fade-up-delay-3">
           <div class="app-card__content">
             <img src="assets/runfree/icon.png" alt="RunFree App Icon" class="app-card__icon">
-            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-              <div class="app-card__chip" data-i18n="runfree_chip">Sport & Running</div>
-              <div style="display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;">
-                <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
-                <span data-i18n="live_on_appstore">App Store</span>
-              </div>
-            </div>
+            <div class="app-card__chip" data-i18n="runfree_chip">Sport & Running</div>
             <h3 class="app-card__name">RunFree</h3>
             <p class="app-card__subtitle" data-i18n="runfree_subtitle">Tracker GPS, vie privée d'abord</p>
             <p class="app-card__description" data-i18n="runfree_description">Un tracker de course GPS conçu autour d'une idée : vos courses vous appartiennent. Tout reste sur votre appareil — sans cloud, sans réseau social, sans comparaison.</p>
@@ -168,12 +176,10 @@
         <a href="inhale/" class="app-card app-card--inhale fade-up fade-up-delay-3">
           <div class="app-card__content">
             <img src="assets/inhale/icon.png" alt="Inhale App Icon" class="app-card__icon">
-            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-              <div class="app-card__chip" data-i18n="inhale_chip">Respiration & Bien-être</div>
-              <div style="display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;">
-                <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
-                <span data-i18n="live_on_appstore">App Store</span>
-              </div>
+            <div class="app-card__chip" data-i18n="inhale_chip">Respiration & Bien-être</div>
+            <div style="display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
+              <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
+              <span data-i18n="live_on_appstore">App Store</span>
             </div>
             <h3 class="app-card__name">Inhale</h3>
             <p class="app-card__subtitle" data-i18n="inhale_subtitle">Respiration guidée pour le stress, le focus & le sommeil</p>
@@ -244,17 +250,19 @@
         <div class="footer__col">
           <h4 data-i18n="footer_apps">Applications</h4>
           <a href="rhythm/">Rhythm</a>
-          <a href="lunarest/">LunaRest</a>
           <a href="enjoymeal/">EnjoyMeal</a>
           <a href="inhale/">Inhale</a>
+          <a href="nova/">Nova</a>
+          <a href="lunarest/">LunaRest</a>
           <a href="runfree/">RunFree</a>
         </div>
         <div class="footer__col">
           <h4 data-i18n="footer_legal">Légal</h4>
           <div class="footer__legal-row"><span>Rhythm</span><a href="rhythm/privacy.html" data-i18n="footer_privacy_short">Confidentialité</a><a href="rhythm/terms.html" data-i18n="footer_terms_short">Conditions</a></div>
-          <div class="footer__legal-row"><span>LunaRest</span><a href="lunarest/privacy.html" data-i18n="footer_privacy_short">Confidentialité</a><a href="lunarest/terms.html" data-i18n="footer_terms_short">Conditions</a></div>
           <div class="footer__legal-row"><span>EnjoyMeal</span><a href="enjoymeal/privacy.html" data-i18n="footer_privacy_short">Confidentialité</a><a href="enjoymeal/terms.html" data-i18n="footer_terms_short">Conditions</a></div>
           <div class="footer__legal-row"><span>Inhale</span><a href="inhale/privacy.html" data-i18n="footer_privacy_short">Confidentialité</a><a href="inhale/terms.html" data-i18n="footer_terms_short">Conditions</a></div>
+          <div class="footer__legal-row"><span>Nova</span><a href="nova/privacy.html" data-i18n="footer_privacy_short">Confidentialité</a><a href="nova/terms.html" data-i18n="footer_terms_short">Conditions</a></div>
+          <div class="footer__legal-row"><span>LunaRest</span><a href="lunarest/privacy.html" data-i18n="footer_privacy_short">Confidentialité</a><a href="lunarest/terms.html" data-i18n="footer_terms_short">Conditions</a></div>
           <div class="footer__legal-row"><span>RunFree</span><a href="runfree/privacy.html" data-i18n="footer_privacy_short">Confidentialité</a><a href="runfree/terms.html" data-i18n="footer_terms_short">Conditions</a></div>
         </div>
         <div class="footer__col">
@@ -265,8 +273,8 @@
       <div class="footer__bottom">
         <p data-i18n="footer_rights">© 2026 MyIdeApp. Tous droits réservés.</p>
         <div class="footer__bottom-links">
-          <a href="rhythm/privacy.html" data-i18n="privacy_link">Confidentialité</a>
-          <a href="rhythm/terms.html" data-i18n="terms_link">Conditions</a>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="contact.html" data-i18n="studio_contact_title">Contact</a>
         </div>
       </div>
     </div>

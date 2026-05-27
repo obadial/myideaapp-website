@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="legal-nova">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova — Politique de confidentialité / Privacy Policy</title>
+  <meta name="description" content="Politique de confidentialité de l'application Nova — Santé sexuelle, confidentialité absolue.">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .navbar { background: rgba(15,14,12,0.92); border-bottom-color: rgba(201,164,90,0.15); }
+    .navbar__nav a { color: #A89F88; }
+    .navbar__nav a:hover, .navbar__nav a.active { color: #F2EBD7; }
+    .navbar__back { color: #A89F88; }
+    .navbar__back:hover { color: #C9A45A; }
+    .hamburger span { background: #F2EBD7; }
+    .mobile-nav { background: #0F0E0C; border-top-color: rgba(201,164,90,0.15); }
+    .mobile-nav a { color: #A89F88; border-bottom-color: rgba(201,164,90,0.1); }
+  </style>
+</head>
+<body data-theme="legal-nova">
+
+  <!-- ─── Navbar ─────────────────────────────────────────── -->
+  <nav class="navbar">
+    <div class="navbar__left">
+      <a href="index.html" class="navbar__back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        <span>Nova</span>
+      </a>
+    </div>
+    <div class="navbar__nav">
+      <a href="index.html" data-i18n="nav_overview">Présentation</a>
+      <a href="privacy.html" class="active" data-i18n="nav_privacy">Confidentialité</a>
+      <a href="terms.html" data-i18n="nav_terms">Conditions</a>
+    </div>
+    <div class="navbar__right">
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang-btn="fr">FR</button>
+        <button class="lang-btn" data-lang-btn="en">EN</button>
+        <button class="lang-btn" data-lang-btn="es">ES</button>
+      </div>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <a href="index.html">← Nova</a>
+    <a href="index.html" data-i18n="nav_overview">Présentation</a>
+    <a href="privacy.html" data-i18n="nav_privacy">Confidentialité</a>
+    <a href="terms.html" data-i18n="nav_terms">Conditions</a>
+    <div class="lang-switcher" style="margin-top:1.5rem">
+      <button class="lang-btn" data-lang-btn="fr">FR</button>
+      <button class="lang-btn" data-lang-btn="en">EN</button>
+      <button class="lang-btn" data-lang-btn="es">ES</button>
+    </div>
+  </div>
+
+  <!-- ─── Legal page ─────────────────────────────────────── -->
+  <div class="legal-page">
+    <div class="legal-page__header">
+      <div class="container container--narrow">
+        <a href="index.html" class="legal-page__back" data-i18n="legal_back">← Retour</a>
+        <h1 class="legal-page__title" data-i18n="privacy_link">Politique de confidentialité</h1>
+        <p class="legal-page__meta">Nova · <span data-i18n="legal_updated">Dernière mise à jour</span> : Mai 2026</p>
+        <div class="legal-lang-tabs">
+          <button class="legal-tab" data-legal-tab="fr">Français</button>
+          <button class="legal-tab" data-legal-tab="en">English</button>
+          <button class="legal-tab" data-legal-tab="es">Español</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="legal-body">
+      <div class="container container--narrow">
+
+        <!-- ── Français ── -->
+        <div class="legal-content" data-legal-content="fr">
+          <span class="legal-date">Dernière mise à jour : Mai 2026</span>
+          <div class="legal-text">
+            <h2>1. Introduction</h2>
+            <p>Nova ("nous") s'engage à protéger ta vie privée avec le plus grand soin. Les données de santé sexuelle sont des <strong>données de catégorie spéciale</strong> au sens du RGPD Art. 9 — elles bénéficient des protections les plus strictes. Cette politique explique comment nous traitons tes données lorsque tu utilises l'application Nova.</p>
+
+            <h2>2. Principe fondamental : zéro donnée de santé sur nos serveurs</h2>
+            <p>Nova est conçue selon un principe <strong>offline-first</strong> radical : <strong>aucune donnée de santé sexuelle ne quitte jamais ton appareil</strong>. Tes vaccinations, résultats de tests IST, journal d'activité, programmes PrEP/PEP et symptômes sont stockés uniquement dans une base de données SQLite locale sur ton appareil.</p>
+
+            <h2>3. Données collectées</h2>
+            <p>Nova distingue deux catégories de données :</p>
+            <h3>3.1 Données de santé (stockées uniquement en local)</h3>
+            <ul>
+              <li><strong>Vaccinations</strong> : nom du vaccin, numéro de dose, date, rappels.</li>
+              <li><strong>Dépistages IST</strong> : type de test, date, résultats, rappels.</li>
+              <li><strong>Journal d'activité</strong> : date, types d'activité (jamais de vrais noms de partenaires).</li>
+              <li><strong>Programmes PrEP/PEP/contraception</strong> : dates, rappels.</li>
+              <li><strong>Symptômes</strong> : description, sévérité, date.</li>
+            </ul>
+            <p>Ces données ne sont <strong>jamais</strong> envoyées à nos serveurs, ni à des tiers.</p>
+            <h3>3.2 Données de compte (Firebase Auth)</h3>
+            <ul>
+              <li>Adresse e-mail (si tu crées un compte e-mail), ou identifiant anonyme.</li>
+              <li>Ces données servent uniquement à l'authentification et ne sont jamais liées à tes données de santé.</li>
+            </ul>
+            <h3>3.3 Données analytiques (anonymisées)</h3>
+            <ul>
+              <li>Interactions anonymisées via Firebase Analytics. Aucune donnée de santé n'est incluse.</li>
+            </ul>
+
+            <h2>4. Base légale du traitement (RGPD)</h2>
+            <ul>
+              <li>Données de santé (Art. 9) : <strong>consentement explicite</strong> donné lors de la première utilisation de l'app.</li>
+              <li>Données de compte : exécution du contrat (fourniture du service).</li>
+              <li>Analytiques anonymisées : intérêt légitime (amélioration du service).</li>
+            </ul>
+
+            <h2>5. Stockage et sécurité</h2>
+            <p>Toutes les données de santé sont stockées <strong>exclusivement sur ton appareil</strong> via Drift (SQLite). L'authentification est assurée par Firebase Authentication (Google LLC), conforme au RGPD via les Clauses Contractuales Types. Les clés API sont stockées dans le trousseau sécurisé de l'appareil (Keychain iOS / Keystore Android).</p>
+
+            <h2>6. Tes droits (RGPD Art. 15–22)</h2>
+            <p>Tu as le droit :</p>
+            <ul>
+              <li>D'<strong>accéder</strong> à tes données (via Réglages dans l'app)</li>
+              <li>De <strong>rectifier</strong> des données incorrectes (dans l'app)</li>
+              <li>D'<strong>effacer</strong> toutes tes données (Réglages → Supprimer le compte)</li>
+              <li>À la <strong>portabilité</strong> : contacte-nous pour exporter tes données</li>
+              <li>De <strong>retirer ton consentement</strong> à tout moment (Art. 9§2a)</li>
+              <li>De t'<strong>opposer</strong> au traitement à tout moment</li>
+              <li>D'introduire une <strong>réclamation</strong> auprès de la <strong>CNIL</strong> (<a href="https://www.cnil.fr" target="_blank">www.cnil.fr</a>) (Art. 77 RGPD)</li>
+            </ul>
+
+            <h2>7. Conservation des données</h2>
+            <p>Les données de santé existent uniquement sur ton appareil — elles sont supprimées si tu désinstalles l'app ou si tu utilises la fonction "Supprimer toutes les données" dans Réglages. Les données de compte Firebase sont supprimées lors de la suppression de compte.</p>
+
+            <h2>8. Publicité et tracking</h2>
+            <p>Nova utilise des publicités interstitielles via AdMob (Google). Pour diffuser ces publicités, l'identifiant publicitaire de l'appareil est utilisé conformément à la politique d'Apple (App Tracking Transparency — ATT). Tu peux refuser ce suivi dans la fenêtre ATT présentée au premier lancement, ou à tout moment via Réglages → Confidentialité → Suivi.</p>
+
+            <h2>9. Enfants</h2>
+            <p>Nova est destinée aux adultes de 17 ans et plus (classification App Store 17+). Nous ne collectons pas sciemment de données d'enfants de moins de 17 ans.</p>
+
+            <h2>10. Violation de données</h2>
+            <p>En cas de violation de données présentant un risque, nous notifierons la CNIL dans les 72 heures (Art. 33 RGPD). Si le risque est élevé, tu seras notifié(e) directement sans délai injustifié (Art. 34 RGPD).</p>
+
+            <h2>11. Contact</h2>
+            <p>Questions sur ta vie privée ? Contacte-nous : <a href="mailto:contact.myideapp@icloud.com">contact.myideapp@icloud.com</a></p>
+          </div>
+        </div>
+
+        <!-- ── English ── -->
+        <div class="legal-content" data-legal-content="en">
+          <span class="legal-date">Last updated: May 2026</span>
+          <div class="legal-text">
+            <h2>1. Introduction</h2>
+            <p>Nova ("we", "our", "us") is committed to protecting your privacy with the utmost care. Sexual health data constitutes <strong>special category data</strong> under GDPR Art. 9 — it receives the strictest protections. This policy explains how we handle your data when you use the Nova app.</p>
+
+            <h2>2. Core principle: zero health data on our servers</h2>
+            <p>Nova is built on a radical <strong>offline-first</strong> principle: <strong>no sexual health data ever leaves your device</strong>. Your vaccinations, STI test results, activity journal, PrEP/PEP programs, and symptoms are stored solely in a local SQLite database on your device.</p>
+
+            <h2>3. Data we collect</h2>
+            <p>Nova distinguishes two categories of data:</p>
+            <h3>3.1 Health data (stored locally only)</h3>
+            <ul>
+              <li><strong>Vaccinations</strong>: vaccine name, dose number, date, reminders.</li>
+              <li><strong>STI screenings</strong>: test type, date, results, reminders.</li>
+              <li><strong>Activity journal</strong>: date, activity types (never real partner names).</li>
+              <li><strong>PrEP/PEP/contraception programs</strong>: dates, reminders.</li>
+              <li><strong>Symptoms</strong>: description, severity, date.</li>
+            </ul>
+            <p>This data is <strong>never</strong> sent to our servers or to any third parties.</p>
+            <h3>3.2 Account data (Firebase Auth)</h3>
+            <ul>
+              <li>Email address (if you create an email account), or anonymous identifier.</li>
+              <li>Used only for authentication and never linked to your health data.</li>
+            </ul>
+            <h3>3.3 Analytics (anonymized)</h3>
+            <ul>
+              <li>Anonymized interactions via Firebase Analytics. No health data is ever included.</li>
+            </ul>
+
+            <h2>4. Legal basis for processing (GDPR)</h2>
+            <ul>
+              <li>Health data (Art. 9): <strong>explicit consent</strong> given during first app launch.</li>
+              <li>Account data: performance of contract (service provision).</li>
+              <li>Anonymized analytics: legitimate interest (service improvement).</li>
+            </ul>
+
+            <h2>5. Storage and security</h2>
+            <p>All health data is stored <strong>exclusively on your device</strong> via Drift (SQLite). Authentication is handled by Firebase Authentication (Google LLC), GDPR-compliant via Standard Contractual Clauses. API keys are stored in your device's secure keychain (iOS Keychain / Android Keystore).</p>
+
+            <h2>6. Your rights (GDPR Art. 15–22)</h2>
+            <p>You have the right to:</p>
+            <ul>
+              <li><strong>Access</strong> your data (in-app via Settings)</li>
+              <li><strong>Rectify</strong> incorrect data (in-app)</li>
+              <li><strong>Erase</strong> all your data (Settings → Delete account)</li>
+              <li><strong>Portability</strong>: contact us to export your data</li>
+              <li><strong>Withdraw consent</strong> at any time (Art. 9§2a)</li>
+              <li><strong>Object</strong> to processing at any time</li>
+              <li><strong>Lodge a complaint</strong> with the <strong>CNIL</strong> (<a href="https://www.cnil.fr" target="_blank">www.cnil.fr</a>) for French users (Art. 77 GDPR)</li>
+            </ul>
+
+            <h2>7. Data retention</h2>
+            <p>Health data exists only on your device — it is deleted when you uninstall the app or use the "Delete all data" function in Settings. Firebase account data is deleted upon account deletion.</p>
+
+            <h2>8. Advertising and tracking</h2>
+            <p>Nova uses interstitial advertising via AdMob (Google). To serve these ads, your device's advertising identifier is used in accordance with Apple's App Tracking Transparency (ATT) policy. You can decline this tracking in the ATT prompt shown at first launch, or at any time via Settings → Privacy → Tracking.</p>
+
+            <h2>9. Children</h2>
+            <p>Nova is intended for adults aged 17 and over (App Store 17+ rating). We do not knowingly collect data from anyone under 17.</p>
+
+            <h2>10. Data breach notification</h2>
+            <p>In the event of a data breach posing a risk, we will notify the CNIL within 72 hours (Art. 33 GDPR). Where the risk is high, you will be notified directly without undue delay (Art. 34 GDPR).</p>
+
+            <h2>11. Contact</h2>
+            <p>Privacy questions? Contact us at: <a href="mailto:contact.myideapp@icloud.com">contact.myideapp@icloud.com</a></p>
+          </div>
+        </div>
+
+        <!-- ── Español ── -->
+        <div class="legal-content" data-legal-content="es">
+          <span class="legal-date">Última actualización: Mayo 2026</span>
+          <div class="legal-text">
+            <h2>1. Introducción</h2>
+            <p>Nova ("nosotros") se compromete a proteger tu privacidad con el mayor cuidado. Los datos de salud sexual son <strong>datos de categoría especial</strong> según el RGPD Art. 9 — reciben las protecciones más estrictas. Esta política explica cómo tratamos tus datos cuando usas la aplicación Nova.</p>
+
+            <h2>2. Principio fundamental: cero datos de salud en nuestros servidores</h2>
+            <p>Nova está diseñada según un principio radical <strong>offline-first</strong>: <strong>ningún dato de salud sexual sale jamás de tu dispositivo</strong>. Tus vacunaciones, resultados de pruebas de ITS, diario de actividad, programas PrEP/PEP y síntomas se almacenan únicamente en una base de datos SQLite local en tu dispositivo.</p>
+
+            <h2>3. Datos que recopilamos</h2>
+            <p>Nova distingue dos categorías de datos:</p>
+            <h3>3.1 Datos de salud (almacenados solo localmente)</h3>
+            <ul>
+              <li><strong>Vacunaciones</strong>: nombre de la vacuna, número de dosis, fecha, recordatorios.</li>
+              <li><strong>Análisis de ITS</strong>: tipo de prueba, fecha, resultados, recordatorios.</li>
+              <li><strong>Diario de actividad</strong>: fecha, tipos de actividad (nunca nombres reales de parejas).</li>
+              <li><strong>Programas PrEP/PEP/anticoncepción</strong>: fechas, recordatorios.</li>
+              <li><strong>Síntomas</strong>: descripción, gravedad, fecha.</li>
+            </ul>
+            <p>Estos datos <strong>nunca</strong> se envían a nuestros servidores ni a terceros.</p>
+            <h3>3.2 Datos de cuenta (Firebase Auth)</h3>
+            <ul>
+              <li>Dirección de correo electrónico (si creas una cuenta), o identificador anónimo.</li>
+              <li>Usados únicamente para autenticación y nunca vinculados a tus datos de salud.</li>
+            </ul>
+            <h3>3.3 Analíticas (anonimizadas)</h3>
+            <ul>
+              <li>Interacciones anonimizadas vía Firebase Analytics. No se incluyen datos de salud.</li>
+            </ul>
+
+            <h2>4. Base legal del tratamiento (RGPD)</h2>
+            <ul>
+              <li>Datos de salud (Art. 9): <strong>consentimiento explícito</strong> dado en el primer lanzamiento de la app.</li>
+              <li>Datos de cuenta: ejecución del contrato (prestación del servicio).</li>
+              <li>Analíticas anonimizadas: interés legítimo (mejora del servicio).</li>
+            </ul>
+
+            <h2>5. Almacenamiento y seguridad</h2>
+            <p>Todos los datos de salud se almacenan <strong>exclusivamente en tu dispositivo</strong> vía Drift (SQLite). La autenticación la gestiona Firebase Authentication (Google LLC), compatible con el RGPD mediante Cláusulas Contractuales Estándar. Las claves API se almacenan en el llavero seguro del dispositivo (Keychain iOS / Keystore Android).</p>
+
+            <h2>6. Tus derechos (RGPD Art. 15–22)</h2>
+            <p>Tienes derecho a:</p>
+            <ul>
+              <li><strong>Acceder</strong> a tus datos (en la app, en Ajustes)</li>
+              <li><strong>Rectificar</strong> datos incorrectos (en la app)</li>
+              <li><strong>Suprimir</strong> todos tus datos (Ajustes → Eliminar cuenta)</li>
+              <li><strong>Portabilidad</strong>: contáctanos para exportar tus datos</li>
+              <li><strong>Retirar tu consentimiento</strong> en cualquier momento (Art. 9§2a)</li>
+              <li><strong>Oponerte</strong> al tratamiento en cualquier momento</li>
+              <li><strong>Presentar una reclamación</strong> ante la <strong>CNIL</strong> (<a href="https://www.cnil.fr" target="_blank">www.cnil.fr</a>) (Art. 77 RGPD)</li>
+            </ul>
+
+            <h2>7. Conservación de datos</h2>
+            <p>Los datos de salud existen únicamente en tu dispositivo — se eliminan al desinstalar la app o al usar la función "Eliminar todos los datos" en Ajustes. Los datos de cuenta de Firebase se eliminan al eliminar la cuenta.</p>
+
+            <h2>8. Publicidad y seguimiento</h2>
+            <p>Nova usa publicidad intersticial a través de AdMob (Google). Para mostrar estos anuncios, se utiliza el identificador publicitario del dispositivo de acuerdo con la política de transparencia de seguimiento de apps (ATT) de Apple. Puedes rechazar este seguimiento en la pantalla ATT del primer lanzamiento, o en cualquier momento en Ajustes → Privacidad → Seguimiento.</p>
+
+            <h2>9. Menores</h2>
+            <p>Nova está destinada a adultos de 17 años o más (clasificación App Store 17+). No recopilamos conscientemente datos de menores de 17 años.</p>
+
+            <h2>10. Notificación de violación de datos</h2>
+            <p>En caso de violación de datos que represente un riesgo, notificaremos a la CNIL en un plazo de 72 horas (Art. 33 RGPD). Si el riesgo es alto, serás notificado/a directamente sin dilación indebida (Art. 34 RGPD).</p>
+
+            <h2>11. Contacto</h2>
+            <p>¿Preguntas sobre privacidad? Contáctanos: <a href="mailto:contact.myideapp@icloud.com">contact.myideapp@icloud.com</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom">
+        <p>Nova · <span data-i18n="footer_rights">© 2026 MyIdeApp. Tous droits réservés.</span></p>
+        <div class="footer__bottom-links">
+          <a href="privacy.html" data-i18n="privacy_link">Confidentialité</a>
+          <a href="terms.html" data-i18n="terms_link">Conditions</a>
+          <a href="../">Studio</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/i18n.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
