@@ -144,6 +144,36 @@ ul { list-style: none; }
   --primary: #FF6B35;
   --secondary: #4CAF50;
 }
+
+/* ─── HYDROME Theme ────────────────────────────────────── */
+[data-theme="hydrome"] {
+  --bg: #F7FEFF;
+  --bg2: #E1F5FE;
+  --surface: #FFFFFF;
+  --surface2: #EEF8FE;
+  --border: rgba(79,195,247,0.12);
+  --text: #1A3A4A;
+  --text2: #546E7A;
+  --text3: #90A4AE;
+  --primary: #4FC3F7;
+  --primary-dark: #0288D1;
+  --secondary: #B3E5FC;
+  --accent: #B3E5FC;
+  --accent-light: #E1F5FE;
+  --hero-grad: linear-gradient(135deg, #F7FEFF 0%, #E1F5FE 50%, #C5EBF9 100%);
+}
+
+[data-theme="legal-hydrome"] {
+  --bg: #F7FEFF;
+  --bg2: #E1F5FE;
+  --surface: #FFFFFF;
+  --border: rgba(79,195,247,0.12);
+  --text: #1A3A4A;
+  --text2: #546E7A;
+  --text3: #90A4AE;
+  --primary: #4FC3F7;
+  --secondary: #B3E5FC;
+}
 [data-theme="legal-rhythm"] {
   --bg: #FDFAF8;
   --bg2: #F7EEF1;
