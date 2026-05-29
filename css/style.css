@@ -604,6 +604,15 @@ body {
   background: radial-gradient(ellipse at bottom right, rgba(201,164,90,0.18) 0%, transparent 60%);
   pointer-events: none;
 }
+.app-card--chapter {
+  background: linear-gradient(145deg, #0E0B10 0%, #14101A 50%, #0E0B10 100%);
+}
+.app-card--chapter::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at bottom right, rgba(180,140,200,0.18) 0%, transparent 60%);
+  pointer-events: none;
+}
 .app-card__content { position: relative; z-index: 1; flex: 1; display: flex; flex-direction: column; }
 .app-card__icon {
   width: 80px; height: 80px;
@@ -627,6 +636,7 @@ body {
 .app-card--inhale .app-card__chip { background: rgba(107,143,184,0.2); color: #8BB5D8; }
 .app-card--runfree .app-card__chip { background: rgba(255,107,53,0.2); color: #FF8C5A; }
 .app-card--nova .app-card__chip { background: rgba(201,164,90,0.2); color: #D9B66B; }
+.app-card--chapter .app-card__chip { background: rgba(180,140,200,0.2); color: #C8A8DC; }
 .app-card__name {
   font-size: 2.25rem; font-weight: 900;
   letter-spacing: -0.04em; color: #fff;
@@ -642,6 +652,7 @@ body {
 .app-card--inhale .app-card__subtitle { color: #8BB5D8; }
 .app-card--runfree .app-card__subtitle { color: #FF8C5A; }
 .app-card--nova .app-card__subtitle { color: #C9A45A; }
+.app-card--chapter .app-card__subtitle { color: #B48CC8; }
 .app-card__description {
   font-size: 0.9375rem; line-height: 1.65;
   color: rgba(255,255,255,0.55);
@@ -709,6 +720,15 @@ body {
 .app-card--runfree:hover .app-card__cta {
   background: #E67B3A; color: #fff;
   border-color: #E67B3A;
+}
+.app-card--chapter .app-card__cta {
+  background: rgba(180,140,200,0.15);
+  border: 1px solid rgba(180,140,200,0.35);
+  color: #C8A8DC;
+}
+.app-card--chapter:hover .app-card__cta {
+  background: #B48CC8; color: #fff;
+  border-color: #B48CC8;
 }
 .app-card__cta svg { width: 16px; height: 16px; transition: transform var(--transition); }
 .app-card:hover .app-card__cta svg { transform: translateX(4px); }

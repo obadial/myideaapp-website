@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="chapter">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter — Your Private Dating Journal</title>
+  <meta name="description" content="Chapter est un carnet de dating privé pour noter vos rencontres, vos ressentis et vos histoires. Vos données restent sur votre appareil — toujours.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Chapter — Your Private Dating Journal">
+  <meta property="og:description" content="A private journal for your dating life. Write your chapters, keep them to yourself.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../css/fonts.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <style>
+    /* ─── Chapter theme ─────────────────────────────────────── */
+    [data-theme="chapter"] {
+      --bg: #0E0B10;
+      --bg2: #14101A;
+      --surface: #14101A;
+      --surface2: #1B1524;
+      --border: rgba(180,130,200,0.15);
+      --text: #F0EAF5;
+      --text2: #A89AB6;
+      --text3: #6B5E78;
+      --primary: #B48CC8;
+      --primary-dark: #7A5A96;
+      --secondary: #C8A06E;
+      --accent: #B48CC8;
+      --accent-light: rgba(180,140,200,0.15);
+      --hero-grad: linear-gradient(135deg, #0E0B10 0%, #14101A 50%, #0E0B10 100%);
+    }
+
+    .store-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 24px;
+      background: #B48CC8;
+      color: #fff;
+      border-radius: 12px;
+      font-size: 0.9375rem; font-weight: 700;
+      text-decoration: none;
+      transition: all 0.22s;
+      box-shadow: 0 4px 20px rgba(180,140,200,0.4);
+    }
+    .store-badge:hover { background: #7A5A96; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(180,140,200,0.5); }
+    .store-badge svg { width: 20px; height: 20px; }
+
+    /* Feature chips */
+    .feature-chips {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .feature-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 14px;
+      border-radius: 100px;
+      font-size: 0.8125rem; font-weight: 600;
+      background: rgba(180,140,200,0.1);
+      border: 1px solid rgba(180,140,200,0.2);
+      color: #A89AB6;
+    }
+
+    /* Stats */
+    .stats-row {
+      display: flex; gap: 2rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(180,140,200,0.12);
+      border-bottom: 1px solid rgba(180,140,200,0.12);
+      margin: 1.5rem 0;
+    }
+    .stat { text-align: center; }
+    .stat__value { font-size: 1.75rem; font-weight: 900; color: #B48CC8; letter-spacing: -0.03em; }
+    .stat__label { font-size: 0.8125rem; color: #A89AB6; margin-top: 2px; }
+
+    /* Journal visual */
+    .chapter-visual {
+      position: relative;
+      width: 280px; height: 280px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .chapter-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(180,140,200,0.12);
+      animation: pulse-ring-ch 5s ease-in-out infinite;
+    }
+    .chapter-ring--1 { width: 200px; height: 200px; animation-delay: 0s; }
+    .chapter-ring--2 { width: 240px; height: 240px; animation-delay: 0.6s; }
+    .chapter-ring--3 { width: 275px; height: 275px; animation-delay: 1.2s; }
+    @keyframes pulse-ring-ch {
+      0%, 100% { opacity: 0.25; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.03); }
+    }
+    .chapter-circle {
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #2A1E36 0%, #B48CC8 100%);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 60px rgba(180,140,200,0.35);
+      animation: glow-ch 5s ease-in-out infinite;
+    }
+    @keyframes glow-ch {
+      0%, 100% { box-shadow: 0 0 40px rgba(180,140,200,0.25); }
+      50% { box-shadow: 0 0 80px rgba(180,140,200,0.55); }
+    }
+    .chapter-circle__inner {
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .chapter-circle__icon { width: 68px; height: 68px; border-radius: 16px; object-fit: cover; font-size: 2.5rem; display: flex; align-items: center; justify-content: center; }
+    .chapter-emoji { font-size: 2.5rem; line-height: 1; }
+  </style>
+</head>
+<body data-theme="chapter">
+
+  <!-- ─── Navbar ─────────────────────────────────────────── -->
+  <nav class="navbar">
+    <div class="navbar__left">
+      <a href="../" class="navbar__back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        <span data-i18n="back_to_studio">Studio</span>
+      </a>
+      <div class="navbar__logo">
+        <span class="logo-text">Chapter</span>
+      </div>
+    </div>
+    <div class="navbar__nav">
+      <a href="#overview" class="active" data-i18n="nav_overview">Présentation</a>
+      <a href="privacy.html" data-i18n="nav_privacy">Confidentialité</a>
+      <a href="terms.html" data-i18n="nav_terms">Conditions</a>
+    </div>
+    <div class="navbar__right">
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang-btn="fr">FR</button>
+        <button class="lang-btn" data-lang-btn="en">EN</button>
+        <button class="lang-btn" data-lang-btn="es">ES</button>
+      </div>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <a href="../" data-i18n="back_to_studio">← Studio</a>
+    <a href="#overview" data-i18n="nav_overview">Présentation</a>
+    <a href="privacy.html" data-i18n="nav_privacy">Confidentialité</a>
+    <a href="terms.html" data-i18n="nav_terms">Conditions</a>
+    <div class="lang-switcher" style="margin-top:1.5rem">
+      <button class="lang-btn" data-lang-btn="fr">FR</button>
+      <button class="lang-btn" data-lang-btn="en">EN</button>
+      <button class="lang-btn" data-lang-btn="es">ES</button>
+    </div>
+  </div>
+
+  <!-- ─── Hero ───────────────────────────────────────────── -->
+  <section id="overview" class="app-hero">
+    <div class="app-hero__orb"></div>
+    <div class="container">
+      <div class="app-hero__inner">
+        <div class="app-hero__info">
+          <div class="app-hero__icon-wrap">
+            <span style="font-size:2.2rem;line-height:1;">📖</span>
+            <span class="app-hero__app-name">Chapter</span>
+          </div>
+          <h1 class="app-hero__tagline" data-i18n="chapter_tagline">Écrivez votre histoire, gardez-la pour vous.</h1>
+          <p class="app-hero__subtitle" data-i18n="chapter_subtitle">Votre carnet de dating privé</p>
+          <p class="app-hero__description" data-i18n="chapter_description">Chapter est l'endroit pour noter vos rencontres, vos ressentis et vos histoires amoureuses — en toute intimité. Vos chapitres restent sur votre appareil, à l'abri des regards.</p>
+
+          <div class="feature-chips">
+            <span class="feature-chip">📖 Journal intime</span>
+            <span class="feature-chip">🔒 100 % privé</span>
+            <span class="feature-chip">💬 Notes & ressentis</span>
+            <span class="feature-chip">📅 Chronologie</span>
+            <span class="feature-chip">🏷️ Tags & filtres</span>
+          </div>
+
+          <div class="stats-row">
+            <div class="stat">
+              <div class="stat__value">0</div>
+              <div class="stat__label" data-i18n="chapter_stat_cloud">Données cloud</div>
+            </div>
+            <div class="stat">
+              <div class="stat__value">17+</div>
+              <div class="stat__label" data-i18n="chapter_stat_age">Âge minimum</div>
+            </div>
+            <div class="stat">
+              <div class="stat__value">iOS</div>
+              <div class="stat__label" data-i18n="chapter_stat_platform">iPhone & iPad</div>
+            </div>
+          </div>
+
+          <div class="app-hero__actions">
+            <a href="https://apps.apple.com/app/id6774410173" class="store-badge" target="_blank" rel="noopener" aria-label="Download Chapter on App Store">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+              </svg>
+              <span data-i18n="download_ios">Télécharger sur l'App Store</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Journal visual -->
+        <div class="chapter-visual">
+          <div class="chapter-ring chapter-ring--3"></div>
+          <div class="chapter-ring chapter-ring--2"></div>
+          <div class="chapter-ring chapter-ring--1"></div>
+          <div class="chapter-circle">
+            <div class="chapter-circle__inner">
+              <span class="chapter-emoji">📖</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Features ───────────────────────────────────────── -->
+  <section class="features-section section">
+    <div class="container">
+      <h2 class="section-title fade-up" data-i18n="chapter_feat_title">Fonctionnalités</h2>
+      <div class="features-grid">
+        <div class="feature-card fade-up fade-up-delay-1">
+          <div class="feature-card__icon">📖</div>
+          <h3 class="feature-card__title" data-i18n="chapter_feat1_title">Journal de rencontres</h3>
+          <p class="feature-card__desc" data-i18n="chapter_feat1_desc">Notez vos dates, vos premières impressions, vos anecdotes. Chaque chapitre raconte une histoire, la vôtre.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-2">
+          <div class="feature-card__icon">🔒</div>
+          <h3 class="feature-card__title" data-i18n="chapter_feat2_title">Vie privée absolue</h3>
+          <p class="feature-card__desc" data-i18n="chapter_feat2_desc">Tous vos chapitres sont stockés localement sur votre iPhone. Aucun cloud, aucun partage — vos histoires vous appartiennent.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-3">
+          <div class="feature-card__icon">💬</div>
+          <h3 class="feature-card__title" data-i18n="chapter_feat3_title">Notes & ressentis</h3>
+          <p class="feature-card__desc" data-i18n="chapter_feat3_desc">Exprimez ce que vous ressentez librement : émotions, compatibilité, red flags ou green flags. Sans filtre, sans jugement.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-1">
+          <div class="feature-card__icon">📅</div>
+          <h3 class="feature-card__title" data-i18n="chapter_feat4_title">Chronologie</h3>
+          <p class="feature-card__desc" data-i18n="chapter_feat4_desc">Retrouvez vos entrées dans l'ordre chronologique. Relisez votre parcours et mesurez votre évolution.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-2">
+          <div class="feature-card__icon">🏷️</div>
+          <h3 class="feature-card__title" data-i18n="chapter_feat5_title">Tags & filtres</h3>
+          <p class="feature-card__desc" data-i18n="chapter_feat5_desc">Organisez vos chapitres avec des tags personnalisés. Recherchez, filtrez, retrouvez facilement.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-3">
+          <div class="feature-card__icon">✨</div>
+          <h3 class="feature-card__title" data-i18n="chapter_feat6_title">Design apaisant</h3>
+          <p class="feature-card__desc" data-i18n="chapter_feat6_desc">Une interface douce et élégante qui invite à l'écriture. Parce que votre journal mérite d'être beau.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Legal ───────────────────────────────────────────── -->
+  <section class="legal-strip">
+    <div class="container">
+      <div class="legal-strip__inner">
+        <div class="legal-strip__text">
+          <h3 data-i18n="chapter_legal_title">Documents légaux</h3>
+          <p data-i18n="chapter_legal_desc">Consultez notre politique de confidentialité et nos conditions d'utilisation.</p>
+        </div>
+        <div class="legal-strip__links">
+          <a href="privacy.html" class="legal-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span data-i18n="privacy_link">Politique de confidentialité</span>
+          </a>
+          <a href="terms.html" class="legal-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            <span data-i18n="terms_link">Conditions d'utilisation</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="../"><span class="logo-text">myideapp</span></a>
+          <p data-i18n="footer_tagline">Applications mobiles élégantes et respectueuses de ta vie privée.</p>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_apps">Applications</h4>
+          <a href="../rhythm/">Rhythm</a>
+          <a href="../lunarest/">LunaRest</a>
+          <a href="../enjoymeal/">EnjoyMeal</a>
+          <a href="../inhale/">Inhale</a>
+          <a href="../hydrome/">HydroMe</a>
+          <a href="../chapter/">Chapter</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_legal">Légal</h4>
+          <a href="privacy.html" data-i18n="privacy_link">Politique de confidentialité</a>
+          <a href="terms.html" data-i18n="terms_link">Conditions d'utilisation</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_contact">Contact</h4>
+          <a href="../contact.html">contact.myideapp@icloud.com</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p data-i18n="footer_rights">© 2026 MyIdeApp. Tous droits réservés.</p>
+        <div class="footer__bottom-links">
+          <a href="privacy.html" data-i18n="privacy_link">Confidentialité</a>
+          <a href="terms.html" data-i18n="terms_link">Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/i18n.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
