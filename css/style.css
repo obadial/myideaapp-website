@@ -586,6 +586,17 @@ body {
   background: radial-gradient(ellipse at top right, rgba(107,143,184,0.22) 0%, transparent 60%);
   pointer-events: none;
 }
+.app-card--hydrome {
+  background: linear-gradient(145deg, #071A20 0%, #0D2A38 50%, #071A20 100%);
+}
+.app-card--hydrome::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at top left, rgba(79,195,247,0.22) 0%, transparent 60%);
+  pointer-events: none;
+}
+.app-card--hydrome .app-card__chip { background: rgba(79,195,247,0.2); color: #6DD4F8; }
+.app-card--hydrome .app-card__subtitle { color: #4FC3F7; }
 .app-card--runfree {
   background: linear-gradient(145deg, #0D1117 0%, #111820 50%, #0D1117 100%);
 }
@@ -720,6 +731,15 @@ body {
 .app-card--runfree:hover .app-card__cta {
   background: #E67B3A; color: #fff;
   border-color: #E67B3A;
+}
+.app-card--hydrome .app-card__cta {
+  background: rgba(79,195,247,0.15);
+  border: 1px solid rgba(79,195,247,0.35);
+  color: #4FC3F7;
+}
+.app-card--hydrome:hover .app-card__cta {
+  background: #4FC3F7; color: #1A3A4A;
+  border-color: #4FC3F7;
 }
 .app-card--chapter .app-card__cta {
   background: rgba(180,140,200,0.15);
