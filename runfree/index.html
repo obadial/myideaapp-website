@@ -127,7 +127,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M19 12H5M12 19l-7-7 7-7"/>
         </svg>
-        <span>Studio</span>
+        <span data-i18n="back_to_studio">Studio</span>
       </a>
       <div class="navbar__logo">
         <img src="../assets/runfree/icon.png" alt="RunFree" class="navbar__app-icon">
@@ -135,11 +135,16 @@
       </div>
     </div>
     <div class="navbar__nav">
-      <a href="#overview" class="active">Overview</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
+      <a href="#overview" class="active" data-i18n="nav_overview">Présentation</a>
+      <a href="privacy.html" data-i18n="nav_privacy">Confidentialité</a>
+      <a href="terms.html" data-i18n="nav_terms">Conditions</a>
     </div>
     <div class="navbar__right">
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang-btn="fr">FR</button>
+        <button class="lang-btn" data-lang-btn="en">EN</button>
+        <button class="lang-btn" data-lang-btn="es">ES</button>
+      </div>
       <button class="hamburger" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -148,10 +153,15 @@
 
   <!-- Mobile nav -->
   <div class="mobile-nav">
-    <a href="../">← Studio</a>
-    <a href="#overview">Overview</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="terms.html">Terms</a>
+    <a href="../" data-i18n="back_to_studio">← Studio</a>
+    <a href="#overview" data-i18n="nav_overview">Présentation</a>
+    <a href="privacy.html" data-i18n="nav_privacy">Confidentialité</a>
+    <a href="terms.html" data-i18n="nav_terms">Conditions</a>
+    <div class="lang-switcher" style="margin-top:1.5rem">
+      <button class="lang-btn" data-lang-btn="fr">FR</button>
+      <button class="lang-btn" data-lang-btn="en">EN</button>
+      <button class="lang-btn" data-lang-btn="es">ES</button>
+    </div>
   </div>
 
   <!-- ─── Hero ───────────────────────────────────────────── -->
@@ -164,29 +174,29 @@
             <img src="../assets/runfree/icon.png" alt="RunFree" class="app-hero__icon">
             <span class="app-hero__app-name">RunFree</span>
           </div>
-          <h1 class="app-hero__tagline">Just you &amp; the road.</h1>
-          <p class="app-hero__subtitle">Privacy-first GPS running tracker</p>
-          <p class="app-hero__description">RunFree tracks your runs without sending anything to the cloud. Your routes, pace and records stay on your device — period.</p>
+          <h1 class="app-hero__tagline" data-i18n="runfree_tagline">Juste toi &amp; la route.</h1>
+          <p class="app-hero__subtitle" data-i18n="runfree_subtitle">Tracker GPS, vie privée d'abord</p>
+          <p class="app-hero__description" data-i18n="runfree_description">RunFree enregistre vos courses sans rien envoyer vers le cloud. Vos itinéraires, allure et records restent sur votre appareil — point final.</p>
 
           <div class="run-chips">
-            <span class="run-chip">📍 GPS tracking</span>
-            <span class="run-chip">🗺 Route map</span>
-            <span class="run-chip">🏅 Personal records</span>
-            <span class="run-chip">📅 Training plans</span>
+            <span class="run-chip">📍 <span data-i18n="runfree_chip_gps">GPS tracking</span></span>
+            <span class="run-chip">🗺 <span data-i18n="runfree_chip_route">Route map</span></span>
+            <span class="run-chip">🏅 <span data-i18n="runfree_chip_pr">Personal records</span></span>
+            <span class="run-chip">📅 <span data-i18n="runfree_chip_plans">Training plans</span></span>
           </div>
 
           <div class="stats-row">
             <div class="stat">
               <div class="stat__value">5</div>
-              <div class="stat__label">Run types</div>
+              <div class="stat__label" data-i18n="runfree_stat_runtypes">Types de course</div>
             </div>
             <div class="stat">
               <div class="stat__value">4</div>
-              <div class="stat__label">Plans</div>
+              <div class="stat__label" data-i18n="runfree_stat_plans">Plans</div>
             </div>
             <div class="stat">
               <div class="stat__value">100%</div>
-              <div class="stat__label">Offline</div>
+              <div class="stat__label" data-i18n="runfree_stat_offline">Offline</div>
             </div>
           </div>
 
@@ -195,7 +205,7 @@
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
               </svg>
-              Download on the App Store
+              <span data-i18n="download_ios">Télécharger sur l'App Store</span>
             </a>
           </div>
         </div>
@@ -217,37 +227,37 @@
   <!-- ─── Features ───────────────────────────────────────── -->
   <section class="features-section section">
     <div class="container">
-      <h2 class="section-title fade-up">Features</h2>
+      <h2 class="section-title fade-up" data-i18n="runfree_feat_title">Fonctionnalités</h2>
       <div class="features-grid">
         <div class="feature-card fade-up fade-up-delay-1">
           <div class="feature-card__icon">📍</div>
-          <h3 class="feature-card__title">GPS Tracking</h3>
-          <p class="feature-card__desc">Live pace, distance and duration. Auto-pause when you stop. Full route map with every run.</p>
+          <h3 class="feature-card__title" data-i18n="runfree_feat1_title">GPS Tracking</h3>
+          <p class="feature-card__desc" data-i18n="runfree_feat1_desc">Allure, distance et durée en direct. Pause automatique à l'arrêt. Carte complète de chaque itinéraire.</p>
         </div>
         <div class="feature-card fade-up fade-up-delay-2">
           <div class="feature-card__icon">📋</div>
-          <h3 class="feature-card__title">Training Plans</h3>
-          <p class="feature-card__desc">Beginner 5k, 10k, Half Marathon and Marathon plans. Structured weekly sessions with guided workouts.</p>
+          <h3 class="feature-card__title" data-i18n="runfree_feat2_title">Plans d'entraînement</h3>
+          <p class="feature-card__desc" data-i18n="runfree_feat2_desc">Plans débutant 5k, 10k, semi-marathon et marathon. Séances hebdomadaires structurées avec workouts guidés.</p>
         </div>
         <div class="feature-card fade-up fade-up-delay-3">
           <div class="feature-card__icon">🏅</div>
-          <h3 class="feature-card__title">Personal Records</h3>
-          <p class="feature-card__desc">Automatic PRs across 1k, 5k, 10k, half and full marathon distances. Updated after every run.</p>
+          <h3 class="feature-card__title" data-i18n="runfree_feat3_title">Records personnels</h3>
+          <p class="feature-card__desc" data-i18n="runfree_feat3_desc">Records automatiques sur 1k, 5k, 10k, semi et marathon. Mis à jour après chaque course.</p>
         </div>
         <div class="feature-card fade-up fade-up-delay-1">
           <div class="feature-card__icon">📊</div>
-          <h3 class="feature-card__title">Advanced Stats</h3>
-          <p class="feature-card__desc">Weekly and monthly distance charts, pace zones and full run history with split analysis.</p>
+          <h3 class="feature-card__title" data-i18n="runfree_feat4_title">Statistiques avancées</h3>
+          <p class="feature-card__desc" data-i18n="runfree_feat4_desc">Graphiques hebdomadaires et mensuels, zones d'allure et historique complet avec analyse des splits.</p>
         </div>
         <div class="feature-card fade-up fade-up-delay-2">
           <div class="feature-card__icon">🔒</div>
-          <h3 class="feature-card__title">Privacy First</h3>
-          <p class="feature-card__desc">All data stored locally on your device. No cloud account required. No social feed. No comparisons.</p>
+          <h3 class="feature-card__title" data-i18n="runfree_feat5_title">Vie privée d'abord</h3>
+          <p class="feature-card__desc" data-i18n="runfree_feat5_desc">Toutes les données stockées localement sur votre appareil. Pas de compte cloud. Pas de réseau social. Pas de comparaisons.</p>
         </div>
         <div class="feature-card fade-up fade-up-delay-3">
           <div class="feature-card__icon">📵</div>
-          <h3 class="feature-card__title">Works Offline</h3>
-          <p class="feature-card__desc">Full GPS tracking, history and training plans available without any internet connection.</p>
+          <h3 class="feature-card__title" data-i18n="runfree_feat6_title">Fonctionne hors ligne</h3>
+          <p class="feature-card__desc" data-i18n="runfree_feat6_desc">GPS complet, historique et plans d'entraînement disponibles sans aucune connexion internet.</p>
         </div>
       </div>
     </div>
@@ -258,17 +268,17 @@
     <div class="container">
       <div class="legal-strip__inner">
         <div class="legal-strip__text">
-          <h3>Legal documents</h3>
-          <p>Read our privacy policy and terms of use.</p>
+          <h3 data-i18n="runfree_legal_title">Documents légaux</h3>
+          <p data-i18n="runfree_legal_desc">Consultez notre politique de confidentialité et nos conditions d'utilisation.</p>
         </div>
         <div class="legal-strip__links">
           <a href="privacy.html" class="legal-link">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Privacy Policy
+            <span data-i18n="privacy_link">Politique de confidentialité</span>
           </a>
           <a href="terms.html" class="legal-link">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-            Terms of Use
+            <span data-i18n="terms_link">Conditions d'utilisation</span>
           </a>
         </div>
       </div>
@@ -281,7 +291,7 @@
       <div class="footer__grid">
         <div class="footer__brand">
           <a href="../"><span class="logo-text">myideapp</span></a>
-          <p>Privacy-first mobile apps.</p>
+          <p data-i18n="footer_tagline">Applications mobiles élégantes et respectueuses de ta vie privée.</p>
         </div>
         <div class="footer__col">
           <h4 data-i18n="footer_apps">Applications</h4>
@@ -297,19 +307,19 @@
         <div class="footer__col">
           <h4 data-i18n="footer_legal">Légal</h4>
           <a href="privacy.html" data-i18n="privacy_link">Politique de confidentialité</a>
-          <a href="terms.html">Terms of Use</a>
+          <a href="terms.html" data-i18n="terms_link">Conditions d'utilisation</a>
         </div>
         <div class="footer__col">
-          <h4>Contact</h4>
+          <h4 data-i18n="footer_contact">Contact</h4>
           <a href="mailto:contact.myideapp@icloud.com">contact.myideapp@icloud.com</a>
         </div>
       </div>
       <div class="footer__bottom">
-        <p>© 2026 MyIdeApp. All rights reserved.</p>
+        <p data-i18n="footer_rights">© 2026 MyIdeApp. Tous droits réservés.</p>
         <div class="footer__bottom-links">
-          <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
-          <a href="../">Studio</a>
+          <a href="privacy.html" data-i18n="footer_privacy_short">Confidentialité</a>
+          <a href="terms.html" data-i18n="footer_terms_short">Conditions</a>
+          <a href="../" data-i18n="back_to_studio">Studio</a>
         </div>
       </div>
     </div>
