@@ -28,30 +28,22 @@
       background: radial-gradient(ellipse at 70% 40%, rgba(201,164,90,0.18) 0%, transparent 65%);
     }
 
-    /* Pill "Bientôt disponible" */
-    .coming-soon-pill {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 8px 20px;
-      background: rgba(201,164,90,0.1);
-      border: 1px solid rgba(201,164,90,0.3);
+    /* Badge App Store */
+    .store-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 10px 22px;
+      background: #15130F;
+      border: 1px solid #3A3528;
       border-radius: 2px;
-      color: #D9B66B;
-      font-size: 0.8125rem;
+      color: #F2EBD7;
+      font-size: 0.875rem;
       font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      text-decoration: none;
       margin-bottom: 1.5rem;
+      transition: background 0.2s, transform 0.2s;
     }
-    .coming-soon-pill__dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: #C9A45A;
-      animation: pulse-dot 2s ease-in-out infinite;
-    }
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
+    .store-badge:hover { background: #1C1914; transform: translateY(-2px); }
+    .store-badge svg { width: 20px; height: 20px; flex-shrink: 0; }
 
     /* Tags feature */
     .nova-tags {
@@ -273,10 +265,12 @@
             <span class="app-hero__app-name">Nova</span>
           </div>
 
-          <div class="coming-soon-pill">
-            <span class="coming-soon-pill__dot"></span>
-            <span>Bientôt sur l'App Store</span>
-          </div>
+          <a href="https://apps.apple.com/fr/app/nova-sant%C3%A9-intime/id6773055145" class="store-badge" target="_blank" rel="noopener" aria-label="Télécharger Nova sur l'App Store">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            <span data-i18n="download_ios">Télécharger sur l'App Store</span>
+          </a>
 
           <h1 class="app-hero__tagline" data-i18n="nova_tagline">Ta santé intime, sans jugement.</h1>
           <p class="app-hero__subtitle" data-i18n="nova_subtitle">Suivi intime, confidentialité absolue</p>
