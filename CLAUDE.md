@@ -7,6 +7,7 @@ Site vitrine statique du studio **MyIdeApp**. Aucun build, aucun framework — H
 | App | Statut | Lien |
 |-----|--------|------|
 | **Rhythm** | ✅ LIVE App Store — 2026-05-15 | https://apps.apple.com/fr/app/rhythm-cycle-wellbeing/id6767194298 |
+| **Chapter** | ✅ LIVE App Store — 2026-06-07 | https://apps.apple.com/fr/app/chapter-dating-notebook/id6774410173 |
 | **LunaRest** | 🟠 En review Apple | — |
 | **EnjoyMeal** | 🟠 En review Apple | — |
 | **Inhale** | 🔧 Phase 1 terminée | — |
