@@ -1,53 +1,52 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="chapter">
+<html lang="fr" data-theme="budgetbrief">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chapter — Your Private Dating Journal</title>
-  <meta name="description" content="Chapter est un carnet de dating privé pour noter vos rencontres, vos ressentis et vos histoires. Vos données restent sur votre appareil — toujours.">
+  <title>MyBudgetBrief — Suivi des dépenses privacy-first</title>
+  <meta name="description" content="MyBudgetBrief est un tracker de dépenses 100% offline. Loggez vos dépenses, fixez un budget par catégorie. Vos données financières restent sur votre appareil — toujours.">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Chapter — Your Private Dating Journal">
-  <meta property="og:description" content="A private journal for your dating life. Write your chapters, keep them to yourself.">
+  <meta property="og:title" content="MyBudgetBrief — Privacy-first budget tracker">
+  <meta property="og:description" content="Log expenses in seconds. Set budgets by category. All your data stays on your device.">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="../css/fonts.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <style>
-    /* ─── Chapter theme ─────────────────────────────────────── */
-    [data-theme="chapter"] {
-      --bg: #0E0B10;
-      --bg2: #14101A;
-      --surface: #14101A;
-      --surface2: #1B1524;
-      --border: rgba(180,130,200,0.15);
-      --text: #F0EAF5;
-      --text2: #A89AB6;
-      --text3: #6B5E78;
-      --primary: #B48CC8;
-      --primary-dark: #7A5A96;
-      --secondary: #C8A06E;
-      --accent: #B48CC8;
-      --accent-light: rgba(180,140,200,0.15);
-      --hero-grad: linear-gradient(135deg, #0E0B10 0%, #14101A 50%, #0E0B10 100%);
+    /* ─── MyBudgetBrief theme ────────────────────────────────── */
+    [data-theme="budgetbrief"] {
+      --bg: #071422;
+      --bg2: #0D1E35;
+      --surface: #0D1E35;
+      --surface2: #132840;
+      --border: rgba(33,150,243,0.15);
+      --text: #E8F4FD;
+      --text2: #90B8D8;
+      --text3: #506880;
+      --primary: #2196F3;
+      --primary-dark: #1565C0;
+      --secondary: #42A5F5;
+      --accent: #2196F3;
+      --accent-light: rgba(33,150,243,0.15);
+      --hero-grad: linear-gradient(135deg, #071422 0%, #0D1E35 50%, #071422 100%);
     }
 
     .store-badge {
       display: inline-flex; align-items: center; gap: 10px;
       padding: 12px 24px;
-      background: #B48CC8;
+      background: #2196F3;
       color: #fff;
       border-radius: 12px;
       font-size: 0.9375rem; font-weight: 700;
       text-decoration: none;
       transition: all 0.22s;
-      box-shadow: 0 4px 20px rgba(180,140,200,0.4);
+      box-shadow: 0 4px 20px rgba(33,150,243,0.4);
       width: fit-content;
       align-self: flex-start;
     }
-    .store-badge:hover { background: #7A5A96; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(180,140,200,0.5); }
+    .store-badge:hover { background: #1565C0; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(33,150,243,0.5); }
     .store-badge svg { width: 20px; height: 20px; }
 
-    /* Feature chips */
     .feature-chips {
       display: flex; gap: 8px; flex-wrap: wrap;
       margin-top: 1rem;
@@ -57,66 +56,68 @@
       padding: 5px 14px;
       border-radius: 100px;
       font-size: 0.8125rem; font-weight: 600;
-      background: rgba(180,140,200,0.1);
-      border: 1px solid rgba(180,140,200,0.2);
-      color: #A89AB6;
+      background: rgba(33,150,243,0.1);
+      border: 1px solid rgba(33,150,243,0.2);
+      color: #90B8D8;
     }
 
-    /* Stats */
     .stats-row {
       display: flex; gap: 2rem;
       padding: 1.5rem 0;
-      border-top: 1px solid rgba(180,140,200,0.12);
-      border-bottom: 1px solid rgba(180,140,200,0.12);
+      border-top: 1px solid rgba(33,150,243,0.12);
+      border-bottom: 1px solid rgba(33,150,243,0.12);
       margin: 1.5rem 0;
     }
     .stat { text-align: center; }
-    .stat__value { font-size: 1.75rem; font-weight: 900; color: #B48CC8; letter-spacing: -0.03em; }
-    .stat__label { font-size: 0.8125rem; color: #A89AB6; margin-top: 2px; }
+    .stat__value { font-size: 1.75rem; font-weight: 900; color: #2196F3; letter-spacing: -0.03em; }
+    .stat__label { font-size: 0.8125rem; color: #90B8D8; margin-top: 2px; }
 
-    /* Journal visual */
-    .chapter-visual {
+    /* Budget visual */
+    .budget-visual {
       position: relative;
       width: 280px; height: 280px;
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
-    .chapter-ring {
+    .budget-ring {
       position: absolute;
       border-radius: 50%;
-      border: 1px solid rgba(180,140,200,0.12);
-      animation: pulse-ring-ch 5s ease-in-out infinite;
+      border: 1px solid rgba(33,150,243,0.12);
+      animation: pulse-ring-bb 5s ease-in-out infinite;
     }
-    .chapter-ring--1 { width: 200px; height: 200px; animation-delay: 0s; }
-    .chapter-ring--2 { width: 240px; height: 240px; animation-delay: 0.6s; }
-    .chapter-ring--3 { width: 275px; height: 275px; animation-delay: 1.2s; }
-    @keyframes pulse-ring-ch {
+    .budget-ring--1 { width: 200px; height: 200px; animation-delay: 0s; }
+    .budget-ring--2 { width: 240px; height: 240px; animation-delay: 0.6s; }
+    .budget-ring--3 { width: 275px; height: 275px; animation-delay: 1.2s; }
+    @keyframes pulse-ring-bb {
       0%, 100% { opacity: 0.25; transform: scale(1); }
       50% { opacity: 0.6; transform: scale(1.03); }
     }
-    .chapter-circle {
+    .budget-circle {
       width: 160px; height: 160px;
       border-radius: 50%;
-      background: radial-gradient(circle, #2A1E36 0%, #B48CC8 100%);
+      background: radial-gradient(circle, #0D1E35 0%, #2196F3 100%);
       display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 0 60px rgba(180,140,200,0.35);
-      animation: glow-ch 5s ease-in-out infinite;
+      box-shadow: 0 0 60px rgba(33,150,243,0.35);
+      animation: glow-bb 5s ease-in-out infinite;
     }
-    @keyframes glow-ch {
-      0%, 100% { box-shadow: 0 0 40px rgba(180,140,200,0.25); }
-      50% { box-shadow: 0 0 80px rgba(180,140,200,0.55); }
+    @keyframes glow-bb {
+      0%, 100% { box-shadow: 0 0 40px rgba(33,150,243,0.25); }
+      50% { box-shadow: 0 0 80px rgba(33,150,243,0.55); }
     }
-    .chapter-circle__inner {
+    .budget-circle__inner {
       width: 100px; height: 100px;
       border-radius: 50%;
       background: rgba(255,255,255,0.07);
       display: flex; align-items: center; justify-content: center;
     }
-    .chapter-circle__icon { width: 68px; height: 68px; border-radius: 16px; object-fit: cover; font-size: 2.5rem; display: flex; align-items: center; justify-content: center; }
-    .chapter-emoji { font-size: 2.5rem; line-height: 1; }
+    .budget-icon {
+      width: 68px; height: 68px;
+      border-radius: 16px;
+      object-fit: cover;
+    }
   </style>
 </head>
-<body data-theme="chapter">
+<body data-theme="budgetbrief">
 
   <!-- ─── Navbar ─────────────────────────────────────────── -->
   <nav class="navbar">
@@ -128,7 +129,7 @@
         <span data-i18n="back_to_studio">Studio</span>
       </a>
       <div class="navbar__logo">
-        <span class="logo-text">Chapter</span>
+        <span class="logo-text">MyBudgetBrief</span>
       </div>
     </div>
     <div class="navbar__nav">
@@ -167,39 +168,39 @@
       <div class="app-hero__inner">
         <div class="app-hero__info">
           <div class="app-hero__icon-wrap">
-            <img src="../assets/chapter/icon.png" alt="Chapter icon" style="width:40px;height:40px;border-radius:10px;object-fit:cover;">
-            <span class="app-hero__app-name">Chapter</span>
+            <img src="../assets/budgetbrief/icon.png" alt="MyBudgetBrief icon" style="width:40px;height:40px;border-radius:10px;object-fit:cover;">
+            <span class="app-hero__app-name">MyBudgetBrief</span>
           </div>
-          <h1 class="app-hero__tagline" data-i18n="chapter_tagline">Écrivez votre histoire, gardez-la pour vous.</h1>
-          <p class="app-hero__subtitle" data-i18n="chapter_subtitle">Votre carnet de dating privé</p>
-          <p class="app-hero__description" data-i18n="chapter_description">Chapter est l'endroit pour noter vos rencontres, vos ressentis et vos histoires amoureuses — en toute intimité. Vos chapitres restent sur votre appareil, à l'abri des regards.</p>
+          <h1 class="app-hero__tagline" data-i18n="budgetbrief_tagline">Vos finances, votre appareil. Toujours.</h1>
+          <p class="app-hero__subtitle" data-i18n="budgetbrief_subtitle">Suivi des dépenses privacy-first</p>
+          <p class="app-hero__description" data-i18n="budgetbrief_description">Loggez vos dépenses en quelques secondes, fixez un budget par catégorie et visualisez votre progression. Toutes vos données financières restent sur votre appareil — toujours.</p>
 
           <div class="feature-chips">
-            <span class="feature-chip">📖 Journal intime</span>
-            <span class="feature-chip">🔒 100 % privé</span>
-            <span class="feature-chip">🔐 Face ID &amp; Touch ID</span>
-            <span class="feature-chip">💬 Notes & ressentis</span>
-            <span class="feature-chip">📅 Chronologie</span>
-            <span class="feature-chip">🏷️ Tags & filtres</span>
+            <span class="feature-chip">💸 Log express</span>
+            <span class="feature-chip">🔒 100 % offline</span>
+            <span class="feature-chip">📊 Statistiques</span>
+            <span class="feature-chip">🗂️ Budgets par catégorie</span>
+            <span class="feature-chip">🔁 Dépenses récurrentes</span>
+            <span class="feature-chip">📄 Export PDF</span>
           </div>
 
           <div class="stats-row">
             <div class="stat">
               <div class="stat__value">0</div>
-              <div class="stat__label" data-i18n="chapter_stat_cloud">Données cloud</div>
+              <div class="stat__label" data-i18n="budgetbrief_stat_cloud">Données cloud</div>
             </div>
             <div class="stat">
-              <div class="stat__value">17+</div>
-              <div class="stat__label" data-i18n="chapter_stat_age">Âge minimum</div>
+              <div class="stat__value">16+</div>
+              <div class="stat__label" data-i18n="budgetbrief_stat_age">Âge minimum</div>
             </div>
             <div class="stat">
               <div class="stat__value">iOS</div>
-              <div class="stat__label" data-i18n="chapter_stat_platform">iPhone & iPad</div>
+              <div class="stat__label" data-i18n="budgetbrief_stat_platform">iPhone & iPad</div>
             </div>
           </div>
 
           <div class="app-hero__actions">
-            <a href="https://apps.apple.com/fr/app/chapter-dating-notebook/id6774410173" class="store-badge" target="_blank" rel="noopener" aria-label="Download Chapter on App Store">
+            <a href="https://apps.apple.com/app/id6775309029" class="store-badge" target="_blank" rel="noopener" aria-label="Download MyBudgetBrief on App Store">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
               </svg>
@@ -208,14 +209,14 @@
           </div>
         </div>
 
-        <!-- Journal visual -->
-        <div class="chapter-visual">
-          <div class="chapter-ring chapter-ring--3"></div>
-          <div class="chapter-ring chapter-ring--2"></div>
-          <div class="chapter-ring chapter-ring--1"></div>
-          <div class="chapter-circle">
-            <div class="chapter-circle__inner">
-              <img src="../assets/chapter/icon.png" alt="Chapter" style="width:68px;height:68px;border-radius:16px;object-fit:cover;">
+        <!-- Budget visual -->
+        <div class="budget-visual">
+          <div class="budget-ring budget-ring--3"></div>
+          <div class="budget-ring budget-ring--2"></div>
+          <div class="budget-ring budget-ring--1"></div>
+          <div class="budget-circle">
+            <div class="budget-circle__inner">
+              <img src="../assets/budgetbrief/icon.png" alt="MyBudgetBrief" class="budget-icon">
             </div>
           </div>
         </div>
@@ -226,37 +227,37 @@
   <!-- ─── Features ───────────────────────────────────────── -->
   <section class="features-section section">
     <div class="container">
-      <h2 class="section-title fade-up" data-i18n="chapter_feat_title">Fonctionnalités</h2>
+      <h2 class="section-title fade-up" data-i18n="budgetbrief_feat_title">Fonctionnalités</h2>
       <div class="features-grid">
         <div class="feature-card fade-up fade-up-delay-1">
-          <div class="feature-card__icon">📖</div>
-          <h3 class="feature-card__title" data-i18n="chapter_feat1_title">Journal de rencontres</h3>
-          <p class="feature-card__desc" data-i18n="chapter_feat1_desc">Notez vos dates, vos premières impressions, vos anecdotes. Chaque chapitre raconte une histoire, la vôtre.</p>
+          <div class="feature-card__icon">💸</div>
+          <h3 class="feature-card__title" data-i18n="budgetbrief_feat1_title">Log en 3 secondes</h3>
+          <p class="feature-card__desc" data-i18n="budgetbrief_feat1_desc">Ajoutez une dépense en un instant : montant, catégorie, note. Zéro friction, zéro compte à créer.</p>
         </div>
         <div class="feature-card fade-up fade-up-delay-2">
-          <div class="feature-card__icon">🔒</div>
-          <h3 class="feature-card__title" data-i18n="chapter_feat2_title">Vie privée absolue</h3>
-          <p class="feature-card__desc" data-i18n="chapter_feat2_desc">Tous vos chapitres sont stockés localement sur votre iPhone. Aucun cloud, aucun partage — vos histoires vous appartiennent.</p>
+          <div class="feature-card__icon">🗂️</div>
+          <h3 class="feature-card__title" data-i18n="budgetbrief_feat2_title">Budgets par catégorie</h3>
+          <p class="feature-card__desc" data-i18n="budgetbrief_feat2_desc">Définissez un plafond mensuel par catégorie (alimentation, transport, loisirs...) et suivez votre progression en temps réel.</p>
         </div>
         <div class="feature-card fade-up fade-up-delay-3">
-          <div class="feature-card__icon">💬</div>
-          <h3 class="feature-card__title" data-i18n="chapter_feat3_title">Notes & ressentis</h3>
-          <p class="feature-card__desc" data-i18n="chapter_feat3_desc">Exprimez ce que vous ressentez librement : émotions, compatibilité, red flags ou green flags. Sans filtre, sans jugement.</p>
+          <div class="feature-card__icon">🔒</div>
+          <h3 class="feature-card__title" data-i18n="budgetbrief_feat3_title">100 % offline</h3>
+          <p class="feature-card__desc" data-i18n="budgetbrief_feat3_desc">Vos données financières ne quittent jamais votre iPhone. Aucun cloud, aucun serveur, aucun partage tiers.</p>
         </div>
         <div class="feature-card fade-up fade-up-delay-1">
-          <div class="feature-card__icon">📅</div>
-          <h3 class="feature-card__title" data-i18n="chapter_feat4_title">Chronologie</h3>
-          <p class="feature-card__desc" data-i18n="chapter_feat4_desc">Retrouvez vos entrées dans l'ordre chronologique. Relisez votre parcours et mesurez votre évolution.</p>
+          <div class="feature-card__icon">📊</div>
+          <h3 class="feature-card__title" data-i18n="budgetbrief_feat4_title">Statistiques visuelles</h3>
+          <p class="feature-card__desc" data-i18n="budgetbrief_feat4_desc">Graphiques mensuels en camembert et évolution sur 12 mois. Comprenez vos habitudes de dépenses d'un coup d'œil.</p>
         </div>
         <div class="feature-card fade-up fade-up-delay-2">
-          <div class="feature-card__icon">🏷️</div>
-          <h3 class="feature-card__title" data-i18n="chapter_feat5_title">Tags & filtres</h3>
-          <p class="feature-card__desc" data-i18n="chapter_feat5_desc">Organisez vos chapitres avec des tags personnalisés. Recherchez, filtrez, retrouvez facilement.</p>
+          <div class="feature-card__icon">🔁</div>
+          <h3 class="feature-card__title" data-i18n="budgetbrief_feat5_title">Dépenses récurrentes</h3>
+          <p class="feature-card__desc" data-i18n="budgetbrief_feat5_desc">Loyers, abonnements, factures récurrentes : planifiez-les une fois, oubliez-les.</p>
         </div>
         <div class="feature-card fade-up fade-up-delay-3">
           <div class="feature-card__icon">✨</div>
-          <h3 class="feature-card__title" data-i18n="chapter_feat6_title">Design apaisant</h3>
-          <p class="feature-card__desc" data-i18n="chapter_feat6_desc">Une interface douce et élégante qui invite à l'écriture. Parce que votre journal mérite d'être beau.</p>
+          <h3 class="feature-card__title" data-i18n="budgetbrief_feat6_title">Design minimaliste</h3>
+          <p class="feature-card__desc" data-i18n="budgetbrief_feat6_desc">Une interface épurée, sans distraction. L'essentiel pour tenir son budget sans se prendre la tête.</p>
         </div>
       </div>
     </div>
@@ -267,8 +268,8 @@
     <div class="container">
       <div class="legal-strip__inner">
         <div class="legal-strip__text">
-          <h3 data-i18n="chapter_legal_title">Documents légaux</h3>
-          <p data-i18n="chapter_legal_desc">Consultez notre politique de confidentialité et nos conditions d'utilisation.</p>
+          <h3 data-i18n="budgetbrief_legal_title">Documents légaux</h3>
+          <p data-i18n="budgetbrief_legal_desc">Consultez notre politique de confidentialité et nos conditions d'utilisation.</p>
         </div>
         <div class="legal-strip__links">
           <a href="privacy.html" class="legal-link">
@@ -302,6 +303,7 @@
           <a href="../runfree/">RunFree</a>
           <a href="../hydrome/">HydroMe</a>
           <a href="../chapter/">Chapter</a>
+          <a href="../budgetbrief/">MyBudgetBrief</a>
         </div>
         <div class="footer__col">
           <h4 data-i18n="footer_legal">Légal</h4>
