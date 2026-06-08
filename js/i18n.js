@@ -24,7 +24,7 @@ const TRANSLATIONS = {
     studio_tagline: 'Des apps pensées avec soin.',
     studio_description: "MyIdeApp est un studio indépendant qui crée des applications mobiles élégantes, inclusives et respectueuses de la vie privée.",
     studio_apps_title: 'Nos Applications',
-    studio_apps_subtitle: '8 apps, une obsession : des expériences qui comptent vraiment.',
+    studio_apps_subtitle: '9 apps, une obsession : des expériences qui comptent vraiment.',
     studio_about_title: 'Le Studio',
     studio_about_text1: "Nous concevons des applications qui respectent leurs utilisateurs. Chaque décision — du design à la gestion des données — est prise avec soin.",
     studio_about_text2: "Basé en France, MyIdeApp développe des apps mobile iOS-first, soignées et centrées sur la vie privée.",
@@ -227,6 +227,7 @@ const TRANSLATIONS = {
     hydrome_subtitle: 'Tracker d\'hydratation minimaliste',
 
     // Chapter
+    chapter_chip: 'Journal & Dating',
     chapter_tagline: 'Écrivez votre histoire, gardez-la pour vous.',
     chapter_subtitle: 'Votre carnet de dating privé',
     chapter_description: "Chapter est l'endroit pour noter vos rencontres, vos ressentis et vos histoires amoureuses — en toute intimité. Vos chapitres restent sur votre appareil, à l'abri des regards.",
@@ -248,6 +249,30 @@ const TRANSLATIONS = {
     chapter_feat6_desc: "Une interface douce et élégante qui invite à l'écriture. Parce que votre journal mérite d'être beau.",
     chapter_legal_title: 'Documents légaux',
     chapter_legal_desc: "Consultez notre politique de confidentialité et nos conditions d'utilisation.",
+
+    // MyBudgetBrief
+    budgetbrief_chip: 'Finance & Budget',
+    budgetbrief_subtitle: 'Suivi des dépenses privacy-first',
+    budgetbrief_description: "Loggez vos dépenses en quelques secondes, fixez un budget par catégorie et visualisez votre progression. Toutes vos données financières restent sur votre appareil — toujours.",
+    budgetbrief_tagline: 'Vos finances, votre appareil. Toujours.',
+    budgetbrief_stat_cloud: 'Données cloud',
+    budgetbrief_stat_age: 'Âge minimum',
+    budgetbrief_stat_platform: 'iPhone & iPad',
+    budgetbrief_feat_title: 'Fonctionnalités',
+    budgetbrief_feat1_title: 'Log en 3 secondes',
+    budgetbrief_feat1_desc: "Ajoutez une dépense en un instant : montant, catégorie, note. Zéro friction, zéro compte à créer.",
+    budgetbrief_feat2_title: 'Budgets par catégorie',
+    budgetbrief_feat2_desc: "Définissez un plafond mensuel par catégorie (alimentation, transport, loisirs...) et suivez votre progression en temps réel.",
+    budgetbrief_feat3_title: '100 % offline',
+    budgetbrief_feat3_desc: "Vos données financières ne quittent jamais votre iPhone. Aucun cloud, aucun serveur, aucun partage tiers.",
+    budgetbrief_feat4_title: 'Statistiques visuelles',
+    budgetbrief_feat4_desc: "Graphiques mensuels en camembert et évolution sur 12 mois. Comprenez vos habitudes de dépenses d'un coup d'œil.",
+    budgetbrief_feat5_title: 'Dépenses récurrentes',
+    budgetbrief_feat5_desc: "Loyers, abonnements, factures récurrentes : planifiez-les une fois, oubliez-les.",
+    budgetbrief_feat6_title: 'Design minimaliste',
+    budgetbrief_feat6_desc: "Une interface épurée, sans distraction. L'essentiel pour tenir son budget sans se prendre la tête.",
+    budgetbrief_legal_title: 'Documents légaux',
+    budgetbrief_legal_desc: "Consultez notre politique de confidentialité et nos conditions d'utilisation.",
   },
 
   en: {
@@ -267,7 +292,7 @@ const TRANSLATIONS = {
     studio_tagline: 'Crafting apps people love.',
     studio_description: "MyIdeApp is an independent studio building elegant, inclusive, privacy-first mobile apps.",
     studio_apps_title: 'Our Apps',
-    studio_apps_subtitle: '8 apps, one obsession: experiences that truly matter.',
+    studio_apps_subtitle: '9 apps, one obsession: experiences that truly matter.',
     studio_about_title: 'The Studio',
     studio_about_text1: "We build apps that respect their users. Every decision — from design to data — is made with care.",
     studio_about_text2: "Based in France, MyIdeApp creates thoughtful iOS-first mobile apps centered on privacy and craftsmanship.",
@@ -466,6 +491,7 @@ const TRANSLATIONS = {
     hydrome_subtitle: 'Minimalist hydration tracker',
 
     // Chapter
+    chapter_chip: 'Journal & Dating',
     chapter_tagline: 'One chapter per person.',
     chapter_subtitle: 'Your private dating journal',
     chapter_description: "Chapter is the place to note your dates, feelings, and love stories — in complete privacy. Your chapters stay on your device, away from prying eyes.",
@@ -487,6 +513,30 @@ const TRANSLATIONS = {
     chapter_feat6_desc: "A soft, elegant interface that invites writing. Because your journal deserves to be beautiful.",
     chapter_legal_title: 'Legal documents',
     chapter_legal_desc: "Read our Privacy Policy and Terms of Service.",
+
+    // MyBudgetBrief
+    budgetbrief_chip: 'Finance & Budget',
+    budgetbrief_subtitle: 'Privacy-first expense tracker',
+    budgetbrief_description: "Log expenses in seconds, set budgets by category and track your progress. All your financial data stays on your device — always.",
+    budgetbrief_tagline: 'Your finances. Your device. Always.',
+    budgetbrief_stat_cloud: 'Cloud data',
+    budgetbrief_stat_age: 'Minimum age',
+    budgetbrief_stat_platform: 'iPhone & iPad',
+    budgetbrief_feat_title: 'Features',
+    budgetbrief_feat1_title: 'Log in 3 seconds',
+    budgetbrief_feat1_desc: "Add an expense instantly: amount, category, note. Zero friction, no account required.",
+    budgetbrief_feat2_title: 'Budgets per category',
+    budgetbrief_feat2_desc: "Set monthly limits per category (food, transport, entertainment...) and track progress in real time.",
+    budgetbrief_feat3_title: '100% offline',
+    budgetbrief_feat3_desc: "Your financial data never leaves your iPhone. No cloud, no server, no third-party sharing.",
+    budgetbrief_feat4_title: 'Visual statistics',
+    budgetbrief_feat4_desc: "Monthly pie charts and 12-month trends. Understand your spending habits at a glance.",
+    budgetbrief_feat5_title: 'Recurring expenses',
+    budgetbrief_feat5_desc: "Rent, subscriptions, recurring bills — set them once and forget them.",
+    budgetbrief_feat6_title: 'Minimalist design',
+    budgetbrief_feat6_desc: "A clean, distraction-free interface. Everything you need to stay on budget, nothing you don't.",
+    budgetbrief_legal_title: 'Legal documents',
+    budgetbrief_legal_desc: "Read our Privacy Policy and Terms of Service.",
   },
 
   es: {
@@ -506,7 +556,7 @@ const TRANSLATIONS = {
     studio_tagline: 'Apps que la gente ama.',
     studio_description: "MyIdeApp es un estudio independiente que crea aplicaciones móviles elegantes, inclusivas y respetuosas con la privacidad.",
     studio_apps_title: 'Nuestras Apps',
-    studio_apps_subtitle: '8 apps, una obsesión: experiencias que realmente importan.',
+    studio_apps_subtitle: '9 apps, una obsesión: experiencias que realmente importan.',
     studio_about_title: 'El Estudio',
     studio_about_text1: "Creamos apps que respetan a sus usuarios. Cada decisión — del diseño a los datos — se toma con cuidado.",
     studio_about_text2: "Con sede en Francia, MyIdeApp desarrolla apps móviles iOS-first, cuidadas y centradas en la privacidad.",
@@ -705,6 +755,7 @@ const TRANSLATIONS = {
     hydrome_subtitle: 'Rastreador de hidratación minimalista',
 
     // Chapter
+    chapter_chip: 'Diario & Citas',
     chapter_tagline: 'Un capítulo por persona.',
     chapter_subtitle: 'Tu diario privado de citas',
     chapter_description: "Chapter es el lugar para anotar tus encuentros, tus sentimientos y tus historias amorosas — con total privacidad. Tus capítulos permanecen en tu dispositivo, lejos de miradas ajenas.",
@@ -726,6 +777,30 @@ const TRANSLATIONS = {
     chapter_feat6_desc: "Una interfaz suave y elegante que invita a escribir. Porque tu diario merece ser bonito.",
     chapter_legal_title: 'Documentos legales',
     chapter_legal_desc: "Consulta nuestra política de privacidad y términos de servicio.",
+
+    // MyBudgetBrief
+    budgetbrief_chip: 'Finanzas & Presupuesto',
+    budgetbrief_subtitle: 'Seguimiento de gastos con privacidad',
+    budgetbrief_description: "Registra gastos en segundos, establece presupuestos por categoría y visualiza tu progreso. Todos tus datos financieros permanecen en tu dispositivo — siempre.",
+    budgetbrief_tagline: 'Tus finanzas. Tu dispositivo. Siempre.',
+    budgetbrief_stat_cloud: 'Datos en la nube',
+    budgetbrief_stat_age: 'Edad mínima',
+    budgetbrief_stat_platform: 'iPhone & iPad',
+    budgetbrief_feat_title: 'Funcionalidades',
+    budgetbrief_feat1_title: 'Registra en 3 segundos',
+    budgetbrief_feat1_desc: "Agrega un gasto al instante: importe, categoría, nota. Sin fricción, sin registro.",
+    budgetbrief_feat2_title: 'Presupuestos por categoría',
+    budgetbrief_feat2_desc: "Establece límites mensuales por categoría (alimentación, transporte, ocio...) y sigue tu progreso en tiempo real.",
+    budgetbrief_feat3_title: '100% sin conexión',
+    budgetbrief_feat3_desc: "Tus datos financieros nunca salen de tu iPhone. Sin nube, sin servidor, sin terceros.",
+    budgetbrief_feat4_title: 'Estadísticas visuales',
+    budgetbrief_feat4_desc: "Gráficos circulares mensuales y evolución de 12 meses. Entiende tus hábitos de gasto de un vistazo.",
+    budgetbrief_feat5_title: 'Gastos recurrentes',
+    budgetbrief_feat5_desc: "Alquiler, suscripciones, facturas recurrentes — configúralos una vez y olvídate.",
+    budgetbrief_feat6_title: 'Diseño minimalista',
+    budgetbrief_feat6_desc: "Una interfaz limpia sin distracciones. Todo lo que necesitas para controlar tu presupuesto.",
+    budgetbrief_legal_title: 'Documentos legales',
+    budgetbrief_legal_desc: "Consulta nuestra política de privacidad y términos de servicio.",
   }
 };
 
