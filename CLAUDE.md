@@ -4,10 +4,14 @@ Site vitrine statique du studio **MyIdeApp**. Aucun build, aucun framework — H
 
 ## État des apps
 
+> Dernière mise à jour : 2026-06-12
+
 | App | Statut | Lien |
 |-----|--------|------|
 | **Rhythm** | ✅ LIVE App Store — 2026-05-15 | https://apps.apple.com/fr/app/rhythm-cycle-wellbeing/id6767194298 |
 | **Chapter** | ✅ LIVE App Store — 2026-06-07 | https://apps.apple.com/fr/app/chapter-dating-notebook/id6774410173 |
+| **HydroMe** | ✅ LIVE App Store — 2026-06 | https://apps.apple.com/fr/app/hydrome-suivi-hydratation/id6774221997 |
+| **MantraMe** | 🟡 TestFlight (build 6) — page + légales en ligne | — |
 | **LunaRest** | 🟠 En review Apple | — |
 | **EnjoyMeal** | 🟠 En review Apple | — |
 | **Inhale** | 🔧 Phase 1 terminée | — |
@@ -49,9 +53,11 @@ Chaque page déclare son thème sur `<body data-theme="...">` :
 | `rhythm` | Page Rhythm | Fond crème `#FDFAF8`, rose `#C96B8A`, lavande `#9B7FB5` |
 | `lunarest` | Page LunaRest | Fond marine `#0A0E1A`, bleu `#6B8DE3`, violet `#9B7FE8` |
 | `enjoymeal` | Page EnjoyMeal | Fond chaud `#FAFAF8`, orange `#FF6B35`, vert `#4CAF50` |
+| `mantrame` | Page MantraMe | Fond crème `#FDFAF5`, sage `#7C9B7C`, caramel `#C4956A` |
 | `legal-rhythm` | Pages légales Rhythm | Même charte que `rhythm` |
 | `legal-lunarest` | Pages légales LunaRest | Même charte que `lunarest` |
 | `legal-enjoymeal` | Pages légales EnjoyMeal | Même charte que `enjoymeal` |
+| `legal-mantrame` | Pages légales MantraMe | Même charte que `mantrame` |
 
 Toutes les couleurs utilisent des **CSS custom properties** (`--bg`, `--text`, `--primary`, etc.)  
 → Modifier un theme : changer uniquement le bloc `[data-theme="..."]` dans `style.css`.
