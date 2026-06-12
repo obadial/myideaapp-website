@@ -174,6 +174,34 @@ ul { list-style: none; }
   --primary: #4FC3F7;
   --secondary: #B3E5FC;
 }
+[data-theme="mantrame"] {
+  --bg: #FDFAF5;
+  --bg2: #EDF3ED;
+  --surface: #FFFFFF;
+  --surface2: #F2F7F2;
+  --border: rgba(124,155,124,0.14);
+  --text: #2D3A2D;
+  --text2: #5C7A5C;
+  --text3: #9AB09A;
+  --primary: #7C9B7C;
+  --primary-dark: #4A7C59;
+  --secondary: #C8DFC8;
+  --accent: #C4956A;
+  --accent-light: #EDD9C0;
+  --hero-grad: linear-gradient(135deg, #FDFAF5 0%, #EDF3ED 50%, #D8E8D8 100%);
+}
+
+[data-theme="legal-mantrame"] {
+  --bg: #FDFAF5;
+  --bg2: #EDF3ED;
+  --surface: #FFFFFF;
+  --border: rgba(124,155,124,0.14);
+  --text: #2D3A2D;
+  --text2: #5C7A5C;
+  --text3: #9AB09A;
+  --primary: #7C9B7C;
+  --secondary: #C8DFC8;
+}
 [data-theme="legal-rhythm"] {
   --bg: #FDFAF8;
   --bg2: #F7EEF1;
