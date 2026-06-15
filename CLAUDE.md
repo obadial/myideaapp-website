@@ -110,6 +110,13 @@ Structure HTML dans `privacy.html` et `terms.html` :
 5. Ajouter les clés i18n (`nouvellapp_*`) dans `js/i18n.js`
 6. Créer des pages légales `privacy.html` et `terms.html` avec les textes corrects
 
+## ⚠️ Règle obligatoire — sitemap.xml
+
+À chaque ajout, suppression ou renommage d'une page HTML, mettre à jour `sitemap.xml` à la racine :
+- Nouvelle app → ajouter les 3 URLs (`/{app}/`, `/{app}/privacy.html`, `/{app}/terms.html`)
+- Page supprimée → retirer l'URL du sitemap
+- Le sitemap est soumis à Google Search Console (`myideapp.com`) — une URL manquante = page non indexée
+
 ## Commandes utiles
 
 ```bash
