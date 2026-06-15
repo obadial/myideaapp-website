@@ -4,17 +4,20 @@ Site vitrine statique du studio **MyIdeApp**. Aucun build, aucun framework — H
 
 ## État des apps
 
-> Dernière mise à jour : 2026-06-12
+> Dernière mise à jour : 2026-06-15
 
 | App | Statut | Lien |
 |-----|--------|------|
-| **Rhythm** | ✅ LIVE App Store — 2026-05-15 | https://apps.apple.com/fr/app/rhythm-cycle-wellbeing/id6767194298 |
-| **Chapter** | ✅ LIVE App Store — 2026-06-07 | https://apps.apple.com/fr/app/chapter-dating-notebook/id6774410173 |
-| **HydroMe** | ✅ LIVE App Store — 2026-06 | https://apps.apple.com/fr/app/hydrome-suivi-hydratation/id6774221997 |
-| **MantraMe** | 🟡 TestFlight (build 6) — page + légales en ligne | — |
+| **Rhythm** | ✅ LIVE App Store | https://apps.apple.com/fr/app/rhythm-cycle-wellbeing/id6767194298 |
+| **Chapter** | ✅ LIVE App Store | https://apps.apple.com/fr/app/chapter-dating-notebook/id6774410173 |
+| **HydroMe** | ✅ LIVE App Store | https://apps.apple.com/fr/app/hydrome-suivi-hydratation/id6774221997 |
+| **EnjoyMeal** | ✅ LIVE App Store | — |
+| **Nova** | ✅ LIVE App Store | — |
+| **RunFree** | ✅ LIVE App Store | — |
+| **Inhale** | ✅ LIVE App Store | — |
+| **MantraMe** | 🟠 En review Apple (build 11) — page + légales en ligne | — |
 | **LunaRest** | 🟠 En review Apple | — |
-| **EnjoyMeal** | 🟠 En review Apple | — |
-| **Inhale** | 🔧 Phase 1 terminée | — |
+| **MyBudgetBrief** | 🟠 En review Apple | — |
 
 ## TODO
 
