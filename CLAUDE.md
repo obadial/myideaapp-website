@@ -17,7 +17,7 @@ Site vitrine statique du studio **MyIdeApp**. Aucun build, aucun framework — H
 | **Inhale** | ✅ LIVE App Store | — |
 | **MantraMe** | 🟠 En review Apple (build 11) — page + légales en ligne | — |
 | **LunaRest** | 🟠 En review Apple | — |
-| **MyBudgetBrief** | 🟠 En review Apple | — |
+| **MyBudgetBrief** | ✅ LIVE App Store | https://apps.apple.com/fr/app/mybudgetbrief/id6775309029 |
 
 ## TODO
 
