@@ -4,7 +4,7 @@ Site vitrine statique du studio **MyIdeApp**. Aucun build, aucun framework — H
 
 ## État des apps
 
-> Dernière mise à jour : 2026-06-15
+> Dernière mise à jour : 2026-06-19
 
 | App | Statut | Lien |
 |-----|--------|------|
@@ -15,7 +15,7 @@ Site vitrine statique du studio **MyIdeApp**. Aucun build, aucun framework — H
 | **Nova** | ✅ LIVE App Store | — |
 | **RunFree** | ✅ LIVE App Store | — |
 | **Inhale** | ✅ LIVE App Store | — |
-| **MantraMe** | 🟠 En review Apple (build 11) — page + légales en ligne | — |
+| **MantraMe** | ✅ LIVE App Store | https://apps.apple.com/app/mantrame/id6775309231 |
 | **LunaRest** | 🟠 En review Apple | — |
 | **MyBudgetBrief** | ✅ LIVE App Store | https://apps.apple.com/fr/app/mybudgetbrief/id6775309029 |
 
