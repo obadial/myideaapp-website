@@ -10,13 +10,13 @@ Site vitrine statique du studio **MyIdeApp**. Aucun build, aucun framework — H
 |-----|--------|------|
 | **Rhythm** | ✅ LIVE App Store | https://apps.apple.com/fr/app/rhythm-cycle-wellbeing/id6767194298 |
 | **Chapter** | ✅ LIVE App Store | https://apps.apple.com/fr/app/chapter-dating-notebook/id6774410173 |
-| **HydroMe** | ✅ LIVE App Store | https://apps.apple.com/fr/app/hydrome-suivi-hydratation/id6774221997 |
+| **HydroMe** | ✅ LIVE App Store | https://apps.apple.com/fr/app/hydrome-suivi-hydratation/id6774221997 — live 2026-06-19 |
 | **EnjoyMeal** | ✅ LIVE App Store | — |
 | **Nova** | ✅ LIVE App Store | — |
 | **RunFree** | ✅ LIVE App Store | — |
 | **Inhale** | ✅ LIVE App Store | — |
 | **MantraMe** | ✅ LIVE App Store | https://apps.apple.com/app/mantrame/id6775309231 |
-| **LunaRest** | 🟠 En review Apple | — |
+| **LunaRest** | 🔵 En review Apple | — |
 | **MyBudgetBrief** | ✅ LIVE App Store | https://apps.apple.com/fr/app/mybudgetbrief/id6775309029 |
 
 ## TODO
