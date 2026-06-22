@@ -8,6 +8,7 @@ const TRANSLATIONS = {
     // Global
     back_to_studio: 'Studio',
     download_ios: "Télécharger sur l'App Store",
+    follow_instagram: "Suivre sur Instagram",
     coming_soon: 'Bientôt disponible',
     live_on_appstore: 'App Store',
     discover: 'Découvrir →',
@@ -297,6 +298,7 @@ const TRANSLATIONS = {
   en: {
     back_to_studio: 'Studio',
     download_ios: 'Download on the App Store',
+    follow_instagram: 'Follow on Instagram',
     coming_soon: 'Coming Soon',
     live_on_appstore: 'App Store',
     discover: 'Explore →',
@@ -580,6 +582,7 @@ const TRANSLATIONS = {
   es: {
     back_to_studio: 'Estudio',
     download_ios: 'Descargar en el App Store',
+    follow_instagram: 'Seguir en Instagram',
     coming_soon: 'Próximamente',
     live_on_appstore: 'App Store',
     discover: 'Explorar →',
