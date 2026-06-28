@@ -283,6 +283,68 @@ ul { list-style: none; }
   --secondary: #7A8C73;
 }
 
+/* ─── StockWatch Theme (dark, finance green) ─────────────── */
+[data-theme="stockwatch"] {
+  --bg: #0D1117;
+  --bg2: #111A14;
+  --surface: #161B22;
+  --surface2: #1C2530;
+  --border: rgba(22,163,74,0.14);
+  --text: #F0F6FC;
+  --text2: #8B949E;
+  --text3: #4A5568;
+  --primary: #16A34A;
+  --primary-dark: #15803D;
+  --secondary: #0EA5E9;
+  --accent: #16A34A;
+  --accent-light: rgba(22,163,74,0.15);
+  --hero-grad: linear-gradient(135deg, #0D1117 0%, #111A14 50%, #0D1117 100%);
+}
+[data-theme="legal-stockwatch"] {
+  --bg: #0D1117;
+  --bg2: #111A14;
+  --surface: #161B22;
+  --border: rgba(22,163,74,0.12);
+  --text: #F0F6FC;
+  --text2: #8B949E;
+  --text3: #4A5568;
+  --primary: #16A34A;
+  --secondary: #0EA5E9;
+}
+
+/* ─── MyFoodBook Theme (light, teal/cream) ───────────────── */
+[data-theme="myfoodbook"] {
+  --bg: #FDF6F0;
+  --bg2: #F2EFEA;
+  --surface: #FFFFFF;
+  --surface2: #F2EFEA;
+  --border: rgba(74,124,126,0.16);
+  --text: #22312F;
+  --text2: #5E6F6C;
+  --text3: #8A9794;
+  --primary: #4A7C7E;
+  --primary-dark: #345758;
+  --secondary: #E9C46A;
+  --accent: #E9C46A;
+  --accent-light: rgba(74,124,126,0.12);
+  --hero-grad: linear-gradient(135deg, #FDF6F0 0%, #E0EAEA 50%, #FDF6F0 100%);
+}
+[data-theme="legal-myfoodbook"] {
+  --bg: #FDF6F0;
+  --bg2: #F2EFEA;
+  --surface: #FFFFFF;
+  --border: rgba(74,124,126,0.14);
+  --text: #22312F;
+  --text2: #5E6F6C;
+  --text3: #8A9794;
+  --primary: #4A7C7E;
+  --secondary: #E9C46A;
+}
+[data-theme="stockwatch"] .logo-text,
+[data-theme="legal-stockwatch"] .logo-text { color: #16A34A; }
+[data-theme="myfoodbook"] .logo-text,
+[data-theme="legal-myfoodbook"] .logo-text { color: #4A7C7E; }
+
 /* ─── Base Body ──────────────────────────────────────────── */
 body {
   background-color: var(--bg);

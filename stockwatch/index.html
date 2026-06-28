@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="stockwatch">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StockWatch — Suivi d'actions & portefeuille virtuel | MyIdeApp</title>
+  <meta name="description" content="StockWatch : suis les marchés, entraîne-toi avec un portefeuille virtuel et reçois des alertes de prix. Outil éducatif, sans risque, jamais connecté à ta banque.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="StockWatch — Train your investing, risk-free">
+  <meta property="og:description" content="Track stocks, practice with a virtual portfolio, set price alerts. Educational tool — not financial advice.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://myideapp.com/stockwatch/">
+  <meta property="og:image" content="https://myideapp.com/assets/og-studio.png">
+  <link rel="canonical" href="https://myideapp.com/stockwatch/">
+  <link rel="stylesheet" href="../css/fonts.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <style>
+    .navbar { --bg-raw: 13,17,23; background: rgba(13,17,23,0.85); }
+    .navbar__nav a { color: #8B949E; }
+    .navbar__nav a:hover, .navbar__nav a.active { color: #16A34A; }
+    .navbar__back { color: #8B949E; }
+    .navbar__back:hover { color: #16A34A; }
+    .hamburger span { background: #F0F6FC; }
+    .mobile-nav { background: #0D1117; border-top-color: rgba(22,163,74,0.15); }
+    .mobile-nav a { color: #8B949E; border-bottom-color: rgba(22,163,74,0.15); }
+
+    .brand-mark {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; border-radius: 11px;
+      background: linear-gradient(135deg, #16A34A, #0EA5E9);
+      font-size: 1.25rem;
+    }
+    .brand-mark--lg { width: 84px; height: 84px; border-radius: 22px; font-size: 2.5rem; }
+
+    .phases-strip { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 1rem; }
+    .phase-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 12px; border-radius: 100px;
+      font-size: 0.8125rem; font-weight: 600;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+      color: #F0F6FC;
+    }
+    .phase-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+    .soon-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 24px; background: rgba(22,163,74,0.15);
+      color: #5FDB93; border: 1px solid rgba(22,163,74,0.4);
+      border-radius: 12px; font-size: 0.9375rem; font-weight: 700;
+    }
+
+    .disclaimer-box {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.25rem 1.5rem; margin-top: 2rem;
+      background: rgba(210,153,34,0.08); border: 1px solid rgba(210,153,34,0.25);
+      border-radius: 16px;
+    }
+    .disclaimer-box__icon { font-size: 1.5rem; flex-shrink: 0; }
+    .disclaimer-box__text h4 { font-size: 0.9375rem; font-weight: 700; color: #F0F6FC; margin-bottom: 4px; }
+    .disclaimer-box__text p { font-size: 0.875rem; color: #8B949E; line-height: 1.6; }
+  </style>
+</head>
+<body data-theme="stockwatch">
+
+  <!-- ─── Navbar ─────────────────────────────────────────── -->
+  <nav class="navbar">
+    <div class="navbar__left">
+      <a href="../" class="navbar__back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        <span data-i18n="back_to_studio">Studio</span>
+      </a>
+      <div class="navbar__logo">
+        <span class="brand-mark">📈</span>
+        <span class="logo-text">StockWatch</span>
+      </div>
+    </div>
+    <div class="navbar__nav">
+      <a href="#overview" class="active" data-i18n="nav_overview">Présentation</a>
+      <a href="privacy.html" data-i18n="nav_privacy">Confidentialité</a>
+      <a href="terms.html" data-i18n="nav_terms">Conditions</a>
+    </div>
+    <div class="navbar__right">
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang-btn="fr">FR</button>
+        <button class="lang-btn" data-lang-btn="en">EN</button>
+        <button class="lang-btn" data-lang-btn="es">ES</button>
+      </div>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <a href="../" data-i18n="back_to_studio">← Studio</a>
+    <a href="#overview" data-i18n="nav_overview">Présentation</a>
+    <a href="privacy.html" data-i18n="nav_privacy">Confidentialité</a>
+    <a href="terms.html" data-i18n="nav_terms">Conditions</a>
+    <div class="lang-switcher" style="margin-top:1.5rem">
+      <button class="lang-btn" data-lang-btn="fr">FR</button>
+      <button class="lang-btn" data-lang-btn="en">EN</button>
+      <button class="lang-btn" data-lang-btn="es">ES</button>
+    </div>
+  </div>
+
+  <!-- ─── Hero ───────────────────────────────────────────── -->
+  <section id="overview" class="app-hero">
+    <div class="app-hero__orb"></div>
+    <div class="container">
+      <div class="app-hero__inner">
+        <div class="app-hero__info">
+          <div class="app-hero__icon-wrap">
+            <span class="brand-mark brand-mark--lg">📈</span>
+            <span class="app-hero__app-name">StockWatch</span>
+          </div>
+          <h1 class="app-hero__tagline" data-i18n="stockwatch_tagline">Entraîne-toi à investir, sans risque.</h1>
+          <p class="app-hero__subtitle" data-i18n="stockwatch_subtitle">Suivi d'actions & portefeuille virtuel</p>
+          <p class="app-hero__description" data-i18n="stockwatch_description">Suis les marchés, simule des achats dans un portefeuille fictif et reçois des alertes de prix. Un outil éducatif, jamais connecté à ta banque. Tes données restent sur ton appareil.</p>
+
+          <div class="phases-strip">
+            <span class="phase-badge"><span class="phase-dot" style="background:#16A34A"></span><span data-i18n="stockwatch_tag1">Suivi d'actions</span></span>
+            <span class="phase-badge"><span class="phase-dot" style="background:#0EA5E9"></span><span data-i18n="stockwatch_tag2">Portefeuille virtuel</span></span>
+            <span class="phase-badge"><span class="phase-dot" style="background:#D29922"></span><span data-i18n="stockwatch_tag3">Alertes de prix</span></span>
+            <span class="phase-badge"><span class="phase-dot" style="background:#EF4444"></span><span data-i18n="stockwatch_tag4">Actualité</span></span>
+          </div>
+
+          <div class="app-hero__actions" style="margin-top:1.5rem">
+            <span class="soon-badge">
+              <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
+              <span data-i18n="coming_soon">Bientôt sur l'App Store</span>
+            </span>
+          </div>
+
+          <div class="disclaimer-box">
+            <span class="disclaimer-box__icon">⚠️</span>
+            <div class="disclaimer-box__text">
+              <h4 data-i18n="stockwatch_disclaimer_title">Aucun conseil financier</h4>
+              <p data-i18n="stockwatch_disclaimer_desc">StockWatch est un outil éducatif. Les informations affichées ne constituent pas un conseil en investissement. Les marchés comportent des risques.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Features ───────────────────────────────────────── -->
+  <section class="features-section section">
+    <div class="container">
+      <h2 class="section-title fade-up" data-i18n="stockwatch_feat_title">Fonctionnalités</h2>
+      <div class="features-grid">
+        <div class="feature-card fade-up fade-up-delay-1">
+          <div class="feature-card__icon">📈</div>
+          <h3 class="feature-card__title" data-i18n="stockwatch_feat1_title">Suivi des marchés</h3>
+          <p class="feature-card__desc" data-i18n="stockwatch_feat1_desc">Suis tes actions favorites avec des cours en direct et des graphiques clairs sur plusieurs périodes.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-2">
+          <div class="feature-card__icon">💼</div>
+          <h3 class="feature-card__title" data-i18n="stockwatch_feat2_title">Portefeuille virtuel</h3>
+          <p class="feature-card__desc" data-i18n="stockwatch_feat2_desc">Enregistre des achats et ventes simulés et mesure tes performances dans le temps — sans argent réel.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-3">
+          <div class="feature-card__icon">🔔</div>
+          <h3 class="feature-card__title" data-i18n="stockwatch_feat3_title">Alertes de prix</h3>
+          <p class="feature-card__desc" data-i18n="stockwatch_feat3_desc">Définis un seuil et reçois une notification dès qu'une action l'atteint. Toi seul décides du moment.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-1">
+          <div class="feature-card__icon">📰</div>
+          <h3 class="feature-card__title" data-i18n="stockwatch_feat4_title">Actualité boursière</h3>
+          <p class="feature-card__desc" data-i18n="stockwatch_feat4_desc">Reste informé avec les dernières actualités des marchés, directement dans l'app.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-2">
+          <div class="feature-card__icon">🔒</div>
+          <h3 class="feature-card__title" data-i18n="stockwatch_feat5_title">Vie privée</h3>
+          <p class="feature-card__desc" data-i18n="stockwatch_feat5_desc">Ta watchlist, ton portefeuille et tes alertes restent sur ton appareil. Jamais connecté à ta banque.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-3">
+          <div class="feature-card__icon">🌍</div>
+          <h3 class="feature-card__title" data-i18n="stockwatch_feat6_title">9 langues</h3>
+          <p class="feature-card__desc" data-i18n="stockwatch_feat6_desc">Disponible en 9 langues, avec une interface épurée pensée pour les débutants comme les confirmés.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Legal ───────────────────────────────────────────── -->
+  <section class="legal-strip">
+    <div class="container">
+      <div class="legal-strip__inner">
+        <div class="legal-strip__text">
+          <h3 data-i18n="stockwatch_legal_title">Documents légaux</h3>
+          <p data-i18n="stockwatch_legal_desc">Consulte notre politique de confidentialité et nos conditions d'utilisation.</p>
+        </div>
+        <div class="legal-strip__links">
+          <a href="privacy.html" class="legal-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span data-i18n="privacy_link">Politique de confidentialité</span>
+          </a>
+          <a href="terms.html" class="legal-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            <span data-i18n="terms_link">Conditions d'utilisation</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="../"><span class="logo-text">myideapp</span></a>
+          <p data-i18n="footer_tagline">Applications mobiles élégantes et respectueuses de ta vie privée.</p>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_apps">Applications</h4>
+          <a href="../rhythm/">Rhythm</a>
+          <a href="../enjoymeal/">EnjoyMeal</a>
+          <a href="../inhale/">Inhale</a>
+          <a href="../nova/">Nova</a>
+          <a href="../runfree/">RunFree</a>
+          <a href="../hydrome/">HydroMe</a>
+          <a href="../chapter/">Chapter</a>
+          <a href="../stockwatch/">StockWatch</a>
+          <a href="../mycookbook/">MyFoodBook</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_legal">Légal</h4>
+          <a href="privacy.html" data-i18n="privacy_link">Politique de confidentialité</a>
+          <a href="terms.html" data-i18n="terms_link">Conditions d'utilisation</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_contact">Contact</h4>
+          <a href="mailto:contact.myideapp@icloud.com">contact.myideapp@icloud.com</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p data-i18n="footer_rights">© 2026 MyIdeApp. Tous droits réservés.</p>
+        <div class="footer__bottom-links">
+          <a href="privacy.html" data-i18n="privacy_link">Confidentialité</a>
+          <a href="terms.html" data-i18n="terms_link">Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/i18n.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -188,4 +188,38 @@
     <priority>0.4</priority>
   </url>
 
+  <!-- StockWatch -->
+  <url>
+    <loc>https://myideapp.com/stockwatch/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://myideapp.com/stockwatch/privacy.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://myideapp.com/stockwatch/terms.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- MyFoodBook -->
+  <url>
+    <loc>https://myideapp.com/mycookbook/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://myideapp.com/mycookbook/privacy.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://myideapp.com/mycookbook/terms.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
 </urlset>
