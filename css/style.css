@@ -1342,3 +1342,19 @@ body {
 .text-center { text-align: center; }
 .hidden { display: none !important; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+
+/* ─── Screenshots band (app pages) ───────────────────────── */
+.screenshots-band {
+  display: flex; justify-content: center; align-items: flex-start;
+  gap: 22px; flex-wrap: wrap;
+  padding: 72px 24px 84px;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.screenshots-band .phone-frame { width: 208px; }
+@media (max-width: 720px) {
+  .screenshots-band { padding: 48px 16px 56px; gap: 16px; }
+  .screenshots-band .phone-frame { width: 150px; }
+  .screenshots-band .phone-frame:nth-child(2),
+  .screenshots-band .phone-frame:nth-child(3) { transform: none; }
+}
