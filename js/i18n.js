@@ -66,7 +66,6 @@ const TRANSLATIONS = {
     studio_val3_title: 'Inclusivité',
     studio_val3_desc: 'Des apps conçues pour tous les corps, toutes les cultures, disponibles en 9 langues.',
     studio_contact_title: 'Nous contacter',
-    studio_contact_text: 'Une question, une suggestion ou juste pour dire bonjour.',
 
     // Rhythm
     rhythm_chip: 'Santé & Bien-être',
@@ -224,9 +223,46 @@ const TRANSLATIONS = {
     footer_terms_short: 'Conditions',
 
     // Legal page
+    // ── Titres d'onglet et descriptions de référencement ──
+    // {app} est renseigné par l'attribut data-i18n-app de la balise.
+    meta_privacy_title: '{app} — Politique de confidentialité | MyIdeApp',
+    meta_privacy_desc: 'Politique de confidentialité de l\'application {app} : données collectées, finalités, conservation et vos droits (RGPD).',
+    meta_terms_title: '{app} — Conditions d\'utilisation | MyIdeApp',
+    meta_terms_desc: 'Conditions générales d\'utilisation de l\'application {app} : usage du service, abonnements, responsabilités.',
+    meta_home_title: 'MyIdeApp — Studio d\'apps iOS respectueuses de la vie privée',
+    meta_home_desc: 'MyIdeApp est un studio indépendant qui crée des applications iOS élégantes et respectueuses de la vie privée. 12 apps sur l\'App Store.',
+    meta_contact_title: 'Contact — Studio MyIdeApp',
+    meta_contact_desc: 'Contactez le studio MyIdeApp pour toute question sur nos applications iOS disponibles sur l\'App Store.',
+    meta_legal_title: 'MyIdeApp — Mentions légales',
+    meta_legal_desc: 'Mentions légales du site MyIdeApp : éditeur, hébergeur, données personnelles.',
+    meta_rhythm_desc: 'Rhythm est une app de suivi du cycle menstruel positive, inclusive et respectueuse de la vie privée. Vos données restent sur votre appareil.',
+    meta_lunarest_desc: 'LunaRest est une app de sommeil avec sons d\'ambiance, suivi du sommeil et réveil intelligent. Hors ligne, sans compte.',
+    meta_enjoymeal_desc: 'EnjoyMeal est une app de suivi nutritionnel bienveillante. Suis tes calories et macros sans stress, tes données restent chez toi.',
+    meta_inhale_desc: 'Inhale est une app de respiration guidée et de pleine conscience. Techniques validées par la science, sans collecte de données.',
+    meta_runfree_desc: 'RunFree est un tracker de course GPS respectueux de la vie privée. Pas de cloud, pas de réseau social — juste toi et tes routes.',
+    meta_nova_desc: 'Nova t\'aide à suivre tes vaccinations, dépistages IST et activité intime. Toutes tes données restent sur ton appareil.',
+    meta_mantrame_desc: 'MantraMe t\'offre une affirmation puissante par jour en 5 thèmes : amour de soi, confiance, calme, gratitude et énergie.',
+    meta_budgetbrief_desc: 'MyBudgetBrief : suis tes dépenses en quelques secondes, fixe un budget par catégorie et visualise tes progrès. Sans compte bancaire.',
+    meta_hydrome_desc: 'HydroMe : suis ton hydratation quotidienne sans effort. Anneau de progression, séries et rappels intelligents.',
+    meta_chapter_desc: 'Chapter est un carnet de dating privé pour noter tes rencontres, tes ressentis et tes histoires. Tes données restent sur ton appareil.',
+    meta_stockwatch_desc: 'StockWatch : suis les marchés, entraîne-toi avec un portefeuille virtuel et reçois des alertes de prix. Outil éducatif, jamais connecté à ta banque.',
+    meta_myfoodbook_desc: 'MyFoodBook : note tes recettes, organise-les par tags, retrouve tes favorites. Carnet de cuisine privé et hors ligne.',
+    // ── Page Contact ──
+    back: '← Retour',
+    contact_title: 'Nous contacter',
+    contact_subtitle: 'Une question, un bug, une suggestion ? On vous répond sous 48h.',
+    contact_name: 'Nom',
+    contact_name_ph: 'Votre nom',
+    contact_email: 'Email',
+    contact_email_ph: 'votre@email.com',
+    contact_app: 'Application concernée',
+    contact_app_placeholder: 'Choisir une app...',
+    contact_app_other: 'Autre / Général',
+    contact_message: 'Message',
+    contact_send: 'Envoyer le message',
+    contact_note: "Votre messagerie s'ouvrira avec le message pré-rempli.",
     legal_back: '← Retour',
     legal_updated: 'Dernière mise à jour',
-    legal_available: 'Disponible en',
 
     // Footer
     footer_tagline: 'Applications mobiles élégantes et respectueuses de ta vie privée.',
@@ -234,19 +270,8 @@ const TRANSLATIONS = {
     footer_legal: 'Légal',
     footer_contact: 'Contact',
     footer_rights: '© 2026 MyIdeApp. Tous droits réservés.',
-    footer_privacy_rhythm: 'Confidentialité (Rhythm)',
-    footer_terms_rhythm: 'Conditions (Rhythm)',
-    footer_privacy_lunarest: 'Confidentialité (LunaRest)',
-    footer_terms_lunarest: 'Conditions (LunaRest)',
-    footer_privacy_enjoymeal: 'Confidentialité (EnjoyMeal)',
-    footer_terms_enjoymeal: 'Conditions (EnjoyMeal)',
-    footer_privacy_inhale: 'Confidentialité (Inhale)',
-    footer_terms_inhale: 'Conditions (Inhale)',
-    footer_privacy_hydrome: 'Confidentialité (HydroMe)',
-    footer_terms_hydrome: 'Conditions (HydroMe)',
     hydrome_tagline: 'Restez hydraté, chaque jour.',
     hydrome_description: "Tracker d'hydratation minimaliste et privacy-first. Un tap pour logger, un anneau pour progresser. Vos données restent sur votre appareil — toujours.",
-    hydrome_coming_soon: 'Bientôt sur l\'App Store',
     hydrome_features_title: 'Simple. Beau. Efficace.',
     hydrome_f1_title: 'Log en 1 tap', hydrome_f1_desc: 'Boutons rapides +200ml, +350ml, +500ml.',
     hydrome_f2_title: 'Streak quotidien', hydrome_f2_desc: 'Atteignez votre objectif chaque jour pour maintenir votre série.',
@@ -261,7 +286,6 @@ const TRANSLATIONS = {
     mantrame_tagline: 'Une affirmation par jour.',
     mantrame_description: "Commencez chaque journée avec intention. MantraMe vous offre une affirmation puissante par jour, à travers cinq thèmes — Amour de soi, Confiance, Calme, Gratitude et Force. Minimaliste, hors-ligne, privacy-first. Vos données restent sur votre appareil.",
     mantrame_download: 'Télécharger sur l\'App Store',
-    mantrame_card_chip: 'Amour de soi',
     mantrame_features_title: 'Doux. Intime. Quotidien.',
     mantrame_f1_title: 'Une affirmation par jour',
     mantrame_f1_desc: 'Une seule phrase, plein écran, choisie pour la journée. Pas de surcharge, juste l\'essentiel.',
@@ -340,7 +364,7 @@ const TRANSLATIONS = {
     nav_terms: 'Terms',
 
     studio_badge: 'App Studio',
-    studio_tagline: 'Crafting apps people love.',
+    studio_tagline: 'Apps crafted with care.',
     studio_description: "MyIdeApp is an independent studio building elegant, inclusive, privacy-first mobile apps.",
     studio_apps_title: 'Our Apps',
     studio_apps_subtitle: '12 apps, one obsession: experiences that truly matter.',
@@ -384,7 +408,6 @@ const TRANSLATIONS = {
     studio_val3_title: 'Inclusive',
     studio_val3_desc: 'Apps designed for all bodies, all cultures, available in 9 languages.',
     studio_contact_title: 'Get in touch',
-    studio_contact_text: 'A question, a suggestion, or just to say hello.',
 
     rhythm_chip: 'Health & Wellness',
     rhythm_tagline: 'Know your rhythm.',
@@ -539,28 +562,53 @@ const TRANSLATIONS = {
     footer_privacy_short: 'Privacy',
     footer_terms_short: 'Terms',
 
+    // ── Tab titles and search-engine descriptions ──
+    meta_privacy_title: '{app} — Privacy Policy | MyIdeApp',
+    meta_privacy_desc: 'Privacy policy for the {app} app: data collected, purposes, retention and your rights (GDPR).',
+    meta_terms_title: '{app} — Terms of Service | MyIdeApp',
+    meta_terms_desc: 'Terms of service for the {app} app: use of the service, subscriptions, liability.',
+    meta_home_title: 'MyIdeApp — Privacy-first iOS app studio',
+    meta_home_desc: 'MyIdeApp is an independent studio building elegant, privacy-first iOS apps. 12 apps on the App Store.',
+    meta_contact_title: 'Contact — MyIdeApp Studio',
+    meta_contact_desc: 'Get in touch with MyIdeApp Studio about any of our iOS apps on the App Store.',
+    meta_legal_title: 'MyIdeApp — Legal Notice',
+    meta_legal_desc: 'Legal notice for the MyIdeApp website: publisher, host, personal data.',
+    meta_rhythm_desc: 'Rhythm is a positive, inclusive and privacy-respecting period tracker. Your data never leaves your device.',
+    meta_lunarest_desc: 'LunaRest is a sleep app with ambient sounds, sleep tracking and a smart alarm. Offline, no account needed.',
+    meta_enjoymeal_desc: 'EnjoyMeal is a gentle nutrition tracker. Follow your calories and macros without stress — your data stays with you.',
+    meta_inhale_desc: 'Inhale is a guided breathing and mindfulness app. Science-backed techniques, no data collection.',
+    meta_runfree_desc: 'RunFree is a privacy-first GPS run tracker. No cloud, no social feed — just you and your routes.',
+    meta_nova_desc: 'Nova helps you track vaccinations, STI screenings and intimate activity. Everything stays on your device.',
+    meta_mantrame_desc: 'MantraMe gives you one powerful affirmation a day across 5 themes: self-love, confidence, calm, gratitude and energy.',
+    meta_budgetbrief_desc: 'MyBudgetBrief: log expenses in seconds, set a budget per category and watch your progress. No bank account required.',
+    meta_hydrome_desc: 'HydroMe: track your daily hydration effortlessly. Progress ring, streaks and smart reminders.',
+    meta_chapter_desc: 'Chapter is a private dating journal for your dates, feelings and stories. Your entries stay on your device.',
+    meta_stockwatch_desc: 'StockWatch: follow the markets, practise with a virtual portfolio and get price alerts. An educational tool, never linked to your bank.',
+    meta_myfoodbook_desc: 'MyFoodBook: save your recipes, organise them with tags and find your favourites. A private, offline cookbook.',
+    // ── Contact page ──
+    back: '← Back',
+    contact_title: 'Get in touch',
+    contact_subtitle: 'A question, a bug, a suggestion? We reply within 48 hours.',
+    contact_name: 'Name',
+    contact_name_ph: 'Your name',
+    contact_email: 'Email',
+    contact_email_ph: 'your@email.com',
+    contact_app: 'Which app?',
+    contact_app_placeholder: 'Choose an app...',
+    contact_app_other: 'Other / General',
+    contact_message: 'Message',
+    contact_send: 'Send message',
+    contact_note: 'Your mail app will open with the message pre-filled.',
     legal_back: '← Back',
     legal_updated: 'Last updated',
-    legal_available: 'Available in',
 
     footer_tagline: 'Elegant mobile apps that respect your privacy.',
     footer_apps: 'Apps',
     footer_legal: 'Legal',
     footer_contact: 'Contact',
     footer_rights: '© 2026 MyIdeApp. All rights reserved.',
-    footer_privacy_rhythm: 'Privacy (Rhythm)',
-    footer_terms_rhythm: 'Terms (Rhythm)',
-    footer_privacy_lunarest: 'Privacy (LunaRest)',
-    footer_terms_lunarest: 'Terms (LunaRest)',
-    footer_privacy_enjoymeal: 'Privacy (EnjoyMeal)',
-    footer_terms_enjoymeal: 'Terms (EnjoyMeal)',
-    footer_privacy_inhale: 'Privacy (Inhale)',
-    footer_terms_inhale: 'Terms (Inhale)',
-    footer_privacy_hydrome: 'Privacy (HydroMe)',
-    footer_terms_hydrome: 'Terms (HydroMe)',
     hydrome_tagline: 'Stay hydrated, every day.',
     hydrome_description: 'Minimalist, privacy-first hydration tracker. One tap to log, one ring to track progress. Your data stays on your device — always.',
-    hydrome_coming_soon: 'Coming Soon on the App Store',
     hydrome_features_title: 'Simple. Beautiful. Effective.',
     hydrome_f1_title: 'Log in 1 tap', hydrome_f1_desc: 'Quick buttons +200ml, +350ml, +500ml.',
     hydrome_f2_title: 'Daily streak', hydrome_f2_desc: 'Hit your goal every day to keep your streak alive.',
@@ -575,7 +623,6 @@ const TRANSLATIONS = {
     mantrame_tagline: 'One affirmation a day.',
     mantrame_description: 'Start each day with intention. MantraMe gives you one powerful affirmation per day across five themes — Self-Love, Confidence, Calm, Gratitude and Strength. Minimalist, offline, privacy-first. Your data stays on your device.',
     mantrame_download: 'Download on the App Store',
-    mantrame_card_chip: 'Self-Love',
     mantrame_features_title: 'Gentle. Intimate. Daily.',
     mantrame_f1_title: 'One affirmation a day',
     mantrame_f1_desc: 'A single sentence, full screen, chosen for the day. No overload — just the essential.',
@@ -654,7 +701,7 @@ const TRANSLATIONS = {
     nav_terms: 'Términos',
 
     studio_badge: 'App Studio',
-    studio_tagline: 'Apps que la gente ama.',
+    studio_tagline: 'Apps hechas con esmero.',
     studio_description: "MyIdeApp es un estudio independiente que crea aplicaciones móviles elegantes, inclusivas y respetuosas con la privacidad.",
     studio_apps_title: 'Nuestras Apps',
     studio_apps_subtitle: '12 apps, una obsesión: experiencias que realmente importan.',
@@ -698,7 +745,6 @@ const TRANSLATIONS = {
     studio_val3_title: 'Inclusividad',
     studio_val3_desc: 'Apps diseñadas para todos los cuerpos y culturas, disponibles en 9 idiomas.',
     studio_contact_title: 'Contáctanos',
-    studio_contact_text: 'Una pregunta, una sugerencia o simplemente para saludar.',
 
     rhythm_chip: 'Salud & Bienestar',
     rhythm_tagline: 'Conoce tu ritmo.',
@@ -853,28 +899,53 @@ const TRANSLATIONS = {
     footer_privacy_short: 'Privacidad',
     footer_terms_short: 'Términos',
 
+    // ── Títulos de pestaña y descripciones para buscadores ──
+    meta_privacy_title: '{app} — Política de privacidad | MyIdeApp',
+    meta_privacy_desc: 'Política de privacidad de la app {app}: datos recopilados, finalidades, conservación y tus derechos (RGPD).',
+    meta_terms_title: '{app} — Términos de servicio | MyIdeApp',
+    meta_terms_desc: 'Términos de servicio de la app {app}: uso del servicio, suscripciones y responsabilidades.',
+    meta_home_title: 'MyIdeApp — Estudio de apps iOS que respetan tu privacidad',
+    meta_home_desc: 'MyIdeApp es un estudio independiente que crea apps iOS elegantes y respetuosas con la privacidad. 12 apps en la App Store.',
+    meta_contact_title: 'Contacto — Estudio MyIdeApp',
+    meta_contact_desc: 'Contacta con el estudio MyIdeApp para cualquier duda sobre nuestras apps iOS en la App Store.',
+    meta_legal_title: 'MyIdeApp — Aviso legal',
+    meta_legal_desc: 'Aviso legal del sitio MyIdeApp: editor, alojamiento y datos personales.',
+    meta_rhythm_desc: 'Rhythm es una app de seguimiento del ciclo menstrual positiva, inclusiva y respetuosa con tu privacidad. Tus datos no salen de tu dispositivo.',
+    meta_lunarest_desc: 'LunaRest es una app de sueño con sonidos ambientales, seguimiento del sueño y despertador inteligente. Sin conexión ni cuenta.',
+    meta_enjoymeal_desc: 'EnjoyMeal es un diario de nutrición amable. Sigue tus calorías y macros sin estrés; tus datos se quedan contigo.',
+    meta_inhale_desc: 'Inhale es una app de respiración guiada y atención plena. Técnicas avaladas por la ciencia, sin recopilar datos.',
+    meta_runfree_desc: 'RunFree es un rastreador GPS de carrera que respeta tu privacidad. Sin nube ni red social: solo tú y tus rutas.',
+    meta_nova_desc: 'Nova te ayuda a seguir vacunas, pruebas de ITS y actividad íntima. Todo permanece en tu dispositivo.',
+    meta_mantrame_desc: 'MantraMe te da una afirmación poderosa al día en 5 temas: amor propio, confianza, calma, gratitud y energía.',
+    meta_budgetbrief_desc: 'MyBudgetBrief: registra tus gastos en segundos, fija un presupuesto por categoría y sigue tu progreso. Sin cuenta bancaria.',
+    meta_hydrome_desc: 'HydroMe: sigue tu hidratación diaria sin esfuerzo. Anillo de progreso, rachas y recordatorios inteligentes.',
+    meta_chapter_desc: 'Chapter es un diario de citas privado para tus encuentros, sensaciones e historias. Tus notas se quedan en tu dispositivo.',
+    meta_stockwatch_desc: 'StockWatch: sigue los mercados, practica con una cartera virtual y recibe alertas de precio. Herramienta educativa, nunca conectada a tu banco.',
+    meta_myfoodbook_desc: 'MyFoodBook: guarda tus recetas, organízalas con etiquetas y encuentra tus favoritas. Un recetario privado y sin conexión.',
+    // ── Página de contacto ──
+    back: '← Volver',
+    contact_title: 'Contáctanos',
+    contact_subtitle: '¿Una pregunta, un error, una sugerencia? Respondemos en 48 h.',
+    contact_name: 'Nombre',
+    contact_name_ph: 'Tu nombre',
+    contact_email: 'Correo electrónico',
+    contact_email_ph: 'tu@email.com',
+    contact_app: 'Aplicación',
+    contact_app_placeholder: 'Elige una app...',
+    contact_app_other: 'Otra / General',
+    contact_message: 'Mensaje',
+    contact_send: 'Enviar mensaje',
+    contact_note: 'Se abrirá tu app de correo con el mensaje ya redactado.',
     legal_back: '← Volver',
     legal_updated: 'Última actualización',
-    legal_available: 'Disponible en',
 
     footer_tagline: 'Aplicaciones móviles elegantes que respetan tu privacidad.',
     footer_apps: 'Apps',
     footer_legal: 'Legal',
     footer_contact: 'Contacto',
     footer_rights: '© 2026 MyIdeApp. Todos los derechos reservados.',
-    footer_privacy_rhythm: 'Privacidad (Rhythm)',
-    footer_terms_rhythm: 'Términos (Rhythm)',
-    footer_privacy_lunarest: 'Privacidad (LunaRest)',
-    footer_terms_lunarest: 'Términos (LunaRest)',
-    footer_privacy_enjoymeal: 'Privacidad (EnjoyMeal)',
-    footer_terms_enjoymeal: 'Términos (EnjoyMeal)',
-    footer_privacy_inhale: 'Privacidad (Inhale)',
-    footer_terms_inhale: 'Términos (Inhale)',
-    footer_privacy_hydrome: 'Privacidad (HydroMe)',
-    footer_terms_hydrome: 'Términos (HydroMe)',
     hydrome_tagline: 'Mantente hidratado, cada día.',
     hydrome_description: 'Rastreador de hidratación minimalista y privacy-first. Un toque para registrar, un anillo para progresar. Tus datos permanecen en tu dispositivo.',
-    hydrome_coming_soon: 'Próximamente en el App Store',
     hydrome_features_title: 'Simple. Bonito. Eficaz.',
     hydrome_f1_title: 'Registra en 1 toque', hydrome_f1_desc: 'Botones rápidos +200ml, +350ml, +500ml.',
     hydrome_f2_title: 'Racha diaria', hydrome_f2_desc: 'Alcanza tu objetivo cada día para mantener tu racha.',
@@ -889,7 +960,6 @@ const TRANSLATIONS = {
     mantrame_tagline: 'Una afirmación al día.',
     mantrame_description: 'Empieza cada día con intención. MantraMe te ofrece una afirmación poderosa al día en cinco temas — Amor propio, Confianza, Calma, Gratitud y Fortaleza. Minimalista, sin conexión, centrada en la privacidad. Tus datos permanecen en tu dispositivo.',
     mantrame_download: 'Descargar en el App Store',
-    mantrame_card_chip: 'Amor propio',
     mantrame_features_title: 'Suave. Íntimo. Diario.',
     mantrame_f1_title: 'Una afirmación al día',
     mantrame_f1_desc: 'Una sola frase, a pantalla completa, elegida para el día. Sin sobrecarga, solo lo esencial.',
@@ -969,6 +1039,15 @@ const I18n = {
     this._bindButtons();
   },
 
+  /* Résout une clé, en remplaçant {app} par le nom porté par l'élément.
+     Évite de dupliquer un titre de page pour chacune des douze apps. */
+  t(key, lang = this.current, vars = null) {
+    const raw = TRANSLATIONS[lang]?.[key];
+    if (raw === undefined) return undefined;
+    if (!vars) return raw;
+    return raw.replace(/\{(\w+)\}/g, (m, name) => vars[name] ?? m);
+  },
+
   apply(lang) {
     if (!TRANSLATIONS[lang]) return;
     this.current = lang;
@@ -976,19 +1055,51 @@ const I18n = {
     document.documentElement.lang = lang;
 
     document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.dataset.i18n;
-      const val = TRANSLATIONS[lang][key];
+      const val = this.t(el.dataset.i18n, lang, el.dataset.i18nApp ? { app: el.dataset.i18nApp } : null);
       if (val !== undefined) el.textContent = val;
     });
 
     document.querySelectorAll('[data-i18n-href]').forEach(el => {
-      const key = el.dataset.i18nHref;
-      const val = TRANSLATIONS[lang][key];
+      const val = this.t(el.dataset.i18nHref, lang);
       if (val !== undefined) el.setAttribute('href', val);
+    });
+
+    /* Balises <meta> : le titre d'onglet, le référencement et les aperçus de
+       partage restaient en français quelle que soit la langue choisie. */
+    document.querySelectorAll('[data-i18n-content]').forEach(el => {
+      const val = this.t(el.dataset.i18nContent, lang, el.dataset.i18nApp ? { app: el.dataset.i18nApp } : null);
+      if (val !== undefined) el.setAttribute('content', val);
+    });
+
+    /* Champs de formulaire : le texte d'invite est un attribut, pas un
+       contenu — il échappait à la traduction. */
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const val = this.t(el.dataset.i18nPlaceholder, lang);
+      if (val !== undefined) el.setAttribute('placeholder', val);
     });
 
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.langBtn === lang);
+    });
+
+    /* Pages légales : le corps du document vit dans trois blocs figés, hors du
+       dictionnaire. Sans ce rappel, changer de langue dans l'en-tête traduisait
+       le menu et le pied de page mais laissait la politique en français. */
+    this._syncLegal(lang);
+  },
+
+  /* Affiche le bloc légal de la langue demandée, avec repli sur le premier
+     disponible — une page traduite en deux langues seulement reste lisible. */
+  _syncLegal(lang) {
+    const panels = document.querySelectorAll('.legal-content');
+    if (!panels.length) return;
+
+    const available = [...panels].map(p => p.dataset.legalContent);
+    const shown = available.includes(lang) ? lang : available[0];
+
+    panels.forEach(p => p.classList.toggle('active', p.dataset.legalContent === shown));
+    document.querySelectorAll('.legal-tab').forEach(t => {
+      t.classList.toggle('active', t.dataset.legalTab === shown);
     });
   },
 

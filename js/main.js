@@ -64,34 +64,18 @@ function initLegalTabs() {
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      const lang = tab.dataset.legalTab;
+      // Un onglet légal change la langue de toute la page : garder deux
+      // sélecteurs désynchronisés (en-tête en anglais, corps en français)
+      // était précisément le défaut à corriger.
+      I18n.apply(tab.dataset.legalTab);
 
-      // Update tabs
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-
-      // Update content panels
-      document.querySelectorAll('.legal-content').forEach(c => {
-        c.classList.toggle('active', c.dataset.legalContent === lang);
-      });
-
-      // Scroll to top of content
       const body = document.querySelector('.legal-body');
       if (body) body.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 
-  // Auto-select based on current language
-  const currentLang = I18n.current;
-  const matchingTab = document.querySelector(`[data-legal-tab="${currentLang}"]`);
-  if (matchingTab) matchingTab.click();
-  else {
-    // Default to first tab if language not available
-    const firstTab = document.querySelector('.legal-tab');
-    if (firstTab) firstTab.classList.add('active');
-    const firstContent = document.querySelector('.legal-content');
-    if (firstContent) firstContent.classList.add('active');
-  }
+  // L'affichage initial est posé par I18n.apply(), appelé avant nous : rien à
+  // déclencher ici. Simuler un clic ferait défiler la page dès son ouverture.
 }
 
 /* ─── Carousel drag-to-scroll ────────────────────────────── */
