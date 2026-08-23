@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="meta_contact_title">Contact — MyIdeApp Studio</title>
-  <meta name="description" data-i18n-content="meta_contact_desc" content="Contactez le studio MyIdeApp pour toute question sur nos 10 applications iOS disponibles sur l'App Store.">
+  <meta name="description" data-i18n-content="meta_contact_desc" content="Contactez le studio MyIdeApp pour toute question sur nos 12 applications disponibles sur l'App Store.">
   <meta name="robots" content="index, follow">
   <meta property="og:title" data-i18n-content="meta_contact_title" content="Contact — MyIdeApp">
   <meta property="og:description" data-i18n-content="meta_contact_desc" content="Contactez le studio MyIdeApp pour toute question sur nos applications iOS.">
@@ -195,6 +195,18 @@
     </div>
   </main>
 
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom">
+        <p>© 2026 MyIdeApp — Lucas Obadia. Tous droits réservés.</p>
+        <div class="footer__bottom-links">
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="index.html">Studio</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script>
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -263,10 +275,10 @@
         const key = el.getAttribute('data-i18n');
         if (t[key]) el.textContent = t[key];
       });
-      localStorage.setItem('lang', lang);
+      localStorage.setItem('mia_lang', lang);
     }
 
-    const savedLang = localStorage.getItem('lang') || navigator.language.slice(0,2) || 'fr';
+    const savedLang = localStorage.getItem('mia_lang') || navigator.language.slice(0,2) || 'fr';
     applyLang(['fr','en','es'].includes(savedLang) ? savedLang : 'fr');
   </script>
 </body>

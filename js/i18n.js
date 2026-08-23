@@ -11,7 +11,8 @@ const TRANSLATIONS = {
     follow_instagram: "Suivre sur Instagram",
     coming_soon: 'Bientôt disponible',
     live_on_appstore: 'App Store',
-    discover: 'Découvrir →',
+    playstore_soon: 'Bientôt sur Google Play',
+    discover: 'Découvrir',
     privacy_link: 'Politique de confidentialité',
     terms_link: "Conditions d'utilisation",
 
@@ -263,6 +264,7 @@ const TRANSLATIONS = {
     contact_note: "Votre messagerie s'ouvrira avec le message pré-rempli.",
     legal_back: '← Retour',
     legal_updated: 'Dernière mise à jour',
+    delete_account_title: 'Supprimer mon compte et mes données',
 
     // Footer
     footer_tagline: 'Applications mobiles élégantes et respectueuses de ta vie privée.',
@@ -355,7 +357,8 @@ const TRANSLATIONS = {
     follow_instagram: 'Follow on Instagram',
     coming_soon: 'Coming Soon',
     live_on_appstore: 'App Store',
-    discover: 'Explore →',
+    playstore_soon: 'Coming soon on Google Play',
+    discover: 'Explore',
     privacy_link: 'Privacy Policy',
     terms_link: 'Terms of Service',
 
@@ -601,6 +604,7 @@ const TRANSLATIONS = {
     contact_note: 'Your mail app will open with the message pre-filled.',
     legal_back: '← Back',
     legal_updated: 'Last updated',
+    delete_account_title: 'Delete my account and data',
 
     footer_tagline: 'Elegant mobile apps that respect your privacy.',
     footer_apps: 'Apps',
@@ -692,7 +696,8 @@ const TRANSLATIONS = {
     follow_instagram: 'Seguir en Instagram',
     coming_soon: 'Próximamente',
     live_on_appstore: 'App Store',
-    discover: 'Explorar →',
+    playstore_soon: 'Pronto en Google Play',
+    discover: 'Explorar',
     privacy_link: 'Política de privacidad',
     terms_link: 'Términos de servicio',
 
@@ -938,6 +943,7 @@ const TRANSLATIONS = {
     contact_note: 'Se abrirá tu app de correo con el mensaje ya redactado.',
     legal_back: '← Volver',
     legal_updated: 'Última actualización',
+    delete_account_title: 'Eliminar mi cuenta y mis datos',
 
     footer_tagline: 'Aplicaciones móviles elegantes que respetan tu privacidad.',
     footer_apps: 'Apps',
