@@ -1084,6 +1084,21 @@ const I18n = {
       if (val !== undefined) el.setAttribute('placeholder', val);
     });
 
+    /* Captures d'écran : les textes de la page changeaient de langue, mais les
+       images montraient une app en anglais quelle que soit la langue choisie —
+       un visiteur français voyait « Recipes / Favorites / Settings ». Les
+       captures existent dans les dix langues (générées par Fastlane pour les
+       stores) ; on permute simplement le segment de locale du chemin. */
+    const SHOT_LOCALE = { fr: 'fr-FR', en: 'en-US', es: 'es-ES' };
+    const shotLocale = SHOT_LOCALE[lang];
+    if (shotLocale) {
+      document.querySelectorAll('img[data-i18n-shot]').forEach(img => {
+        const next = img.getAttribute('src')
+          .replace(/screenshots\/[A-Za-z-]+\//, 'screenshots/' + shotLocale + '/');
+        if (next !== img.getAttribute('src')) img.setAttribute('src', next);
+      });
+    }
+
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.langBtn === lang);
     });
