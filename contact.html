@@ -210,6 +210,12 @@
   </footer>
 
   <script>
+    // Présélection de l'app depuis l'URL (?app=Nova), utilisée par les URL de support des fiches App Store.
+    (function () {
+      const wanted = new URLSearchParams(location.search).get('app');
+      const select = document.getElementById('app');
+      if (wanted && [...select.options].some(o => o.value === wanted)) select.value = wanted;
+    })();
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
 
