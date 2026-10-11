@@ -36,6 +36,9 @@ APPS = {
 }
 LANGUAGES = ["en", "fr", "de", "es", "it", "pt", "hi", "ar"]
 START, END = "<!-- llm-en:start -->", "<!-- llm-en:end -->"
+_facts_path = SITE / "data" / "apps.json"
+FACTS = ({a["slug"]: a for a in json.loads(_facts_path.read_text(encoding="utf-8"))["apps"]}
+         if _facts_path.exists() else {})
 
 
 def read_meta(app_dir: str, locale: str, field: str) -> str:
@@ -153,6 +156,16 @@ def main():
             llms.append(f"- App Store: {store_url}")
         if features:
             llms.append("- Key features: " + "; ".join(features[:8]))
+        fact = FACTS.get(site_dir)
+        if fact:
+            pr = fact["price"]
+            llms.append("- Price: free to download; " + (
+                f"optional Premium ${pr['monthly_usd']}/month or ${pr['annual_usd']}/year (France €{pr['monthly_eur'].replace(',', '.')}/€{pr['annual_eur'].replace(',', '.')})"
+                if fact.get("premium_available", True) else "ad-free Premium coming soon"))
+            llms.append("- Free: " + fact["free"]["en"])
+            if fact.get("premium_available", True):
+                llms.append("- Premium adds: " + fact["premium"]["en"])
+            llms.append(f"- Data: stored on device only, no account required. iOS {fact['ios_min']}+. 9 languages.")
         llms += [f"- Privacy policy: https://myideapp.com/{site_dir}/privacy.html", ""]
         print(f"ok {site_dir}: {len(features)} features")
 

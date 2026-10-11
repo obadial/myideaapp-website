@@ -1,0 +1,202 @@
+{
+  "_meta": {
+    "updated": "2026-10-11",
+    "sources": "Prix : API App Store Connect (subscriptionPrices, territoires FRA et USA). Fonctions : descriptions App Store en-US. Stockage et compte : code des apps (Drift local, connexion anonyme Firebase).",
+    "note": "Source unique des encadrés « En bref » et des données structurées. Régénérer avec scripts/build_facts.py."
+  },
+  "categories": {
+    "health": {"fr": "Santé", "en": "Health", "es": "Salud"},
+    "sport": {"fr": "Sport", "en": "Sport", "es": "Deporte"},
+    "food": {"fr": "Cuisine & nutrition", "en": "Food & nutrition", "es": "Cocina y nutrición"},
+    "finance": {"fr": "Finances", "en": "Finance", "es": "Finanzas"},
+    "wellbeing": {"fr": "Bien-être & sommeil", "en": "Wellbeing & sleep", "es": "Bienestar y sueño"},
+    "relationships": {"fr": "Relations", "en": "Relationships", "es": "Relaciones"}
+  },
+  "apps": [
+    {
+      "slug": "rhythm", "name": "Rhythm", "category": "health", "ios_min": "15.0", "apple_health": true,
+      "price": {"monthly_eur": "3,99", "annual_eur": "29,99", "monthly_usd": "3.99", "annual_usd": "24.99"},
+      "free": {
+        "fr": "Prédiction des règles et de l'ovulation, 4 phases du cycle, journal quotidien (flux, douleur, symptômes, humeur), rappels de médicaments, widget, export calendrier",
+        "en": "Period and ovulation predictions, 4 cycle phases, daily log (flow, pain, symptoms, mood), medication reminders, widget, calendar export",
+        "es": "Predicción de regla y ovulación, 4 fases del ciclo, diario (flujo, dolor, síntomas, ánimo), recordatorios de medicación, widget, exportación al calendario"
+      },
+      "premium": {
+        "fr": "Analyses avancées par phase, export PDF pour le médecin, sans publicité",
+        "en": "Advanced insights by cycle phase, PDF export for your doctor, no ads",
+        "es": "Análisis avanzados por fase, exportación PDF para tu médico, sin anuncios"
+      }
+    },
+    {
+      "slug": "runfree", "name": "RunFree", "category": "sport", "ios_min": "15.0", "apple_health": true,
+      "price": {"monthly_eur": "3,99", "annual_eur": "19,99", "monthly_usd": "3.99", "annual_usd": "17.99"},
+      "free": {
+        "fr": "Suivi GPS (allure, distance, carte), historique complet, 5 types de séance, plan 5 km débutant (8 semaines), records 1 et 5 km, calendrier",
+        "en": "GPS tracking (pace, distance, map), full history, 5 run types, 8-week beginner 5k plan, 1k and 5k records, training calendar",
+        "es": "Seguimiento GPS (ritmo, distancia, mapa), historial completo, 5 tipos de sesión, plan 5 km principiante (8 semanas), récords de 1 y 5 km, calendario"
+      },
+      "premium": {
+        "fr": "4 plans (5 km à marathon, jusqu'à 16 semaines), plan sur mesure, statistiques avancées, zones d'allure, records jusqu'au marathon, sans publicité",
+        "en": "4 plans (5k to marathon, up to 16 weeks), custom plan builder, advanced stats, pace zones, records up to the marathon, no ads",
+        "es": "4 planes (5 km a maratón, hasta 16 semanas), plan a medida, estadísticas avanzadas, zonas de ritmo, récords hasta el maratón, sin anuncios"
+      }
+    },
+    {
+      "slug": "myfoodbook", "name": "MyFoodBook", "category": "food", "ios_min": "15.0", "apple_health": false,
+      "premium_available": false,
+      "price": {"monthly_eur": "0,99", "annual_eur": "5,99", "monthly_usd": "0.99", "annual_usd": "4.99"},
+      "free": {
+        "fr": "Toutes les fonctions : recettes illimitées avec photos, ingrédients et étapes, tags, favoris, recherche, mode sombre, hors ligne",
+        "en": "Every feature: unlimited recipes with photos, ingredients and steps, tags, favorites, search, dark mode, offline",
+        "es": "Todas las funciones: recetas ilimitadas con fotos, ingredientes y pasos, etiquetas, favoritos, búsqueda, modo oscuro, sin conexión"
+      },
+      "premium": {
+        "fr": "Uniquement la suppression des publicités",
+        "en": "Only removes ads",
+        "es": "Solo elimina los anuncios"
+      }
+    },
+    {
+      "slug": "hydrome", "name": "HydroMe", "category": "health", "ios_min": "16.0", "apple_health": true,
+      "premium_available": false,
+      "price": {"monthly_eur": "0,99", "annual_eur": "9,99", "monthly_usd": "0.99", "annual_usd": "8.99"},
+      "free": {
+        "fr": "Ajout d'une boisson en un geste, objectif quotidien et série, 6 boissons avec coefficient d'hydratation, historique de la semaine, 3 rappels, ml ou oz",
+        "en": "One-tap drink logging, daily goal and streak, 6 drink types with hydration coefficients, weekly history, 3 reminders, ml or oz",
+        "es": "Registro de bebidas con un toque, objetivo diario y racha, 6 bebidas con coeficiente de hidratación, historial semanal, 3 recordatorios, ml u oz"
+      },
+      "premium": {
+        "fr": "Statistiques sur 30 jours, widget, synchronisation Apple Santé, jusqu'à 5 rappels intelligents, sans publicité",
+        "en": "30-day statistics, widget, Apple Health sync, up to 5 smart reminders, no ads",
+        "es": "Estadísticas de 30 días, widget, sincronización con Apple Salud, hasta 5 recordatorios inteligentes, sin anuncios"
+      }
+    },
+    {
+      "slug": "stockwatch", "name": "StockWatch", "category": "finance", "ios_min": "15.0", "apple_health": false,
+      "price": {"monthly_eur": "3,99", "annual_eur": "24,99", "monthly_usd": "3.99", "annual_usd": "24.99"},
+      "free": {
+        "fr": "Liste de suivi (10 actions) avec cours en direct, 1 portefeuille virtuel, 3 alertes de prix, comparaison au S&P 500, heatmap des secteurs, simulateur DCA, lexique, actualités",
+        "en": "Watchlist (10 stocks) with live prices, 1 virtual portfolio, 3 price alerts, S&P 500 comparison, sector heatmap, DCA simulator, glossary, news",
+        "es": "Lista de seguimiento (10 acciones) con cotizaciones en directo, 1 cartera virtual, 3 alertas de precio, comparación con el S&P 500, mapa de sectores, simulador DCA, glosario, noticias"
+      },
+      "premium": {
+        "fr": "Liste de suivi et alertes illimitées, portefeuilles multiples, sans publicité",
+        "en": "Unlimited watchlist and alerts, multiple portfolios, no ads",
+        "es": "Lista y alertas ilimitadas, varias carteras, sin anuncios"
+      },
+      "extra": {
+        "fr": "Outil pédagogique : aucun ordre réel, jamais connecté à une banque ou un courtier, pas de conseil financier.",
+        "en": "Educational tool: no real trades, never connected to a bank or broker, not financial advice.",
+        "es": "Herramienta educativa: sin operaciones reales, nunca conectada a un banco o bróker, no es asesoramiento financiero."
+      }
+    },
+    {
+      "slug": "enjoymeal", "name": "EnjoyMeal", "category": "food", "ios_min": "16.0", "apple_health": false,
+      "price": {"monthly_eur": "4,99", "annual_eur": "29,99", "monthly_usd": "3.99", "annual_usd": "24.99"},
+      "free": {
+        "fr": "Journal des repas, recherche Open Food Facts et scan de codes-barres, anneau de calories et macros, objectifs personnalisés (Mifflin-St Jeor), rappels de repas, coach sportif",
+        "en": "Meal diary, Open Food Facts search and barcode scan, calorie ring and macros, personalised goals (Mifflin-St Jeor), meal reminders, sport coach",
+        "es": "Diario de comidas, búsqueda en Open Food Facts y escáner de códigos de barras, anillo de calorías y macros, objetivos personalizados (Mifflin-St Jeor), recordatorios, coach deportivo"
+      },
+      "premium": {
+        "fr": "Reconnaissance des repas par photo (IA, avec ta propre clé), suivi du poids, analyses sur 30 et 90 jours, export PDF, sans publicité",
+        "en": "AI meal photo recognition (with your own API key), weight tracking, 30 and 90-day insights, PDF export, no ads",
+        "es": "Reconocimiento de comidas por foto (IA, con tu propia clave), seguimiento del peso, análisis de 30 y 90 días, exportación PDF, sin anuncios"
+      }
+    },
+    {
+      "slug": "chapter", "name": "Chapter", "category": "relationships", "ios_min": "16.0", "apple_health": false,
+      "price": {"monthly_eur": "0,99", "annual_eur": "4,99", "monthly_usd": "0.99", "annual_usd": "3.99"},
+      "free": {
+        "fr": "5 personnes (« chapitres »), notes libres, sujets abordés, rappels, verrouillage Face ID / Touch ID",
+        "en": "5 people (\"chapters\"), free-form notes, topic tags, reminders, Face ID / Touch ID lock",
+        "es": "5 personas (« capítulos »), notas libres, temas tratados, recordatorios, bloqueo con Face ID / Touch ID"
+      },
+      "premium": {
+        "fr": "Chapitres et rappels illimités, sans publicité",
+        "en": "Unlimited chapters and reminders, no ads",
+        "es": "Capítulos y recordatorios ilimitados, sin anuncios"
+      }
+    },
+    {
+      "slug": "nova", "name": "Nova", "category": "health", "ios_min": "15.0", "apple_health": false,
+      "price": {"monthly_eur": "0,99", "annual_eur": "4,99", "monthly_usd": "0.99", "annual_usd": "3.99"},
+      "free": {
+        "fr": "Vaccins avec rappels, tests IST et résultats, contraception, PrEP et PEP, journal (30 entrées), symptômes, statistiques",
+        "en": "Vaccinations with reminders, STI tests and results, contraception, PrEP and PEP, journal (30 entries), symptoms, stats",
+        "es": "Vacunas con recordatorios, pruebas de ITS y resultados, anticoncepción, PrEP y PEP, diario (30 entradas), síntomas, estadísticas"
+      },
+      "premium": {
+        "fr": "Journal illimité, export PDF pour le médecin, suggestion de dépistage discrète à un partenaire, sans publicité",
+        "en": "Unlimited journal, PDF export for your doctor, discreet partner screening suggestion, no ads",
+        "es": "Diario ilimitado, exportación PDF para tu médico, sugerencia discreta de prueba a una pareja, sin anuncios"
+      },
+      "extra": {
+        "fr": "Réservée aux 18 ans et plus. Aucun contenu explicite.",
+        "en": "Adults 18+ only. No explicit content.",
+        "es": "Solo para mayores de 18 años. Sin contenido explícito."
+      }
+    },
+    {
+      "slug": "mantrame", "name": "MantraMe", "category": "wellbeing", "ios_min": "16.0", "apple_health": false,
+      "price": {"monthly_eur": "1,99", "annual_eur": "9,99", "monthly_usd": "1.99", "annual_usd": "8.99"},
+      "free": {
+        "fr": "Une affirmation par jour, favoris, rappel quotidien, hors ligne",
+        "en": "One affirmation a day, favorites, daily reminder, offline",
+        "es": "Una afirmación al día, favoritos, recordatorio diario, sin conexión"
+      },
+      "premium": {
+        "fr": "Les 5 catégories (Amour de soi, Confiance, Calme, Gratitude, Force), suivi de la série, sans publicité",
+        "en": "All 5 categories (Self-Love, Confidence, Calm, Gratitude, Strength), streak tracking, no ads",
+        "es": "Las 5 categorías (Amor propio, Confianza, Calma, Gratitud, Fuerza), seguimiento de racha, sin anuncios"
+      }
+    },
+    {
+      "slug": "lunarest", "name": "LunaRest", "category": "wellbeing", "ios_min": "15.0", "apple_health": true,
+      "price": {"monthly_eur": "4,99", "annual_eur": "29,99", "monthly_usd": "3.99", "annual_usd": "24.99"},
+      "free": {
+        "fr": "Sons de sommeil et mixeur, routines du soir, 4 techniques de respiration, enregistrement du sommeil, réveil, chronotype, phase de lune",
+        "en": "Sleep sounds and mixer, bedtime routines, 4 breathing techniques, sleep logging, alarm, chronotype, moon phase",
+        "es": "Sonidos para dormir y mezclador, rutinas nocturnas, 4 técnicas de respiración, registro del sueño, alarma, cronotipo, fase lunar"
+      },
+      "premium": {
+        "fr": "Statistiques de sommeil, journée adaptée au chronotype, dette de sommeil, plan jet-lag et horaires décalés, sans publicité",
+        "en": "Sleep statistics, chronotype-adapted day, sleep debt, jet-lag and shift planner, no ads",
+        "es": "Estadísticas de sueño, día adaptado al cronotipo, deuda de sueño, plan de jet lag y turnos, sin anuncios"
+      }
+    },
+    {
+      "slug": "inhale", "name": "Inhale", "category": "wellbeing", "ios_min": "15.0", "apple_health": false,
+      "price": {"monthly_eur": "4,99", "annual_eur": "24,99", "monthly_usd": "3.99", "annual_usd": "22.99"},
+      "free": {
+        "fr": "Cohérence cardiaque (5-5), respiration carrée, 4-7-8, soupir physiologique",
+        "en": "Cardiac coherence (5-5), box breathing, 4-7-8, physiological sigh",
+        "es": "Coherencia cardíaca (5-5), respiración cuadrada, 4-7-8, suspiro fisiológico"
+      },
+      "premium": {
+        "fr": "Plus de 20 techniques (Wim Hof, Nadi Shodhana…), 5 programmes de 30 jours, mode SOS, statistiques, rappels, sans publicité",
+        "en": "20+ techniques (Wim Hof, Nadi Shodhana…), 5 30-day programs, SOS mode, stats, reminders, no ads",
+        "es": "Más de 20 técnicas (Wim Hof, Nadi Shodhana…), 5 programas de 30 días, modo SOS, estadísticas, recordatorios, sin anuncios"
+      }
+    },
+    {
+      "slug": "budgetbrief", "name": "MyBudgetBrief", "category": "finance", "ios_min": "16.0", "apple_health": false,
+      "price": {"monthly_eur": "3,99", "annual_eur": "19,99", "monthly_usd": "3.99", "annual_usd": "17.99"},
+      "free": {
+        "fr": "Dépenses en moins de 5 secondes, budgets par catégorie (8 catégories), statistiques mensuelles, 3 derniers mois d'historique",
+        "en": "Expenses in under 5 seconds, budgets by category (8 categories), monthly stats, last 3 months of history",
+        "es": "Gastos en menos de 5 segundos, presupuestos por categoría (8 categorías), estadísticas mensuales, últimos 3 meses de historial"
+      },
+      "premium": {
+        "fr": "Historique illimité, export PDF, dépenses récurrentes, statistiques sur 12 mois, sans publicité",
+        "en": "Unlimited history, PDF export, recurring expenses, 12-month stats, no ads",
+        "es": "Historial ilimitado, exportación PDF, gastos recurrentes, estadísticas de 12 meses, sin anuncios"
+      },
+      "extra": {
+        "fr": "Aucune connexion bancaire.",
+        "en": "No bank connection.",
+        "es": "Sin conexión bancaria."
+      }
+    }
+  ]
+}
