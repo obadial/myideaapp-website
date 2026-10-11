@@ -5,17 +5,50 @@
     "note": "Source unique des encadrés « En bref » et des données structurées. Régénérer avec scripts/build_facts.py."
   },
   "categories": {
-    "health": {"fr": "Santé", "en": "Health", "es": "Salud"},
-    "sport": {"fr": "Sport", "en": "Sport", "es": "Deporte"},
-    "food": {"fr": "Cuisine & nutrition", "en": "Food & nutrition", "es": "Cocina y nutrición"},
-    "finance": {"fr": "Finances", "en": "Finance", "es": "Finanzas"},
-    "wellbeing": {"fr": "Bien-être & sommeil", "en": "Wellbeing & sleep", "es": "Bienestar y sueño"},
-    "relationships": {"fr": "Relations", "en": "Relationships", "es": "Relaciones"}
+    "health": {
+      "fr": "Santé",
+      "en": "Health",
+      "es": "Salud"
+    },
+    "sport": {
+      "fr": "Sport",
+      "en": "Sport",
+      "es": "Deporte"
+    },
+    "food": {
+      "fr": "Cuisine & nutrition",
+      "en": "Food & nutrition",
+      "es": "Cocina y nutrición"
+    },
+    "finance": {
+      "fr": "Finances",
+      "en": "Finance",
+      "es": "Finanzas"
+    },
+    "wellbeing": {
+      "fr": "Bien-être & sommeil",
+      "en": "Wellbeing & sleep",
+      "es": "Bienestar y sueño"
+    },
+    "relationships": {
+      "fr": "Relations",
+      "en": "Relationships",
+      "es": "Relaciones"
+    }
   },
   "apps": [
     {
-      "slug": "rhythm", "name": "Rhythm", "category": "health", "ios_min": "15.0", "apple_health": true,
-      "price": {"monthly_eur": "3,99", "annual_eur": "29,99", "monthly_usd": "3.99", "annual_usd": "24.99"},
+      "slug": "rhythm",
+      "name": "Rhythm",
+      "category": "health",
+      "ios_min": "15.0",
+      "apple_health": true,
+      "price": {
+        "monthly_eur": "3,99",
+        "annual_eur": "29,99",
+        "monthly_usd": "3.99",
+        "annual_usd": "24.99"
+      },
       "free": {
         "fr": "Prédiction des règles et de l'ovulation, 4 phases du cycle, journal quotidien (flux, douleur, symptômes, humeur), rappels de médicaments, widget, export calendrier",
         "en": "Period and ovulation predictions, 4 cycle phases, daily log (flow, pain, symptoms, mood), medication reminders, widget, calendar export",
@@ -28,8 +61,17 @@
       }
     },
     {
-      "slug": "runfree", "name": "RunFree", "category": "sport", "ios_min": "15.0", "apple_health": true,
-      "price": {"monthly_eur": "3,99", "annual_eur": "19,99", "monthly_usd": "3.99", "annual_usd": "17.99"},
+      "slug": "runfree",
+      "name": "RunFree",
+      "category": "sport",
+      "ios_min": "15.0",
+      "apple_health": true,
+      "price": {
+        "monthly_eur": "3,99",
+        "annual_eur": "19,99",
+        "monthly_usd": "3.99",
+        "annual_usd": "17.99"
+      },
       "free": {
         "fr": "Suivi GPS (allure, distance, carte), historique complet, 5 types de séance, plan 5 km débutant (8 semaines), records 1 et 5 km, calendrier",
         "en": "GPS tracking (pace, distance, map), full history, 5 run types, 8-week beginner 5k plan, 1k and 5k records, training calendar",
@@ -42,9 +84,18 @@
       }
     },
     {
-      "slug": "myfoodbook", "name": "MyFoodBook", "category": "food", "ios_min": "15.0", "apple_health": false,
+      "slug": "myfoodbook",
+      "name": "MyFoodBook",
+      "category": "food",
+      "ios_min": "15.0",
+      "apple_health": false,
       "premium_available": false,
-      "price": {"monthly_eur": "0,99", "annual_eur": "5,99", "monthly_usd": "0.99", "annual_usd": "4.99"},
+      "price": {
+        "monthly_eur": "0,99",
+        "annual_eur": "5,99",
+        "monthly_usd": "0.99",
+        "annual_usd": "4.99"
+      },
       "free": {
         "fr": "Toutes les fonctions : recettes illimitées avec photos, ingrédients et étapes, tags, favoris, recherche, mode sombre, hors ligne",
         "en": "Every feature: unlimited recipes with photos, ingredients and steps, tags, favorites, search, dark mode, offline",
@@ -57,9 +108,18 @@
       }
     },
     {
-      "slug": "hydrome", "name": "HydroMe", "category": "health", "ios_min": "16.0", "apple_health": true,
+      "slug": "hydrome",
+      "name": "HydroMe",
+      "category": "health",
+      "ios_min": "16.0",
+      "apple_health": false,
       "premium_available": false,
-      "price": {"monthly_eur": "0,99", "annual_eur": "9,99", "monthly_usd": "0.99", "annual_usd": "8.99"},
+      "price": {
+        "monthly_eur": "0,99",
+        "annual_eur": "9,99",
+        "monthly_usd": "0.99",
+        "annual_usd": "8.99"
+      },
       "free": {
         "fr": "Ajout d'une boisson en un geste, objectif quotidien et série, 6 boissons avec coefficient d'hydratation, historique de la semaine, 3 rappels, ml ou oz",
         "en": "One-tap drink logging, daily goal and streak, 6 drink types with hydration coefficients, weekly history, 3 reminders, ml or oz",
@@ -72,8 +132,17 @@
       }
     },
     {
-      "slug": "stockwatch", "name": "StockWatch", "category": "finance", "ios_min": "15.0", "apple_health": false,
-      "price": {"monthly_eur": "3,99", "annual_eur": "24,99", "monthly_usd": "3.99", "annual_usd": "24.99"},
+      "slug": "stockwatch",
+      "name": "StockWatch",
+      "category": "finance",
+      "ios_min": "15.0",
+      "apple_health": false,
+      "price": {
+        "monthly_eur": "3,99",
+        "annual_eur": "24,99",
+        "monthly_usd": "3.99",
+        "annual_usd": "24.99"
+      },
       "free": {
         "fr": "Liste de suivi (10 actions) avec cours en direct, 1 portefeuille virtuel, 3 alertes de prix, comparaison au S&P 500, heatmap des secteurs, simulateur DCA, lexique, actualités",
         "en": "Watchlist (10 stocks) with live prices, 1 virtual portfolio, 3 price alerts, S&P 500 comparison, sector heatmap, DCA simulator, glossary, news",
@@ -91,8 +160,17 @@
       }
     },
     {
-      "slug": "enjoymeal", "name": "EnjoyMeal", "category": "food", "ios_min": "16.0", "apple_health": false,
-      "price": {"monthly_eur": "4,99", "annual_eur": "29,99", "monthly_usd": "3.99", "annual_usd": "24.99"},
+      "slug": "enjoymeal",
+      "name": "EnjoyMeal",
+      "category": "food",
+      "ios_min": "16.0",
+      "apple_health": false,
+      "price": {
+        "monthly_eur": "4,99",
+        "annual_eur": "29,99",
+        "monthly_usd": "3.99",
+        "annual_usd": "24.99"
+      },
       "free": {
         "fr": "Journal des repas, recherche Open Food Facts et scan de codes-barres, anneau de calories et macros, objectifs personnalisés (Mifflin-St Jeor), rappels de repas, coach sportif",
         "en": "Meal diary, Open Food Facts search and barcode scan, calorie ring and macros, personalised goals (Mifflin-St Jeor), meal reminders, sport coach",
@@ -105,8 +183,17 @@
       }
     },
     {
-      "slug": "chapter", "name": "Chapter", "category": "relationships", "ios_min": "16.0", "apple_health": false,
-      "price": {"monthly_eur": "0,99", "annual_eur": "4,99", "monthly_usd": "0.99", "annual_usd": "3.99"},
+      "slug": "chapter",
+      "name": "Chapter",
+      "category": "relationships",
+      "ios_min": "16.0",
+      "apple_health": false,
+      "price": {
+        "monthly_eur": "0,99",
+        "annual_eur": "4,99",
+        "monthly_usd": "0.99",
+        "annual_usd": "3.99"
+      },
       "free": {
         "fr": "5 personnes (« chapitres »), notes libres, sujets abordés, rappels, verrouillage Face ID / Touch ID",
         "en": "5 people (\"chapters\"), free-form notes, topic tags, reminders, Face ID / Touch ID lock",
@@ -119,8 +206,17 @@
       }
     },
     {
-      "slug": "nova", "name": "Nova", "category": "health", "ios_min": "15.0", "apple_health": false,
-      "price": {"monthly_eur": "0,99", "annual_eur": "4,99", "monthly_usd": "0.99", "annual_usd": "3.99"},
+      "slug": "nova",
+      "name": "Nova",
+      "category": "health",
+      "ios_min": "15.0",
+      "apple_health": false,
+      "price": {
+        "monthly_eur": "0,99",
+        "annual_eur": "4,99",
+        "monthly_usd": "0.99",
+        "annual_usd": "3.99"
+      },
       "free": {
         "fr": "Vaccins avec rappels, tests IST et résultats, contraception, PrEP et PEP, journal (30 entrées), symptômes, statistiques",
         "en": "Vaccinations with reminders, STI tests and results, contraception, PrEP and PEP, journal (30 entries), symptoms, stats",
@@ -138,8 +234,17 @@
       }
     },
     {
-      "slug": "mantrame", "name": "MantraMe", "category": "wellbeing", "ios_min": "16.0", "apple_health": false,
-      "price": {"monthly_eur": "1,99", "annual_eur": "9,99", "monthly_usd": "1.99", "annual_usd": "8.99"},
+      "slug": "mantrame",
+      "name": "MantraMe",
+      "category": "wellbeing",
+      "ios_min": "16.0",
+      "apple_health": false,
+      "price": {
+        "monthly_eur": "1,99",
+        "annual_eur": "9,99",
+        "monthly_usd": "1.99",
+        "annual_usd": "8.99"
+      },
       "free": {
         "fr": "Une affirmation par jour, favoris, rappel quotidien, hors ligne",
         "en": "One affirmation a day, favorites, daily reminder, offline",
@@ -152,8 +257,17 @@
       }
     },
     {
-      "slug": "lunarest", "name": "LunaRest", "category": "wellbeing", "ios_min": "15.0", "apple_health": true,
-      "price": {"monthly_eur": "4,99", "annual_eur": "29,99", "monthly_usd": "3.99", "annual_usd": "24.99"},
+      "slug": "lunarest",
+      "name": "LunaRest",
+      "category": "wellbeing",
+      "ios_min": "15.0",
+      "apple_health": true,
+      "price": {
+        "monthly_eur": "4,99",
+        "annual_eur": "29,99",
+        "monthly_usd": "3.99",
+        "annual_usd": "24.99"
+      },
       "free": {
         "fr": "Sons de sommeil et mixeur, routines du soir, 4 techniques de respiration, enregistrement du sommeil, réveil, chronotype, phase de lune",
         "en": "Sleep sounds and mixer, bedtime routines, 4 breathing techniques, sleep logging, alarm, chronotype, moon phase",
@@ -166,8 +280,17 @@
       }
     },
     {
-      "slug": "inhale", "name": "Inhale", "category": "wellbeing", "ios_min": "15.0", "apple_health": false,
-      "price": {"monthly_eur": "4,99", "annual_eur": "24,99", "monthly_usd": "3.99", "annual_usd": "22.99"},
+      "slug": "inhale",
+      "name": "Inhale",
+      "category": "wellbeing",
+      "ios_min": "15.0",
+      "apple_health": false,
+      "price": {
+        "monthly_eur": "4,99",
+        "annual_eur": "24,99",
+        "monthly_usd": "3.99",
+        "annual_usd": "22.99"
+      },
       "free": {
         "fr": "Cohérence cardiaque (5-5), respiration carrée, 4-7-8, soupir physiologique",
         "en": "Cardiac coherence (5-5), box breathing, 4-7-8, physiological sigh",
@@ -180,8 +303,17 @@
       }
     },
     {
-      "slug": "budgetbrief", "name": "MyBudgetBrief", "category": "finance", "ios_min": "16.0", "apple_health": false,
-      "price": {"monthly_eur": "3,99", "annual_eur": "19,99", "monthly_usd": "3.99", "annual_usd": "17.99"},
+      "slug": "budgetbrief",
+      "name": "MyBudgetBrief",
+      "category": "finance",
+      "ios_min": "16.0",
+      "apple_health": false,
+      "price": {
+        "monthly_eur": "3,99",
+        "annual_eur": "19,99",
+        "monthly_usd": "3.99",
+        "annual_usd": "17.99"
+      },
       "free": {
         "fr": "Dépenses en moins de 5 secondes, budgets par catégorie (8 catégories), statistiques mensuelles, 3 derniers mois d'historique",
         "en": "Expenses in under 5 seconds, budgets by category (8 categories), monthly stats, last 3 months of history",

@@ -31,7 +31,7 @@ Recipes & shopping list. MyFoodBook is your personal recipe keeper — simple, w
 - Page: https://myideapp.com/myfoodbook/
 - App Store: https://apps.apple.com/fr/app/myfoodbook-recipe-keeper/id6785071500
 - Key features: Why you'll love it; Free to use; Works offline; Organize with tags; Mark your favorites and search instantly; Light and dark mode; Available in 9 languages; Private by design
-- Price: free to download; ad-free Premium coming soon
+- Price: free to download; Premium option coming soon
 - Free: Every feature: unlimited recipes with photos, ingredients and steps, tags, favorites, search, dark mode, offline
 - Data: stored on device only, no account required. iOS 15.0+. 9 languages.
 - Privacy policy: https://myideapp.com/myfoodbook/privacy.html
@@ -41,7 +41,7 @@ Daily Drink Reminder. HydroMe is a minimalist hydration tracker built around one
 - Page: https://myideapp.com/hydrome/
 - App Store: https://apps.apple.com/fr/app/hydrome-suivi-hydratation/id6774221997
 - Key features: Beautiful animated progress ring; Daily goal with streak counter; Weekly history view; Up to 3 daily reminders; Metric (ml) and imperial (oz) units; 9 languages supported; Privacy Policy; Support
-- Price: free to download; ad-free Premium coming soon
+- Price: free to download; Premium option coming soon
 - Free: One-tap drink logging, daily goal and streak, 6 drink types with hydration coefficients, weekly history, 3 reminders, ml or oz
 - Data: stored on device only, no account required. iOS 16.0+. 9 languages.
 - Privacy policy: https://myideapp.com/hydrome/privacy.html

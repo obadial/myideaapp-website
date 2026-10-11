@@ -41,8 +41,13 @@
 
   <!-- ─── Navbar ─────────────────────────────────────────── -->
   <nav class="navbar">
-    <div class="navbar__logo">
+    <a href="./" class="navbar__logo">
       <span class="logo-text">MyIdeApp</span>
+    </a>
+    <div class="navbar__nav">
+      <a href="#apps" data-i18n="nav_apps">Apps</a>
+      <a href="guides/" data-i18n="nav_guides">Guides</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact</a>
     </div>
     <div class="navbar__right">
       <div class="lang-switcher">
@@ -50,7 +55,7 @@
         <button class="lang-btn" data-lang-btn="en">EN</button>
         <button class="lang-btn" data-lang-btn="es">ES</button>
       </div>
-      <button class="hamburger hamburger--always" aria-label="Menu" aria-expanded="false">
+      <button class="hamburger" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -58,16 +63,26 @@
 
   <!-- Menu burger -->
   <div class="mobile-nav">
+    <p class="mobile-nav__group" data-i18n="cat_health">Santé</p>
     <a href="rhythm/">Rhythm</a>
-    <a href="enjoymeal/">EnjoyMeal</a>
-    <a href="inhale/">Inhale</a>
     <a href="hydrome/">HydroMe</a>
     <a href="nova/">Nova</a>
-    <a href="lunarest/">LunaRest</a>
+    <p class="mobile-nav__group" data-i18n="cat_sport">Sport</p>
     <a href="runfree/">RunFree</a>
-    <a href="chapter/">Chapter</a>
+    <p class="mobile-nav__group" data-i18n="cat_food">Cuisine & nutrition</p>
+    <a href="myfoodbook/">MyFoodBook</a>
+    <a href="enjoymeal/">EnjoyMeal</a>
+    <p class="mobile-nav__group" data-i18n="cat_finance">Finances</p>
+    <a href="stockwatch/">StockWatch</a>
     <a href="budgetbrief/">MyBudgetBrief</a>
+    <p class="mobile-nav__group" data-i18n="cat_wellbeing">Bien-être & sommeil</p>
     <a href="mantrame/">MantraMe</a>
+    <a href="lunarest/">LunaRest</a>
+    <a href="inhale/">Inhale</a>
+    <p class="mobile-nav__group" data-i18n="cat_relationships">Relations</p>
+    <a href="chapter/">Chapter</a>
+    <p class="mobile-nav__group" data-i18n="nav_more">Plus</p>
+    <a href="guides/" data-i18n="nav_guides">Guides</a>
     <a href="contact.html" data-i18n="studio_contact_title">Nous contacter</a>
     <div class="lang-switcher" style="margin-top:1.5rem">
       <button class="lang-btn" data-lang-btn="fr">FR</button>
@@ -104,10 +119,38 @@
     <div class="container">
       <h2 class="section-title fade-up" data-i18n="studio_apps_title">Nos Applications</h2>
       <p class="section-subtitle fade-up fade-up-delay-1" data-i18n="studio_apps_subtitle">12 apps, une obsession : des expériences qui comptent vraiment.</p>
+      <div class="app-filter" role="group" aria-label="Filtrer les apps">
+        <button class="app-filter__btn active" data-filter="all" data-i18n="filter_all">Toutes</button>
+        <button class="app-filter__btn" data-filter="health" data-i18n="cat_health">Santé</button>
+        <button class="app-filter__btn" data-filter="sport" data-i18n="cat_sport">Sport</button>
+        <button class="app-filter__btn" data-filter="food" data-i18n="cat_food">Cuisine & nutrition</button>
+        <button class="app-filter__btn" data-filter="finance" data-i18n="cat_finance">Finances</button>
+        <button class="app-filter__btn" data-filter="wellbeing" data-i18n="cat_wellbeing">Bien-être & sommeil</button>
+        <button class="app-filter__btn" data-filter="relationships" data-i18n="cat_relationships">Relations</button>
+      </div>
       <div class="apps-carousel">
 
+        <!-- StockWatch -->
+        <a href="stockwatch/" data-category="finance" class="app-card app-card--stockwatch fade-up fade-up-delay-3">
+          <div class="app-card__content">
+            <img src="assets/stockwatch/icon.png" alt="StockWatch App Icon" class="app-card__icon">
+            <div class="app-card__chip" data-i18n="stockwatch_chip">Finance & Investissement</div>
+            <div style="display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
+              <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
+              <span data-i18n="live_on_appstore">App Store</span>
+            </div>
+            <h3 class="app-card__name">StockWatch</h3>
+            <p class="app-card__subtitle" data-i18n="stockwatch_subtitle">Suivi d'actions & portefeuille virtuel</p>
+            <p class="app-card__description" data-i18n="stockwatch_description">Suis les marchés, simule des achats dans un portefeuille fictif et reçois des alertes de prix. Outil éducatif, jamais connecté à ta banque.</p>
+            <span class="app-card__cta">
+              <span data-i18n="discover">Découvrir</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
         <!-- Rhythm -->
-        <a href="rhythm/" class="app-card app-card--rhythm fade-up fade-up-delay-2">
+        <a href="rhythm/" data-category="health" class="app-card app-card--rhythm fade-up fade-up-delay-2">
           <div class="app-card__content">
             <img src="assets/rhythm/icon.png" alt="Rhythm App Icon" class="app-card__icon">
             <div class="app-card__chip" data-i18n="rhythm_chip">Santé & Bien-être</div>
@@ -127,113 +170,8 @@
           </div>
         </a>
 
-        <!-- LunaRest -->
-        <a href="lunarest/" class="app-card app-card--lunarest fade-up fade-up-delay-3">
-          <div class="app-card__content">
-            <img src="assets/lunarest/icon.png" alt="LunaRest App Icon" class="app-card__icon">
-            <div class="app-card__chip" data-i18n="lunarest_chip">Sommeil & Bien-être</div>
-            <div style="display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
-              <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
-              <span data-i18n="live_on_appstore">App Store</span>
-            </div>
-            <h3 class="app-card__name">LunaRest</h3>
-            <p class="app-card__subtitle" data-i18n="lunarest_subtitle">Sons, suivi du sommeil & réveil intelligent</p>
-            <p class="app-card__description" data-i18n="lunarest_description">Endormez-vous plus vite avec des sons d'ambiance, comprenez vos cycles de sommeil et réveillez-vous frais et dispos.</p>
-            <span class="app-card__cta">
-              <span data-i18n="discover">Découvrir</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </span>
-          </div>
-        </a>
-
-        <!-- EnjoyMeal -->
-        <a href="enjoymeal/" class="app-card app-card--enjoymeal fade-up fade-up-delay-2">
-          <div class="app-card__content">
-            <img src="assets/enjoymeal/icon.png" alt="EnjoyMeal App Icon" class="app-card__icon">
-            <div class="app-card__chip" data-i18n="enjoymeal_chip">Nutrition & Bien-être</div>
-            <div style="display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
-              <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
-              <span data-i18n="live_on_appstore">App Store</span>
-            </div>
-            <h3 class="app-card__name">EnjoyMeal</h3>
-            <p class="app-card__subtitle" data-i18n="enjoymeal_subtitle">Suivi nutritionnel bienveillant</p>
-            <p class="app-card__description" data-i18n="enjoymeal_description">EnjoyMeal t'aide à comprendre tes repas sans stress ni culpabilité. Des objectifs doux et réalistes basés sur la science — pas sur la restriction.</p>
-            <span class="app-card__cta">
-              <span data-i18n="discover">Découvrir</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </span>
-          </div>
-        </a>
-
-        <!-- Nova -->
-        <a href="nova/" class="app-card app-card--nova fade-up fade-up-delay-2">
-          <div class="app-card__content">
-            <img src="assets/nova/icon.png" alt="Nova App Icon" class="app-card__icon">
-            <div class="app-card__chip" data-i18n="nova_chip">Santé sexuelle</div>
-            <div style="display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
-              <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
-              <span data-i18n="live_on_appstore">App Store</span>
-            </div>
-            <h3 class="app-card__name">Nova</h3>
-            <p class="app-card__subtitle" data-i18n="nova_subtitle">Suivi intime, vie privée absolue</p>
-            <p class="app-card__description" data-i18n="nova_description">Nova t'aide à suivre tes vaccinations, dépistages IST et activité intime. Bienveillant, sans jugement — toutes tes données restent sur ton appareil.</p>
-            <span class="app-card__cta">
-              <span data-i18n="discover">Découvrir</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </span>
-          </div>
-        </a>
-
-        <!-- HydroMe -->
-        <a href="hydrome/" class="app-card app-card--hydrome fade-up fade-up-delay-2">
-          <div class="app-card__content">
-            <img src="assets/hydrome/icon.png" alt="HydroMe App Icon" class="app-card__icon">
-            <div class="app-card__chip" data-i18n="hydrome_chip">Santé & Hydratation</div>
-            <div style="display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
-              <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
-              <span data-i18n="live_on_appstore">App Store</span>
-            </div>
-            <h3 class="app-card__name">HydroMe</h3>
-            <p class="app-card__subtitle" data-i18n="hydrome_subtitle">Tracker d'hydratation minimaliste</p>
-            <p class="app-card__description" data-i18n="hydrome_description">Tracker d'hydratation minimaliste et privacy-first. Un tap pour logger, un anneau pour progresser. Vos données restent sur votre appareil — toujours.</p>
-            <span class="app-card__cta">
-              <span data-i18n="discover">Découvrir</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </span>
-          </div>
-        </a>
-
-        <!-- MantraMe -->
-        <a href="mantrame/" class="app-card app-card--mantrame fade-up fade-up-delay-3">
-          <div class="app-card__content">
-            <img src="assets/mantrame/icon.png" alt="MantraMe App Icon" class="app-card__icon">
-            <div class="app-card__chip" data-i18n="mantrame_chip">Bien-être & Pleine conscience</div>
-            <div style="display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
-              <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
-              <span data-i18n="live_on_appstore">App Store</span>
-            </div>
-            <h3 class="app-card__name">MantraMe</h3>
-            <p class="app-card__subtitle" data-i18n="mantrame_subtitle">Affirmations positives quotidiennes</p>
-            <p class="app-card__description" data-i18n="mantrame_description">Commencez chaque journée avec intention. Une affirmation puissante par jour, à travers cinq thèmes. Minimaliste, hors-ligne, privacy-first. Vos données restent sur votre appareil.</p>
-            <span class="app-card__cta">
-              <span data-i18n="discover">Découvrir</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </span>
-          </div>
-        </a>
-
         <!-- RunFree -->
-        <a href="runfree/" class="app-card app-card--runfree fade-up fade-up-delay-3">
+        <a href="runfree/" data-category="sport" class="app-card app-card--runfree fade-up fade-up-delay-3">
           <div class="app-card__content">
             <img src="assets/runfree/icon.png" alt="RunFree App Icon" class="app-card__icon">
             <div class="app-card__chip" data-i18n="runfree_chip">Sport & Running</div>
@@ -253,17 +191,18 @@
           </div>
         </a>
 
-        <a href="inhale/" class="app-card app-card--inhale fade-up fade-up-delay-3">
+        <!-- HydroMe -->
+        <a href="hydrome/" data-category="health" class="app-card app-card--hydrome fade-up fade-up-delay-2">
           <div class="app-card__content">
-            <img src="assets/inhale/icon.png" alt="Inhale App Icon" class="app-card__icon">
-            <div class="app-card__chip" data-i18n="inhale_chip">Respiration & Bien-être</div>
+            <img src="assets/hydrome/icon.png" alt="HydroMe App Icon" class="app-card__icon">
+            <div class="app-card__chip" data-i18n="hydrome_chip">Santé & Hydratation</div>
             <div style="display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
               <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
               <span data-i18n="live_on_appstore">App Store</span>
             </div>
-            <h3 class="app-card__name">Inhale</h3>
-            <p class="app-card__subtitle" data-i18n="inhale_subtitle">Respiration guidée pour le stress, le focus & le sommeil</p>
-            <p class="app-card__description" data-i18n="inhale_description">Des techniques de respiration validées par la science, rendues accessibles à tous. Sentez-vous mieux dès la première session — sans jargon, sans friction.</p>
+            <h3 class="app-card__name">HydroMe</h3>
+            <p class="app-card__subtitle" data-i18n="hydrome_subtitle">Tracker d'hydratation minimaliste</p>
+            <p class="app-card__description" data-i18n="hydrome_description">Tracker d'hydratation minimaliste et privacy-first. Un tap pour logger, un anneau pour progresser. Vos données restent sur votre appareil — toujours.</p>
             <span class="app-card__cta">
               <span data-i18n="discover">Découvrir</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -273,29 +212,48 @@
           </div>
         </a>
 
-        <!-- MyBudgetBrief -->
-        <a href="budgetbrief/" class="app-card app-card--budgetbrief fade-up fade-up-delay-3">
+        <!-- EnjoyMeal -->
+        <a href="enjoymeal/" data-category="food" class="app-card app-card--enjoymeal fade-up fade-up-delay-2">
           <div class="app-card__content">
-            <img src="assets/budgetbrief/icon.png" alt="MyBudgetBrief App Icon" class="app-card__icon">
-            <div class="app-card__chip" data-i18n="budgetbrief_chip">Finance & Budget</div>
+            <img src="assets/enjoymeal/icon.png" alt="EnjoyMeal App Icon" class="app-card__icon">
+            <div class="app-card__chip" data-i18n="enjoymeal_chip">Nutrition & Bien-être</div>
             <div style="display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
               <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
               <span data-i18n="live_on_appstore">App Store</span>
             </div>
-            <h3 class="app-card__name">MyBudgetBrief</h3>
-            <p class="app-card__subtitle" data-i18n="budgetbrief_subtitle">Suivi des dépenses privacy-first</p>
-            <p class="app-card__description" data-i18n="budgetbrief_description">Loggez vos dépenses en quelques secondes, fixez un budget par catégorie et visualisez votre progression. Toutes vos données financières restent sur votre appareil — toujours.</p>
+            <h3 class="app-card__name">EnjoyMeal</h3>
+            <p class="app-card__subtitle" data-i18n="enjoymeal_subtitle">Suivi nutritionnel bienveillant</p>
+            <p class="app-card__description" data-i18n="enjoymeal_description">EnjoyMeal t'aide à comprendre tes repas sans stress ni culpabilité. Des objectifs doux et réalistes basés sur la science — pas sur la restriction.</p>
             <span class="app-card__cta">
               <span data-i18n="discover">Découvrir</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- MyFoodBook -->
+        <a href="myfoodbook/" data-category="food" class="app-card app-card--myfoodbook fade-up fade-up-delay-2">
+          <div class="app-card__content">
+            <img src="assets/myfoodbook/icon.png" alt="MyFoodBook App Icon" class="app-card__icon">
+            <div class="app-card__chip" data-i18n="myfoodbook_chip">Cuisine & Lifestyle</div>
+            <div style="display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
+              <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
+              <span data-i18n="live_on_appstore">App Store</span>
+            </div>
+            <h3 class="app-card__name">MyFoodBook</h3>
+            <p class="app-card__subtitle" data-i18n="myfoodbook_subtitle">Ton carnet de recettes personnel</p>
+            <p class="app-card__description" data-i18n="myfoodbook_description">Note tes recettes, organise-les par tags et retrouve tes favorites en un instant. Un carnet de cuisine privé et hors-ligne.</p>
+            <span class="app-card__cta">
+              <span data-i18n="discover">Découvrir</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </span>
           </div>
         </a>
 
         <!-- Chapter -->
-        <a href="chapter/" class="app-card app-card--chapter fade-up fade-up-delay-2">
+        <a href="chapter/" data-category="relationships" class="app-card app-card--chapter fade-up fade-up-delay-2">
           <div class="app-card__content">
             <img src="assets/chapter/icon.png" alt="Chapter App Icon" class="app-card__icon">
             <div class="app-card__chip" data-i18n="chapter_chip">Journal & Dating</div>
@@ -315,50 +273,123 @@
           </div>
         </a>
 
-        <!-- StockWatch -->
-        <a href="stockwatch/" class="app-card app-card--stockwatch fade-up fade-up-delay-3">
+        <!-- Nova -->
+        <a href="nova/" data-category="health" class="app-card app-card--nova fade-up fade-up-delay-2">
           <div class="app-card__content">
-            <img src="assets/stockwatch/icon.png" alt="StockWatch App Icon" class="app-card__icon">
-            <div class="app-card__chip" data-i18n="stockwatch_chip">Finance & Investissement</div>
+            <img src="assets/nova/icon.png" alt="Nova App Icon" class="app-card__icon">
+            <div class="app-card__chip" data-i18n="nova_chip">Santé sexuelle</div>
             <div style="display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
               <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
               <span data-i18n="live_on_appstore">App Store</span>
             </div>
-            <h3 class="app-card__name">StockWatch</h3>
-            <p class="app-card__subtitle" data-i18n="stockwatch_subtitle">Suivi d'actions & portefeuille virtuel</p>
-            <p class="app-card__description" data-i18n="stockwatch_description">Suis les marchés, simule des achats dans un portefeuille fictif et reçois des alertes de prix. Outil éducatif, jamais connecté à ta banque.</p>
+            <h3 class="app-card__name">Nova</h3>
+            <p class="app-card__subtitle" data-i18n="nova_subtitle">Suivi intime, vie privée absolue</p>
+            <p class="app-card__description" data-i18n="nova_description">Nova t'aide à suivre tes vaccinations, dépistages IST et activité intime. Bienveillant, sans jugement — toutes tes données restent sur ton appareil.</p>
             <span class="app-card__cta">
               <span data-i18n="discover">Découvrir</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
             </span>
           </div>
         </a>
 
-        <!-- MyFoodBook -->
-        <a href="myfoodbook/" class="app-card app-card--myfoodbook fade-up fade-up-delay-2">
+        <!-- LunaRest -->
+        <a href="lunarest/" data-category="wellbeing" class="app-card app-card--lunarest fade-up fade-up-delay-3">
           <div class="app-card__content">
-            <img src="assets/myfoodbook/icon.png" alt="MyFoodBook App Icon" class="app-card__icon">
-            <div class="app-card__chip" data-i18n="myfoodbook_chip">Cuisine & Lifestyle</div>
+            <img src="assets/lunarest/icon.png" alt="LunaRest App Icon" class="app-card__icon">
+            <div class="app-card__chip" data-i18n="lunarest_chip">Sommeil & Bien-être</div>
             <div style="display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
               <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
               <span data-i18n="live_on_appstore">App Store</span>
             </div>
-            <h3 class="app-card__name">MyFoodBook</h3>
-            <p class="app-card__subtitle" data-i18n="myfoodbook_subtitle">Ton carnet de recettes personnel</p>
-            <p class="app-card__description" data-i18n="myfoodbook_description">Note tes recettes, organise-les par tags et retrouve tes favorites en un instant. Un carnet de cuisine privé et hors-ligne.</p>
+            <h3 class="app-card__name">LunaRest</h3>
+            <p class="app-card__subtitle" data-i18n="lunarest_subtitle">Sons, suivi du sommeil & réveil intelligent</p>
+            <p class="app-card__description" data-i18n="lunarest_description">Endormez-vous plus vite avec des sons d'ambiance, comprenez vos cycles de sommeil et réveillez-vous frais et dispos.</p>
             <span class="app-card__cta">
               <span data-i18n="discover">Découvrir</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Inhale -->
+        <a href="inhale/" data-category="wellbeing" class="app-card app-card--inhale fade-up fade-up-delay-3">
+          <div class="app-card__content">
+            <img src="assets/inhale/icon.png" alt="Inhale App Icon" class="app-card__icon">
+            <div class="app-card__chip" data-i18n="inhale_chip">Respiration & Bien-être</div>
+            <div style="display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
+              <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
+              <span data-i18n="live_on_appstore">App Store</span>
+            </div>
+            <h3 class="app-card__name">Inhale</h3>
+            <p class="app-card__subtitle" data-i18n="inhale_subtitle">Respiration guidée pour le stress, le focus & le sommeil</p>
+            <p class="app-card__description" data-i18n="inhale_description">Des techniques de respiration validées par la science, rendues accessibles à tous. Sentez-vous mieux dès la première session — sans jargon, sans friction.</p>
+            <span class="app-card__cta">
+              <span data-i18n="discover">Découvrir</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- MantraMe -->
+        <a href="mantrame/" data-category="wellbeing" class="app-card app-card--mantrame fade-up fade-up-delay-3">
+          <div class="app-card__content">
+            <img src="assets/mantrame/icon.png" alt="MantraMe App Icon" class="app-card__icon">
+            <div class="app-card__chip" data-i18n="mantrame_chip">Bien-être & Pleine conscience</div>
+            <div style="display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
+              <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
+              <span data-i18n="live_on_appstore">App Store</span>
+            </div>
+            <h3 class="app-card__name">MantraMe</h3>
+            <p class="app-card__subtitle" data-i18n="mantrame_subtitle">Affirmations positives quotidiennes</p>
+            <p class="app-card__description" data-i18n="mantrame_description">Commencez chaque journée avec intention. Une affirmation puissante par jour, à travers cinq thèmes. Minimaliste, hors-ligne, privacy-first. Vos données restent sur votre appareil.</p>
+            <span class="app-card__cta">
+              <span data-i18n="discover">Découvrir</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- MyBudgetBrief -->
+        <a href="budgetbrief/" data-category="finance" class="app-card app-card--budgetbrief fade-up fade-up-delay-3">
+          <div class="app-card__content">
+            <img src="assets/budgetbrief/icon.png" alt="MyBudgetBrief App Icon" class="app-card__icon">
+            <div class="app-card__chip" data-i18n="budgetbrief_chip">Finance & Budget</div>
+            <div style="display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
+              <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
+              <span data-i18n="live_on_appstore">App Store</span>
+            </div>
+            <h3 class="app-card__name">MyBudgetBrief</h3>
+            <p class="app-card__subtitle" data-i18n="budgetbrief_subtitle">Suivi des dépenses privacy-first</p>
+            <p class="app-card__description" data-i18n="budgetbrief_description">Loggez vos dépenses en quelques secondes, fixez un budget par catégorie et visualisez votre progression. Toutes vos données financières restent sur votre appareil — toujours.</p>
+            <span class="app-card__cta">
+              <span data-i18n="discover">Découvrir</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
             </span>
           </div>
         </a>
 
       </div>
-      <!-- Indicateur scroll -->
-      <div class="carousel-hint">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-        <span data-i18n="scroll_to_explore">Faites défiler</span>
+    </div>
+  </section>
+
+  <!-- ─── Guides ─────────────────────────────────────────── -->
+  <section class="home-guides">
+    <div class="container home-guides__inner">
+      <div>
+        <h2 class="section-title" data-i18n="home_guides_title">Quelle app choisir ?</h2>
+        <p class="section-subtitle" data-i18n="home_guides_subtitle">Nos comparatifs honnêtes face à Strava, Flo, MyFitnessPal et les autres : prix, compte, données.</p>
       </div>
+      <a class="btn-store" href="guides/" data-i18n="home_guides_cta">Voir les guides</a>
     </div>
   </section>
 

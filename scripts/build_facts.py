@@ -30,10 +30,11 @@ L = {
         "es": "Descarga gratuita. Premium opcional: {m_eur} €/mes o {a_eur} €/año (Estados Unidos: {m_usd} $/mes o {a_usd} $/año).",
     },
     "premium_soon": {
-        "fr": "Téléchargement gratuit, toutes les fonctions incluses. Une option Premium sans publicité arrive bientôt.",
-        "en": "Free to download, every feature included. An ad-free Premium option is coming soon.",
-        "es": "Descarga gratuita, todas las funciones incluidas. Pronto llegará una opción Premium sin anuncios.",
+        "fr": "Téléchargement gratuit. L'option Premium arrive bientôt.",
+        "en": "Free to download. The Premium option is coming soon.",
+        "es": "Descarga gratuita. La opción Premium llegará pronto.",
     },
+    "premium_later": {"fr": "Premium (bientôt)", "en": "Premium (coming soon)", "es": "Premium (próximamente)"},
     "included": {"fr": "Inclus gratuitement", "en": "Free features", "es": "Incluido gratis"},
     "premium": {"fr": "Premium ajoute", "en": "Premium adds", "es": "Premium añade"},
     "data": {"fr": "Données", "en": "Data", "es": "Datos"},
@@ -91,8 +92,7 @@ def box(app, lang):
         ("price", price),
         ("included", app["free"][lang]),
     ]
-    if app.get("premium_available", True):
-        rows.append(("premium", app["premium"][lang]))
+    rows.append(("premium" if app.get("premium_available", True) else "premium_later", app["premium"][lang]))
     rows += [
         ("data", t("data_v", lang)),
         ("ads", t("ads_v", lang)),

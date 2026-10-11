@@ -161,7 +161,7 @@ def main():
             pr = fact["price"]
             llms.append("- Price: free to download; " + (
                 f"optional Premium ${pr['monthly_usd']}/month or ${pr['annual_usd']}/year (France €{pr['monthly_eur'].replace(',', '.')}/€{pr['annual_eur'].replace(',', '.')})"
-                if fact.get("premium_available", True) else "ad-free Premium coming soon"))
+                if fact.get("premium_available", True) else "Premium option coming soon"))
             llms.append("- Free: " + fact["free"]["en"])
             if fact.get("premium_available", True):
                 llms.append("- Premium adds: " + fact["premium"]["en"])

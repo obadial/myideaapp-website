@@ -1449,10 +1449,14 @@ body {
 
 /* ── Encadré « En bref » (scripts/build_facts.py) ─────────────────────────────
    Trois blocs de langue en dur : seul celui de la langue active s'affiche. */
-[data-lang-block] { display: none; }
+html [data-lang-block] { display: none; }
 html[lang="fr"] [data-lang-block="fr"],
 html[lang="en"] [data-lang-block="en"],
 html[lang="es"] [data-lang-block="es"] { display: block; }
+html[lang] .app-crosslinks__guide[data-lang-block] { display: none; }
+html[lang="fr"] .app-crosslinks__guide[data-lang-block="fr"],
+html[lang="en"] .app-crosslinks__guide[data-lang-block="en"],
+html[lang="es"] .app-crosslinks__guide[data-lang-block="es"] { display: inline-block; }
 .facts-section { padding-top: 0; }
 .facts {
   max-width: 820px;
@@ -1516,3 +1520,38 @@ html[lang="es"] [data-lang-block="es"] { display: block; }
 .guide-card__title { font-weight: 800; line-height: 1.35; }
 .guide-card__desc { font-size: 0.88rem; color: var(--text2); line-height: 1.5; }
 @media (max-width: 640px) { .guide-nav__links { display: none; } }
+
+/* ── Navigation (refonte oct. 2026) ───────────────────────────────────────── */
+.studio-hero { min-height: 72vh; }
+a.navbar__logo { text-decoration: none; }
+.mobile-nav { overflow-y: auto; }
+.mobile-nav__group { margin: 1.25rem 0 0.25rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text3); }
+.app-filter { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin: 0 auto 2rem; }
+.app-filter__btn { padding: 0.45rem 1rem; border-radius: 100px; border: 1px solid var(--border); background: var(--surface); color: var(--text2); font: inherit; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all var(--transition); }
+.app-filter__btn:hover { color: var(--text); }
+.app-filter__btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
+.app-card.is-filtered { display: none; }
+.home-guides { padding: 3rem 0; border-top: 1px solid var(--border); background: var(--bg); }
+.home-guides__inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.home-guides .section-title, .home-guides .section-subtitle { text-align: left; margin-bottom: 0.4rem; }
+.app-crosslinks { padding: 3rem 0; border-top: 1px solid var(--border); }
+.app-crosslinks__title { font-size: 1.2rem; font-weight: 800; color: var(--text); margin-bottom: 1rem; }
+.app-crosslinks__guide { display: inline-block; margin-bottom: 1.5rem; color: var(--primary); font-weight: 700; }
+.app-crosslinks__list { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.app-crosslinks__list a { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.45rem 0.9rem 0.45rem 0.45rem; border-radius: 100px; border: 1px solid var(--border); background: var(--surface); color: var(--text2); font-size: 0.88rem; font-weight: 600; }
+.app-crosslinks__list a:hover { color: var(--text); border-color: var(--primary); }
+.app-crosslinks__list img { width: 26px; height: 26px; border-radius: 7px; }
+.app-crumbs { font-size: 0.82rem; color: var(--text3); margin-bottom: 0.75rem; }
+.app-crumbs a { color: var(--text2); }
+/* Carrousel horizontal → grille : les 12 apps visibles sans glisser latéralement. */
+.apps-section .apps-carousel {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  overflow: visible;
+  scroll-snap-type: none;
+  cursor: auto;
+}
+.apps-section .apps-carousel .app-card { min-height: 340px; width: auto; flex: none; scroll-snap-align: none; }
+/* Les apps et leur titre s'affichent immédiatement : l'animation au défilement
+   laissait un grand vide noir tant qu'elle n'était pas déclenchée. */
+.apps-section .fade-up { opacity: 1; transform: none; }

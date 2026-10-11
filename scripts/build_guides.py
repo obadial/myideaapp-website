@@ -41,8 +41,8 @@ def human_date(iso, lang):
 def price(app, lang):
     p = app["price"]
     if not app.get("premium_available", True):
-        return {"fr": "Gratuit (Premium sans pub bientôt)", "en": "Free (ad-free Premium coming soon)",
-                "es": "Gratis (Premium sin anuncios próximamente)"}[lang]
+        return {"fr": "Gratuit (Premium bientôt)", "en": "Free (Premium coming soon)",
+                "es": "Gratis (Premium próximamente)"}[lang]
     return {"fr": f"Gratuit, Premium {p['monthly_eur']} €/mois ou {p['annual_eur']} €/an",
             "en": f"Free, Premium ${p['monthly_usd']}/month or ${p['annual_usd']}/year",
             "es": f"Gratis, Premium {p['monthly_eur']} €/mes o {p['annual_eur']} €/año"}[lang]

@@ -97,3 +97,18 @@ function initCarouselDrag() {
     carousel.scrollLeft = scrollLeft - (x - startX) * 1.2;
   });
 }
+
+
+// Filtre des apps par thème sur l'accueil (boutons .app-filter__btn, cartes [data-category]).
+(function initAppFilter() {
+  const buttons = document.querySelectorAll('.app-filter__btn');
+  if (!buttons.length) return;
+  buttons.forEach(btn => btn.addEventListener('click', () => {
+    buttons.forEach(b => b.classList.toggle('active', b === btn));
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.app-card[data-category]').forEach(card => {
+      card.classList.toggle('is-filtered', f !== 'all' && card.dataset.category !== f);
+      if (f !== 'all') card.classList.add('visible');
+    });
+  }));
+})();
