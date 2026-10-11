@@ -1,0 +1,351 @@
+{
+  "_meta": {
+    "checked": "2026-10-11",
+    "rule": "Chaque fait sur un concurrent doit être couvert par une source officielle listée dans `sources`. Pas de prix de concurrent (variables selon le pays) : on décrit le modèle (gratuit, abonnement, achat unique)."
+  },
+  "hub": {
+    "title": {"fr": "Guides : bien choisir son app", "en": "Guides: choosing the right app", "es": "Guías: elegir bien tu app"},
+    "intro": {
+      "fr": "Des comparatifs honnêtes entre nos apps et les plus connues de leur catégorie : prix, compte obligatoire, où vont tes données. Quand une autre app te conviendra mieux, on le dit.",
+      "en": "Honest comparisons between our apps and the best-known ones in each category: price, whether an account is required, where your data goes. When another app suits you better, we say so.",
+      "es": "Comparativas honestas entre nuestras apps y las más conocidas de cada categoría: precio, si hace falta cuenta y adónde van tus datos. Cuando otra app te conviene más, lo decimos."
+    }
+  },
+  "ui": {
+    "short_answer": {"fr": "La réponse courte", "en": "The short answer", "es": "La respuesta corta"},
+    "comparison": {"fr": "Comparatif", "en": "Comparison", "es": "Comparativa"},
+    "why": {"fr": "Pourquoi choisir {app}", "en": "Why choose {app}", "es": "Por qué elegir {app}"},
+    "when_other": {"fr": "Quand choisir une autre app", "en": "When another app is a better fit", "es": "Cuándo elegir otra app"},
+    "faq": {"fr": "Questions fréquentes", "en": "Frequently asked questions", "es": "Preguntas frecuentes"},
+    "sources": {"fr": "Sources", "en": "Sources", "es": "Fuentes"},
+    "checked": {"fr": "Informations vérifiées le {d}. Les offres des autres apps peuvent évoluer : vérifie leur fiche avant de t'abonner.", "en": "Information checked on {d}. Other apps' offers may change: check their store listing before subscribing.", "es": "Información verificada el {d}. Las ofertas de otras apps pueden cambiar: revisa su ficha antes de suscribirte."},
+    "cta": {"fr": "Télécharger {app} sur l'App Store", "en": "Get {app} on the App Store", "es": "Descargar {app} en la App Store"},
+    "more": {"fr": "Tout savoir sur {app}", "en": "All about {app}", "es": "Todo sobre {app}"},
+    "criterion": {"fr": "Critère", "en": "Criterion", "es": "Criterio"},
+    "guides": {"fr": "Guides", "en": "Guides", "es": "Guías"},
+    "home": {"fr": "Accueil", "en": "Home", "es": "Inicio"},
+    "other_langs": {"fr": "Lire en", "en": "Read in", "es": "Leer en"},
+    "by": {"fr": "Par le studio MyIdeApp, éditeur de {app}. Comparatif rédigé à partir des pages officielles de chaque app.", "en": "By MyIdeApp, the studio behind {app}. Comparison based on each app's official pages.", "es": "Por MyIdeApp, el estudio que crea {app}. Comparativa basada en las páginas oficiales de cada app."}
+  },
+  "guides": [
+    {
+      "id": "running", "app": "runfree",
+      "slug": {"fr": "app-course-sans-reseau-social", "en": "running-app-without-social-network", "es": "app-correr-sin-red-social"},
+      "title": {"fr": "App de course sans réseau social : RunFree, Strava ou Nike Run Club ?", "en": "A running app without the social network: RunFree, Strava or Nike Run Club?", "es": "App para correr sin red social: ¿RunFree, Strava o Nike Run Club?"},
+      "description": {"fr": "Comparatif honnête pour suivre ses courses au GPS sans fil d'actualité ni classement : prix, compte obligatoire, données.", "en": "An honest comparison for tracking runs with GPS without a feed or leaderboards: price, account, data.", "es": "Comparativa honesta para registrar tus carreras con GPS sin muro ni clasificaciones: precio, cuenta, datos."},
+      "answer": {
+        "fr": "Si tu veux suivre tes courses au GPS sans fil d'actualité, sans abonnés ni classements, RunFree garde tout sur ton iPhone et ne demande aucun compte. Strava est le bon choix si la dimension sociale te motive (abonnés, kudos, segments). Nike Run Club est gratuit et propose des séances guidées, mais il faut un compte Nike.",
+        "en": "If you want GPS run tracking with no feed, followers or leaderboards, RunFree keeps everything on your iPhone and needs no account. Strava is the right pick if the social side motivates you (followers, kudos, segments). Nike Run Club is free and offers guided runs, but requires a Nike account.",
+        "es": "Si quieres registrar tus carreras con GPS sin muro, seguidores ni clasificaciones, RunFree lo guarda todo en tu iPhone y no pide cuenta. Strava es la mejor opción si te motiva lo social (seguidores, kudos, segmentos). Nike Run Club es gratis y ofrece carreras guiadas, pero necesita una cuenta Nike."
+      },
+      "competitors": ["Strava", "Nike Run Club"],
+      "rows": [
+        {"label": {"fr": "Prix", "en": "Price", "es": "Precio"},
+         "ours": "__PRICE__",
+         "them": [
+           {"fr": "Gratuit, abonnement payant pour les fonctions avancées", "en": "Free, paid subscription for advanced features", "es": "Gratis, suscripción de pago para funciones avanzadas"},
+           {"fr": "Gratuit", "en": "Free", "es": "Gratis"}]},
+        {"label": {"fr": "Compte obligatoire", "en": "Account required", "es": "Cuenta obligatoria"},
+         "ours": {"fr": "Non", "en": "No", "es": "No"},
+         "them": [
+           {"fr": "Oui", "en": "Yes", "es": "Sí"},
+           {"fr": "Oui (compte membre Nike)", "en": "Yes (Nike member account)", "es": "Sí (cuenta de miembro Nike)"}]},
+        {"label": {"fr": "Où vont tes courses", "en": "Where your runs go", "es": "Adónde van tus carreras"},
+         "ours": {"fr": "Uniquement sur ton iPhone", "en": "Only on your iPhone", "es": "Solo en tu iPhone"},
+         "them": [
+           {"fr": "Sur ton profil Strava, visibles par tous, tes abonnés ou toi seul selon tes réglages", "en": "On your Strava profile, visible to everyone, your followers or only you depending on your settings", "es": "En tu perfil de Strava, visibles para todos, tus seguidores o solo tú según tu configuración"},
+           {"fr": "Sur ton compte Nike", "en": "On your Nike account", "es": "En tu cuenta Nike"}]},
+        {"label": {"fr": "Dimension sociale", "en": "Social features", "es": "Parte social"},
+         "ours": {"fr": "Aucune : ni fil, ni abonnés, ni classement", "en": "None: no feed, followers or leaderboards", "es": "Ninguna: sin muro, seguidores ni clasificaciones"},
+         "them": [
+           {"fr": "Centrale : abonnés, kudos, clubs, segments et classements", "en": "Core: followers, kudos, clubs, segments and leaderboards", "es": "Central: seguidores, kudos, clubes, segmentos y clasificaciones"},
+           {"fr": "Communauté et défis Nike", "en": "Nike community and challenges", "es": "Comunidad y retos de Nike"}]}
+      ],
+      "why": {
+        "fr": ["Aucun compte à créer : tu ouvres l'app et tu cours.", "Tes parcours ne quittent jamais ton téléphone, il n'y a donc rien à rendre privé.", "Gratuit pour le suivi GPS, l'historique et un plan 5 km de 8 semaines.", "Premium (3,99 €/mois ou 19,99 €/an) pour 4 plans jusqu'au marathon, le plan sur mesure et les zones d'allure."],
+        "en": ["No account to create: open the app and run.", "Your routes never leave your phone, so there is nothing to make private.", "Free for GPS tracking, history and an 8-week 5k plan.", "Premium ($3.99/month or $17.99/year) adds 4 plans up to the marathon, a custom plan builder and pace zones."],
+        "es": ["Sin cuenta: abres la app y corres.", "Tus recorridos nunca salen de tu teléfono, así que no hay nada que ocultar.", "Gratis para el GPS, el historial y un plan de 5 km de 8 semanas.", "Premium (3,99 €/mes o 19,99 €/año) añade 4 planes hasta el maratón, plan a medida y zonas de ritmo."]
+      },
+      "when_other": {
+        "fr": "Choisis Strava si la communauté te pousse à sortir courir : suivre tes amis, comparer tes temps sur des segments et rejoindre des clubs, c'est précisément ce que RunFree ne fait pas. Choisis Nike Run Club si tu veux des séances guidées gratuites et que créer un compte Nike ne te dérange pas.",
+        "en": "Pick Strava if the community is what gets you out the door: following friends, comparing segment times and joining clubs is exactly what RunFree does not do. Pick Nike Run Club if you want free guided runs and don't mind creating a Nike account.",
+        "es": "Elige Strava si la comunidad es lo que te hace salir a correr: seguir a amigos, comparar tiempos en segmentos y unirte a clubes es justo lo que RunFree no hace. Elige Nike Run Club si quieres carreras guiadas gratis y no te importa crear una cuenta Nike."
+      },
+      "faq": [
+        {"q": {"fr": "RunFree fonctionne-t-elle sans internet ?", "en": "Does RunFree work without internet?", "es": "¿Funciona RunFree sin internet?"},
+         "a": {"fr": "Oui. Le GPS, l'historique et les plans d'entraînement fonctionnent entièrement hors ligne.", "en": "Yes. GPS, history and training plans work fully offline.", "es": "Sí. El GPS, el historial y los planes funcionan totalmente sin conexión."}},
+        {"q": {"fr": "Peut-on utiliser RunFree sans créer de compte ?", "en": "Can I use RunFree without an account?", "es": "¿Se puede usar RunFree sin cuenta?"},
+         "a": {"fr": "Oui, aucun compte n'est nécessaire pour commencer à courir.", "en": "Yes, no account is needed to start running.", "es": "Sí, no hace falta ninguna cuenta para empezar a correr."}},
+        {"q": {"fr": "RunFree est-elle disponible sur Android ?", "en": "Is RunFree available on Android?", "es": "¿Está RunFree en Android?"},
+         "a": {"fr": "Pas encore : RunFree est disponible sur iPhone, la version Android arrive bientôt.", "en": "Not yet: RunFree is on iPhone, the Android version is coming soon.", "es": "Todavía no: RunFree está en iPhone y la versión Android llegará pronto."}}
+      ],
+      "sources": [
+        {"label": "Strava — Activity privacy controls", "url": "https://support.strava.com/hc/en-us/articles/216919377"},
+        {"label": "Nike — Free running and training apps (Nike membership)", "url": "https://www.nike.com/membership/free-running-training-apps"}
+      ]
+    },
+    {
+      "id": "period", "app": "rhythm",
+      "slug": {"fr": "suivre-son-cycle-sans-partager-ses-donnees", "en": "track-your-period-without-sharing-data", "es": "seguir-tu-ciclo-sin-compartir-datos"},
+      "title": {"fr": "Suivre son cycle sans partager ses données : Rhythm, Flo ou Clue ?", "en": "Track your period without sharing your data: Rhythm, Flo or Clue?", "es": "Seguir tu ciclo sin compartir tus datos: ¿Rhythm, Flo o Clue?"},
+      "description": {"fr": "Où vont tes données de cycle selon l'app : comparatif factuel de Rhythm, Flo et Clue (compte, stockage, prix).", "en": "Where your cycle data goes in each app: a factual comparison of Rhythm, Flo and Clue (account, storage, price).", "es": "Adónde van tus datos del ciclo en cada app: comparativa de Rhythm, Flo y Clue (cuenta, almacenamiento, precio)."},
+      "answer": {
+        "fr": "Rhythm stocke ton cycle uniquement sur ton téléphone, sans compte : aucune donnée ne part sur un serveur. Flo envoie tes données sur ses serveurs, mais propose un mode anonyme gratuit qui empêche de les relier à ton identité. Clue les stocke sur des serveurs situés dans l'Union européenne si tu crées un compte, sinon elles restent sur l'appareil sans sauvegarde.",
+        "en": "Rhythm stores your cycle only on your phone, with no account: no data goes to a server. Flo sends your data to its servers but offers a free anonymous mode that prevents linking it to your identity. Clue stores it on EU-based servers if you create an account; otherwise it stays on the device without backup.",
+        "es": "Rhythm guarda tu ciclo solo en tu teléfono, sin cuenta: ningún dato va a un servidor. Flo envía tus datos a sus servidores, pero ofrece un modo anónimo gratuito que impide vincularlos a tu identidad. Clue los guarda en servidores de la Unión Europea si creas una cuenta; si no, se quedan en el dispositivo sin copia de seguridad."
+      },
+      "competitors": ["Flo", "Clue"],
+      "rows": [
+        {"label": {"fr": "Prix", "en": "Price", "es": "Precio"},
+         "ours": "__PRICE__",
+         "them": [
+           {"fr": "Gratuit, abonnement Premium", "en": "Free, Premium subscription", "es": "Gratis, suscripción Premium"},
+           {"fr": "Gratuit, abonnement Clue Plus", "en": "Free, Clue Plus subscription", "es": "Gratis, suscripción Clue Plus"}]},
+        {"label": {"fr": "Compte", "en": "Account", "es": "Cuenta"},
+         "ours": {"fr": "Aucun compte nécessaire", "en": "No account needed", "es": "Sin cuenta"},
+         "them": [
+           {"fr": "Mode anonyme possible, sans nom ni e-mail", "en": "Anonymous mode available, no name or email", "es": "Modo anónimo disponible, sin nombre ni correo"},
+           {"fr": "Facultatif", "en": "Optional", "es": "Opcional"}]},
+        {"label": {"fr": "Où sont stockées tes données", "en": "Where your data is stored", "es": "Dónde se guardan tus datos"},
+         "ours": {"fr": "Uniquement sur ton téléphone", "en": "Only on your phone", "es": "Solo en tu teléfono"},
+         "them": [
+           {"fr": "Sur les serveurs de Flo (non reliées à ton identité en mode anonyme)", "en": "On Flo's servers (not linked to your identity in anonymous mode)", "es": "En los servidores de Flo (no vinculados a tu identidad en modo anónimo)"},
+           {"fr": "Serveurs dans l'UE avec un compte, sinon sur l'appareil", "en": "EU-based servers with an account, otherwise on the device", "es": "Servidores en la UE con cuenta; si no, en el dispositivo"}]},
+        {"label": {"fr": "Si tu changes de téléphone", "en": "If you change phones", "es": "Si cambias de teléfono"},
+         "ours": {"fr": "Tes données suivent la sauvegarde de ton iPhone", "en": "Your data follows your iPhone backup", "es": "Tus datos siguen la copia de seguridad de tu iPhone"},
+         "them": [
+           {"fr": "Récupérables avec un compte, perdues en mode anonyme", "en": "Recoverable with an account, lost in anonymous mode", "es": "Recuperables con cuenta, se pierden en modo anónimo"},
+           {"fr": "Récupérables avec un compte, perdues sans compte", "en": "Recoverable with an account, lost without one", "es": "Recuperables con cuenta, se pierden sin ella"}]}
+      ],
+      "why": {
+        "fr": ["Rien ne quitte ton téléphone : pas de serveur, pas de compte, rien à pirater ni à réclamer.", "Prédiction des règles et de l'ovulation, 4 phases du cycle, symptômes, humeur, rappels de pilule : gratuit.", "Widget, export vers ton calendrier, synchronisation avec Apple Santé.", "Premium (3,99 €/mois ou 29,99 €/an) pour les analyses par phase et l'export PDF pour ton médecin."],
+        "en": ["Nothing leaves your phone: no server, no account, nothing to hack or request.", "Period and ovulation predictions, 4 cycle phases, symptoms, mood, pill reminders: free.", "Widget, calendar export, Apple Health sync.", "Premium ($3.99/month or $24.99/year) adds insights by phase and a PDF export for your doctor."],
+        "es": ["Nada sale de tu teléfono: sin servidor, sin cuenta, nada que hackear ni reclamar.", "Predicción de regla y ovulación, 4 fases, síntomas, ánimo, recordatorios de la píldora: gratis.", "Widget, exportación al calendario, sincronización con Apple Salud.", "Premium (3,99 €/mes o 29,99 €/año) añade análisis por fase y exportación PDF para tu médico."]
+      },
+      "when_other": {
+        "fr": "Flo et Clue ont des années de contenus santé et une très large communauté. Si tu veux retrouver ton historique sur un nouvel appareil sans dépendre de la sauvegarde de ton iPhone, un compte Clue (serveurs européens) est une solution solide. Si tu veux les contenus de Flo sans être identifiable, active son mode anonyme.",
+        "en": "Flo and Clue have years of health content and a very large community. If you want your history on a new device without relying on your iPhone backup, a Clue account (EU servers) is a solid option. If you want Flo's content without being identifiable, turn on its anonymous mode.",
+        "es": "Flo y Clue tienen años de contenido de salud y una comunidad muy grande. Si quieres recuperar tu historial en otro dispositivo sin depender de la copia del iPhone, una cuenta de Clue (servidores europeos) es una buena opción. Si quieres el contenido de Flo sin ser identificable, activa su modo anónimo."
+      },
+      "faq": [
+        {"q": {"fr": "Rhythm envoie-t-elle mes données de cycle quelque part ?", "en": "Does Rhythm send my cycle data anywhere?", "es": "¿Envía Rhythm mis datos del ciclo a algún sitio?"},
+         "a": {"fr": "Non. Tout est stocké sur ton appareil ; tu peux utiliser Rhythm sans créer de compte.", "en": "No. Everything is stored on your device; you can use Rhythm without an account.", "es": "No. Todo se guarda en tu dispositivo; puedes usar Rhythm sin cuenta."}},
+        {"q": {"fr": "Rhythm prédit-elle l'ovulation ?", "en": "Does Rhythm predict ovulation?", "es": "¿Predice Rhythm la ovulación?"},
+         "a": {"fr": "Oui, à partir de tes propres données : prochaines règles, fenêtre d'ovulation et les 4 phases du cycle. Ce n'est pas un moyen de contraception.", "en": "Yes, from your own data: next period, ovulation window and the 4 cycle phases. It is not a method of contraception.", "es": "Sí, a partir de tus propios datos: próxima regla, ventana de ovulación y las 4 fases. No es un método anticonceptivo."}},
+        {"q": {"fr": "Combien coûte Rhythm ?", "en": "How much does Rhythm cost?", "es": "¿Cuánto cuesta Rhythm?"},
+         "a": {"fr": "Le téléchargement et le suivi sont gratuits. Premium coûte 3,99 €/mois ou 29,99 €/an en France.", "en": "Download and tracking are free. Premium costs $3.99/month or $24.99/year in the US.", "es": "La descarga y el seguimiento son gratis. Premium cuesta 3,99 €/mes o 29,99 €/año en Europa."}}
+      ],
+      "sources": [
+        {"label": "Flo — Anonymous Mode", "url": "https://flo.health/anonymous-mode"},
+        {"label": "Clue — Create a Clue account (data storage)", "url": "https://helloclue.com/articles/about-clue/want-personalized-insights-about-your-cycle-create-clue-account"}
+      ]
+    },
+    {
+      "id": "recipes", "app": "myfoodbook",
+      "slug": {"fr": "app-recettes-hors-ligne", "en": "offline-recipe-app", "es": "app-recetas-sin-conexion"},
+      "title": {"fr": "Quelle app pour garder ses recettes hors ligne ? MyFoodBook, Paprika ou Notes", "en": "Which app to keep your recipes offline? MyFoodBook, Paprika or Apple Notes", "es": "¿Qué app para guardar tus recetas sin conexión? MyFoodBook, Paprika o Notas"},
+      "description": {"fr": "Carnet de recettes sur iPhone sans connexion : comparatif de MyFoodBook, Paprika et Notes (prix, compte, fonctions).", "en": "An offline recipe book on iPhone: MyFoodBook vs Paprika vs Apple Notes (price, account, features).", "es": "Recetario sin conexión en iPhone: MyFoodBook, Paprika y Notas (precio, cuenta, funciones)."},
+      "answer": {
+        "fr": "MyFoodBook est un carnet de recettes gratuit, entièrement hors ligne et sans compte, pensé pour tes propres recettes avec photos, étapes et tags. Paprika, en achat unique, est plus complet si tu veux importer des recettes depuis des sites web et planifier tes repas. Notes d'Apple suffit si tu veux juste noter quelques recettes en texte libre.",
+        "en": "MyFoodBook is a free recipe keeper that works fully offline with no account, built for your own recipes with photos, steps and tags. Paprika, a one-time purchase, goes further if you want to import recipes from websites and plan meals. Apple Notes is enough if you just jot down a few recipes as free text.",
+        "es": "MyFoodBook es un recetario gratuito, totalmente sin conexión y sin cuenta, pensado para tus propias recetas con fotos, pasos y etiquetas. Paprika, de pago único, es más completo si quieres importar recetas de webs y planificar comidas. Notas de Apple basta si solo apuntas algunas recetas en texto libre."
+      },
+      "competitors": ["Paprika", "Apple Notes"],
+      "competitor_names": {"Apple Notes": {"fr": "Notes (Apple)", "en": "Apple Notes", "es": "Notas (Apple)"}},
+      "rows": [
+        {"label": {"fr": "Prix", "en": "Price", "es": "Precio"},
+         "ours": {"fr": "Gratuit, toutes les fonctions incluses", "en": "Free, every feature included", "es": "Gratis, todas las funciones incluidas"},
+         "them": [
+           {"fr": "Achat unique, à payer sur chaque plateforme", "en": "One-time purchase, paid separately per platform", "es": "Pago único, por cada plataforma"},
+           {"fr": "Gratuit, inclus dans iOS", "en": "Free, built into iOS", "es": "Gratis, incluido en iOS"}]},
+        {"label": {"fr": "Compte", "en": "Account", "es": "Cuenta"},
+         "ours": {"fr": "Aucun", "en": "None", "es": "Ninguna"},
+         "them": [
+           {"fr": "Facultatif (synchronisation Paprika Cloud gratuite)", "en": "Optional (free Paprika Cloud Sync)", "es": "Opcional (sincronización Paprika Cloud gratuita)"},
+           {"fr": "Compte Apple pour synchroniser via iCloud", "en": "Apple Account to sync via iCloud", "es": "Cuenta de Apple para sincronizar por iCloud"}]},
+        {"label": {"fr": "Fonctions recettes", "en": "Recipe features", "es": "Funciones de recetas"},
+         "ours": {"fr": "Ingrédients, étapes, temps, photos, tags, favoris, recherche", "en": "Ingredients, steps, times, photos, tags, favorites, search", "es": "Ingredientes, pasos, tiempos, fotos, etiquetas, favoritos, búsqueda"},
+         "them": [
+           {"fr": "Import depuis le web, listes de courses, planning des repas", "en": "Web import, grocery lists, meal planning", "es": "Importación web, listas de la compra, planificación de comidas"},
+           {"fr": "Texte libre, sans structure de recette", "en": "Free text, no recipe structure", "es": "Texto libre, sin estructura de receta"}]}
+      ],
+      "why": {
+        "fr": ["Gratuit pour de vrai : aucune fonction de recette n'est payante.", "Tout reste sur ton iPhone, même sans connexion en cuisine.", "Photos de tes plats prises depuis l'app, tags libres (végétarien, dessert, rapide…).", "Le Premium optionnel sert uniquement à retirer la publicité."],
+        "en": ["Truly free: no recipe feature is paywalled.", "Everything stays on your iPhone, even with no signal in the kitchen.", "Photos of your dishes taken in the app, free-form tags (vegan, dessert, quick…).", "The optional Premium only removes ads."],
+        "es": ["Gratis de verdad: ninguna función de recetas es de pago.", "Todo se queda en tu iPhone, incluso sin cobertura en la cocina.", "Fotos de tus platos desde la app, etiquetas libres (vegano, postre, rápido…).", "El Premium opcional solo quita los anuncios."]
+      },
+      "when_other": {
+        "fr": "MyFoodBook n'importe pas les recettes depuis un site web et ne fait pas de planning des repas. Si c'est ce que tu cherches, Paprika est le meilleur choix, en achat unique, sans abonnement. Si tu n'as que quelques recettes, Notes fait l'affaire sans rien installer.",
+        "en": "MyFoodBook doesn't import recipes from websites and has no meal planner. If that is what you need, Paprika is the better choice, as a one-time purchase with no subscription. If you only have a handful of recipes, Apple Notes does the job with nothing to install.",
+        "es": "MyFoodBook no importa recetas desde webs ni planifica comidas. Si es lo que buscas, Paprika es la mejor opción, con pago único y sin suscripción. Si solo tienes unas pocas recetas, Notas basta sin instalar nada."
+      },
+      "faq": [
+        {"q": {"fr": "MyFoodBook est-elle vraiment gratuite ?", "en": "Is MyFoodBook really free?", "es": "¿Es MyFoodBook gratis de verdad?"},
+         "a": {"fr": "Oui. Toutes les fonctions sont gratuites ; l'app est financée par la publicité.", "en": "Yes. Every feature is free; the app is supported by ads.", "es": "Sí. Todas las funciones son gratis; la app se financia con anuncios."}},
+        {"q": {"fr": "Mes recettes sont-elles sauvegardées en ligne ?", "en": "Are my recipes backed up online?", "es": "¿Se guardan mis recetas en línea?"},
+         "a": {"fr": "Non, elles restent sur ton appareil et suivent la sauvegarde de ton iPhone.", "en": "No, they stay on your device and follow your iPhone backup.", "es": "No, se quedan en tu dispositivo y siguen la copia de seguridad del iPhone."}}
+      ],
+      "sources": [
+        {"label": "Paprika Recipe Manager — official site", "url": "https://www.paprikaapp.com/"},
+        {"label": "Apple — Use Notes on iPhone", "url": "https://support.apple.com/guide/iphone/iph9c5b3d6c/ios"}
+      ]
+    },
+    {
+      "id": "water", "app": "hydrome",
+      "slug": {"fr": "app-rappel-boire-eau-sans-compte", "en": "water-reminder-app-no-account", "es": "app-recordatorio-beber-agua-sin-cuenta"},
+      "title": {"fr": "Une app pour penser à boire de l'eau, sans compte : HydroMe, WaterMinder ou Plant Nanny ?", "en": "A water reminder app with no account: HydroMe, WaterMinder or Plant Nanny?", "es": "Una app para acordarte de beber agua, sin cuenta: ¿HydroMe, WaterMinder o Plant Nanny?"},
+      "description": {"fr": "Trois façons de suivre son hydratation sur iPhone : minimaliste, détaillée ou ludique. Prix et approche comparés.", "en": "Three ways to track hydration on iPhone: minimalist, detailed or playful. Price and approach compared.", "es": "Tres formas de controlar tu hidratación en iPhone: minimalista, detallada o lúdica. Precio y enfoque comparados."},
+      "answer": {
+        "fr": "HydroMe est la plus simple : un geste pour noter une boisson, un anneau qui se remplit, une série à entretenir, gratuitement et sans compte. WaterMinder convient si tu veux un suivi très détaillé avec Apple Watch. Plant Nanny transforme l'hydratation en jeu : tu fais pousser une plante virtuelle en buvant.",
+        "en": "HydroMe is the simplest: one tap to log a drink, a ring that fills up, a streak to keep, for free and with no account. WaterMinder suits you if you want very detailed tracking with Apple Watch. Plant Nanny turns hydration into a game: you grow a virtual plant as you drink.",
+        "es": "HydroMe es la más sencilla: un toque para anotar una bebida, un anillo que se llena y una racha que mantener, gratis y sin cuenta. WaterMinder te conviene si quieres un seguimiento muy detallado con Apple Watch. Plant Nanny convierte la hidratación en un juego: haces crecer una planta virtual al beber."
+      },
+      "competitors": ["WaterMinder", "Plant Nanny"],
+      "rows": [
+        {"label": {"fr": "Prix", "en": "Price", "es": "Precio"},
+         "ours": "__PRICE__",
+         "them": [
+           {"fr": "Gratuit, abonnement ou achat à vie", "en": "Free, subscription or lifetime purchase", "es": "Gratis, suscripción o compra de por vida"},
+           {"fr": "Gratuit, abonnement et achats intégrés", "en": "Free, subscription and in-app purchases", "es": "Gratis, suscripción y compras dentro de la app"}]},
+        {"label": {"fr": "Approche", "en": "Approach", "es": "Enfoque"},
+         "ours": {"fr": "Minimaliste : un anneau, un objectif, une série", "en": "Minimalist: one ring, one goal, one streak", "es": "Minimalista: un anillo, un objetivo, una racha"},
+         "them": [
+           {"fr": "Détaillée : objectif selon ton poids, Apple Watch, Apple Santé", "en": "Detailed: goal based on your weight, Apple Watch, Apple Health", "es": "Detallada: objetivo según tu peso, Apple Watch, Apple Salud"},
+           {"fr": "Ludique : une plante virtuelle grandit quand tu bois", "en": "Playful: a virtual plant grows as you drink", "es": "Lúdica: una planta virtual crece cuando bebes"}]},
+        {"label": {"fr": "Particularité", "en": "Stand-out feature", "es": "Particularidad"},
+         "ours": {"fr": "Coefficient d'hydratation par boisson (le café compte moins que l'eau)", "en": "Hydration coefficient per drink (coffee counts less than water)", "es": "Coeficiente de hidratación por bebida (el café cuenta menos que el agua)"},
+         "them": [
+           {"fr": "Application Apple Watch", "en": "Apple Watch app", "es": "App para Apple Watch"},
+           {"fr": "Missions et récompenses", "en": "Missions and rewards", "es": "Misiones y recompensas"}]}
+      ],
+      "why": {
+        "fr": ["Aucun compte, aucune donnée envoyée : tout reste sur ton iPhone.", "Gratuit : objectif quotidien, série, 6 types de boissons, historique de la semaine, 3 rappels.", "Le café et le thé ne comptent pas comme de l'eau : chaque boisson a son coefficient.", "Unités en ml ou en oz, 9 langues."],
+        "en": ["No account, no data sent: everything stays on your iPhone.", "Free: daily goal, streak, 6 drink types, weekly history, 3 reminders.", "Coffee and tea don't count as water: each drink has its own coefficient.", "ml or oz units, 9 languages."],
+        "es": ["Sin cuenta ni datos enviados: todo se queda en tu iPhone.", "Gratis: objetivo diario, racha, 6 tipos de bebida, historial semanal, 3 recordatorios.", "El café y el té no cuentan como agua: cada bebida tiene su coeficiente.", "Unidades en ml u oz, 9 idiomas."]
+      },
+      "when_other": {
+        "fr": "Si tu veux suivre ton hydratation depuis ta montre, WaterMinder a une application Apple Watch, ce que HydroMe n'a pas. Si tu as besoin d'un jeu pour tenir l'habitude, Plant Nanny est plus motivant.",
+        "en": "If you want to track hydration from your watch, WaterMinder has an Apple Watch app, which HydroMe doesn't. If you need a game to stick to the habit, Plant Nanny is more motivating.",
+        "es": "Si quieres controlar tu hidratación desde el reloj, WaterMinder tiene app para Apple Watch y HydroMe no. Si necesitas un juego para mantener el hábito, Plant Nanny motiva más."
+      },
+      "faq": [
+        {"q": {"fr": "HydroMe nécessite-t-elle un compte ?", "en": "Does HydroMe require an account?", "es": "¿Necesita HydroMe una cuenta?"},
+         "a": {"fr": "Non, et aucune donnée ne quitte ton téléphone.", "en": "No, and no data leaves your phone.", "es": "No, y ningún dato sale de tu teléfono."}},
+        {"q": {"fr": "Combien de verres d'eau faut-il boire par jour ?", "en": "How much water should I drink a day?", "es": "¿Cuánta agua hay que beber al día?"},
+         "a": {"fr": "Cela dépend de ton poids, de ton activité et du climat. HydroMe te laisse fixer ton propre objectif quotidien ; demande conseil à un professionnel de santé en cas de doute.", "en": "It depends on your weight, activity and climate. HydroMe lets you set your own daily goal; ask a health professional if in doubt.", "es": "Depende de tu peso, tu actividad y el clima. HydroMe te deja fijar tu propio objetivo; consulta a un profesional de la salud si tienes dudas."}}
+      ],
+      "sources": [
+        {"label": "WaterMinder — App Store listing", "url": "https://apps.apple.com/us/app/id653031147"},
+        {"label": "Plant Nanny — App Store listing", "url": "https://apps.apple.com/us/app/id1424178757"}
+      ]
+    },
+    {
+      "id": "stocks", "app": "stockwatch",
+      "slug": {"fr": "s-entrainer-bourse-sans-argent-reel", "en": "practice-investing-without-real-money", "es": "practicar-bolsa-sin-dinero-real"},
+      "title": {"fr": "S'entraîner à la Bourse sans argent réel : StockWatch, Investopedia ou un compte démo ?", "en": "Practice investing without real money: StockWatch, Investopedia or a broker demo?", "es": "Practicar en bolsa sin dinero real: ¿StockWatch, Investopedia o una cuenta demo?"},
+      "description": {"fr": "Portefeuille virtuel sur iPhone, simulateur web ou compte démo de courtier : lequel choisir pour apprendre à investir ?", "en": "A virtual portfolio on iPhone, a web simulator or a broker demo account: which one to learn investing?", "es": "Cartera virtual en iPhone, simulador web o cuenta demo de bróker: ¿cuál elegir para aprender a invertir?"},
+      "answer": {
+        "fr": "StockWatch est une app iPhone pédagogique : tu crées un portefeuille fictif avec tes propres achats, tu suis les cours en direct et tu compares ta performance au S&P 500, sans compte et sans jamais te connecter à une banque. Le simulateur d'Investopedia, gratuit sur le web, te donne 100 000 $ fictifs et permet de jouer entre amis. Un compte démo de courtier reproduit son interface réelle, mais suppose de s'inscrire chez lui.",
+        "en": "StockWatch is an educational iPhone app: you build a virtual portfolio with your own trades, follow live prices and compare your performance with the S&P 500, with no account and never connected to a bank. Investopedia's free web simulator gives you $100,000 in virtual cash and lets you play with friends. A broker demo account mirrors its real interface but means signing up with that broker.",
+        "es": "StockWatch es una app educativa para iPhone: creas una cartera ficticia con tus propias compras, sigues las cotizaciones en directo y comparas tu rentabilidad con el S&P 500, sin cuenta y sin conectarte nunca a un banco. El simulador web gratuito de Investopedia te da 100 000 $ ficticios y permite jugar con amigos. Una cuenta demo de bróker reproduce su interfaz real, pero exige registrarte con él."
+      },
+      "competitors": ["Investopedia Simulator", "Broker demo"],
+      "competitor_names": {"Broker demo": {"fr": "Compte démo d'un courtier", "en": "Broker demo account", "es": "Cuenta demo de un bróker"}},
+      "rows": [
+        {"label": {"fr": "Prix", "en": "Price", "es": "Precio"},
+         "ours": "__PRICE__",
+         "them": [
+           {"fr": "Gratuit", "en": "Free", "es": "Gratis"},
+           {"fr": "Généralement gratuit", "en": "Usually free", "es": "Normalmente gratis"}]},
+        {"label": {"fr": "Compte", "en": "Account", "es": "Cuenta"},
+         "ours": {"fr": "Non obligatoire", "en": "Not required", "es": "No obligatoria"},
+         "them": [
+           {"fr": "Compte Investopedia obligatoire", "en": "Investopedia account required", "es": "Cuenta de Investopedia obligatoria"},
+           {"fr": "Inscription chez le courtier", "en": "Sign-up with the broker", "es": "Registro con el bróker"}]},
+        {"label": {"fr": "Format", "en": "Format", "es": "Formato"},
+         "ours": {"fr": "App iPhone", "en": "iPhone app", "es": "App para iPhone"},
+         "them": [
+           {"fr": "Site web", "en": "Website", "es": "Sitio web"},
+           {"fr": "App ou site du courtier", "en": "Broker's app or website", "es": "App o web del bróker"}]},
+        {"label": {"fr": "Pour apprendre", "en": "Learning tools", "es": "Para aprender"},
+         "ours": {"fr": "Comparaison au S&P 500, alertes, simulateur DCA, lexique", "en": "S&P 500 comparison, alerts, DCA simulator, glossary", "es": "Comparación con el S&P 500, alertas, simulador DCA, glosario"},
+         "them": [
+           {"fr": "100 000 $ fictifs, jeux entre amis ou en classe, articles", "en": "$100,000 virtual cash, games with friends or classes, articles", "es": "100 000 $ ficticios, juegos con amigos o en clase, artículos"},
+           {"fr": "Interface identique au compte réel", "en": "Same interface as the real account", "es": "Misma interfaz que la cuenta real"}]}
+      ],
+      "why": {
+        "fr": ["Aucun lien avec une banque ou un courtier : impossible de passer un vrai ordre par erreur.", "Ton portefeuille, ta liste de suivi et tes alertes restent sur ton iPhone.", "Gratuit : 10 actions suivies, 1 portefeuille, 3 alertes, heatmap des secteurs, simulateur DCA.", "Premium (3,99 €/mois ou 24,99 €/an) pour l'illimité et plusieurs portefeuilles."],
+        "en": ["No link to a bank or broker: you can't place a real order by mistake.", "Your portfolio, watchlist and alerts stay on your iPhone.", "Free: 10 tracked stocks, 1 portfolio, 3 alerts, sector heatmap, DCA simulator.", "Premium ($3.99/month or $24.99/year) unlocks unlimited use and multiple portfolios."],
+        "es": ["Sin vínculo con un banco o bróker: imposible lanzar una orden real por error.", "Tu cartera, tu lista y tus alertas se quedan en tu iPhone.", "Gratis: 10 acciones, 1 cartera, 3 alertas, mapa de sectores, simulador DCA.", "Premium (3,99 €/mes o 24,99 €/año) para uso ilimitado y varias carteras."]
+      },
+      "when_other": {
+        "fr": "Pour un concours en classe ou entre amis avec un capital de départ identique, le simulateur d'Investopedia est fait pour ça. Si tu as déjà choisi ton courtier et veux apprendre son interface avant d'investir pour de vrai, son compte démo est le plus réaliste. StockWatch ne donne aucun conseil financier et ne remplace pas un professionnel.",
+        "en": "For a class or friends competition with the same starting capital, Investopedia's simulator is built for it. If you've already chosen a broker and want to learn its interface before investing for real, its demo account is the most realistic. StockWatch gives no financial advice and doesn't replace a professional.",
+        "es": "Para un concurso en clase o entre amigos con el mismo capital inicial, el simulador de Investopedia está hecho para eso. Si ya elegiste bróker y quieres aprender su interfaz antes de invertir de verdad, su cuenta demo es lo más realista. StockWatch no da asesoramiento financiero ni sustituye a un profesional."
+      },
+      "faq": [
+        {"q": {"fr": "StockWatch passe-t-elle de vrais ordres ?", "en": "Does StockWatch place real trades?", "es": "¿Hace StockWatch operaciones reales?"},
+         "a": {"fr": "Non. C'est un outil pédagogique, jamais connecté à une banque ou à un courtier.", "en": "No. It is an educational tool, never connected to a bank or broker.", "es": "No. Es una herramienta educativa, nunca conectada a un banco o bróker."}},
+        {"q": {"fr": "Les cours sont-ils en temps réel ?", "en": "Are prices real-time?", "es": "¿Las cotizaciones son en tiempo real?"},
+         "a": {"fr": "StockWatch affiche les cours en direct issus de sources publiques ; un léger différé est possible selon la place de cotation.", "en": "StockWatch shows live prices from public sources; a slight delay is possible depending on the exchange.", "es": "StockWatch muestra cotizaciones en directo de fuentes públicas; puede haber un ligero retraso según la bolsa."}}
+      ],
+      "sources": [
+        {"label": "Investopedia — Stock Simulator", "url": "https://www.investopedia.com/simulator/"}
+      ]
+    },
+    {
+      "id": "food", "app": "enjoymeal",
+      "slug": {"fr": "suivi-alimentaire-sans-regime", "en": "food-tracker-without-dieting", "es": "seguimiento-alimentario-sin-dieta"},
+      "title": {"fr": "Suivi alimentaire sans régime ni culpabilité : EnjoyMeal, MyFitnessPal ou Yazio ?", "en": "Food tracking without dieting or guilt: EnjoyMeal, MyFitnessPal or Yazio?", "es": "Seguimiento alimentario sin dieta ni culpa: ¿EnjoyMeal, MyFitnessPal o Yazio?"},
+      "description": {"fr": "Journal alimentaire bienveillant ou compteur de calories ? Comparatif d'EnjoyMeal, MyFitnessPal et Yazio : prix, scan de codes-barres, approche.", "en": "A kind food diary or a calorie counter? EnjoyMeal vs MyFitnessPal vs Yazio: price, barcode scanning, approach.", "es": "¿Diario amable o contador de calorías? EnjoyMeal, MyFitnessPal y Yazio: precio, escáner de códigos, enfoque."},
+      "answer": {
+        "fr": "EnjoyMeal suit tes repas, tes calories et tes macros avec des objectifs doux et sans régime drastique, et le scan de codes-barres y est gratuit. MyFitnessPal et Yazio sont des compteurs de calories très complets, avec d'immenses bases d'aliments, mais leur scan de codes-barres est réservé aux abonnés.",
+        "en": "EnjoyMeal tracks your meals, calories and macros with gentle goals and no crash diets, and barcode scanning is free. MyFitnessPal and Yazio are very complete calorie counters with huge food databases, but their barcode scanner is for subscribers only.",
+        "es": "EnjoyMeal registra tus comidas, calorías y macros con objetivos suaves y sin dietas drásticas, y el escáner de códigos de barras es gratis. MyFitnessPal y Yazio son contadores de calorías muy completos, con enormes bases de alimentos, pero su escáner es solo para suscriptores."
+      },
+      "competitors": ["MyFitnessPal", "Yazio"],
+      "rows": [
+        {"label": {"fr": "Prix", "en": "Price", "es": "Precio"},
+         "ours": "__PRICE__",
+         "them": [
+           {"fr": "Gratuit, abonnements Premium et Premium+", "en": "Free, Premium and Premium+ subscriptions", "es": "Gratis, suscripciones Premium y Premium+"},
+           {"fr": "Gratuit, abonnement PRO", "en": "Free, PRO subscription", "es": "Gratis, suscripción PRO"}]},
+        {"label": {"fr": "Scan de codes-barres", "en": "Barcode scanning", "es": "Escáner de códigos"},
+         "ours": {"fr": "Gratuit (base Open Food Facts)", "en": "Free (Open Food Facts database)", "es": "Gratis (base Open Food Facts)"},
+         "them": [
+           {"fr": "Réservé aux abonnés", "en": "Subscribers only", "es": "Solo suscriptores"},
+           {"fr": "Réservé à PRO", "en": "PRO only", "es": "Solo PRO"}]},
+        {"label": {"fr": "Approche", "en": "Approach", "es": "Enfoque"},
+         "ours": {"fr": "Anti-régime : objectifs réalistes, pas de restriction", "en": "Anti-diet: realistic goals, no restriction", "es": "Antidieta: objetivos realistas, sin restricción"},
+         "them": [
+           {"fr": "Comptage des calories et des macros", "en": "Calorie and macro counting", "es": "Conteo de calorías y macros"},
+           {"fr": "Comptage des calories, jeûne intermittent", "en": "Calorie counting, intermittent fasting", "es": "Conteo de calorías, ayuno intermitente"}]},
+        {"label": {"fr": "Reconnaissance des repas par photo", "en": "Meal photo recognition", "es": "Reconocimiento por foto"},
+         "ours": {"fr": "Premium, avec ta propre clé d'IA", "en": "Premium, with your own AI key", "es": "Premium, con tu propia clave de IA"},
+         "them": [
+           {"fr": "—", "en": "—", "es": "—"},
+           {"fr": "Réservée à PRO", "en": "PRO only", "es": "Solo PRO"}]}
+      ],
+      "why": {
+        "fr": ["Gratuit : journal des repas, scan de codes-barres, calories et macros, objectifs personnalisés, rappels.", "Objectifs calculés avec l'équation de Mifflin-St Jeor, à un rythme doux, sans régime drastique.", "Un coach sportif inclus : séances cardio, renforcement et mobilité.", "Premium (4,99 €/mois ou 29,99 €/an) pour la photo IA, le suivi du poids et l'export PDF."],
+        "en": ["Free: meal diary, barcode scanning, calories and macros, personalised goals, reminders.", "Goals computed with the Mifflin-St Jeor equation, at a gentle pace, no crash diets.", "A built-in sport coach: cardio, strength and mobility sessions.", "Premium ($3.99/month or $24.99/year) adds AI photo logging, weight tracking and PDF export."],
+        "es": ["Gratis: diario de comidas, escáner, calorías y macros, objetivos personalizados, recordatorios.", "Objetivos calculados con la ecuación de Mifflin-St Jeor, a un ritmo suave, sin dietas drásticas.", "Coach deportivo incluido: cardio, fuerza y movilidad.", "Premium (4,99 €/mes o 29,99 €/año) añade la foto con IA, el seguimiento del peso y el PDF."]
+      },
+      "when_other": {
+        "fr": "Si tu suis un programme sportif précis et veux connecter de nombreuses applications de fitness, MyFitnessPal a l'écosystème le plus large. Si tu pratiques le jeûne intermittent, Yazio intègre un minuteur dédié. EnjoyMeal est un outil d'information et ne remplace pas l'avis d'un professionnel de santé.",
+        "en": "If you follow a precise training program and want to connect many fitness apps, MyFitnessPal has the largest ecosystem. If you practice intermittent fasting, Yazio has a built-in timer. EnjoyMeal is an informational tool and doesn't replace advice from a health professional.",
+        "es": "Si sigues un programa deportivo preciso y quieres conectar muchas apps de fitness, MyFitnessPal tiene el ecosistema más amplio. Si practicas el ayuno intermitente, Yazio integra un temporizador. EnjoyMeal es una herramienta informativa y no sustituye el consejo de un profesional de la salud."
+      },
+      "faq": [
+        {"q": {"fr": "EnjoyMeal compte-t-elle les calories ?", "en": "Does EnjoyMeal count calories?", "es": "¿Cuenta EnjoyMeal las calorías?"},
+         "a": {"fr": "Oui, avec un anneau de calories et le suivi des macros, mais avec des objectifs réalistes plutôt que restrictifs.", "en": "Yes, with a calorie ring and macro tracking, but with realistic rather than restrictive goals.", "es": "Sí, con un anillo de calorías y seguimiento de macros, pero con objetivos realistas en lugar de restrictivos."}},
+        {"q": {"fr": "D'où viennent les données des aliments ?", "en": "Where does the food data come from?", "es": "¿De dónde vienen los datos de los alimentos?"},
+         "a": {"fr": "De la base ouverte Open Food Facts, sous licence ODbL.", "en": "From the open Open Food Facts database, under the ODbL license.", "es": "De la base abierta Open Food Facts, con licencia ODbL."}}
+      ],
+      "sources": [
+        {"label": "MyFitnessPal — Premium", "url": "https://www.myfitnesspal.com/premium"},
+        {"label": "Yazio — App Store listing", "url": "https://apps.apple.com/us/app/id946099227"}
+      ]
+    }
+  ]
+}

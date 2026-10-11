@@ -1473,3 +1473,46 @@ html[lang="es"] [data-lang-block="es"] { display: block; }
   .facts__list { grid-template-columns: 1fr; gap: 0.2rem; }
   .facts__list dd { margin-bottom: 0.6rem; }
 }
+
+/* ── Guides (scripts/build_guides.py) ───────────────────────────────────────── */
+.guide-nav { position: sticky; top: 0; }
+.guide-nav__logo { font-weight: 800; font-size: 1.1rem; }
+.guide-nav__links { display: flex; gap: 1.5rem; }
+.guide-nav__links a { color: rgba(255,255,255,0.85); }
+.guide-nav__links a:hover, .guide-nav__links a.active { color: #fff; }
+.guide-nav .lang-btn { text-decoration: none; }
+.guide { background: var(--bg); color: var(--text); padding: 3rem 0 4rem; }
+.guide__container { max-width: 860px; }
+.guide__crumbs { font-size: 0.85rem; color: var(--text3); margin-bottom: 1rem; }
+.guide__crumbs a { color: var(--text2); }
+.guide__title { font-size: clamp(1.7rem, 4vw, 2.5rem); font-weight: 800; line-height: 1.2; margin-bottom: 0.75rem; }
+.guide__by { color: var(--text2); font-size: 0.9rem; margin-bottom: 2rem; }
+.guide__by a { color: var(--primary); }
+.guide section { margin-bottom: 2.5rem; }
+.guide h2 { font-size: 1.35rem; font-weight: 800; margin-bottom: 0.9rem; }
+.guide p, .guide li { line-height: 1.7; color: var(--text2); }
+.guide__answer { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: var(--r-lg); padding: 1.25rem 1.5rem; }
+.guide__answer p { color: var(--text); font-size: 1.05rem; }
+.guide__list, .guide__sources ul { padding-left: 1.2rem; list-style: disc; }
+.guide__list li { margin-bottom: 0.4rem; }
+.guide__cta { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: 1.25rem; }
+.guide__more { color: var(--primary); font-weight: 600; }
+.guide-table__wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.guide-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; min-width: 560px; }
+.guide-table th, .guide-table td { text-align: left; vertical-align: top; padding: 0.75rem; border-bottom: 1px solid var(--border); color: var(--text2); }
+.guide-table thead th { color: var(--text); font-weight: 800; }
+.guide-table tbody th { color: var(--text); font-weight: 700; width: 9rem; }
+.guide-table .guide-table__ours { background: color-mix(in srgb, var(--primary) 8%, transparent); color: var(--text); }
+.guide .faq-item { border-bottom: 1px solid var(--border); padding: 1rem 0; }
+.guide .faq-item summary { cursor: pointer; font-weight: 700; color: var(--text); }
+.guide .faq-item p { margin-top: 0.6rem; }
+.guide__sources ul { padding-left: 1.2rem; font-size: 0.9rem; }
+.guide__sources a { color: var(--text2); text-decoration: underline; }
+.guide__checked { font-size: 0.8rem; color: var(--text3); margin-top: 0.75rem; }
+.guide-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+.guide-card { display: flex; flex-direction: column; gap: 0.4rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.25rem; color: var(--text); text-decoration: none; transition: transform var(--transition), border-color var(--transition); }
+.guide-card:hover { transform: translateY(-2px); border-color: var(--primary); }
+.guide-card__app { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--primary); font-weight: 700; }
+.guide-card__title { font-weight: 800; line-height: 1.35; }
+.guide-card__desc { font-size: 0.88rem; color: var(--text2); line-height: 1.5; }
+@media (max-width: 640px) { .guide-nav__links { display: none; } }
