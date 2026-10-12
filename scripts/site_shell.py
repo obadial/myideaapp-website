@@ -81,7 +81,7 @@ def footer_inner(lang):
         <div class="site-footer__col site-footer__col--ig">
           <h4 class="site-footer__ig-title">{IG_GLYPH}{e(T['insta'][lang])}</h4>
           <div class="site-footer__igs">{instagram_links()}</div>
-          <a class="site-footer__ig-all" href="{IG_PAGE[lang]}">{e(T['ig_all'][lang])} →</a>
+          <a class="site-footer__ig-all" href="{IG_PAGE[lang]}">{IG_GLYPH}{e(T['ig_all'][lang])} →</a>
         </div>
         <div class="site-footer__col">
           <h4>{e(T['res'][lang])}</h4>
@@ -113,8 +113,9 @@ def footer_multi():
 NAV_LABELS = {"apps": {"fr": "Ce qu'on fait", "en": "What We Do", "es": "Lo que hacemos"},
               "about": {"fr": "Qui sommes-nous", "en": "Who We Are", "es": "Quiénes somos"},
               "guides": {"fr": "Guides", "en": "Guides", "es": "Guías"},
+              "instagram": {"fr": "Instagram", "en": "Instagram", "es": "Instagram"},
               "contact": {"fr": "Contact", "en": "Contact", "es": "Contacto"}}
-NAV_KEYS = {"apps": "nav_apps", "guides": "nav_guides", "about": "nav_about", "contact": "nav_contact"}
+NAV_KEYS = {"apps": "nav_apps", "guides": "nav_guides", "about": "nav_about", "instagram": "nav_instagram", "contact": "nav_contact"}
 LANG_NAMES = {"fr": "Français", "en": "English", "es": "Español"}
 GLOBE = ('<svg class="lang-menu__globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" '
          'stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9'
@@ -152,7 +153,8 @@ def _nav(links, lang_label, lang_items):
 
 def nav(lang, lang_links, active=None, about_href=None):
     """Pages générées dans une langue fixe : libellés écrits, langues = liens vers l'autre URL."""
-    hrefs = {"apps": "/#apps", "guides": "/guides/", "about": about_href or ABOUT[lang], "contact": "/contact.html"}
+    hrefs = {"apps": "/#apps", "guides": "/guides/", "about": about_href or ABOUT[lang], "instagram": IG_PAGE[lang],
+             "contact": "/contact.html"}
     active_cls = ' class="active"'
     links = "\n".join(f'        <a href="{hrefs[k]}"{active_cls if k == active else ""}>{e(NAV_LABELS[k][lang])}</a>'
                       for k in NAV_LABELS)
@@ -163,9 +165,9 @@ def nav(lang, lang_links, active=None, about_href=None):
 
 def nav_multi(active=None):
     """Pages traduites par i18n.js : libellés par clés, langues = boutons."""
-    hrefs = {"apps": "/#apps", "guides": "/guides/", "about": "/a-propos/", "contact": "/contact.html"}
+    hrefs = {"apps": "/#apps", "guides": "/guides/", "about": "/a-propos/", "instagram": "/instagram/", "contact": "/contact.html"}
     def link(k):
-        extra = ' data-i18n-href="nav_about_href"' if k == "about" else ""
+        extra = {"about": ' data-i18n-href="nav_about_href"', "instagram": ' data-i18n-href="nav_instagram_href"'}.get(k, "")
         cls = ' class="active"' if k == active else ""
         return f'        <a href="{hrefs[k]}" data-i18n="{NAV_KEYS[k]}"{extra}{cls}>{e(NAV_LABELS[k]["fr"])}</a>'
     links = "\n".join(link(k) for k in NAV_LABELS)

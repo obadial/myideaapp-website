@@ -89,9 +89,17 @@ def phone(post, slug, lang):
         </a>"""
 
 
+def latest_per_account(data, n):
+    """Le post le plus récent de chaque compte, du plus récent au plus ancien : un écran
+    par app plutôt que plusieurs posts du même compte côte à côte."""
+    firsts = [(max(a["posts"], key=lambda p: p["timestamp"]), s) for s, a in data.get("accounts", {}).items()
+              if a.get("posts") and s in APPS]
+    return sorted(firsts, key=lambda x: x[0]["timestamp"], reverse=True)[:n]
+
+
 def page(data, lang):
     accounts = {s: a for s, a in data["accounts"].items() if a.get("posts") and s in APPS}
-    latest = sorted(((p, s) for s, a in accounts.items() for p in a["posts"]), key=lambda x: x[0]["timestamp"], reverse=True)[:8]
+    latest = latest_per_account(data, 8)
     alternates = {l: BASE + PATHS[l] for l in LANGS}
     ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": TXT["title"][lang], "url": BASE + PATHS[lang],
            "inLanguage": lang, "isPartOf": {"@id": BASE + "/#organization"},
@@ -138,7 +146,7 @@ def page(data, lang):
     </div>
   </main>
 """
-    return out + "\n" + G.nav(lang, alternates, active=None) + body + G.footer(lang)
+    return out + "\n" + G.nav(lang, alternates, active="instagram") + body + G.footer(lang)
 
 
 def site_shell_two_tone(parts):

@@ -40,6 +40,11 @@ T = {
               "en": [("12", "iPhone apps"), ("9", "languages"), ("0", "account required"), ("$0", "to download")],
               "es": [("12", "apps para iPhone"), ("9", "idiomas"), ("0", "cuentas obligatorias"), ("0 €", "para descargar")]},
     # Titres de section bicolores (première partie au dégradé du studio), façon wearebluefoxes.com
+    "ig_title": {"fr": ["Vu sur", "Instagram"], "en": ["Seen on", "Instagram"], "es": ["Visto en", "Instagram"]},
+    "ig_sub": {"fr": "Conseils, coulisses et nouveautés : les derniers posts de nos apps.",
+               "en": "Tips, behind the scenes and what's new: the latest posts from our apps.",
+               "es": "Consejos, entre bastidores y novedades: las últimas publicaciones de nuestras apps."},
+    "ig_all": {"fr": "Voir tous les posts", "en": "See all posts", "es": "Ver todas las publicaciones"},
     "guides_title": {"fr": ("Quelle app", "choisir ?"), "en": ("Which app", "should you pick?"), "es": ("¿Qué app", "elegir?")},
     "guides_sub": {"fr": "Nos comparatifs honnêtes face aux apps les plus connues : prix, compte, données. Quand une autre app te convient mieux, on le dit.",
                    "en": "Honest comparisons with the best-known apps: price, account, data. When another app suits you better, we say so.",
@@ -148,6 +153,33 @@ def why():
     </div>
   </section>"""
 
+def instagram():
+    """« VU SUR INSTAGRAM » : les 4 derniers posts dans des écrans d'iPhone, avec un lien
+    vers la page complète. Sans données Instagram, la section est vide."""
+    import build_instagram as IG
+    path = SITE / "data/instagram.json"
+    data = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {"accounts": {}}
+    posts = IG.latest_per_account(data, 4)
+    if not posts:
+        return "  <!-- pas de posts Instagram -->"
+
+    def r(l):
+        phones = "\n".join(IG.phone(p, slug, l) for p, slug in posts)
+        return f"""      <div data-lang-block="{l}" lang="{l}">
+        <h2 class="section-title">{two_tone(T['ig_title'][l])}</h2>
+        <p class="section-subtitle">{e(T['ig_sub'][l])}</p>
+        <div class="ig-phones ig-phones--home">
+{phones}
+        </div>
+        <p class="home-ig__all"><a class="hero2__btn hero2__btn--primary" href="{site_shell.IG_PAGE[l]}">{e(T['ig_all'][l])} →</a></p>
+      </div>"""
+    return f"""  <section class="home-ig">
+    <div class="container">
+{blocks(r)}
+    </div>
+  </section>"""
+
+
 def put(page, name, content, fallback_pattern):
     start, end = f"<!-- home:{name}:start -->", f"<!-- home:{name}:end -->"
     block = f"{start}\n{content}\n  {end}"
@@ -164,6 +196,7 @@ def main():
     s = p.read_text(encoding="utf-8")
     s = put(s, "hero", hero(), r"  <section class=\"studio-hero\">.*?</section>")
     s = put(s, "stats", stats(), r"(?<=<!-- home:hero:end -->\n)")
+    s = put(s, "instagram", instagram(), r"(?=<!-- home:guides:start -->)")
     s = put(s, "guides", guides(), r"  <section class=\"home-guides\">.*?</section>")
     s = put(s, "why", why(), r"  <section class=\"about-section\">.*?</section>")
     # Pied de page : habillage commun du studio (scripts/build_shell.py).
