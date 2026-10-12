@@ -43,17 +43,17 @@ T = {
     "why_title": {"fr": "Pourquoi nos apps", "en": "Why our apps", "es": "Por qué nuestras apps"},
     "why": {
         "fr": [("Aucun compte obligatoire", "Les 12 apps s'utilisent sans créer de compte. Tu ouvres, tu t'en sers."),
-               ("Tes données restent chez toi", "Tout est stocké sur ton iPhone. Rien n'est revendu, rien n'est envoyé sur nos serveurs."),
+               ("Tes données restent chez toi", "Ton cycle, tes courses, tes dépenses… sont stockés sur ton iPhone, pas sur un serveur. Rien n'est revendu."),
                ("Prix affichés", "Gratuites au téléchargement. Le Premium optionnel est affiché en clair sur chaque page."),
-               ("Pensées pour tout le monde", "9 langues, du mode sombre à l'arabe de droite à gauche, sans jugement ni stéréotype.")],
+               ("Pensées pour tout le monde", "9 langues, dont l'arabe de droite à gauche. Des apps sans jugement ni stéréotype.")],
         "en": [("No account required", "All 12 apps work without creating an account. Open it and go."),
-               ("Your data stays with you", "Everything is stored on your iPhone. Nothing is sold or sent to our servers."),
+               ("Your data stays with you", "Your cycle, runs, spending… are stored on your iPhone, not on a server. Nothing is sold."),
                ("Prices shown upfront", "Free to download. The optional Premium price is shown clearly on every page."),
-               ("Built for everyone", "9 languages, dark mode to right-to-left Arabic, no judgment, no stereotypes.")],
+               ("Built for everyone", "9 languages, including right-to-left Arabic. Apps with no judgment and no stereotypes.")],
         "es": [("Sin cuenta obligatoria", "Las 12 apps funcionan sin crear una cuenta. Abres y listo."),
-               ("Tus datos se quedan contigo", "Todo se guarda en tu iPhone. Nada se vende ni se envía a nuestros servidores."),
+               ("Tus datos se quedan contigo", "Tu ciclo, tus carreras, tus gastos… se guardan en tu iPhone, no en un servidor. Nada se vende."),
                ("Precios a la vista", "Descarga gratuita. El precio del Premium opcional aparece claro en cada página."),
-               ("Pensadas para todos", "9 idiomas, del modo oscuro al árabe de derecha a izquierda, sin juicios ni estereotipos.")],
+               ("Pensadas para todos", "9 idiomas, incluido el árabe de derecha a izquierda. Apps sin juicios ni estereotipos.")],
     },
     "contact": {"fr": "Une question ? Écris-nous", "en": "A question? Write to us", "es": "¿Una pregunta? Escríbenos"},
     "res": {"fr": "Ressources", "en": "Resources", "es": "Recursos"},
@@ -71,7 +71,7 @@ def blocks(render):
 def hero():
     icons = "\n".join(
         f'          <a class="hero-apps__item" href="{a["slug"]}/" title="{e(a["name"])}">'
-        f'<img src="assets/{a["slug"]}/icon.png" alt="{e(a["name"])}" width="56" height="56">'
+        f'<img src="assets/{a["slug"]}/icon-192.png" alt="{e(a["name"])}" width="56" height="56">'
         f'<span>{e(a["name"])}</span></a>' for a in APPS)
 
     def r(l):

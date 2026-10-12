@@ -37,7 +37,7 @@ def block(app):
     others = sorted((a for a in APPS if a["slug"] != app["slug"]),
                     key=lambda a: (a["category"] != app["category"], APPS.index(a)))
     chips = "\n".join(
-        f'        <a href="../{a["slug"]}/"><img src="../assets/{a["slug"]}/icon.png" alt="" loading="lazy">{html.escape(a["name"])}</a>'
+        f'        <a href="../{a["slug"]}/"><img src="../assets/{a["slug"]}/icon-192.png" alt="" loading="lazy">{html.escape(a["name"])}</a>'
         for a in others)
     titles = "\n".join(f'      <h2 class="app-crosslinks__title" data-lang-block="{l}">{LABEL["others"][l]}</h2>' for l in LANGS)
     return f"""{START}
