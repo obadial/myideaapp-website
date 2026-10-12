@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-itunes-app" content="app-id=6774221997">
   <title>HydroMe — Suivi de l'hydratation & rappels eau | MyIdeApp</title>
   <meta name="description" data-i18n-content="meta_hydrome_desc" content="HydroMe : suis ton hydratation sans effort. Anneau de progression, séries et rappels. Minimaliste, hors ligne, tes données restent sur ton iPhone.">
   <meta name="robots" content="index, follow">
@@ -192,8 +193,12 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M19 12H5M12 19l-7-7 7-7"/>
         </svg>
-        <span>MyIdeApp</span>
+        <span data-i18n="back_to_studio">Studio</span>
       </a>
+      <div class="navbar__logo">
+        <img src="../assets/hydrome/icon.png" alt="HydroMe" class="navbar__app-icon">
+        <span class="logo-text">HydroMe</span>
+      </div>
     </div>
     <div class="navbar__nav">
       <a href="index.html" class="active" data-i18n="nav_overview">Présentation</a>
@@ -366,9 +371,32 @@
 
 
   <!-- FAQ (SEO) -->
+  <section class="legal-strip">
+    <div class="container">
+      <div class="legal-strip__inner">
+        <div class="legal-strip__text">
+          <h3 data-i18n="rhythm_legal_title">Documents légaux</h3>
+          <p data-i18n="rhythm_legal_desc">Consulte notre politique de confidentialité et nos conditions d'utilisation.</p>
+        </div>
+        <div class="legal-strip__links">
+          <a href="privacy.html" class="legal-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span data-i18n="privacy_link">Politique de confidentialité</span>
+          </a>
+          <a href="terms.html" class="legal-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            <span data-i18n="terms_link">Conditions d'utilisation</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container">
-      <h2 class="section-title fade-up">Questions fréquentes</h2>
+      <!-- faq:start -->
+      <div data-lang-block="fr" lang="fr">
+      <h2 class="section-title">Questions fréquentes</h2>
       <div class="faq" style="max-width:760px;margin:2rem auto 0;">
         <details class="faq-item" style="border-bottom:1px solid rgba(128,128,128,0.18);padding:1.15rem 0;">
           <summary style="cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;">Comment logger mon hydratation avec HydroMe ?</summary>
@@ -383,6 +411,42 @@
           <p style="margin:.85rem 0 0;opacity:.82;line-height:1.65;">Non. Aucun compte ni cloud : toutes tes données restent sur ton appareil.</p>
         </details>
       </div>
+      </div>
+      <div data-lang-block="en" lang="en">
+      <h2 class="section-title">Frequently asked questions</h2>
+      <div class="faq" style="max-width:760px;margin:2rem auto 0;">
+        <details class="faq-item" style="border-bottom:1px solid rgba(128,128,128,0.18);padding:1.15rem 0;">
+          <summary style="cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;">How do I log my water intake with HydroMe?</summary>
+          <p style="margin:.85rem 0 0;opacity:.82;line-height:1.65;">In one tap, with quick buttons +200ml, +350ml, +500ml. The progress ring fills up instantly.</p>
+        </details>
+        <details class="faq-item" style="border-bottom:1px solid rgba(128,128,128,0.18);padding:1.15rem 0;">
+          <summary style="cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;">Does HydroMe sync with Apple Health?</summary>
+          <p style="margin:.85rem 0 0;opacity:.82;line-height:1.65;">Yes, your intake syncs automatically with HealthKit every time you log.</p>
+        </details>
+        <details class="faq-item" style="border-bottom:1px solid rgba(128,128,128,0.18);padding:1.15rem 0;">
+          <summary style="cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;">Does HydroMe require an account?</summary>
+          <p style="margin:.85rem 0 0;opacity:.82;line-height:1.65;">No. No account, no cloud: all your data stays on your device.</p>
+        </details>
+      </div>
+      </div>
+      <div data-lang-block="es" lang="es">
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <div class="faq" style="max-width:760px;margin:2rem auto 0;">
+        <details class="faq-item" style="border-bottom:1px solid rgba(128,128,128,0.18);padding:1.15rem 0;">
+          <summary style="cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;">¿Cómo registro mi hidratación con HydroMe?</summary>
+          <p style="margin:.85rem 0 0;opacity:.82;line-height:1.65;">Con un toque, gracias a los botones rápidos +200ml, +350ml, +500ml. El anillo de progreso se llena al instante.</p>
+        </details>
+        <details class="faq-item" style="border-bottom:1px solid rgba(128,128,128,0.18);padding:1.15rem 0;">
+          <summary style="cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;">¿HydroMe se sincroniza con Apple Salud?</summary>
+          <p style="margin:.85rem 0 0;opacity:.82;line-height:1.65;">Sí, tu hidratación se sincroniza automáticamente con HealthKit cada vez que registras.</p>
+        </details>
+        <details class="faq-item" style="border-bottom:1px solid rgba(128,128,128,0.18);padding:1.15rem 0;">
+          <summary style="cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;">¿HydroMe necesita una cuenta?</summary>
+          <p style="margin:.85rem 0 0;opacity:.82;line-height:1.65;">No. Sin cuenta ni nube: todos tus datos se quedan en tu dispositivo.</p>
+        </details>
+      </div>
+      </div>
+      <!-- faq:end -->
     </div>
   </section>
 

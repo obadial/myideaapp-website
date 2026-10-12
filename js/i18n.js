@@ -283,6 +283,8 @@ const TRANSLATIONS = {
     legal_back: '← Retour',
     legal_updated: 'Dernière mise à jour',
     delete_account_title: 'Supprimer mon compte et mes données',
+    footer_legal_notice: 'Mentions légales',
+    footer_delete_account: 'Supprimer mon compte',
 
     // Footer
     footer_tagline: 'Applications mobiles élégantes et respectueuses de ta vie privée.',
@@ -641,6 +643,8 @@ const TRANSLATIONS = {
     legal_back: '← Back',
     legal_updated: 'Last updated',
     delete_account_title: 'Delete my account and data',
+    footer_legal_notice: 'Legal notice',
+    footer_delete_account: 'Delete my account',
 
     footer_tagline: 'Elegant mobile apps that respect your privacy.',
     footer_apps: 'Apps',
@@ -998,6 +1002,8 @@ const TRANSLATIONS = {
     legal_back: '← Volver',
     legal_updated: 'Última actualización',
     delete_account_title: 'Eliminar mi cuenta y mis datos',
+    footer_legal_notice: 'Aviso legal',
+    footer_delete_account: 'Eliminar mi cuenta',
 
     footer_tagline: 'Aplicaciones móviles elegantes que respetan tu privacidad.',
     footer_apps: 'Apps',

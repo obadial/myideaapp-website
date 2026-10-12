@@ -1,0 +1,102 @@
+{
+ "_note": "FAQ visibles des 12 pages d'app, en FR/EN/ES. Source du FR : texte d'origine des pages (le JSON-LD FAQPage reste en français). Régénérer avec scripts/build_faq.py.",
+ "title": {"fr": "Questions fréquentes", "en": "Frequently asked questions", "es": "Preguntas frecuentes"},
+ "apps": {
+  "rhythm": [
+   {"q": {"fr": "Rhythm respecte-t-elle vraiment ma vie privée ?", "en": "Does Rhythm really respect my privacy?", "es": "¿Rhythm respeta de verdad mi privacidad?"},
+    "a": {"fr": "Oui. Toutes tes données de santé (règles, symptômes, humeur, énergie) sont stockées uniquement sur ton iPhone, jamais envoyées ni partagées.", "en": "Yes. All your health data (periods, symptoms, mood, energy) is stored only on your iPhone, never sent or shared.", "es": "Sí. Todos tus datos de salud (reglas, síntomas, estado de ánimo, energía) se guardan solo en tu iPhone, nunca se envían ni se comparten."}},
+   {"q": {"fr": "Rhythm fonctionne-t-elle sans connexion internet ?", "en": "Does Rhythm work without an internet connection?", "es": "¿Rhythm funciona sin conexión a internet?"},
+    "a": {"fr": "Oui, Rhythm fonctionne hors-ligne. Le suivi du cycle, les prédictions et les rappels sont disponibles sans compte ni cloud.", "en": "Yes, Rhythm works offline. Cycle tracking, predictions and reminders are available with no account and no cloud.", "es": "Sí, Rhythm funciona sin conexión. El seguimiento del ciclo, las predicciones y los recordatorios están disponibles sin cuenta ni nube."}},
+   {"q": {"fr": "Rhythm se synchronise-t-elle avec Apple Health ?", "en": "Does Rhythm sync with Apple Health?", "es": "¿Rhythm se sincroniza con Apple Salud?"},
+    "a": {"fr": "Oui, tu peux synchroniser Rhythm avec Apple Health pour une vision complète de ton cycle et de ton bien-être.", "en": "Yes, you can sync Rhythm with Apple Health for a complete view of your cycle and wellbeing.", "es": "Sí, puedes sincronizar Rhythm con Apple Salud para tener una visión completa de tu ciclo y tu bienestar."}}
+  ],
+  "runfree": [
+   {"q": {"fr": "RunFree fonctionne-t-elle sans internet ?", "en": "Does RunFree work without internet?", "es": "¿RunFree funciona sin internet?"},
+    "a": {"fr": "Oui, entièrement hors-ligne : GPS, historique et plans d'entraînement sans aucune connexion ni compte cloud.", "en": "Yes, fully offline: GPS, history and training plans with no connection and no cloud account.", "es": "Sí, totalmente sin conexión: GPS, historial y planes de entrenamiento sin conexión ni cuenta en la nube."}},
+   {"q": {"fr": "RunFree envoie-t-elle mes courses dans le cloud ?", "en": "Does RunFree upload my runs to the cloud?", "es": "¿RunFree sube mis carreras a la nube?"},
+    "a": {"fr": "Non. Tes itinéraires, ton allure et tes records restent uniquement sur ton appareil, sans réseau social ni comparaison.", "en": "No. Your routes, pace and records stay only on your device, with no social network and no comparisons.", "es": "No. Tus rutas, tu ritmo y tus récords se quedan solo en tu dispositivo, sin red social ni comparaciones."}},
+   {"q": {"fr": "Y a-t-il des plans d'entraînement ?", "en": "Are there training plans?", "es": "¿Hay planes de entrenamiento?"},
+    "a": {"fr": "Oui, des plans 5k, 10k, semi-marathon et marathon avec des séances hebdomadaires guidées.", "en": "Yes, 5K, 10K, half-marathon and marathon plans with guided weekly sessions.", "es": "Sí, planes de 5K, 10K, medio maratón y maratón con sesiones semanales guiadas."}}
+  ],
+  "myfoodbook": [
+   {"q": {"fr": "MyFoodBook fonctionne-t-elle hors-ligne ?", "en": "Does MyFoodBook work offline?", "es": "¿MyFoodBook funciona sin conexión?"},
+    "a": {"fr": "Oui, tes recettes sont stockées sur ton appareil et aucune connexion n'est requise.", "en": "Yes, your recipes are stored on your device and no connection is required.", "es": "Sí, tus recetas se guardan en tu dispositivo y no hace falta conexión."}},
+   {"q": {"fr": "MyFoodBook est-elle gratuite ?", "en": "Is MyFoodBook free?", "es": "¿MyFoodBook es gratis?"},
+    "a": {"fr": "Oui, toutes les fonctionnalités sont gratuites. Le Premium retire simplement la publicité.", "en": "Yes, all features are free. Premium simply removes the ads.", "es": "Sí, todas las funciones son gratuitas. Premium simplemente quita la publicidad."}},
+   {"q": {"fr": "Comment organiser mes recettes ?", "en": "How do I organize my recipes?", "es": "¿Cómo organizo mis recetas?"},
+    "a": {"fr": "Classe-les par tags (entrée, dessert, végétarien…) et marque tes favorites pour les retrouver en un tap.", "en": "Sort them with tags (starter, dessert, vegetarian…) and mark your favorites to find them in one tap.", "es": "Clasifícalas con etiquetas (entrante, postre, vegetariano…) y marca tus favoritas para encontrarlas con un toque."}}
+  ],
+  "hydrome": [
+   {"q": {"fr": "Comment logger mon hydratation avec HydroMe ?", "en": "How do I log my water intake with HydroMe?", "es": "¿Cómo registro mi hidratación con HydroMe?"},
+    "a": {"fr": "En un tap, grâce à des boutons rapides +200ml, +350ml, +500ml. L'anneau de progression se remplit instantanément.", "en": "In one tap, with quick buttons +200ml, +350ml, +500ml. The progress ring fills up instantly.", "es": "Con un toque, gracias a los botones rápidos +200ml, +350ml, +500ml. El anillo de progreso se llena al instante."}},
+   {"q": {"fr": "HydroMe se synchronise-t-elle avec Apple Health ?", "en": "Does HydroMe sync with Apple Health?", "es": "¿HydroMe se sincroniza con Apple Salud?"},
+    "a": {"fr": "Oui, ton hydratation se synchronise automatiquement avec HealthKit à chaque log.", "en": "Yes, your intake syncs automatically with HealthKit every time you log.", "es": "Sí, tu hidratación se sincroniza automáticamente con HealthKit cada vez que registras."}},
+   {"q": {"fr": "HydroMe nécessite-t-elle un compte ?", "en": "Does HydroMe require an account?", "es": "¿HydroMe necesita una cuenta?"},
+    "a": {"fr": "Non. Aucun compte ni cloud : toutes tes données restent sur ton appareil.", "en": "No. No account, no cloud: all your data stays on your device.", "es": "No. Sin cuenta ni nube: todos tus datos se quedan en tu dispositivo."}}
+  ],
+  "stockwatch": [
+   {"q": {"fr": "StockWatch est-elle connectée à ma banque ?", "en": "Is StockWatch connected to my bank?", "es": "¿StockWatch está conectada a mi banco?"},
+    "a": {"fr": "Non, jamais. C'est un outil éducatif : ta watchlist, ton portefeuille virtuel et tes alertes restent sur ton appareil.", "en": "No, never. It's an educational tool: your watchlist, virtual portfolio and alerts stay on your device.", "es": "No, nunca. Es una herramienta educativa: tu lista de seguimiento, tu cartera virtual y tus alertas se quedan en tu dispositivo."}},
+   {"q": {"fr": "Puis-je m'entraîner à investir sans risque ?", "en": "Can I practice investing without risk?", "es": "¿Puedo practicar inversión sin riesgo?"},
+    "a": {"fr": "Oui, simule des achats et des ventes dans un portefeuille fictif et mesure tes performances sans argent réel.", "en": "Yes, simulate buys and sells in a virtual portfolio and track your performance with no real money.", "es": "Sí, simula compras y ventas en una cartera ficticia y mide tu rendimiento sin dinero real."}},
+   {"q": {"fr": "StockWatch donne-t-elle des conseils en investissement ?", "en": "Does StockWatch give investment advice?", "es": "¿StockWatch da consejos de inversión?"},
+    "a": {"fr": "Non. Les informations affichées sont purement éducatives et ne constituent pas un conseil en investissement.", "en": "No. The information shown is purely educational and is not investment advice.", "es": "No. La información mostrada es puramente educativa y no constituye un consejo de inversión."}}
+  ],
+  "enjoymeal": [
+   {"q": {"fr": "Comment EnjoyMeal calcule mes objectifs caloriques ?", "en": "How does EnjoyMeal calculate my calorie goals?", "es": "¿Cómo calcula EnjoyMeal mis objetivos de calorías?"},
+    "a": {"fr": "À partir de formules scientifiques (Mifflin-St Jeor, recommandations OMS) adaptées à ton corps et à ton activité, sans logique de restriction.", "en": "With scientific formulas (Mifflin-St Jeor, WHO guidelines) adapted to your body and activity, without a restriction mindset.", "es": "Con fórmulas científicas (Mifflin-St Jeor, recomendaciones de la OMS) adaptadas a tu cuerpo y tu actividad, sin lógica de restricción."}},
+   {"q": {"fr": "Puis-je scanner mes aliments en photo ?", "en": "Can I scan my food with a photo?", "es": "¿Puedo escanear mis alimentos con una foto?"},
+    "a": {"fr": "Oui, EnjoyMeal reconnaît tes aliments en photo grâce à l'IA et donne accès à plus de 300 000 aliments via Open Food Facts.", "en": "Yes, EnjoyMeal recognizes your food from a photo using AI and gives access to over 300,000 foods via Open Food Facts.", "es": "Sí, EnjoyMeal reconoce tus alimentos en una foto gracias a la IA y da acceso a más de 300 000 alimentos mediante Open Food Facts."}},
+   {"q": {"fr": "Mes données nutritionnelles sont-elles privées ?", "en": "Is my nutrition data private?", "es": "¿Mis datos de nutrición son privados?"},
+    "a": {"fr": "Oui, elles restent sur ton appareil et les photos ne sont jamais envoyées vers nos serveurs.", "en": "Yes, it stays on your device and photos are never sent to our servers.", "es": "Sí, se quedan en tu dispositivo y las fotos nunca se envían a nuestros servidores."}}
+  ],
+  "chapter": [
+   {"q": {"fr": "À quoi sert Chapter ?", "en": "What is Chapter for?", "es": "¿Para qué sirve Chapter?"},
+    "a": {"fr": "À noter tes rencontres, tes ressentis et tes histoires amoureuses dans un carnet de dating privé, à l'abri des regards.", "en": "To write down your dates, feelings and love stories in a private dating journal, away from prying eyes.", "es": "Para anotar tus citas, lo que sientes y tus historias de amor en un diario de citas privado, lejos de miradas ajenas."}},
+   {"q": {"fr": "Mes entrées sont-elles privées ?", "en": "Are my entries private?", "es": "¿Mis entradas son privadas?"},
+    "a": {"fr": "Oui, tous tes chapitres sont stockés localement sur ton iPhone. Aucun cloud, aucun partage.", "en": "Yes, all your chapters are stored locally on your iPhone. No cloud, no sharing.", "es": "Sí, todos tus capítulos se guardan localmente en tu iPhone. Sin nube, sin compartir."}},
+   {"q": {"fr": "Puis-je organiser mes entrées ?", "en": "Can I organize my entries?", "es": "¿Puedo organizar mis entradas?"},
+    "a": {"fr": "Oui, avec des tags personnalisés, une recherche et un fil chronologique pour relire ton parcours.", "en": "Yes, with custom tags, search and a timeline to look back on your journey.", "es": "Sí, con etiquetas personalizadas, búsqueda y una línea de tiempo para releer tu recorrido."}}
+  ],
+  "nova": [
+   {"q": {"fr": "Mes données de santé sexuelle sont-elles protégées ?", "en": "Is my sexual health data protected?", "es": "¿Mis datos de salud sexual están protegidos?"},
+    "a": {"fr": "Oui. Ce sont des données de catégorie spéciale (RGPD Art. 9) : Nova les stocke uniquement en local, jamais sur un serveur.", "en": "Yes. This is special-category data (GDPR Art. 9): Nova stores it only locally, never on a server.", "es": "Sí. Son datos de categoría especial (RGPD art. 9): Nova los guarda solo en local, nunca en un servidor."}},
+   {"q": {"fr": "Que puis-je suivre avec Nova ?", "en": "What can I track with Nova?", "es": "¿Qué puedo seguir con Nova?"},
+    "a": {"fr": "Tes vaccinations (HPV, hépatite B, monkeypox…), tes dépistages IST, ton suivi PrEP/PEP et un journal d'activité intime privé.", "en": "Your vaccinations (HPV, hepatitis B, mpox…), STI tests, PrEP/PEP tracking and a private intimate activity log.", "es": "Tus vacunas (VPH, hepatitis B, mpox…), tus pruebas de ITS, tu seguimiento de PrEP/PEP y un diario privado de actividad íntima."}},
+   {"q": {"fr": "Nova envoie-t-elle des rappels ?", "en": "Does Nova send reminders?", "es": "¿Nova envía recordatorios?"},
+    "a": {"fr": "Oui, pour tes prochaines doses de vaccins, tes dépistages et tes traitements préventifs PrEP et PEP.", "en": "Yes, for your next vaccine doses, your tests and your PrEP and PEP preventive treatments.", "es": "Sí, para tus próximas dosis de vacunas, tus pruebas y tus tratamientos preventivos PrEP y PEP."}}
+  ],
+  "mantrame": [
+   {"q": {"fr": "Comment fonctionne MantraMe ?", "en": "How does MantraMe work?", "es": "¿Cómo funciona MantraMe?"},
+    "a": {"fr": "Une affirmation par jour, en plein écran, choisie parmi 5 thèmes : Amour de soi, Confiance, Calme, Gratitude et Force.", "en": "One full-screen affirmation a day, from 5 themes: Self-love, Confidence, Calm, Gratitude and Strength.", "es": "Una afirmación al día, a pantalla completa, de 5 temas: Amor propio, Confianza, Calma, Gratitud y Fuerza."}},
+   {"q": {"fr": "MantraMe est-elle disponible dans ma langue ?", "en": "Is MantraMe available in my language?", "es": "¿MantraMe está disponible en mi idioma?"},
+    "a": {"fr": "Oui, chaque affirmation est traduite et vérifiée dans neuf langues.", "en": "Yes, every affirmation is translated and checked in nine languages.", "es": "Sí, cada afirmación está traducida y revisada en nueve idiomas."}},
+   {"q": {"fr": "Puis-je recevoir un rappel quotidien ?", "en": "Can I get a daily reminder?", "es": "¿Puedo recibir un recordatorio diario?"},
+    "a": {"fr": "Oui, choisis l'heure de ton rappel matinal pour commencer la journée avec intention.", "en": "Yes, pick the time of your morning reminder to start the day with intention.", "es": "Sí, elige la hora de tu recordatorio matinal para empezar el día con intención."}}
+  ],
+  "lunarest": [
+   {"q": {"fr": "Comment LunaRest m'aide à mieux dormir ?", "en": "How does LunaRest help me sleep better?", "es": "¿Cómo me ayuda LunaRest a dormir mejor?"},
+    "a": {"fr": "Avec plus de 50 sons d'ambiance et des histoires apaisantes pour s'endormir, un suivi de la qualité du sommeil et un réveil intelligent.", "en": "With 50+ ambient sounds and calming stories to fall asleep, sleep quality tracking and a smart alarm.", "es": "Con más de 50 sonidos ambientales e historias relajantes para dormirte, seguimiento de la calidad del sueño y un despertador inteligente."}},
+   {"q": {"fr": "Comment fonctionne le réveil intelligent ?", "en": "How does the smart alarm work?", "es": "¿Cómo funciona el despertador inteligente?"},
+    "a": {"fr": "LunaRest te réveille au moment optimal de ton cycle de sommeil pour te sentir plus reposé.", "en": "LunaRest wakes you at the best moment of your sleep cycle so you feel more rested.", "es": "LunaRest te despierta en el mejor momento de tu ciclo de sueño para que te sientas más descansado."}},
+   {"q": {"fr": "Mes données de sommeil sont-elles privées ?", "en": "Is my sleep data private?", "es": "¿Mis datos de sueño son privados?"},
+    "a": {"fr": "Oui, elles restent sur ton appareil. Tes nuits t'appartiennent.", "en": "Yes, it stays on your device. Your nights belong to you.", "es": "Sí, se quedan en tu dispositivo. Tus noches te pertenecen."}}
+  ],
+  "inhale": [
+   {"q": {"fr": "Quelles techniques de respiration propose Inhale ?", "en": "Which breathing techniques does Inhale offer?", "es": "¿Qué técnicas de respiración ofrece Inhale?"},
+    "a": {"fr": "Cohérence cardiaque, Wim Hof, 4-7-8, box breathing et soupir physiologique — des techniques validées par des médecins et des chercheurs.", "en": "Coherent breathing, Wim Hof, 4-7-8, box breathing and the physiological sigh — techniques backed by doctors and researchers.", "es": "Coherencia cardíaca, Wim Hof, 4-7-8, respiración cuadrada y suspiro fisiológico — técnicas validadas por médicos e investigadores."}},
+   {"q": {"fr": "Inhale peut-elle aider en cas de crise de panique ?", "en": "Can Inhale help during a panic attack?", "es": "¿Inhale puede ayudar en un ataque de pánico?"},
+    "a": {"fr": "Oui, un mode de 60 secondes de soupir physiologique aide à revenir au calme rapidement, où que tu sois.", "en": "Yes, a 60-second physiological sigh mode helps you calm down quickly, wherever you are.", "es": "Sí, un modo de 60 segundos de suspiro fisiológico te ayuda a recuperar la calma rápidamente, estés donde estés."}},
+   {"q": {"fr": "Mes données de respiration restent-elles privées ?", "en": "Does my breathing data stay private?", "es": "¿Mis datos de respiración siguen siendo privados?"},
+    "a": {"fr": "Oui, toutes tes sessions restent sur ton appareil. Aucun tracking, aucune revente de données.", "en": "Yes, all your sessions stay on your device. No tracking, no data resale.", "es": "Sí, todas tus sesiones se quedan en tu dispositivo. Sin rastreo, sin reventa de datos."}}
+  ],
+  "budgetbrief": [
+   {"q": {"fr": "MyBudgetBrief est-elle connectée à ma banque ?", "en": "Is MyBudgetBrief connected to my bank?", "es": "¿MyBudgetBrief está conectada a mi banco?"},
+    "a": {"fr": "Non, jamais. Tes données financières ne quittent jamais ton iPhone : aucun cloud, aucun serveur, aucun partage tiers.", "en": "No, never. Your financial data never leaves your iPhone: no cloud, no server, no third-party sharing.", "es": "No, nunca. Tus datos financieros nunca salen de tu iPhone: sin nube, sin servidor, sin compartir con terceros."}},
+   {"q": {"fr": "Puis-je fixer un budget par catégorie ?", "en": "Can I set a budget per category?", "es": "¿Puedo fijar un presupuesto por categoría?"},
+    "a": {"fr": "Oui, tu définis un plafond mensuel par catégorie (alimentation, transport, loisirs…) et tu suis ta progression en temps réel.", "en": "Yes, you set a monthly limit per category (food, transport, leisure…) and follow your progress in real time.", "es": "Sí, defines un límite mensual por categoría (comida, transporte, ocio…) y sigues tu progreso en tiempo real."}},
+   {"q": {"fr": "MyBudgetBrief gère-t-elle les dépenses récurrentes ?", "en": "Does MyBudgetBrief handle recurring expenses?", "es": "¿MyBudgetBrief gestiona los gastos recurrentes?"},
+    "a": {"fr": "Oui, planifie une fois tes loyers, abonnements et factures, puis oublie-les.", "en": "Yes, schedule your rent, subscriptions and bills once, then forget about them.", "es": "Sí, programa una vez tu alquiler, suscripciones y facturas, y olvídate de ellos."}}
+  ]
+ }
+}
