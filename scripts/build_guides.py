@@ -264,7 +264,7 @@ def hub():
 {chr(10).join(blocks)}
     </div>
   </main>
-""" + footer("fr").replace("</body>", '  <script src="/js/i18n.js"></script>\n</body>')
+""" + footer("fr").replace("</body>", '  <script src="/js/i18n.js"></script>\n  <script>document.addEventListener("DOMContentLoaded", () => I18n.init());</script>\n</body>')
 
 
 def update_sitemap(urls):

@@ -267,6 +267,7 @@ const TRANSLATIONS = {
     // ── Page Contact ──
     back: '← Retour',
     contact_title: 'Nous contacter',
+    contact_message_ph: "Décris ta question ou ton problème...",
     contact_subtitle: 'Une question, un bug, une suggestion ? On vous répond sous 48h.',
     contact_name: 'Nom',
     contact_name_ph: 'Votre nom',
@@ -623,6 +624,7 @@ const TRANSLATIONS = {
     // ── Contact page ──
     back: '← Back',
     contact_title: 'Get in touch',
+    contact_message_ph: "Describe your question or issue...",
     contact_subtitle: 'A question, a bug, a suggestion? We reply within 48 hours.',
     contact_name: 'Name',
     contact_name_ph: 'Your name',
@@ -978,6 +980,7 @@ const TRANSLATIONS = {
     // ── Página de contacto ──
     back: '← Volver',
     contact_title: 'Contáctanos',
+    contact_message_ph: "Describe tu pregunta o problema...",
     contact_subtitle: '¿Una pregunta, un error, una sugerencia? Respondemos en 48 h.',
     contact_name: 'Nombre',
     contact_name_ph: 'Tu nombre',

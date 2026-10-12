@@ -142,9 +142,16 @@
   <main class="contact-section">
     <div class="contact-card">
 
-      <a href="index.html" class="back-link">
-        ← <span data-i18n="back">Retour</span>
-      </a>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:var(--sp-md);">
+        <a href="index.html" class="back-link" style="margin-bottom:0;">
+          ← <span data-i18n="back">Retour</span>
+        </a>
+        <div class="lang-switcher">
+          <button class="lang-btn" data-lang-btn="fr">FR</button>
+          <button class="lang-btn" data-lang-btn="en">EN</button>
+          <button class="lang-btn" data-lang-btn="es">ES</button>
+        </div>
+      </div>
 
       <h1 data-i18n="contact_title">Nous contacter</h1>
       <p class="subtitle" data-i18n="contact_subtitle">
@@ -186,7 +193,7 @@
 
         <div class="form-group">
           <label data-i18n="contact_message">Message</label>
-          <textarea id="message" placeholder="Décrivez votre question ou problème..." required></textarea>
+          <textarea id="message" placeholder="Décrivez votre question ou problème..." data-i18n-placeholder="contact_message_ph" required></textarea>
         </div>
 
         <button type="submit" class="submit-btn" data-i18n="contact_send">Envoyer le message</button>
@@ -209,7 +216,10 @@
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script>
+    // La page n'inclut pas main.js : on démarre la traduction ici.
+    document.addEventListener('DOMContentLoaded', () => I18n.init());
     // Présélection de l'app depuis l'URL (?app=Nova), utilisée par les URL de support des fiches App Store.
     (function () {
       const wanted = new URLSearchParams(location.search).get('app');
