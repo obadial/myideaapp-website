@@ -78,10 +78,23 @@ def live_ok(url: str) -> bool:
         return False
 
 
+def malformed() -> list[str]:
+    """Liens qu'aucune vérification d'URL ne voit : « // » sans domaine (lu par le
+    navigateur comme une adresse vers un domaine vide, lien bloqué), href vide."""
+    bad = []
+    for page in SITE.rglob("*.html"):
+        if "scripts" in page.parts or "docs" in page.parts:
+            continue
+        for href in re.findall(r'\s(?:href|src)="([^"]*)"', page.read_text(encoding="utf-8")):
+            if href == "" or re.match(r"^//(?![a-z0-9.-]+\.[a-z]{2,})", href, re.I):
+                bad.append(f"{page.relative_to(SITE)} : lien mal formé « {href} »")
+    return bad
+
+
 def main():
     live = "--live" in sys.argv
     urls = sorted(collect())
-    broken = [u for u in urls if not (live_ok(u) if live else local_ok(u))]
+    broken = [u for u in urls if not (live_ok(u) if live else local_ok(u))] + malformed()
     print(f"{len(urls)} URL vérifiées ({'en ligne' if live else 'fichiers locaux'}), {len(broken)} cassée(s)")
     for u in broken:
         print("  ✗", u)

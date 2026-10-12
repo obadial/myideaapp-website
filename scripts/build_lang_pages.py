@@ -218,7 +218,9 @@ def relink(src, slug, lang):
                     out.pop() if out else None
                 elif p not in (".", ""):
                     out.append(p)
-            path = "/" + "/".join(out) + ("/" if val.endswith("/") or val in ("./", ".") else "")
+            # « ../ » depuis /rhythm/ = racine : sans ce cas, on produisait « // », que le
+            # navigateur lit comme une adresse de domaine vide (lien « ← Studio » bloqué).
+            path = "/" + "/".join(out) + ("/" if out and (val.endswith("/") or val in ("./", ".")) else "")
         app = re.fullmatch(r"/([a-z]+)/(?:index\.html)?", path)
         if app and app.group(1) in SLUGS:
             path = url(app.group(1), lang)
