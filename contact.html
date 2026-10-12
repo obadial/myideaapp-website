@@ -17,33 +17,31 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <style>
     .contact-section {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: var(--sp-xl) var(--sp-md);
+      padding: 112px var(--sp-md) var(--sp-xl);
       background: var(--bg);
+      max-width: 1040px;
+      margin: 0 auto;
     }
+    .contact-head { margin-bottom: var(--sp-lg); }
+    .contact-head h1 { font-size: clamp(2rem, 5vw, 2.75rem); font-weight: 800; color: var(--text); margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+    .contact-head .subtitle { color: var(--text2); font-size: 1.05rem; line-height: 1.6; }
+    .contact-layout { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: var(--sp-lg); align-items: start; }
+    .contact-side { display: flex; flex-direction: column; gap: var(--sp-md); }
+    .contact-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.4rem 1.5rem; }
+    .contact-box h2 { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text); margin-bottom: 0.85rem; }
+    .contact-box > a { display: block; color: var(--text2); font-size: 0.95rem; margin-bottom: 0.55rem; }
+    .contact-box > a:hover { color: var(--text); }
+    .contact-mail { font-size: 1.05rem; font-weight: 700; color: var(--primary); word-break: break-word; }
+    .contact-copy { margin-top: 0.75rem; padding: 0.5rem 0.9rem; border-radius: 100px; border: 1px solid var(--border); background: var(--surface2); color: var(--text); font-weight: 600; font-size: 0.85rem; cursor: pointer; }
+    .contact-copy:hover { border-color: var(--primary); }
+    @media (max-width: 820px) { .contact-layout { grid-template-columns: 1fr; } }
     .contact-card {
       width: 100%;
-      max-width: 560px;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--r-xl);
       padding: var(--sp-lg);
       box-shadow: var(--shadow-lg);
-    }
-    .contact-card h1 {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--text);
-      margin-bottom: 0.5rem;
-    }
-    .contact-card .subtitle {
-      color: var(--text2);
-      font-size: 0.95rem;
-      margin-bottom: var(--sp-lg);
-      line-height: 1.6;
     }
     .form-group {
       margin-bottom: var(--sp-sm);
@@ -125,36 +123,34 @@
       color: var(--text3);
       margin-top: var(--sp-sm);
     }
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      color: var(--text2);
-      font-size: 0.9rem;
-      margin-bottom: var(--sp-md);
-      transition: color var(--transition);
-    }
-    .back-link:hover { color: var(--text); }
   </style>
 </head>
 <body data-theme="studio">
-
-  <main class="contact-section">
-    <div class="contact-card">
-
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:var(--sp-md);">
-        <a href="./" class="back-link" style="margin-bottom:0;">
-          <span data-i18n="back">← Retour</span>
-        </a>
-        <div class="lang-switcher">
-          <button class="lang-btn" data-lang-btn="fr">FR</button>
-          <button class="lang-btn" data-lang-btn="en">EN</button>
-          <button class="lang-btn" data-lang-btn="es">ES</button>
-        </div>
+<!-- shell:nav:start -->
+  <nav class="navbar guide-nav">
+    <div class="navbar__left"><a href="/" class="logo-text guide-nav__logo">MyIdeApp</a></div>
+    <div class="navbar__nav guide-nav__links">
+      <a href="/#apps" data-i18n="nav_apps">Apps</a>
+      <a href="/guides/" data-i18n="nav_guides">Guides</a>
+      <a href="/a-propos/" data-i18n="nav_about" data-i18n-href="nav_about_href">À propos</a>
+      <a href="/contact.html" data-i18n="nav_contact" class="active">Contact</a>
+    </div>
+    <div class="navbar__right">
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang-btn="fr">FR</button>
+        <button class="lang-btn" data-lang-btn="en">EN</button>
+        <button class="lang-btn" data-lang-btn="es">ES</button>
       </div>
-
+    </div>
+  </nav>
+  <!-- shell:nav:end -->
+  <main class="contact-section">
+    <div class="contact-head">
       <h1 data-i18n="contact_title">Nous contacter</h1>
       <p class="subtitle" data-i18n="contact_subtitle">Une question, un bug, une suggestion ? On te répond sous 48 h.</p>
+    </div>
+    <div class="contact-layout">
+    <div class="contact-card">
 
       <form id="contactForm">
         <div class="form-group">
@@ -198,19 +194,120 @@
         <p class="note" data-i18n="contact_note">Ta messagerie s'ouvrira avec le message pré-rempli.</p>
       </form>
     </div>
+
+    <aside class="contact-side">
+      <section class="contact-box">
+        <h2 data-i18n="contact_direct_title">Écris-nous directement</h2>
+        <p><a class="contact-mail" href="mailto:contact.myideapp@icloud.com">contact.myideapp@icloud.com</a></p>
+        <button type="button" class="contact-copy" id="copyMail" data-i18n="contact_copy">Copier l'adresse</button>
+      </section>
+      <section class="contact-box">
+        <h2 data-i18n="contact_before_title">Avant de nous écrire</h2>
+        <a href="/#apps" data-i18n="contact_before_faq">Chaque page d'app a sa FAQ</a>
+        <a href="/guides/" data-i18n="contact_before_guides">Comparer nos apps avec les autres</a>
+        <a href="/suppression-compte.html" data-i18n="contact_before_delete">Supprimer mon compte et mes données</a>
+      </section>
+      <section class="contact-box">
+        <h2 data-i18n="contact_follow_title">Suivre nos apps</h2>
+        <!-- shell:ig:start -->
+        <div class="site-footer__igs"><a class="site-footer__ig" href="https://www.instagram.com/rhythm.cycle.app/" rel="noopener" target="_blank"><img src="/assets/rhythm/icon-192.png" alt="" width="20" height="20" loading="lazy">Rhythm</a><a class="site-footer__ig" href="https://www.instagram.com/runfree.app/" rel="noopener" target="_blank"><img src="/assets/runfree/icon-192.png" alt="" width="20" height="20" loading="lazy">RunFree</a><a class="site-footer__ig" href="https://www.instagram.com/hydrome.app/" rel="noopener" target="_blank"><img src="/assets/hydrome/icon-192.png" alt="" width="20" height="20" loading="lazy">HydroMe</a><a class="site-footer__ig" href="https://www.instagram.com/enjoymeal.app/" rel="noopener" target="_blank"><img src="/assets/enjoymeal/icon-192.png" alt="" width="20" height="20" loading="lazy">EnjoyMeal</a><a class="site-footer__ig" href="https://www.instagram.com/chapter.dating.app/" rel="noopener" target="_blank"><img src="/assets/chapter/icon-192.png" alt="" width="20" height="20" loading="lazy">Chapter</a><a class="site-footer__ig" href="https://www.instagram.com/nova.myideapp/" rel="noopener" target="_blank"><img src="/assets/nova/icon-192.png" alt="" width="20" height="20" loading="lazy">Nova</a><a class="site-footer__ig" href="https://www.instagram.com/inhale.breath.app/" rel="noopener" target="_blank"><img src="/assets/inhale/icon-192.png" alt="" width="20" height="20" loading="lazy">Inhale</a><a class="site-footer__ig" href="https://www.instagram.com/mybudgetbrief.app/" rel="noopener" target="_blank"><img src="/assets/budgetbrief/icon-192.png" alt="" width="20" height="20" loading="lazy">MyBudgetBrief</a></div>
+  <!-- shell:ig:end -->
+      </section>
+    </aside>
+    </div>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__bottom">
-        <p data-i18n="footer_rights">© 2026 MyIdeApp. Tous droits réservés.</p>
-        <div class="footer__bottom-links">
-          <a href="mentions-legales.html" data-i18n="footer_legal_notice">Mentions légales</a>
-          <a href="./">Studio</a>
+<!-- shell:footer:start -->
+  <footer class="footer site-footer">
+    <div class="container" data-lang-block="fr" lang="fr">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <a href="/" class="logo-text">MyIdeApp</a>
+          <p>Studio indépendant d&#x27;apps iPhone. 12 apps simples, tes données sur ton téléphone.</p>
         </div>
+        <div class="site-footer__col">
+          <h4>Une question ?</h4>
+          <a href="mailto:contact.myideapp@icloud.com">contact.myideapp@icloud.com</a>
+          <a href="/contact.html">Formulaire de contact</a>
+          <span class="site-footer__note">Réponse sous 48 h</span>
+        </div>
+        <div class="site-footer__col site-footer__col--ig">
+          <h4>Nos apps sur Instagram</h4>
+          <div class="site-footer__igs"><a class="site-footer__ig" href="https://www.instagram.com/rhythm.cycle.app/" rel="noopener" target="_blank"><img src="/assets/rhythm/icon-192.png" alt="" width="20" height="20" loading="lazy">Rhythm</a><a class="site-footer__ig" href="https://www.instagram.com/runfree.app/" rel="noopener" target="_blank"><img src="/assets/runfree/icon-192.png" alt="" width="20" height="20" loading="lazy">RunFree</a><a class="site-footer__ig" href="https://www.instagram.com/hydrome.app/" rel="noopener" target="_blank"><img src="/assets/hydrome/icon-192.png" alt="" width="20" height="20" loading="lazy">HydroMe</a><a class="site-footer__ig" href="https://www.instagram.com/enjoymeal.app/" rel="noopener" target="_blank"><img src="/assets/enjoymeal/icon-192.png" alt="" width="20" height="20" loading="lazy">EnjoyMeal</a><a class="site-footer__ig" href="https://www.instagram.com/chapter.dating.app/" rel="noopener" target="_blank"><img src="/assets/chapter/icon-192.png" alt="" width="20" height="20" loading="lazy">Chapter</a><a class="site-footer__ig" href="https://www.instagram.com/nova.myideapp/" rel="noopener" target="_blank"><img src="/assets/nova/icon-192.png" alt="" width="20" height="20" loading="lazy">Nova</a><a class="site-footer__ig" href="https://www.instagram.com/inhale.breath.app/" rel="noopener" target="_blank"><img src="/assets/inhale/icon-192.png" alt="" width="20" height="20" loading="lazy">Inhale</a><a class="site-footer__ig" href="https://www.instagram.com/mybudgetbrief.app/" rel="noopener" target="_blank"><img src="/assets/budgetbrief/icon-192.png" alt="" width="20" height="20" loading="lazy">MyBudgetBrief</a></div>
+        </div>
+        <div class="site-footer__col">
+          <h4>Ressources</h4>
+          <a href="/guides/">Guides comparatifs</a>
+          <a href="/a-propos/">À propos du studio</a>
+          <a href="/suppression-compte.html">Supprimer mon compte</a>
+          <a href="/mentions-legales.html">Mentions légales</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 MyIdeApp. Tous droits réservés.</p>
+        <p>Conçu en France</p>
+      </div>
+    </div>
+    <div class="container" data-lang-block="en" lang="en">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <a href="/" class="logo-text">MyIdeApp</a>
+          <p>Independent iPhone app studio. 12 simple apps, your data on your phone.</p>
+        </div>
+        <div class="site-footer__col">
+          <h4>A question?</h4>
+          <a href="mailto:contact.myideapp@icloud.com">contact.myideapp@icloud.com</a>
+          <a href="/contact.html">Contact form</a>
+          <span class="site-footer__note">Reply within 48 hours</span>
+        </div>
+        <div class="site-footer__col site-footer__col--ig">
+          <h4>Our apps on Instagram</h4>
+          <div class="site-footer__igs"><a class="site-footer__ig" href="https://www.instagram.com/rhythm.cycle.app/" rel="noopener" target="_blank"><img src="/assets/rhythm/icon-192.png" alt="" width="20" height="20" loading="lazy">Rhythm</a><a class="site-footer__ig" href="https://www.instagram.com/runfree.app/" rel="noopener" target="_blank"><img src="/assets/runfree/icon-192.png" alt="" width="20" height="20" loading="lazy">RunFree</a><a class="site-footer__ig" href="https://www.instagram.com/hydrome.app/" rel="noopener" target="_blank"><img src="/assets/hydrome/icon-192.png" alt="" width="20" height="20" loading="lazy">HydroMe</a><a class="site-footer__ig" href="https://www.instagram.com/enjoymeal.app/" rel="noopener" target="_blank"><img src="/assets/enjoymeal/icon-192.png" alt="" width="20" height="20" loading="lazy">EnjoyMeal</a><a class="site-footer__ig" href="https://www.instagram.com/chapter.dating.app/" rel="noopener" target="_blank"><img src="/assets/chapter/icon-192.png" alt="" width="20" height="20" loading="lazy">Chapter</a><a class="site-footer__ig" href="https://www.instagram.com/nova.myideapp/" rel="noopener" target="_blank"><img src="/assets/nova/icon-192.png" alt="" width="20" height="20" loading="lazy">Nova</a><a class="site-footer__ig" href="https://www.instagram.com/inhale.breath.app/" rel="noopener" target="_blank"><img src="/assets/inhale/icon-192.png" alt="" width="20" height="20" loading="lazy">Inhale</a><a class="site-footer__ig" href="https://www.instagram.com/mybudgetbrief.app/" rel="noopener" target="_blank"><img src="/assets/budgetbrief/icon-192.png" alt="" width="20" height="20" loading="lazy">MyBudgetBrief</a></div>
+        </div>
+        <div class="site-footer__col">
+          <h4>Resources</h4>
+          <a href="/guides/">Comparison guides</a>
+          <a href="/en/about/">About the studio</a>
+          <a href="/suppression-compte.html">Delete my account</a>
+          <a href="/mentions-legales.html">Legal notice</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 MyIdeApp. All rights reserved.</p>
+        <p>Made in France</p>
+      </div>
+    </div>
+    <div class="container" data-lang-block="es" lang="es">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <a href="/" class="logo-text">MyIdeApp</a>
+          <p>Estudio independiente de apps para iPhone. 12 apps sencillas, tus datos en tu teléfono.</p>
+        </div>
+        <div class="site-footer__col">
+          <h4>¿Una pregunta?</h4>
+          <a href="mailto:contact.myideapp@icloud.com">contact.myideapp@icloud.com</a>
+          <a href="/contact.html">Formulario de contacto</a>
+          <span class="site-footer__note">Respuesta en 48 h</span>
+        </div>
+        <div class="site-footer__col site-footer__col--ig">
+          <h4>Nuestras apps en Instagram</h4>
+          <div class="site-footer__igs"><a class="site-footer__ig" href="https://www.instagram.com/rhythm.cycle.app/" rel="noopener" target="_blank"><img src="/assets/rhythm/icon-192.png" alt="" width="20" height="20" loading="lazy">Rhythm</a><a class="site-footer__ig" href="https://www.instagram.com/runfree.app/" rel="noopener" target="_blank"><img src="/assets/runfree/icon-192.png" alt="" width="20" height="20" loading="lazy">RunFree</a><a class="site-footer__ig" href="https://www.instagram.com/hydrome.app/" rel="noopener" target="_blank"><img src="/assets/hydrome/icon-192.png" alt="" width="20" height="20" loading="lazy">HydroMe</a><a class="site-footer__ig" href="https://www.instagram.com/enjoymeal.app/" rel="noopener" target="_blank"><img src="/assets/enjoymeal/icon-192.png" alt="" width="20" height="20" loading="lazy">EnjoyMeal</a><a class="site-footer__ig" href="https://www.instagram.com/chapter.dating.app/" rel="noopener" target="_blank"><img src="/assets/chapter/icon-192.png" alt="" width="20" height="20" loading="lazy">Chapter</a><a class="site-footer__ig" href="https://www.instagram.com/nova.myideapp/" rel="noopener" target="_blank"><img src="/assets/nova/icon-192.png" alt="" width="20" height="20" loading="lazy">Nova</a><a class="site-footer__ig" href="https://www.instagram.com/inhale.breath.app/" rel="noopener" target="_blank"><img src="/assets/inhale/icon-192.png" alt="" width="20" height="20" loading="lazy">Inhale</a><a class="site-footer__ig" href="https://www.instagram.com/mybudgetbrief.app/" rel="noopener" target="_blank"><img src="/assets/budgetbrief/icon-192.png" alt="" width="20" height="20" loading="lazy">MyBudgetBrief</a></div>
+        </div>
+        <div class="site-footer__col">
+          <h4>Recursos</h4>
+          <a href="/guides/">Guías comparativas</a>
+          <a href="/es/acerca-de/">Sobre el estudio</a>
+          <a href="/suppression-compte.html">Eliminar mi cuenta</a>
+          <a href="/mentions-legales.html">Aviso legal</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 MyIdeApp. Todos los derechos reservados.</p>
+        <p>Hecho en Francia</p>
       </div>
     </div>
   </footer>
+  <!-- shell:footer:end -->
 
   <script src="js/i18n.js"></script>
   <script>
@@ -222,6 +319,13 @@
       const select = document.getElementById('app');
       if (wanted && [...select.options].some(o => o.value === wanted)) select.value = wanted;
     })();
+    // Copier l'adresse : beaucoup préfèrent écrire depuis leur propre messagerie.
+    document.getElementById('copyMail').addEventListener('click', function () {
+      const btn = this;
+      navigator.clipboard?.writeText('contact.myideapp@icloud.com').then(() => {
+        btn.textContent = I18n.t('contact_copied') || 'Copié';
+      });
+    });
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
 

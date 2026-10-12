@@ -1667,3 +1667,44 @@ a.lang-btn { display: inline-block; text-decoration: none; }
 .about section > p a, .about .guide__checked a { color: var(--primary); }
 /* Barre au défilement : un peu plus opaque, dans la couleur du thème */
 .navbar.navbar--scrolled { background: color-mix(in srgb, var(--bg) 94%, transparent); }
+
+/* ══ Habillage commun du studio (scripts/site_shell.py, 2026-10-12) ══ */
+.site-footer__grid {
+  display: grid; grid-template-columns: 1.4fr 1.3fr 1.5fr 1fr; gap: var(--sp-lg);
+  margin-bottom: var(--sp-lg);
+}
+.site-footer__brand .logo-text { font-size: 1.25rem; display: inline-block; margin-bottom: 0.6rem; }
+.site-footer__brand p { font-size: 0.875rem; color: var(--text3); line-height: 1.6; max-width: 300px; }
+.site-footer__col h4 {
+  font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--text); margin-bottom: 0.75rem;
+}
+.site-footer__col > a { display: block; font-size: 0.9rem; color: var(--text2); margin-bottom: 8px; overflow-wrap: anywhere; }
+.site-footer__col > a:hover { color: var(--text); }
+.site-footer__note { display: block; font-size: 0.8rem; color: var(--text3); }
+.site-footer__igs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 12px; }
+.site-footer__ig { display: flex; align-items: center; gap: 8px; font-size: 0.875rem; color: var(--text2); }
+.site-footer__ig:hover { color: var(--text); }
+.site-footer__ig img { width: 20px; height: 20px; border-radius: 5px; flex: none; }
+@media (max-width: 900px) { .site-footer__grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .site-footer__grid { grid-template-columns: 1fr; } }
+
+/* Pages légales : la barre du haut porte déjà le retour ; en-tête plus compact.
+   Pages légales d'app : la date est dans chaque onglet de langue, la ligne
+   d'en-tête (restée en français) faisait doublon. */
+.legal-page__back { display: none; }
+.legal-page__header { padding: var(--sp-lg) 0 var(--sp-md); }
+body[data-theme^="legal-"] .legal-page__meta { display: none; }
+.legal-body { padding-top: var(--sp-lg); }
+/* Bande de chiffres de l'accueil (scripts/build_home.py) */
+.stats-band { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--surface); }
+.stats-band__row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); text-align: center; }
+.stats-band__item { padding: 1.6rem 0.5rem; display: flex; flex-direction: column; gap: 0.25rem; }
+.stats-band__item + .stats-band__item { border-left: 1px solid var(--border); }
+.stats-band__item strong { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; letter-spacing: -0.02em; color: var(--text); line-height: 1; }
+.stats-band__item span { font-size: 0.85rem; color: var(--text2); }
+@media (max-width: 640px) {
+  .stats-band__row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stats-band__item:nth-child(3) { border-left: 0; }
+  .stats-band__item:nth-child(n+3) { border-top: 1px solid var(--border); }
+}

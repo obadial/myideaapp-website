@@ -32,9 +32,9 @@ T = {
             "es": "Ciclo, correr, hidratación, presupuesto, bolsa, recetas, sueño… Una app, una cosa bien hecha. Sin cuenta obligatoria."},
     "cta_apps": {"fr": "Voir les 12 apps", "en": "See the 12 apps", "es": "Ver las 12 apps"},
     "cta_guides": {"fr": "Comparer avec Strava, Flo…", "en": "Compare with Strava, Flo…", "es": "Comparar con Strava, Flo…"},
-    "proofs": {"fr": ["Sans compte obligatoire", "Données sur ton iPhone", "Téléchargement gratuit", "9 langues"],
-               "en": ["No account required", "Data stays on your iPhone", "Free to download", "9 languages"],
-               "es": ["Sin cuenta obligatoria", "Datos en tu iPhone", "Descarga gratuita", "9 idiomas"]},
+    "stats": {"fr": [("12", "apps iPhone"), ("9", "langues"), ("0", "compte obligatoire"), ("0 €", "pour télécharger")],
+              "en": [("12", "iPhone apps"), ("9", "languages"), ("0", "account required"), ("$0", "to download")],
+              "es": [("12", "apps para iPhone"), ("9", "idiomas"), ("0", "cuentas obligatorias"), ("0 €", "para descargar")]},
     "guides_title": {"fr": "Quelle app choisir ?", "en": "Which app should you pick?", "es": "¿Qué app elegir?"},
     "guides_sub": {"fr": "Nos comparatifs honnêtes face aux apps les plus connues : prix, compte, données. Quand une autre app te convient mieux, on le dit.",
                    "en": "Honest comparisons with the best-known apps: price, account, data. When another app suits you better, we say so.",
@@ -56,10 +56,6 @@ T = {
                ("Pensadas para todos", "9 idiomas, incluido el árabe de derecha a izquierda. Apps sin juicios ni estereotipos.")],
     },
     "contact": {"fr": "Une question ? Écris-nous", "en": "A question? Write to us", "es": "¿Una pregunta? Escríbenos"},
-    "res": {"fr": "Ressources", "en": "Resources", "es": "Recursos"},
-    "res_links": {"fr": ["Guides comparatifs", "À propos du studio", "Contact & support", "Supprimer mon compte", "Mentions légales"],
-                  "en": ["Comparison guides", "About the studio", "Contact & support", "Delete my account", "Legal notice"],
-                  "es": ["Guías comparativas", "Sobre el estudio", "Contacto y soporte", "Eliminar mi cuenta", "Aviso legal"]},
 }
 GUIDE_SLUG_LANG = {"fr": "fr", "en": "en", "es": "es"}
 
@@ -75,7 +71,6 @@ def hero():
         f'<span>{e(a["name"])}</span></a>' for a in APPS)
 
     def r(l):
-        proofs = "".join(f"<li>{e(p)}</li>" for p in T["proofs"][l])
         return f"""        <div class="hero2__text" data-lang-block="{l}" lang="{l}">
           <p class="hero2__kicker">{e(T['kicker'][l])}</p>
           <h1 class="hero2__title">{e(T['title'][l])}</h1>
@@ -84,7 +79,6 @@ def hero():
             <a class="hero2__btn hero2__btn--primary" href="#apps">{e(T['cta_apps'][l])}</a>
             <a class="hero2__btn" href="guides/">{e(T['cta_guides'][l])}</a>
           </div>
-          <ul class="hero2__proofs">{proofs}</ul>
         </div>"""
     return f"""  <section class="studio-hero hero2">
     <div class="studio-hero__bg">
@@ -98,6 +92,20 @@ def hero():
         <nav class="hero-apps" aria-label="Apps">
 {icons}
         </nav>
+    </div>
+  </section>"""
+
+
+def stats():
+    """Bande de chiffres sous le premier écran (idée reprise de wearebluefoxes.com).
+    Uniquement des chiffres vérifiables : pas de téléchargements ni de notes."""
+    def r(l):
+        items = "".join(f'<div class="stats-band__item"><strong>{e(n)}</strong><span>{e(t)}</span></div>' for n, t in T["stats"][l])
+        # La grille est dans un conteneur à part : le bloc de langue passe en display:block.
+        return f'      <div data-lang-block="{l}" lang="{l}"><div class="stats-band__row">{items}</div></div>'
+    return f"""  <section class="stats-band" aria-label="MyIdeApp">
+    <div class="container">
+{blocks(r)}
     </div>
   </section>"""
 
@@ -140,17 +148,6 @@ def why():
   </section>"""
 
 
-def footer_col():
-    about = {"fr": "a-propos/", "en": "en/about/", "es": "es/acerca-de/"}
-
-    def r(l):
-        hrefs = ["guides/", about[l], "contact.html", "suppression-compte.html", "mentions-legales.html"]
-        links = "".join(f'<a href="{h}">{e(t)}</a>' for h, t in zip(hrefs, T["res_links"][l]))
-        return f'          <div data-lang-block="{l}" lang="{l}"><h4>{e(T["res"][l])}</h4>{links}</div>'
-    return f"""        <div class="footer__col footer__col--res">
-{blocks(r)}
-        </div>"""
-
 
 def put(page, name, content, fallback_pattern):
     start, end = f"<!-- home:{name}:start -->", f"<!-- home:{name}:end -->"
@@ -167,10 +164,10 @@ def main():
     p = SITE / "index.html"
     s = p.read_text(encoding="utf-8")
     s = put(s, "hero", hero(), r"  <section class=\"studio-hero\">.*?</section>")
+    s = put(s, "stats", stats(), r"(?<=<!-- home:hero:end -->\n)")
     s = put(s, "guides", guides(), r"  <section class=\"home-guides\">.*?</section>")
     s = put(s, "why", why(), r"  <section class=\"about-section\">.*?</section>")
-    s = put(s, "footer-col", footer_col(),
-            r"        <div class=\"footer__col\">\s*<h4 data-i18n=\"footer_legal\">.*?\n        </div>")
+    # Pied de page : habillage commun du studio (scripts/build_shell.py).
     p.write_text(s, encoding="utf-8")
     print("accueil régénéré")
 

@@ -15,7 +15,11 @@ import html
 import json
 import re
 import shutil
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import site_shell  # noqa: E402
 
 SITE = Path(__file__).resolve().parent.parent
 BASE = "https://myideapp.com"
@@ -110,23 +114,8 @@ def nav(lang, lang_links):
 
 
 def footer(lang):
-    legal = {"fr": "Mentions légales", "en": "Legal notice", "es": "Aviso legal"}[lang]
-    return f"""  <footer class="footer">
-    <div class="container">
-      <div class="footer__bottom">
-        <p>© 2026 MyIdeApp.</p>
-        <div class="footer__bottom-links">
-          <a href="/guides/">{e(UI['guides'][lang])}</a>
-          <a href="{ABOUT[lang]}">{ABOUT_LABEL[lang]}</a>
-          <a href="/contact.html">Contact</a>
-          <a href="/mentions-legales.html">{legal}</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-</body>
-</html>
-"""
+    """Pied de page commun du studio (scripts/site_shell.py), dans la langue de la page."""
+    return site_shell.footer(lang) + "\n</body>\n</html>\n"
 
 
 def comp_name(guide, name, lang):
@@ -276,7 +265,7 @@ def hub():
 {chr(10).join(blocks)}
     </div>
   </main>
-""" + footer("fr").replace("</body>", '  <script src="/js/i18n.js"></script>\n  <script>document.addEventListener("DOMContentLoaded", () => I18n.init());</script>\n</body>')
+""" + site_shell.footer_multi() + '\n  <script src="/js/i18n.js"></script>\n  <script>document.addEventListener("DOMContentLoaded", () => I18n.init());</script>\n</body>\n</html>\n'
 
 
 def update_sitemap(urls):

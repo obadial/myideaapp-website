@@ -39,7 +39,7 @@
   "apps": [
     {
       "slug": "rhythm",
-      "name": "Rhythm",
+      "name": "Rhythm", "instagram": "rhythm.cycle.app",
       "category": "health",
       "ios_min": "15.0",
       "apple_health": true,
@@ -62,7 +62,7 @@
     },
     {
       "slug": "runfree",
-      "name": "RunFree",
+      "name": "RunFree", "instagram": "runfree.app",
       "category": "sport",
       "ios_min": "15.0",
       "apple_health": true,
@@ -109,7 +109,7 @@
     },
     {
       "slug": "hydrome",
-      "name": "HydroMe",
+      "name": "HydroMe", "instagram": "hydrome.app",
       "category": "health",
       "ios_min": "16.0",
       "apple_health": false,
@@ -161,7 +161,7 @@
     },
     {
       "slug": "enjoymeal",
-      "name": "EnjoyMeal",
+      "name": "EnjoyMeal", "instagram": "enjoymeal.app",
       "category": "food",
       "ios_min": "16.0",
       "apple_health": false,
@@ -184,7 +184,7 @@
     },
     {
       "slug": "chapter",
-      "name": "Chapter",
+      "name": "Chapter", "instagram": "chapter.dating.app",
       "category": "relationships",
       "ios_min": "16.0",
       "apple_health": false,
@@ -207,7 +207,7 @@
     },
     {
       "slug": "nova",
-      "name": "Nova",
+      "name": "Nova", "instagram": "nova.myideapp",
       "category": "health",
       "ios_min": "15.0",
       "apple_health": false,
@@ -281,7 +281,7 @@
     },
     {
       "slug": "inhale",
-      "name": "Inhale",
+      "name": "Inhale", "instagram": "inhale.breath.app",
       "category": "wellbeing",
       "ios_min": "15.0",
       "apple_health": false,
@@ -304,7 +304,7 @@
     },
     {
       "slug": "budgetbrief",
-      "name": "MyBudgetBrief",
+      "name": "MyBudgetBrief", "instagram": "mybudgetbrief.app",
       "category": "finance",
       "ios_min": "16.0",
       "apple_health": false,

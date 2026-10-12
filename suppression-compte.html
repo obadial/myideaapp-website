@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Supprimer mon compte — MyIdeApp</title>
+  <title data-i18n="delete_account_title">Supprimer mon compte — MyIdeApp</title>
   <meta name="description" content="Comment supprimer ton compte MyIdeApp et toutes tes données, depuis l'application ou sans l'installer.">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="Supprimer mon compte — MyIdeApp">
@@ -18,17 +18,24 @@
 </head>
 <body data-theme="studio">
 
-  <!-- ─── Navbar minimale ─────────────────────────────────── -->
-  <nav class="navbar">
-    <div class="navbar__left">
-      <a href="./" class="navbar__back">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M19 12H5M12 19l-7-7 7-7"/>
-        </svg>
-        <span>MyIdeApp</span>
-      </a>
+<!-- shell:nav:start -->
+  <nav class="navbar guide-nav">
+    <div class="navbar__left"><a href="/" class="logo-text guide-nav__logo">MyIdeApp</a></div>
+    <div class="navbar__nav guide-nav__links">
+      <a href="/#apps" data-i18n="nav_apps">Apps</a>
+      <a href="/guides/" data-i18n="nav_guides">Guides</a>
+      <a href="/a-propos/" data-i18n="nav_about" data-i18n-href="nav_about_href">À propos</a>
+      <a href="/contact.html" data-i18n="nav_contact">Contact</a>
+    </div>
+    <div class="navbar__right">
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang-btn="fr">FR</button>
+        <button class="lang-btn" data-lang-btn="en">EN</button>
+        <button class="lang-btn" data-lang-btn="es">ES</button>
+      </div>
     </div>
   </nav>
+  <!-- shell:nav:end -->
 
   <!-- ─── Contenu ─────────────────────────────────────────── -->
   <div class="legal-page">
@@ -36,7 +43,7 @@
       <div class="container container--narrow">
         <a href="./" class="legal-page__back" data-i18n="legal_back">← Retour</a>
         <h1 class="legal-page__title" data-i18n="delete_account_title">Supprimer mon compte et mes données</h1>
-        <p class="legal-page__meta">MyIdeApp · <span data-i18n="legal_updated">Dernière mise à jour</span> : 23 août 2026</p>
+        <p class="legal-page__meta">MyIdeApp · <span data-i18n="legal_updated">Dernière mise à jour</span> : <span data-i18n="delete_account_updated">23 août 2026</span></p>
         <div class="legal-lang-tabs">
           <button class="legal-tab" data-legal-tab="fr">Français</button>
           <button class="legal-tab" data-legal-tab="en">English</button>
@@ -154,17 +161,97 @@
     </div>
   </div>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__bottom">
-        <p data-i18n="footer_rights">© 2026 MyIdeApp. Tous droits réservés.</p>
-        <div class="footer__bottom-links">
-          <a href="mentions-legales.html" data-i18n="footer_legal_notice">Mentions légales</a>
-          <a href="./">Studio</a>
+<!-- shell:footer:start -->
+  <footer class="footer site-footer">
+    <div class="container" data-lang-block="fr" lang="fr">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <a href="/" class="logo-text">MyIdeApp</a>
+          <p>Studio indépendant d&#x27;apps iPhone. 12 apps simples, tes données sur ton téléphone.</p>
         </div>
+        <div class="site-footer__col">
+          <h4>Une question ?</h4>
+          <a href="mailto:contact.myideapp@icloud.com">contact.myideapp@icloud.com</a>
+          <a href="/contact.html">Formulaire de contact</a>
+          <span class="site-footer__note">Réponse sous 48 h</span>
+        </div>
+        <div class="site-footer__col site-footer__col--ig">
+          <h4>Nos apps sur Instagram</h4>
+          <div class="site-footer__igs"><a class="site-footer__ig" href="https://www.instagram.com/rhythm.cycle.app/" rel="noopener" target="_blank"><img src="/assets/rhythm/icon-192.png" alt="" width="20" height="20" loading="lazy">Rhythm</a><a class="site-footer__ig" href="https://www.instagram.com/runfree.app/" rel="noopener" target="_blank"><img src="/assets/runfree/icon-192.png" alt="" width="20" height="20" loading="lazy">RunFree</a><a class="site-footer__ig" href="https://www.instagram.com/hydrome.app/" rel="noopener" target="_blank"><img src="/assets/hydrome/icon-192.png" alt="" width="20" height="20" loading="lazy">HydroMe</a><a class="site-footer__ig" href="https://www.instagram.com/enjoymeal.app/" rel="noopener" target="_blank"><img src="/assets/enjoymeal/icon-192.png" alt="" width="20" height="20" loading="lazy">EnjoyMeal</a><a class="site-footer__ig" href="https://www.instagram.com/chapter.dating.app/" rel="noopener" target="_blank"><img src="/assets/chapter/icon-192.png" alt="" width="20" height="20" loading="lazy">Chapter</a><a class="site-footer__ig" href="https://www.instagram.com/nova.myideapp/" rel="noopener" target="_blank"><img src="/assets/nova/icon-192.png" alt="" width="20" height="20" loading="lazy">Nova</a><a class="site-footer__ig" href="https://www.instagram.com/inhale.breath.app/" rel="noopener" target="_blank"><img src="/assets/inhale/icon-192.png" alt="" width="20" height="20" loading="lazy">Inhale</a><a class="site-footer__ig" href="https://www.instagram.com/mybudgetbrief.app/" rel="noopener" target="_blank"><img src="/assets/budgetbrief/icon-192.png" alt="" width="20" height="20" loading="lazy">MyBudgetBrief</a></div>
+        </div>
+        <div class="site-footer__col">
+          <h4>Ressources</h4>
+          <a href="/guides/">Guides comparatifs</a>
+          <a href="/a-propos/">À propos du studio</a>
+          <a href="/suppression-compte.html">Supprimer mon compte</a>
+          <a href="/mentions-legales.html">Mentions légales</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 MyIdeApp. Tous droits réservés.</p>
+        <p>Conçu en France</p>
+      </div>
+    </div>
+    <div class="container" data-lang-block="en" lang="en">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <a href="/" class="logo-text">MyIdeApp</a>
+          <p>Independent iPhone app studio. 12 simple apps, your data on your phone.</p>
+        </div>
+        <div class="site-footer__col">
+          <h4>A question?</h4>
+          <a href="mailto:contact.myideapp@icloud.com">contact.myideapp@icloud.com</a>
+          <a href="/contact.html">Contact form</a>
+          <span class="site-footer__note">Reply within 48 hours</span>
+        </div>
+        <div class="site-footer__col site-footer__col--ig">
+          <h4>Our apps on Instagram</h4>
+          <div class="site-footer__igs"><a class="site-footer__ig" href="https://www.instagram.com/rhythm.cycle.app/" rel="noopener" target="_blank"><img src="/assets/rhythm/icon-192.png" alt="" width="20" height="20" loading="lazy">Rhythm</a><a class="site-footer__ig" href="https://www.instagram.com/runfree.app/" rel="noopener" target="_blank"><img src="/assets/runfree/icon-192.png" alt="" width="20" height="20" loading="lazy">RunFree</a><a class="site-footer__ig" href="https://www.instagram.com/hydrome.app/" rel="noopener" target="_blank"><img src="/assets/hydrome/icon-192.png" alt="" width="20" height="20" loading="lazy">HydroMe</a><a class="site-footer__ig" href="https://www.instagram.com/enjoymeal.app/" rel="noopener" target="_blank"><img src="/assets/enjoymeal/icon-192.png" alt="" width="20" height="20" loading="lazy">EnjoyMeal</a><a class="site-footer__ig" href="https://www.instagram.com/chapter.dating.app/" rel="noopener" target="_blank"><img src="/assets/chapter/icon-192.png" alt="" width="20" height="20" loading="lazy">Chapter</a><a class="site-footer__ig" href="https://www.instagram.com/nova.myideapp/" rel="noopener" target="_blank"><img src="/assets/nova/icon-192.png" alt="" width="20" height="20" loading="lazy">Nova</a><a class="site-footer__ig" href="https://www.instagram.com/inhale.breath.app/" rel="noopener" target="_blank"><img src="/assets/inhale/icon-192.png" alt="" width="20" height="20" loading="lazy">Inhale</a><a class="site-footer__ig" href="https://www.instagram.com/mybudgetbrief.app/" rel="noopener" target="_blank"><img src="/assets/budgetbrief/icon-192.png" alt="" width="20" height="20" loading="lazy">MyBudgetBrief</a></div>
+        </div>
+        <div class="site-footer__col">
+          <h4>Resources</h4>
+          <a href="/guides/">Comparison guides</a>
+          <a href="/en/about/">About the studio</a>
+          <a href="/suppression-compte.html">Delete my account</a>
+          <a href="/mentions-legales.html">Legal notice</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 MyIdeApp. All rights reserved.</p>
+        <p>Made in France</p>
+      </div>
+    </div>
+    <div class="container" data-lang-block="es" lang="es">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <a href="/" class="logo-text">MyIdeApp</a>
+          <p>Estudio independiente de apps para iPhone. 12 apps sencillas, tus datos en tu teléfono.</p>
+        </div>
+        <div class="site-footer__col">
+          <h4>¿Una pregunta?</h4>
+          <a href="mailto:contact.myideapp@icloud.com">contact.myideapp@icloud.com</a>
+          <a href="/contact.html">Formulario de contacto</a>
+          <span class="site-footer__note">Respuesta en 48 h</span>
+        </div>
+        <div class="site-footer__col site-footer__col--ig">
+          <h4>Nuestras apps en Instagram</h4>
+          <div class="site-footer__igs"><a class="site-footer__ig" href="https://www.instagram.com/rhythm.cycle.app/" rel="noopener" target="_blank"><img src="/assets/rhythm/icon-192.png" alt="" width="20" height="20" loading="lazy">Rhythm</a><a class="site-footer__ig" href="https://www.instagram.com/runfree.app/" rel="noopener" target="_blank"><img src="/assets/runfree/icon-192.png" alt="" width="20" height="20" loading="lazy">RunFree</a><a class="site-footer__ig" href="https://www.instagram.com/hydrome.app/" rel="noopener" target="_blank"><img src="/assets/hydrome/icon-192.png" alt="" width="20" height="20" loading="lazy">HydroMe</a><a class="site-footer__ig" href="https://www.instagram.com/enjoymeal.app/" rel="noopener" target="_blank"><img src="/assets/enjoymeal/icon-192.png" alt="" width="20" height="20" loading="lazy">EnjoyMeal</a><a class="site-footer__ig" href="https://www.instagram.com/chapter.dating.app/" rel="noopener" target="_blank"><img src="/assets/chapter/icon-192.png" alt="" width="20" height="20" loading="lazy">Chapter</a><a class="site-footer__ig" href="https://www.instagram.com/nova.myideapp/" rel="noopener" target="_blank"><img src="/assets/nova/icon-192.png" alt="" width="20" height="20" loading="lazy">Nova</a><a class="site-footer__ig" href="https://www.instagram.com/inhale.breath.app/" rel="noopener" target="_blank"><img src="/assets/inhale/icon-192.png" alt="" width="20" height="20" loading="lazy">Inhale</a><a class="site-footer__ig" href="https://www.instagram.com/mybudgetbrief.app/" rel="noopener" target="_blank"><img src="/assets/budgetbrief/icon-192.png" alt="" width="20" height="20" loading="lazy">MyBudgetBrief</a></div>
+        </div>
+        <div class="site-footer__col">
+          <h4>Recursos</h4>
+          <a href="/guides/">Guías comparativas</a>
+          <a href="/es/acerca-de/">Sobre el estudio</a>
+          <a href="/suppression-compte.html">Eliminar mi cuenta</a>
+          <a href="/mentions-legales.html">Aviso legal</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 MyIdeApp. Todos los derechos reservados.</p>
+        <p>Hecho en Francia</p>
       </div>
     </div>
   </footer>
+  <!-- shell:footer:end -->
 
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
