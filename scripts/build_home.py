@@ -22,6 +22,7 @@ import site_shell  # noqa: E402
 
 SITE = Path(__file__).resolve().parent.parent
 APPS = json.loads((SITE / "data/apps.json").read_text(encoding="utf-8"))["apps"]
+APPS_BY = {a["slug"]: a for a in APPS}
 GUIDES = json.loads((SITE / "data/guides.json").read_text(encoding="utf-8"))["guides"]
 LANGS = ("fr", "en", "es")
 e = html.escape
@@ -40,16 +41,19 @@ T = {
               "en": [("12", "iPhone apps"), ("9", "languages"), ("0", "account required"), ("$0", "to download")],
               "es": [("12", "apps para iPhone"), ("9", "idiomas"), ("0", "cuentas obligatorias"), ("0 €", "para descargar")]},
     # Titres de section bicolores (première partie au dégradé du studio), façon wearebluefoxes.com
-    "ig_title": {"fr": ["Vu sur", "Instagram"], "en": ["Seen on", "Instagram"], "es": ["Visto en", "Instagram"]},
-    "ig_sub": {"fr": "Conseils, coulisses et nouveautés : les derniers posts de nos apps.",
-               "en": "Tips, behind the scenes and what's new: the latest posts from our apps.",
-               "es": "Consejos, entre bastidores y novedades: las últimas publicaciones de nuestras apps."},
-    "ig_all": {"fr": "Voir tous les posts", "en": "See all posts", "es": "Ver todas las publicaciones"},
-    "guides_title": {"fr": ("Quelle app", "choisir ?"), "en": ("Which app", "should you pick?"), "es": ("¿Qué app", "elegir?")},
-    "guides_sub": {"fr": "Nos comparatifs honnêtes face aux apps les plus connues : prix, compte, données. Quand une autre app te convient mieux, on le dit.",
-                   "en": "Honest comparisons with the best-known apps: price, account, data. When another app suits you better, we say so.",
-                   "es": "Comparativas honestas con las apps más conocidas: precio, cuenta, datos. Si otra app te conviene más, lo decimos."},
-    "guides_all": {"fr": "Tous les guides →", "en": "All guides →", "es": "Todas las guías →"},
+    "about_more": {"fr": "En savoir plus sur le studio", "en": "More about the studio", "es": "Más sobre el estudio"},
+    "door_apps": {"fr": ["Nos", "apps"], "en": ["Our", "apps"], "es": ["Nuestras", "apps"]},
+    "door_apps_text": {"fr": "12 apps, de la santé intime à la Bourse. Une app, un usage.", "en": "12 apps, from sexual health to the stock market. One app, one job.",
+                       "es": "12 apps, de la salud íntima a la bolsa. Una app, un uso."},
+    "door_apps_cta": {"fr": "Voir le catalogue", "en": "See the catalog", "es": "Ver el catálogo"},
+    "door_guides": {"fr": ["Les", "guides"], "en": ["The", "guides"], "es": ["Las", "guías"]},
+    "door_guides_text": {"fr": "Nos comparatifs honnêtes face à Strava, Flo, MyFitnessPal…", "en": "Our honest comparisons with Strava, Flo, MyFitnessPal…",
+                         "es": "Nuestras comparativas honestas frente a Strava, Flo, MyFitnessPal…"},
+    "door_guides_cta": {"fr": "Lire les guides", "en": "Read the guides", "es": "Leer las guías"},
+    "door_ig": {"fr": ["Vu sur", "Instagram"], "en": ["Seen on", "Instagram"], "es": ["Visto en", "Instagram"]},
+    "door_ig_text": {"fr": "Conseils et coulisses : les derniers posts de nos apps.", "en": "Tips and behind the scenes: the latest posts from our apps.",
+                     "es": "Consejos y entre bastidores: las últimas publicaciones de nuestras apps."},
+    "door_ig_cta": {"fr": "Voir les posts", "en": "See the posts", "es": "Ver las publicaciones"},
     "contact": {"fr": "Une question ? Écris-nous", "en": "A question? Write to us", "es": "¿Una pregunta? Escríbenos"},
 }
 GUIDE_SLUG_LANG = {"fr": "fr", "en": "en", "es": "es"}
@@ -76,7 +80,7 @@ def hero():
           <h1 class="hero2__title">{e(T['title'][l])}</h1>
           <p class="hero2__sub">{e(T['sub'][l])}</p>
           <div class="hero2__ctas">
-            <a class="hero2__btn hero2__btn--primary" href="#apps">{e(T['cta_apps'][l])}</a>
+            <a class="hero2__btn hero2__btn--primary" href="{site_shell.APPS_PAGE[l]}">{e(T['cta_apps'][l])}</a>
             <a class="hero2__btn" href="guides/">{e(T['cta_guides'][l])}</a>
           </div>
         </div>"""
@@ -89,7 +93,7 @@ def hero():
     </div>
     <div class="container hero2__inner">
 {blocks(r)}
-        <nav class="hero-apps" aria-label="Apps">
+        <nav class="hero-apps" id="apps" aria-label="Apps">
 {icons}
         </nav>
     </div>
@@ -110,40 +114,21 @@ def stats():
   </section>"""
 
 
-def guides():
-    def r(l):
-        cards = "\n".join(
-            f'          <a class="guide-card" href="guides/{l}/{g["slug"][l]}/"><span class="guide-card__app">'
-            f'{e(next(a["name"] for a in APPS if a["slug"] == g["app"]))}</span>'
-            f'<span class="guide-card__title">{e(g["title"][l])}</span></a>' for g in GUIDES)
-        return f"""      <div data-lang-block="{l}" lang="{l}">
-        <h2 class="section-title">{two_tone(T['guides_title'][l])}</h2>
-        <p class="section-subtitle">{e(T['guides_sub'][l])}</p>
-        <div class="guide-grid">
-{cards}
-        </div>
-        <p class="home-guides__all"><a href="guides/">{e(T['guides_all'][l])}</a></p>
-      </div>"""
-    return f"""  <section class="home-guides">
-    <div class="container">
-{blocks(r)}
-    </div>
-  </section>"""
-
 
 def why():
-    """« POURQUOI MYIDEAPP ? » : photo à gauche, valeurs à droite (structure wearebluefoxes.com).
-    Valeurs et photos partagées avec la page À propos (scripts/site_shell.py)."""
+    """« POURQUOI MYIDEAPP ? » version courte : photo + titres des 4 valeurs, détail sur
+    Qui sommes-nous (l'accueil reste une vitrine, sans doublon avec la page du studio)."""
     def r(l):
+        vals = "\n".join(f'            <li>{e(t)}</li>' for t, _ in site_shell.VALUES[l])
         return f"""      <div data-lang-block="{l}" lang="{l}">
       <div class="split">
         <div class="split__media">{site_shell.photo("amis-cafe", l)}</div>
         <div class="split__text">
           <h2 class="section-title">{two_tone(site_shell.WHY_TITLE[l])}</h2>
-          <div class="values">
-{site_shell.values_list(l)}
-          </div>
-          <p class="why__contact"><a class="hero2__btn" href="contact.html">{e(T['contact'][l])}</a></p>
+          <ul class="values-short">
+{vals}
+          </ul>
+          <p class="why__contact"><a class="hero2__btn" href="{site_shell.ABOUT[l]}">{e(T['about_more'][l])} →</a></p>
         </div>
       </div>
       </div>"""
@@ -153,32 +138,46 @@ def why():
     </div>
   </section>"""
 
-def instagram():
-    """« VU SUR INSTAGRAM » : les 4 derniers posts dans des écrans d'iPhone, avec un lien
-    vers la page complète. Sans données Instagram, la section est vide."""
+def doors():
+    """Trois portes d'entrée vers les pages du site, chacune avec un aperçu :
+    Nos apps (icônes), Les guides (titres), Vu sur Instagram (dernier post)."""
     import build_instagram as IG
     path = SITE / "data/instagram.json"
     data = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {"accounts": {}}
-    posts = IG.latest_per_account(data, 4)
-    if not posts:
-        return "  <!-- pas de posts Instagram -->"
+    last = IG.latest_per_account(data, 1)
+    icons = "".join(f'<img src="assets/{a["slug"]}/icon-192.png" alt="" width="44" height="44" loading="lazy">' for a in APPS[:8])
 
     def r(l):
-        phones = "\n".join(IG.phone(p, slug, l) for p, slug in posts)
+        guides = "".join(f'<span>{e(g["title"][l])}</span>' for g in GUIDES[:2])
+        ig = ""
+        if last:
+            post, slug = last[0]
+            ig = (f'<span class="door__post"><img src="{e(post["image"])}" alt="" loading="lazy">'
+                  f'<span class="door__post-head"><img src="assets/{slug}/icon-192.png" alt="">@{e(APPS_BY[slug]["instagram"])}</span></span>')
         return f"""      <div data-lang-block="{l}" lang="{l}">
-        <h2 class="section-title">{two_tone(T['ig_title'][l])}</h2>
-        <p class="section-subtitle">{e(T['ig_sub'][l])}</p>
-        <div class="ig-phones ig-phones--home">
-{phones}
+        <div class="doors">
+          <a class="door" href="{site_shell.APPS_PAGE[l]}">
+            <span class="door__preview door__preview--apps">{icons}</span>
+            <span class="door__body"><strong class="door__title">{two_tone(T['door_apps'][l])}</strong>
+            <span class="door__text">{e(T['door_apps_text'][l])}</span><span class="door__cta">{e(T['door_apps_cta'][l])} →</span></span>
+          </a>
+          <a class="door" href="guides/">
+            <span class="door__preview door__preview--guides">{guides}</span>
+            <span class="door__body"><strong class="door__title">{two_tone(T['door_guides'][l])}</strong>
+            <span class="door__text">{e(T['door_guides_text'][l])}</span><span class="door__cta">{e(T['door_guides_cta'][l])} →</span></span>
+          </a>
+          <a class="door" href="{site_shell.IG_PAGE[l]}">
+            <span class="door__preview door__preview--ig">{ig}</span>
+            <span class="door__body"><strong class="door__title">{two_tone(T['door_ig'][l])}</strong>
+            <span class="door__text">{e(T['door_ig_text'][l])}</span><span class="door__cta">{e(T['door_ig_cta'][l])} →</span></span>
+          </a>
         </div>
-        <p class="home-ig__all"><a class="hero2__btn hero2__btn--primary" href="{site_shell.IG_PAGE[l]}">{e(T['ig_all'][l])} →</a></p>
       </div>"""
-    return f"""  <section class="home-ig">
+    return f"""  <section class="home-doors">
     <div class="container">
 {blocks(r)}
     </div>
   </section>"""
-
 
 def put(page, name, content, fallback_pattern):
     start, end = f"<!-- home:{name}:start -->", f"<!-- home:{name}:end -->"
@@ -196,8 +195,10 @@ def main():
     s = p.read_text(encoding="utf-8")
     s = put(s, "hero", hero(), r"  <section class=\"studio-hero\">.*?</section>")
     s = put(s, "stats", stats(), r"(?<=<!-- home:hero:end -->\n)")
-    s = put(s, "instagram", instagram(), r"(?=<!-- home:guides:start -->)")
-    s = put(s, "guides", guides(), r"  <section class=\"home-guides\">.*?</section>")
+    # Anciennes sections guides et Instagram : remplacées par les portes d'entrée.
+    for old in ("instagram", "guides"):
+        s = re.sub(r"<!-- home:" + old + r":start -->.*?<!-- home:" + old + r":end -->\n?", "", s, flags=re.S)
+    s = put(s, "doors", doors(), r"(?<=<!-- home:stats:end -->\n)")
     s = put(s, "why", why(), r"  <section class=\"about-section\">.*?</section>")
     # Pied de page : habillage commun du studio (scripts/build_shell.py).
     p.write_text(s, encoding="utf-8")

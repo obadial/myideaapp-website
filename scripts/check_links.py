@@ -50,7 +50,7 @@ def collect() -> set[str]:
                     pass
     urls.update(re.findall(r"<loc>([^<]+)</loc>", (SITE / "sitemap.xml").read_text(encoding="utf-8")))
     for page in SITE.rglob("*.html"):
-        if "scripts" in page.parts or "docs" in page.parts:
+        if {"scripts", "docs", "data"} & set(page.parts):
             continue
         rel = page.relative_to(SITE)
         for href in re.findall(r'\shref="([^"#:?]+)', page.read_text(encoding="utf-8")):
@@ -83,7 +83,7 @@ def malformed() -> list[str]:
     navigateur comme une adresse vers un domaine vide, lien bloqué), href vide."""
     bad = []
     for page in SITE.rglob("*.html"):
-        if "scripts" in page.parts or "docs" in page.parts:
+        if {"scripts", "docs", "data"} & set(page.parts):
             continue
         for href in re.findall(r'\s(?:href|src)="([^"]*)"', page.read_text(encoding="utf-8")):
             if href == "" or re.match(r"^//(?![a-z0-9.-]+\.[a-z]{2,})", href, re.I):

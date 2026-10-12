@@ -13,7 +13,7 @@
   <meta property="og:image" content="https://myideapp.com/assets/og-studio.png">
   <link rel="canonical" href="https://myideapp.com/contact.html">
   <link rel="stylesheet" href="css/fonts.css?v=882d5d82">
-  <link rel="stylesheet" href="css/style.css?v=df8c4aa2">
+  <link rel="stylesheet" href="css/style.css?v=2c71993e">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <style>
     .contact-section {
@@ -131,7 +131,7 @@
     <a href="/" class="studio-logo" aria-label="MyIdeApp"><img src="/assets/favicon.svg" alt="" width="34" height="34"><span class="studio-logo__word">My<span class="tt-hl">IdeA</span>pp</span></a>
     <div class="studio-nav__right">
       <div class="navbar__nav studio-nav__links">
-        <a href="/#apps" data-i18n="nav_apps">Ce qu&#x27;on fait</a>
+        <a href="/apps/" data-i18n="nav_apps" data-i18n-href="nav_apps_href">Ce qu&#x27;on fait</a>
         <a href="/a-propos/" data-i18n="nav_about" data-i18n-href="nav_about_href">Qui sommes-nous</a>
         <a href="/guides/" data-i18n="nav_guides">Guides</a>
         <a href="/instagram/" data-i18n="nav_instagram" data-i18n-href="nav_instagram_href">Instagram</a>
@@ -144,7 +144,7 @@
       <details class="studio-nav__burger">
         <summary aria-label="Menu"><span></span><span></span><span></span></summary>
         <div class="studio-nav__panel">
-        <a href="/#apps" data-i18n="nav_apps">Ce qu&#x27;on fait</a>
+        <a href="/apps/" data-i18n="nav_apps" data-i18n-href="nav_apps_href">Ce qu&#x27;on fait</a>
         <a href="/a-propos/" data-i18n="nav_about" data-i18n-href="nav_about_href">Qui sommes-nous</a>
         <a href="/guides/" data-i18n="nav_guides">Guides</a>
         <a href="/instagram/" data-i18n="nav_instagram" data-i18n-href="nav_instagram_href">Instagram</a>
@@ -214,7 +214,7 @@
       </section>
       <section class="contact-box">
         <h2 data-i18n="contact_before_title">Avant de nous écrire</h2>
-        <a href="/#apps" data-i18n="contact_before_faq">Chaque page d'app a sa FAQ</a>
+        <a href="/apps/" data-i18n-href="nav_apps_href" data-i18n="contact_before_faq">Chaque page d'app a sa FAQ</a>
         <a href="/guides/" data-i18n="contact_before_guides">Comparer nos apps avec les autres</a>
         <a href="/suppression-compte.html" data-i18n="contact_before_delete">Supprimer mon compte et mes données</a>
       </section>
@@ -249,6 +249,7 @@
         </div>
         <div class="site-footer__col">
           <h4>Ressources</h4>
+          <a href="/apps/">Nos 12 apps</a>
           <a href="/guides/">Guides comparatifs</a>
           <a href="/a-propos/">Qui sommes-nous</a>
           <a href="/suppression-compte.html">Supprimer mon compte</a>
@@ -279,6 +280,7 @@
         </div>
         <div class="site-footer__col">
           <h4>Resources</h4>
+          <a href="/en/apps/">Our 12 apps</a>
           <a href="/guides/">Comparison guides</a>
           <a href="/en/about/">Who We Are</a>
           <a href="/suppression-compte.html">Delete my account</a>
@@ -309,6 +311,7 @@
         </div>
         <div class="site-footer__col">
           <h4>Recursos</h4>
+          <a href="/es/apps/">Nuestras 12 apps</a>
           <a href="/guides/">Guías comparativas</a>
           <a href="/es/acerca-de/">Quiénes somos</a>
           <a href="/suppression-compte.html">Eliminar mi cuenta</a>
@@ -323,7 +326,7 @@
   </footer>
   <!-- shell:footer:end -->
 
-  <script src="js/i18n.js?v=bda702d6"></script>
+  <script src="js/i18n.js?v=617f8241"></script>
   <script>
     // La page n'inclut pas main.js : on démarre la traduction ici.
     document.addEventListener('DOMContentLoaded', () => I18n.init());

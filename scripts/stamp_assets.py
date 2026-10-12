@@ -22,7 +22,7 @@ def main():
     pattern = re.compile(r'((?:href|src)="(?:\.\./|/)*(' + "|".join(re.escape(a) for a in ASSETS) + r'))(?:\?v=[0-9a-f]+)?"')
     changed = 0
     for page in SITE.rglob("*.html"):
-        if {"scripts", "docs", ".git"} & set(page.relative_to(SITE).parts):
+        if {"scripts", "docs", ".git", "data"} & set(page.relative_to(SITE).parts):
             continue
         s = page.read_text(encoding="utf-8")
         t = pattern.sub(lambda m: f'{m.group(1)}?v={stamps[m.group(2)]}"', s)

@@ -262,6 +262,8 @@ def jsonld(src, app, lang):
                                   for i in FAQ["apps"][slug]]
         elif t == "BreadcrumbList":
             data["itemListElement"][-1]["item"] = BASE + url(slug, lang)
+            if len(data["itemListElement"]) > 2:  # catégorie → page « Ce qu'on fait » de la langue
+                data["itemListElement"][1]["item"] = f"{BASE}/{lang}/apps/"
         return (f'<script type="application/ld+json"{m.group(1)}>\n'
                 + json.dumps(data, ensure_ascii=False, indent=2) + "\n  </script>")
     return re.sub(r'<script type="application/ld\+json"([^>]*)>(.*?)</script>', fix, src, flags=re.S)

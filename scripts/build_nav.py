@@ -56,7 +56,7 @@ def block(app):
 def breadcrumb(app):
     return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "MyIdeApp", "item": "https://myideapp.com/"},
-        {"@type": "ListItem", "position": 2, "name": CATS[app["category"]]["en"], "item": "https://myideapp.com/#apps"},
+        {"@type": "ListItem", "position": 2, "name": CATS[app["category"]]["en"], "item": "https://myideapp.com/apps/"},
         {"@type": "ListItem", "position": 3, "name": app["name"], "item": f"https://myideapp.com/{app['slug']}/"}]}
 
 

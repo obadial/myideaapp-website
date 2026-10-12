@@ -90,6 +90,10 @@ TXT = {
                  "en": "The exact details are in each app's privacy policy.",
                  "es": "El detalle exacto está en la política de privacidad de cada app."},
     "apps_h": {"fr": ["Les 12", "apps"], "en": ["The 12", "apps"], "es": ["Las 12", "apps"]},
+    "apps_text": {"fr": "Cycle menstruel, course à pied, hydratation, budget, Bourse, recettes, alimentation, sommeil, respiration, affirmations, santé intime et carnet de rencontres.",
+                  "en": "Period tracking, running, hydration, budgeting, stock market practice, recipes, food journaling, sleep, breathing, affirmations, sexual health and a dating journal.",
+                  "es": "Ciclo menstrual, running, hidratación, presupuesto, bolsa, recetas, alimentación, sueño, respiración, afirmaciones, salud íntima y diario de citas."},
+    "apps_cta": {"fr": "Voir les 12 apps", "en": "See the 12 apps", "es": "Ver las 12 apps"},
     "contact_h": {"fr": ["Nous", "contacter"], "en": ["Contact", "us"], "es": ["Escríbenos", ""]},
     "contact": {"fr": "Une question, un bug, une suggestion ? Écris-nous, on répond sous 48 h.",
                 "en": "A question, a bug, a suggestion? Write to us, we reply within 48 hours.",
@@ -134,9 +138,6 @@ def page(lang, T):
     out = out.replace('content="article"', 'content="website"', 1)
     story = "\n".join(f"          <p>{e(x)}</p>" for x in TXT["story"][lang])
     outside = "\n".join(f"          <li>{e(x)}</li>" for x in TXT["out"][lang])
-    apps = "\n".join(
-        f'          <a class="about-app" href="{app_path(a["slug"], lang)}"><img src="/assets/{a["slug"]}/icon-192.png" alt="" width="48" height="48" loading="lazy">'
-        f'<span><strong>{e(a["name"])}</strong><small>{e(T[lang][a["slug"] + "_subtitle"])}</small></span></a>' for a in APPS)
     body = f"""
   <main class="guide about">
     <div class="container guide__inner">
@@ -179,10 +180,8 @@ def page(lang, T):
 
       <section>
         <h2>{two_tone(TXT['apps_h'][lang])}</h2>
-        <div class="about-apps">
-{apps}
-        </div>
-        <p><a href="{DEV_PAGE}" rel="noopener" target="_blank">{e(TXT['store'][lang])} →</a></p>
+        <p>{e(TXT['apps_text'][lang])}</p>
+        <p><a class="hero2__btn hero2__btn--primary" href="{site_shell.APPS_PAGE[lang]}">{e(TXT['apps_cta'][lang])} →</a></p>
       </section>
 
       <section>

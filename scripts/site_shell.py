@@ -27,6 +27,7 @@ LANGS = ("fr", "en", "es")
 EMAIL = "contact.myideapp@icloud.com"
 ABOUT = {"fr": "/a-propos/", "en": "/en/about/", "es": "/es/acerca-de/"}
 IG_PAGE = {"fr": "/instagram/", "en": "/en/instagram/", "es": "/es/instagram/"}
+APPS_PAGE = {"fr": "/apps/", "en": "/en/apps/", "es": "/es/apps/"}
 e = html.escape
 
 T = {
@@ -39,6 +40,7 @@ T = {
     "insta": {"fr": "Nos apps sur Instagram", "en": "Our apps on Instagram", "es": "Nuestras apps en Instagram"},
     "ig_all": {"fr": "Voir leurs derniers posts", "en": "See their latest posts", "es": "Ver sus últimas publicaciones"},
     "res": {"fr": "Ressources", "en": "Resources", "es": "Recursos"},
+    "all_apps": {"fr": "Nos 12 apps", "en": "Our 12 apps", "es": "Nuestras 12 apps"},
     "guides": {"fr": "Guides comparatifs", "en": "Comparison guides", "es": "Guías comparativas"},
     "about": {"fr": "Qui sommes-nous", "en": "Who We Are", "es": "Quiénes somos"},
     "delete": {"fr": "Supprimer mon compte", "en": "Delete my account", "es": "Eliminar mi cuenta"},
@@ -85,6 +87,7 @@ def footer_inner(lang):
         </div>
         <div class="site-footer__col">
           <h4>{e(T['res'][lang])}</h4>
+          <a href="{APPS_PAGE[lang]}">{e(T['all_apps'][lang])}</a>
           <a href="/guides/">{e(T['guides'][lang])}</a>
           <a href="{ABOUT[lang]}">{e(T['about'][lang])}</a>
           <a href="/suppression-compte.html">{e(T['delete'][lang])}</a>
@@ -153,7 +156,7 @@ def _nav(links, lang_label, lang_items):
 
 def nav(lang, lang_links, active=None, about_href=None):
     """Pages générées dans une langue fixe : libellés écrits, langues = liens vers l'autre URL."""
-    hrefs = {"apps": "/#apps", "guides": "/guides/", "about": about_href or ABOUT[lang], "instagram": IG_PAGE[lang],
+    hrefs = {"apps": APPS_PAGE[lang], "guides": "/guides/", "about": about_href or ABOUT[lang], "instagram": IG_PAGE[lang],
              "contact": "/contact.html"}
     active_cls = ' class="active"'
     links = "\n".join(f'        <a href="{hrefs[k]}"{active_cls if k == active else ""}>{e(NAV_LABELS[k][lang])}</a>'
@@ -165,9 +168,10 @@ def nav(lang, lang_links, active=None, about_href=None):
 
 def nav_multi(active=None):
     """Pages traduites par i18n.js : libellés par clés, langues = boutons."""
-    hrefs = {"apps": "/#apps", "guides": "/guides/", "about": "/a-propos/", "instagram": "/instagram/", "contact": "/contact.html"}
+    hrefs = {"apps": "/apps/", "guides": "/guides/", "about": "/a-propos/", "instagram": "/instagram/", "contact": "/contact.html"}
     def link(k):
-        extra = {"about": ' data-i18n-href="nav_about_href"', "instagram": ' data-i18n-href="nav_instagram_href"'}.get(k, "")
+        extra = {"apps": ' data-i18n-href="nav_apps_href"', "about": ' data-i18n-href="nav_about_href"',
+                 "instagram": ' data-i18n-href="nav_instagram_href"'}.get(k, "")
         cls = ' class="active"' if k == active else ""
         return f'        <a href="{hrefs[k]}" data-i18n="{NAV_KEYS[k]}"{extra}{cls}>{e(NAV_LABELS[k]["fr"])}</a>'
     links = "\n".join(link(k) for k in NAV_LABELS)

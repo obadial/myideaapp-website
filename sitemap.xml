@@ -456,6 +456,27 @@
   </url>
   <!-- instagram:end -->
 
+  <!-- apps-page:start -->
+  <url>
+    <loc>https://myideapp.com/apps/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://myideapp.com/en/apps/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://myideapp.com/es/apps/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- apps-page:end -->
+
   <!-- guides:start -->
   <url>
     <loc>https://myideapp.com/guides/</loc>
