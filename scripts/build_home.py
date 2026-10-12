@@ -28,9 +28,9 @@ e = html.escape
 
 T = {
     "kicker": {"fr": "Studio indépendant · France", "en": "Independent studio · France", "es": "Estudio independiente · Francia"},
-    "title": {"fr": "12 apps iPhone simples, qui gardent tes données sur ton téléphone.",
-              "en": "12 simple iPhone apps that keep your data on your phone.",
-              "es": "12 apps sencillas para iPhone que guardan tus datos en tu teléfono."},
+    "title": {"fr": "Des apps simples, qui gardent tes données sur ton téléphone.",
+              "en": "Simple apps that keep your data on your phone.",
+              "es": "Apps sencillas que guardan tus datos en tu teléfono."},
     "sub": {"fr": "Cycle, course, hydratation, budget, Bourse, recettes, sommeil… Une app, une chose bien faite. Sans compte obligatoire.",
             "en": "Cycle, running, hydration, budget, stocks, recipes, sleep… One app, one thing done well. No account required.",
             "es": "Ciclo, correr, hidratación, presupuesto, bolsa, recetas, sueño… Una app, una cosa bien hecha. Sin cuenta obligatoria."},

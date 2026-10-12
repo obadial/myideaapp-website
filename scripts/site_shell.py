@@ -26,19 +26,21 @@ APPS = json.loads((SITE / "data/apps.json").read_text(encoding="utf-8"))["apps"]
 LANGS = ("fr", "en", "es")
 EMAIL = "contact.myideapp@icloud.com"
 ABOUT = {"fr": "/a-propos/", "en": "/en/about/", "es": "/es/acerca-de/"}
+IG_PAGE = {"fr": "/instagram/", "en": "/en/instagram/", "es": "/es/instagram/"}
 e = html.escape
 
 T = {
-    "tagline": {"fr": "Studio indépendant d'apps iPhone. 12 apps simples, tes données sur ton téléphone.",
-                "en": "Independent iPhone app studio. 12 simple apps, your data on your phone.",
-                "es": "Estudio independiente de apps para iPhone. 12 apps sencillas, tus datos en tu teléfono."},
+    "tagline": {"fr": "Studio indépendant d'apps mobiles. Des apps simples, tes données sur ton téléphone.",
+                "en": "Independent mobile app studio. Simple apps, your data on your phone.",
+                "es": "Estudio independiente de apps móviles. Apps sencillas, tus datos en tu teléfono."},
     "question": {"fr": "Une question ?", "en": "A question?", "es": "¿Una pregunta?"},
     "form": {"fr": "Formulaire de contact", "en": "Contact form", "es": "Formulario de contacto"},
     "reply": {"fr": "Réponse sous 48 h", "en": "Reply within 48 hours", "es": "Respuesta en 48 h"},
     "insta": {"fr": "Nos apps sur Instagram", "en": "Our apps on Instagram", "es": "Nuestras apps en Instagram"},
+    "ig_all": {"fr": "Voir leurs derniers posts", "en": "See their latest posts", "es": "Ver sus últimas publicaciones"},
     "res": {"fr": "Ressources", "en": "Resources", "es": "Recursos"},
     "guides": {"fr": "Guides comparatifs", "en": "Comparison guides", "es": "Guías comparativas"},
-    "about": {"fr": "À propos du studio", "en": "About the studio", "es": "Sobre el estudio"},
+    "about": {"fr": "Qui sommes-nous", "en": "Who We Are", "es": "Quiénes somos"},
     "delete": {"fr": "Supprimer mon compte", "en": "Delete my account", "es": "Eliminar mi cuenta"},
     "legal": {"fr": "Mentions légales", "en": "Legal notice", "es": "Aviso legal"},
     "rights": {"fr": "© 2026 MyIdeApp. Tous droits réservés.", "en": "© 2026 MyIdeApp. All rights reserved.",
@@ -79,6 +81,7 @@ def footer_inner(lang):
         <div class="site-footer__col site-footer__col--ig">
           <h4 class="site-footer__ig-title">{IG_GLYPH}{e(T['insta'][lang])}</h4>
           <div class="site-footer__igs">{instagram_links()}</div>
+          <a class="site-footer__ig-all" href="{IG_PAGE[lang]}">{e(T['ig_all'][lang])} →</a>
         </div>
         <div class="site-footer__col">
           <h4>{e(T['res'][lang])}</h4>
@@ -107,9 +110,9 @@ def footer_multi():
     return f'  <footer class="footer site-footer">\n{blocks}\n  </footer>'
 
 
-NAV_LABELS = {"apps": {"fr": "Apps", "en": "Apps", "es": "Apps"},
+NAV_LABELS = {"apps": {"fr": "Ce qu'on fait", "en": "What We Do", "es": "Lo que hacemos"},
+              "about": {"fr": "Qui sommes-nous", "en": "Who We Are", "es": "Quiénes somos"},
               "guides": {"fr": "Guides", "en": "Guides", "es": "Guías"},
-              "about": {"fr": "À propos", "en": "About", "es": "Acerca de"},
               "contact": {"fr": "Contact", "en": "Contact", "es": "Contacto"}}
 NAV_KEYS = {"apps": "nav_apps", "guides": "nav_guides", "about": "nav_about", "contact": "nav_contact"}
 LANG_NAMES = {"fr": "Français", "en": "English", "es": "Español"}

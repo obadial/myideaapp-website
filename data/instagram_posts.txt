@@ -1,0 +1,53 @@
+# Posts Instagram affichés sur la page « Sur Instagram ».
+# Relevés à la main sur les profils (6 derniers posts par compte), le 2026-10-12.
+# Pour mettre à jour : remplacer les lignes, puis lancer
+#   python3 scripts/import_instagram.py && python3 scripts/build_instagram.py
+# Format : <app> <p|r> <code du post> | <début de la légende>   (p = post/carrousel, r = Reel)
+rhythm p DddtNNtG2Nx | your luteal phase is not a personality flaw — it is a progesterone crash 📉 here is the mechanism
+rhythm r DdLS_4Vgqe8 | week 2 and my body was trying to tell me something the whole time 🫖 turns out the exhaustion,
+rhythm r DdCEjluCh9x | week 2 and I genuinely didn't expect to feel *seen* by an app 🌒 turns out the crash every other
+rhythm r DcnP1nPgte6 | deleted Flo after 3 years. week 4 of using Rhythm and honestly? the privacy thing alone changed
+rhythm r DceBTvslbFa | week 4. lying on the couch, period cramps, and somehow… not dreading this anymore? 🌀 Rhythm
+rhythm r DcDMuXOgPNh | I've been fighting my body for years 🌀 Week 3. I wrote it all down — the crashes, the cravings
+runfree r DddrFrfD7qJ | Three runs this week. Zero miles logged. And I actually remember all three.
+runfree r DdM6P-yCo18 | Runners who drop GPS for a few weeks almost always say the same thing: they didn't get slower —
+runfree r Dc861GICjwO | I deleted my tracking app 30 days ago. Not a cleanse. Not a challenge. I just couldn't remember
+runfree r Dc2s4ciARJ5 | First run without GPS felt like driving with no dashboard. No idea how far, how fast — just rain
+runfree r DcY3zrFCqsB | Day 30. No GPS, no Strava, no upload. I didn't get slower. I didn't lose motivation.
+runfree r DcSpd1NEQAh | Week 3 recap. No screenshots. No Strava post. Just three runs I actually remember
+hydrome p DddpyJvm45j | The 2pm slump, the headache you blamed on screen time, the brain fog after lunch — half the time
+hydrome r Dc5RZr4kx44 | POV: you're 20 mins into a workout and you realize… you've actually been drinking water today 💧
+hydrome r DcwC2v9lZLD | I didn't start this to 'transform my health.' I started because I was tired at 2pm every day
+hydrome r DcVORmpktZi | 30 days. Zero perfect days. Still counts. 💧 The only trick? Stop treating a missed glass like
+hydrome r Dbyj6C2E2Sy | Week 1 felt like effort. Week 2 felt like… less effort? 💧 The thing nobody says: building a habit
+hydrome p DbqhKUenUpd | No streaks broken. No points lost. Just you, a glass of water, and a quiet little reset. 💧
+enjoymeal r Ddg-UyLkaSp | The moment it clicked for me wasn't a win. It was standing in the kitchen realizing I couldn't
+enjoymeal p DddtBVNm6pL | The rule that every single meal needs to be perfectly balanced? Pure diet culture math. 🧮
+enjoymeal p DddqHQ3GzLy | The idea that some foods "belong" in your cart and others don't isn't nutrition advice
+enjoymeal p Ddb0L8zCtMn | Nobody taught you that "bulking" and "cutting" are marketing terms, not biology. 💡
+enjoymeal p DdM5O93gL0s | The food police voice hits at the worst moments — right in the middle of a meal with people you love
+enjoymeal p Dc8fLMeCkEz | Eating a snack while you walk somewhere isn't a red flag. 🚶‍♀️ Gentle nutrition doesn't have a
+chapter p DczC7P9EY2u | The flags I actually logged 🟢🚩 vs the ones I felt mid-getting-ready and talked myself into
+chapter p Dctd3XgnXbq | The plot twist nobody talks about: your type might just be your pattern in disguise 📓
+chapter p DcO_zxzjwCN | The flags I actually logged vs the ones I talked myself into 🟢🚩 Funny how the list never lies
+chapter p DcJauAEjFHP | Your brain is a terrible narrator of your own love life 📓 It edits, softens, and rewrites
+chapter p DbsBSoyDSqy | The longing is real — but the target is often wrong. Before you text, ask yourself which one
+chapter r DbNIOiGDdWC | Green flags I actually wrote down 🟢 vs the ones I convinced myself were there.
+nova r DdM-A27lR_A | Someone DM'd me a question I hear constantly: "I got tested. They said everything was fine. But
+nova p DcqdnluFfde | Nobody taught you this about your body, so I will. 🧬 Myth: if you have no symptoms, you don't
+nova p DcoUQrfFvd4 | That negative result hits different when you know about window periods. 🧬 Every STI takes
+nova p DcGaeqhD9Pv | Someone DMed me: 'I asked my doctor for a full STI panel and they said I was fine — but I still
+nova p DcERINtlVvl | The part of safer sex nobody actually explains — and it costs people every day. 💧
+nova p Dbn8ZP7Cney | The STI conversation always stops at penetration. Nobody talks about oral.
+inhale r DdIuL5bAJai | Week two. 3am chest tightening, brain on loop. 😮‍💨 I didn't open my phone. I put on shoes and
+inhale r Dcq5OjXjSKI | Day 30. Box breathing on the couch at 10pm — no app open, no timer. Just me and a pattern
+inhale r DckrCQAk8yy | Day 30. I didn't fix my life. I just stopped white-knuckling through it. 😮‍💨
+inhale r DcG2JD3Enzh | A sigh isn't weakness — it's your body self-correcting. 😮‍💨 When air pools at the bottom of your lungs
+inhale r DcAn5OngqjR | Week two. I started doing it in the car before walking in. 😮‍💨 Not meditating. Not 'manifesting'
+inhale r DbumdlJDxck | It's 11pm and your chest still hasn't unclenched. 😮‍💨 Day 1 of 30.
+budgetbrief p DdHN00XjXWn | Never linked my bank. Still know exactly where every dollar went last month 👀 Manual tracking
+budgetbrief p DcjKsDPGtOL | Never connected a bank account. Still know exactly where every dollar went 👀
+budgetbrief p DcfhNVuDhIG | The real reason your budget falls apart mid-month — it's a timing problem, not a discipline one
+budgetbrief p Db_HkJNHeJW | Budget with me on payday 👀 Rent ✓ Groceries ✓ Transport ✓ 'Going out' fund… debatable 💀
+budgetbrief p Db7eFKnDrso | The real reason budgeting feels exhausting — your categories are doing too much heavy lifting
+budgetbrief p DbpcgyWHUhB | Your budget isn't broken — your categories are 👀 Most people track 6 vague buckets

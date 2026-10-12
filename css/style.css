@@ -1898,3 +1898,7 @@ body[data-theme^="legal-"] .legal-page__meta { display: none; }
   .ig-phone { width: 240px; }
   .ig-phone__screen { height: 510px; }
 }
+.site-footer__ig-all { display: inline-block; margin-top: 0.9rem; font-size: 0.875rem; font-weight: 700; color: var(--primary); }
+.site-footer__ig-all:hover { color: #d6249f; }
+/* Couvertures de Reels (9:16) : le texte est en haut, on cadre plus haut */
+.ig-phone__media--reel img, .ig-account__grid a.reel img { object-position: 50% 12%; }

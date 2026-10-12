@@ -4,8 +4,9 @@
 Demande de Lucas (2026-10-12) : un rendu joli où l'on voit les posts réels du
 studio comme sur l'app Instagram, mis à jour automatiquement.
 
-- Données : data/instagram.json, écrit chaque jour par scripts/fetch_instagram.py
-  (GitHub Actions, .github/workflows/instagram.yml) depuis l'API Graph de Meta.
+- Données : data/instagram.json, préparé par scripts/import_instagram.py à partir de
+  data/instagram_posts.txt (posts relevés à la main). Pas de mise à jour automatique :
+  on rafraîchit la liste quand on met le site à jour (choix de Lucas, 2026-10-12).
 - Les visuels sont des copies légères hébergées sur le site : la page ne charge
   rien depuis Instagram (pas de traceur Meta, pas de bannière cookies).
 - Tant qu'il n'y a aucun post, la page n'est pas générée (jamais de faux posts).
@@ -35,15 +36,15 @@ e = html.escape
 MONTHS = G.MONTHS
 
 TXT = {
-    "title": {"fr": "MyIdeApp sur Instagram : les posts de nos 12 apps", "en": "MyIdeApp on Instagram: posts from our 12 apps",
-              "es": "MyIdeApp en Instagram: las publicaciones de nuestras 12 apps"},
-    "desc": {"fr": "Les derniers posts Instagram des apps MyIdeApp (Rhythm, RunFree, HydroMe, Nova…), mis à jour chaque jour.",
-             "en": "The latest Instagram posts from MyIdeApp's apps (Rhythm, RunFree, HydroMe, Nova…), updated daily.",
-             "es": "Las últimas publicaciones de Instagram de las apps de MyIdeApp (Rhythm, RunFree, HydroMe, Nova…), actualizadas a diario."},
+    "title": {"fr": "MyIdeApp sur Instagram : les posts de nos apps", "en": "MyIdeApp on Instagram: posts from our apps",
+              "es": "MyIdeApp en Instagram: publicaciones de nuestras apps"},
+    "desc": {"fr": "Les derniers posts Instagram des apps MyIdeApp : Rhythm, RunFree, HydroMe, Nova, EnjoyMeal, Chapter, Inhale, MyBudgetBrief.",
+             "en": "The latest Instagram posts from MyIdeApp's apps: Rhythm, RunFree, HydroMe, Nova, EnjoyMeal, Chapter, Inhale, MyBudgetBrief.",
+             "es": "Las últimas publicaciones de Instagram de las apps de MyIdeApp: Rhythm, RunFree, HydroMe, Nova, EnjoyMeal, Chapter, Inhale, MyBudgetBrief."},
     "h1": {"fr": ["Sur", "Instagram"], "en": ["On", "Instagram"], "es": ["En", "Instagram"]},
-    "intro": {"fr": "Conseils, coulisses et nouveautés : chaque app a son compte. Voici leurs derniers posts, mis à jour chaque jour.",
-              "en": "Tips, behind the scenes and what's new: each app has its own account. Here are their latest posts, updated every day.",
-              "es": "Consejos, entre bastidores y novedades: cada app tiene su cuenta. Estas son sus últimas publicaciones, actualizadas cada día."},
+    "intro": {"fr": "Conseils, coulisses et nouveautés : chaque app a son compte. Voici leurs derniers posts.",
+              "en": "Tips, behind the scenes and what's new: each app has its own account. Here are their latest posts.",
+              "es": "Consejos, entre bastidores y novedades: cada app tiene su cuenta. Estas son sus últimas publicaciones."},
     "latest": {"fr": ["Les derniers", "posts"], "en": ["Latest", "posts"], "es": ["Últimas", "publicaciones"]},
     "accounts": {"fr": ["Nos", "comptes"], "en": ["Our", "accounts"], "es": ["Nuestras", "cuentas"]},
     "follow": {"fr": "Suivre", "en": "Follow", "es": "Seguir"},
@@ -80,9 +81,9 @@ def phone(post, slug, lang):
           <span class="ig-phone__island"></span>
           <span class="ig-phone__screen">
             <span class="ig-phone__head"><img src="/assets/{slug}/icon-192.png" alt="" width="30" height="30" loading="lazy"><strong>{e(user)}</strong><span class="ig-phone__follow">{e(TXT['follow'][lang])}</span></span>
-            <span class="ig-phone__media"><img src="/{e(post['image'])}" alt="" loading="lazy" decoding="async">{badge}</span>
+            <span class="ig-phone__media{' ig-phone__media--reel' if reel else ''}"><img src="/{e(post['image'])}" alt="" loading="lazy" decoding="async">{badge}</span>
             <span class="ig-phone__actions">{HEART}{COMMENT}{SEND}<span class="ig-phone__save">{SAVE}</span></span>
-            <span class="ig-phone__caption"><strong>{e(user)}</strong> {e(caption(post.get('caption')))}</span>
+            <span class="ig-phone__caption" lang="en"><strong>{e(user)}</strong> {e(caption(post.get('caption')))}</span>
             <span class="ig-phone__date">{e(human_date(post['timestamp'], lang))}</span>
           </span>
         </a>"""
@@ -101,8 +102,9 @@ def page(data, lang):
     phones = "\n".join(phone(p, s, lang) for p, s in latest)
     cards = []
     for s, a in accounts.items():
-        thumbs = "".join(f'<a href="{e(p["permalink"])}" rel="noopener" target="_blank"><img src="/{e(p["image"])}" alt="" loading="lazy"></a>'
-                         for p in a["posts"][:3])
+        reel_cls = ' class="reel"'
+        thumbs = "".join(f'<a href="{e(p["permalink"])}" rel="noopener" target="_blank"{reel_cls if p.get("type") == "VIDEO" else ""}>'
+                         f'<img src="/{e(p["image"])}" alt="" loading="lazy"></a>' for p in a["posts"][:3])
         cards.append(f"""        <div class="ig-account">
           <a class="ig-account__head" href="https://www.instagram.com/{APPS[s]['instagram']}/" rel="noopener" target="_blank">
             <span class="site-footer__ig-icon"><img src="/assets/{s}/icon-192.png" alt="" width="28" height="28" loading="lazy"><span class="site-footer__ig-badge">{site_shell.IG_GLYPH}</span></span>

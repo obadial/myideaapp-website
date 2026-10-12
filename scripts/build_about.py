@@ -38,28 +38,28 @@ CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 e = html.escape
 
 TXT = {
-    "title": {"fr": "À propos de MyIdeApp, studio d'apps iPhone",
-              "en": "About MyIdeApp, an independent iPhone app studio",
-              "es": "Sobre MyIdeApp, estudio independiente de apps"},
-    "desc": {"fr": "MyIdeApp est un studio indépendant français qui publie 12 apps iPhone simples : données sur ton téléphone, sans compte obligatoire, prix affichés.",
-             "en": "MyIdeApp is an independent French studio publishing 12 simple iPhone apps: data on your phone, no account required, prices shown upfront.",
-             "es": "MyIdeApp es un estudio independiente francés que publica 12 apps sencillas para iPhone: datos en tu teléfono, sin cuenta obligatoria, precios claros."},
-    "h1": {"fr": ["MyIdeApp,", "un studio indépendant d'apps iPhone"], "en": ["MyIdeApp,", "an independent iPhone app studio"], "es": ["MyIdeApp,", "un estudio independiente de apps para iPhone"]},
-    "intro": {"fr": "MyIdeApp conçoit et publie 12 apps iPhone : cycle menstruel, course à pied, hydratation, budget, Bourse, recettes, alimentation, sommeil, respiration, affirmations, santé intime et carnet de rencontres. Une app, un usage, fait simplement.",
-              "en": "MyIdeApp designs and publishes 12 iPhone apps: period tracking, running, hydration, budgeting, stock market practice, recipes, food journaling, sleep, breathing, affirmations, sexual health and a dating journal. One app, one job, done simply.",
-              "es": "MyIdeApp diseña y publica 12 apps para iPhone: ciclo menstrual, running, hidratación, presupuesto, bolsa, recetas, alimentación, sueño, respiración, afirmaciones, salud íntima y diario de citas. Una app, un uso, hecho con sencillez."},
+    "title": {"fr": "MyIdeApp, studio indépendant d'apps mobiles",
+              "en": "MyIdeApp, an independent mobile app studio",
+              "es": "MyIdeApp, estudio independiente de apps móviles"},
+    "desc": {"fr": "MyIdeApp est un studio indépendant français qui publie 12 apps simples, aujourd'hui sur iPhone : données sur ton téléphone, sans compte obligatoire, prix affichés.",
+             "en": "MyIdeApp is an independent French studio publishing 12 simple apps, available today on iPhone: data on your phone, no account required, prices shown upfront.",
+             "es": "MyIdeApp es un estudio independiente francés que publica 12 apps sencillas, hoy en iPhone: datos en tu teléfono, sin cuenta obligatoria, precios claros."},
+    "h1": {"fr": ["MyIdeApp,", "un studio indépendant d'apps mobiles"], "en": ["MyIdeApp,", "an independent mobile app studio"], "es": ["MyIdeApp,", "un estudio independiente de apps móviles"]},
+    "intro": {"fr": "MyIdeApp conçoit et publie 12 apps, aujourd'hui sur iPhone : cycle menstruel, course à pied, hydratation, budget, Bourse, recettes, alimentation, sommeil, respiration, affirmations, santé intime et carnet de rencontres. Une app, un usage, fait simplement.",
+              "en": "MyIdeApp designs and publishes 12 apps, available today on iPhone: period tracking, running, hydration, budgeting, stock market practice, recipes, food journaling, sleep, breathing, affirmations, sexual health and a dating journal. One app, one job, done simply.",
+              "es": "MyIdeApp diseña y publica 12 apps, hoy en iPhone: ciclo menstrual, running, hidratación, presupuesto, bolsa, recetas, alimentación, sueño, respiración, afirmaciones, salud íntima y diario de citas. Una app, un uso, hecho con sencillez."},
     # Histoire racontée par Lucas le 2026-10-12 : studio créé début mai 2026, par lassitude des apps qui
     # demandent trop de données ; idée : les infos sur le téléphone, pas de compte, esprit « mode incognito ».
     "story_h": {"fr": ["Notre", "histoire"], "en": ["Our", "story"], "es": ["Nuestra", "historia"]},
     "story": {
         "fr": ["MyIdeApp est né début mai 2026 d'un ras-le-bol. Pour noter son cycle, boire assez d'eau ou suivre ses dépenses, la plupart des apps demandaient de créer un compte et de confier beaucoup trop de données, pour pas grand-chose en retour.",
-               "Lucas Obadia, développeur indépendant, a voulu changer d'approche : rendre à chacun ses informations, directement sur son téléphone, et pouvoir se servir d'une app sans créer de compte. Un peu comme en navigation privée : tu ouvres, tu utilises, et tes informations restent sur ton téléphone.",
+               "Chez MyIdeApp, on a voulu changer d'approche : rendre à chacun ses informations, directement sur son téléphone, et pouvoir se servir d'une app sans créer de compte. Un peu comme en navigation privée : tu ouvres, tu utilises, et tes informations restent sur ton téléphone.",
                "C'est devenu la règle du studio. Aujourd'hui, ce sont 12 apps en 9 langues, de la santé intime à la Bourse, avec la même promesse : simples, utiles, et tes données chez toi."],
         "en": ["MyIdeApp was born in early May 2026 out of frustration. To track a cycle, drink enough water or follow spending, most apps asked you to create an account and hand over far too much data, for very little in return.",
-               "Lucas Obadia, an independent developer, wanted a different approach: give people their information back, right on their phone, and let them use an app without creating an account. A bit like private browsing: you open it, you use it, and your information stays on your phone.",
+               "At MyIdeApp, we wanted a different approach: give people their information back, right on their phone, and let them use an app without creating an account. A bit like private browsing: you open it, you use it, and your information stays on your phone.",
                "That became the studio's rule. Today it's 12 apps in 9 languages, from sexual health to the stock market, with the same promise: simple, useful, and your data stays with you."],
         "es": ["MyIdeApp nació a principios de mayo de 2026 de un hartazgo. Para registrar el ciclo, beber suficiente agua o seguir los gastos, la mayoría de las apps pedían crear una cuenta y ceder demasiados datos, a cambio de muy poco.",
-               "Lucas Obadia, desarrollador independiente, quiso cambiar el enfoque: devolver a cada uno su información, directamente en su teléfono, y poder usar una app sin crear una cuenta. Un poco como la navegación privada: abres, usas, y tu información se queda en tu teléfono.",
+               "En MyIdeApp quisimos cambiar el enfoque: devolver a cada uno su información, directamente en su teléfono, y poder usar una app sin crear una cuenta. Un poco como la navegación privada: abres, usas, y tu información se queda en tu teléfono.",
                "Se convirtió en la regla del estudio. Hoy son 12 apps en 9 idiomas, de la salud íntima a la bolsa, con la misma promesa: sencillas, útiles y con tus datos contigo."]},
     "everyone_h": {"fr": ["Pensées pour", "tout le monde"], "en": ["Built for", "everyone"], "es": ["Pensadas para", "todos"]},
     "everyone": {"fr": "Quels que soient ton âge, ton corps, ta langue ou ta façon de vivre : nos apps sont pensées sans stéréotype ni culpabilisation.",
@@ -99,7 +99,7 @@ TXT = {
     "legal": {"fr": "Informations légales : voir les mentions légales.", "en": "Legal information: see the legal notice.",
               "es": "Información legal: ver el aviso legal."},
     "updated": {"fr": "Mis à jour le 12 octobre 2026", "en": "Updated October 12, 2026", "es": "Actualizado el 12 de octubre de 2026"},
-    "about": {"fr": "À propos", "en": "About", "es": "Acerca de"},
+    "about": {"fr": "Qui sommes-nous", "en": "Who We Are", "es": "Quiénes somos"},
 }
 
 
