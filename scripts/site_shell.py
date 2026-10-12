@@ -47,10 +47,20 @@ T = {
 }
 
 
+# Glyphe Instagram (contour officiel simplifié) : sans lui, la liste ressemblait à
+# une simple liste d'apps (retour de Lucas, 2026-10-12).
+IG_GLYPH = ('<svg class="ig-glyph" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" '
+            'fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" '
+            'stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg>')
+
+
 def instagram_links():
     return "".join(
-        f'<a class="site-footer__ig" href="https://www.instagram.com/{a["instagram"]}/" rel="noopener" target="_blank">'
-        f'<img src="/assets/{a["slug"]}/icon-192.png" alt="" width="20" height="20" loading="lazy">{e(a["name"])}</a>'
+        f'<a class="site-footer__ig" href="https://www.instagram.com/{a["instagram"]}/" rel="noopener" target="_blank" '
+        f'aria-label="{e(a["name"])} — Instagram @{e(a["instagram"])}">'
+        f'<span class="site-footer__ig-icon"><img src="/assets/{a["slug"]}/icon-192.png" alt="" width="28" height="28" loading="lazy">'
+        f'<span class="site-footer__ig-badge">{IG_GLYPH}</span></span>'
+        f'<span class="site-footer__ig-text"><strong>{e(a["name"])}</strong><small>@{e(a["instagram"])}</small></span></a>'
         for a in APPS if a.get("instagram"))
 
 
@@ -67,7 +77,7 @@ def footer_inner(lang):
           <span class="site-footer__note">{e(T['reply'][lang])}</span>
         </div>
         <div class="site-footer__col site-footer__col--ig">
-          <h4>{e(T['insta'][lang])}</h4>
+          <h4 class="site-footer__ig-title">{IG_GLYPH}{e(T['insta'][lang])}</h4>
           <div class="site-footer__igs">{instagram_links()}</div>
         </div>
         <div class="site-footer__col">

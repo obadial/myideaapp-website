@@ -43,17 +43,15 @@ TXT = {
     "desc": {"fr": "MyIdeApp est un studio indépendant français qui publie 12 apps iPhone simples : données sur ton téléphone, sans compte obligatoire, prix affichés.",
              "en": "MyIdeApp is an independent French studio publishing 12 simple iPhone apps: data on your phone, no account required, prices shown upfront.",
              "es": "MyIdeApp es un estudio independiente francés que publica 12 apps sencillas para iPhone: datos en tu teléfono, sin cuenta obligatoria, precios claros."},
-    "h1": {"fr": "MyIdeApp, un studio indépendant d'apps iPhone",
-           "en": "MyIdeApp, an independent iPhone app studio",
-           "es": "MyIdeApp, un estudio independiente de apps para iPhone"},
+    "h1": {"fr": ["MyIdeApp,", "un studio indépendant d'apps iPhone"], "en": ["MyIdeApp,", "an independent iPhone app studio"], "es": ["MyIdeApp,", "un estudio independiente de apps para iPhone"]},
     "intro": {"fr": "MyIdeApp conçoit et publie 12 apps iPhone : cycle menstruel, course à pied, hydratation, budget, Bourse, recettes, alimentation, sommeil, respiration, affirmations, santé intime et carnet de rencontres. Une app, un usage, fait simplement.",
               "en": "MyIdeApp designs and publishes 12 iPhone apps: period tracking, running, hydration, budgeting, stock market practice, recipes, food journaling, sleep, breathing, affirmations, sexual health and a dating journal. One app, one job, done simply.",
               "es": "MyIdeApp diseña y publica 12 apps para iPhone: ciclo menstrual, running, hidratación, presupuesto, bolsa, recetas, alimentación, sueño, respiración, afirmaciones, salud íntima y diario de citas. Una app, un uso, hecho con sencillez."},
-    "who_h": {"fr": "Qui est derrière le studio", "en": "Who runs the studio", "es": "Quién está detrás del estudio"},
+    "who_h": {"fr": ["Qui est", "derrière le studio"], "en": ["Who", "runs the studio"], "es": ["Quién está", "detrás del estudio"]},
     "who": {"fr": "MyIdeApp est un studio basé en France, fondé et dirigé par Lucas Obadia, développeur indépendant. Il conçoit, développe et maintient lui-même chaque app, du code aux fiches App Store.",
             "en": "MyIdeApp is a studio based in France, founded and run by Lucas Obadia, an independent developer. He designs, builds and maintains every app himself, from the code to the App Store listings.",
             "es": "MyIdeApp es un estudio con sede en Francia, fundado y dirigido por Lucas Obadia, desarrollador independiente. Él mismo diseña, desarrolla y mantiene cada app, del código a las fichas de la App Store."},
-    "principles_h": {"fr": "Nos principes", "en": "Our principles", "es": "Nuestros principios"},
+    "principles_h": {"fr": ["Nos", "principes"], "en": ["Our", "principles"], "es": ["Nuestros", "principios"]},
     "principles": {
         "fr": [("Tes données restent sur ton iPhone", "Ton cycle, tes courses, tes dépenses ou tes notes sont stockés sur ton appareil, pas sur un serveur. Rien n'est revendu."),
                ("Pas de compte obligatoire", "Les 12 apps s'utilisent sans créer de compte."),
@@ -68,7 +66,7 @@ TXT = {
                ("Precios claros", "Descarga gratuita. El precio del Premium opcional aparece claro en cada página de app."),
                ("Sin juicios", "Apps pensadas para todos, en 9 idiomas, sin estereotipos ni culpa.")],
     },
-    "out_h": {"fr": "Ce qui sort de ton téléphone", "en": "What leaves your phone", "es": "Qué sale de tu teléfono"},
+    "out_h": {"fr": ["Ce qui sort", "de ton téléphone"], "en": ["What leaves", "your phone"], "es": ["Qué sale", "de tu teléfono"]},
     "out_intro": {"fr": "Pour être transparents, voici les seuls services extérieurs utilisés, selon l'app :",
                   "en": "To be transparent, these are the only outside services used, depending on the app:",
                   "es": "Para ser transparentes, estos son los únicos servicios externos que se usan, según la app:"},
@@ -92,8 +90,8 @@ TXT = {
     "out_more": {"fr": "Le détail exact figure dans la politique de confidentialité de chaque app.",
                  "en": "The exact details are in each app's privacy policy.",
                  "es": "El detalle exacto está en la política de privacidad de cada app."},
-    "apps_h": {"fr": "Les 12 apps", "en": "The 12 apps", "es": "Las 12 apps"},
-    "contact_h": {"fr": "Nous contacter", "en": "Contact us", "es": "Contacto"},
+    "apps_h": {"fr": ["Les 12", "apps"], "en": ["The 12", "apps"], "es": ["Las 12", "apps"]},
+    "contact_h": {"fr": ["Nous", "contacter"], "en": ["Contact", "us"], "es": ["Escríbenos", ""]},
     "contact": {"fr": "Une question, un bug, une suggestion ? Écris-nous, on répond sous 48 h.",
                 "en": "A question, a bug, a suggestion? Write to us, we reply within 48 hours.",
                 "es": "¿Una pregunta, un error, una sugerencia? Escríbenos, respondemos en 48 h."},
@@ -104,6 +102,11 @@ TXT = {
     "updated": {"fr": "Mis à jour le 12 octobre 2026", "en": "Updated October 12, 2026", "es": "Actualizado el 12 de octubre de 2026"},
     "about": {"fr": "À propos", "en": "About", "es": "Acerca de"},
 }
+
+
+def two_tone(parts):
+    hl, rest = parts
+    return f'<span class="tt-hl">{e(hl)}</span> {e(rest)}'.rstrip()
 
 
 def i18n():
@@ -140,23 +143,23 @@ def page(lang, T):
   <main class="guide about">
     <div class="container guide__inner">
       <p class="guide__crumbs"><a href="/">MyIdeApp</a> › {e(TXT['about'][lang])}</p>
-      <h1 class="guide__title">{e(TXT['h1'][lang])}</h1>
+      <h1 class="guide__title">{two_tone(TXT['h1'][lang])}</h1>
       <p class="guide__intro">{e(TXT['intro'][lang])}</p>
 
       <section>
-        <h2>{e(TXT['who_h'][lang])}</h2>
+        <h2>{two_tone(TXT['who_h'][lang])}</h2>
         <p>{e(TXT['who'][lang])}</p>
       </section>
 
       <section>
-        <h2>{e(TXT['principles_h'][lang])}</h2>
+        <h2>{two_tone(TXT['principles_h'][lang])}</h2>
         <div class="why__grid">
 {principles}
         </div>
       </section>
 
       <section>
-        <h2>{e(TXT['out_h'][lang])}</h2>
+        <h2>{two_tone(TXT['out_h'][lang])}</h2>
         <p>{e(TXT['out_intro'][lang])}</p>
         <ul>
 {outside}
@@ -165,7 +168,7 @@ def page(lang, T):
       </section>
 
       <section>
-        <h2>{e(TXT['apps_h'][lang])}</h2>
+        <h2>{two_tone(TXT['apps_h'][lang])}</h2>
         <div class="about-apps">
 {apps}
         </div>
@@ -173,7 +176,7 @@ def page(lang, T):
       </section>
 
       <section>
-        <h2>{e(TXT['contact_h'][lang])}</h2>
+        <h2>{two_tone(TXT['contact_h'][lang])}</h2>
         <p>{e(TXT['contact'][lang])}</p>
         <p><a href="mailto:contact.myideapp@icloud.com">contact.myideapp@icloud.com</a> · <a href="/contact.html">{e(TXT['form'][lang])}</a></p>
         <p class="guide__checked"><a href="/mentions-legales.html">{e(TXT['legal'][lang])}</a> · {e(TXT['updated'][lang])}</p>
@@ -181,7 +184,8 @@ def page(lang, T):
     </div>
   </main>
 """
-    return out + "\n" + G.nav(lang, alternates) + body + G.footer(lang)
+    nav = G.nav(lang, alternates).replace(f'<a href="{PATHS[lang]}">', f'<a href="{PATHS[lang]}" class="active">', 1)
+    return out + "\n" + nav + body + G.footer(lang)
 
 
 def logo():

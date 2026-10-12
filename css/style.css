@@ -1670,7 +1670,7 @@ a.lang-btn { display: inline-block; text-decoration: none; }
 
 /* ══ Habillage commun du studio (scripts/site_shell.py, 2026-10-12) ══ */
 .site-footer__grid {
-  display: grid; grid-template-columns: 1.4fr 1.3fr 1.5fr 1fr; gap: var(--sp-lg);
+  display: grid; grid-template-columns: 1.15fr 1.15fr 2fr 0.95fr; gap: var(--sp-lg);
   margin-bottom: var(--sp-lg);
 }
 .site-footer__brand .logo-text { font-size: 1.25rem; display: inline-block; margin-bottom: 0.6rem; }
@@ -1708,3 +1708,70 @@ body[data-theme^="legal-"] .legal-page__meta { display: none; }
   .stats-band__item:nth-child(3) { border-left: 0; }
   .stats-band__item:nth-child(n+3) { border-top: 1px solid var(--border); }
 }
+
+/* ══ Charte du studio + typographie (2026-10-12) ═════════════════════════════
+   Couleurs : celles du studio — rose #C96B8A, bleu #6B8DE3, violet #9B7FE8,
+   dégradé signature rose → bleu (logo). Le violet foncé sert aux petits liens
+   (contraste suffisant sur fond clair). Typographie et structure inspirées de
+   wearebluefoxes.com : Raleway, titres en capitales bicolores, menu souligné. */
+[data-theme="studio"] {
+  --accent1: #C96B8A;
+  --accent2: #6B8DE3;
+  --accent3: #9B7FE8;
+  --primary: color-mix(in srgb, #9B7FE8 72%, #15172C);
+  --brand-gradient: linear-gradient(120deg, #C96B8A, #9B7FE8 55%, #6B8DE3);
+}
+[data-theme="studio"],
+[data-theme="studio"] input,
+[data-theme="studio"] textarea,
+[data-theme="studio"] select,
+[data-theme="studio"] button { font-family: 'Raleway', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+[data-theme="studio"] { font-weight: 500; }
+
+/* Titres de section : capitales, première partie au dégradé du studio */
+[data-theme="studio"] .section-title,
+[data-theme="studio"] .contact-head h1,
+.about .guide__title,
+.about section h2 { text-transform: uppercase; letter-spacing: -0.02em; font-weight: 800; }
+.tt-hl {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: var(--accent3);
+}
+[data-theme="studio"] .hero2__title { font-weight: 800; letter-spacing: -0.03em; }
+[data-theme="studio"] .hero2__kicker,
+[data-theme="studio"] .guide-card__app { color: var(--accent1); }
+
+/* Menu : trait fin au dégradé sous la page active et au survol */
+[data-theme="studio"] .navbar__nav a { position: relative; font-weight: 500; }
+[data-theme="studio"] .navbar__nav a::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px;
+  background: var(--brand-gradient); border-radius: 2px;
+  transform: scaleX(0); transform-origin: left; transition: transform var(--transition);
+}
+[data-theme="studio"] .navbar__nav a:hover::after,
+[data-theme="studio"] .navbar__nav a.active::after { transform: scaleX(1); }
+
+/* Bouton principal et bouton de langue actif : dégradé du studio */
+[data-theme="studio"] .hero2__btn--primary { background: var(--brand-gradient); border-color: transparent; color: #fff; }
+
+/* Instagram reconnaissable : glyphe dans le titre, badge sur chaque icône, @compte */
+.ig-glyph { width: 1em; height: 1em; flex: none; }
+.site-footer__ig-title { display: flex; align-items: center; gap: 0.45rem; }
+.site-footer__ig-title .ig-glyph { color: #E1306C; width: 1.1em; height: 1.1em; }
+.site-footer__igs { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 14px; }
+.site-footer__ig { align-items: center; gap: 10px; text-decoration: none; }
+.site-footer__ig-icon { position: relative; flex: none; width: 28px; height: 28px; }
+.site-footer__ig-icon img { width: 28px; height: 28px; border-radius: 7px; display: block; }
+.site-footer__ig-badge {
+  position: absolute; right: -5px; bottom: -5px; width: 15px; height: 15px; border-radius: 50%;
+  display: grid; place-items: center; color: #fff;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  box-shadow: 0 0 0 2px var(--bg);
+}
+.site-footer__ig-badge .ig-glyph { width: 9px; height: 9px; }
+.site-footer__ig-text { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
+.site-footer__ig-text strong { font-size: 0.875rem; color: var(--text); font-weight: 700; }
+.site-footer__ig-text small { font-size: 0.75rem; color: var(--text3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.site-footer__ig:hover small { color: #d6249f; }
+.contact-box .site-footer__ig-title .ig-glyph { color: #E1306C; }

@@ -35,12 +35,13 @@ T = {
     "stats": {"fr": [("12", "apps iPhone"), ("9", "langues"), ("0", "compte obligatoire"), ("0 €", "pour télécharger")],
               "en": [("12", "iPhone apps"), ("9", "languages"), ("0", "account required"), ("$0", "to download")],
               "es": [("12", "apps para iPhone"), ("9", "idiomas"), ("0", "cuentas obligatorias"), ("0 €", "para descargar")]},
-    "guides_title": {"fr": "Quelle app choisir ?", "en": "Which app should you pick?", "es": "¿Qué app elegir?"},
+    # Titres de section bicolores (première partie au dégradé du studio), façon wearebluefoxes.com
+    "guides_title": {"fr": ("Quelle app", "choisir ?"), "en": ("Which app", "should you pick?"), "es": ("¿Qué app", "elegir?")},
     "guides_sub": {"fr": "Nos comparatifs honnêtes face aux apps les plus connues : prix, compte, données. Quand une autre app te convient mieux, on le dit.",
                    "en": "Honest comparisons with the best-known apps: price, account, data. When another app suits you better, we say so.",
                    "es": "Comparativas honestas con las apps más conocidas: precio, cuenta, datos. Si otra app te conviene más, lo decimos."},
     "guides_all": {"fr": "Tous les guides →", "en": "All guides →", "es": "Todas las guías →"},
-    "why_title": {"fr": "Pourquoi nos apps", "en": "Why our apps", "es": "Por qué nuestras apps"},
+    "why_title": {"fr": ("Pourquoi", "nos apps"), "en": ("Why", "our apps"), "es": ("Por qué", "nuestras apps")},
     "why": {
         "fr": [("Aucun compte obligatoire", "Les 12 apps s'utilisent sans créer de compte. Tu ouvres, tu t'en sers."),
                ("Tes données restent chez toi", "Ton cycle, tes courses, tes dépenses… sont stockés sur ton iPhone, pas sur un serveur. Rien n'est revendu."),
@@ -58,6 +59,11 @@ T = {
     "contact": {"fr": "Une question ? Écris-nous", "en": "A question? Write to us", "es": "¿Una pregunta? Escríbenos"},
 }
 GUIDE_SLUG_LANG = {"fr": "fr", "en": "en", "es": "es"}
+
+
+def two_tone(parts):
+    hl, rest = parts
+    return f'<span class="tt-hl">{e(hl)}</span> {e(rest)}'
 
 
 def blocks(render):
@@ -117,7 +123,7 @@ def guides():
             f'{e(next(a["name"] for a in APPS if a["slug"] == g["app"]))}</span>'
             f'<span class="guide-card__title">{e(g["title"][l])}</span></a>' for g in GUIDES)
         return f"""      <div data-lang-block="{l}" lang="{l}">
-        <h2 class="section-title">{e(T['guides_title'][l])}</h2>
+        <h2 class="section-title">{two_tone(T['guides_title'][l])}</h2>
         <p class="section-subtitle">{e(T['guides_sub'][l])}</p>
         <div class="guide-grid">
 {cards}
@@ -135,7 +141,7 @@ def why():
     def r(l):
         items = "\n".join(f'          <div class="why__item"><h3>{e(t)}</h3><p>{e(d)}</p></div>' for t, d in T["why"][l])
         return f"""      <div data-lang-block="{l}" lang="{l}">
-        <h2 class="section-title">{e(T['why_title'][l])}</h2>
+        <h2 class="section-title">{two_tone(T['why_title'][l])}</h2>
         <div class="why__grid">
 {items}
         </div>
