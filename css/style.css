@@ -1902,3 +1902,7 @@ body[data-theme^="legal-"] .legal-page__meta { display: none; }
 .site-footer__ig-all:hover { color: #d6249f; }
 /* Couvertures de Reels (9:16) : le texte est en haut, on cadre plus haut */
 .ig-phone__media--reel img, .ig-account__grid a.reel img { object-position: 50% 12%; }
+/* Dégradé du studio disponible sur tous les thèmes : les guides prennent les couleurs
+   de leur app (RunFree, StockWatch… sur fond sombre) et le logo « IdeA » y devenait
+   transparent faute de variable. */
+:root { --brand-gradient: linear-gradient(120deg, #C96B8A, #9B7FE8 55%, #6B8DE3); }
