@@ -243,7 +243,7 @@ const TRANSLATIONS = {
     // ── Titres d'onglet et descriptions de référencement ──
     // {app} est renseigné par l'attribut data-i18n-app de la balise.
     meta_privacy_title: '{app} — Politique de confidentialité | MyIdeApp',
-    meta_privacy_desc: 'Politique de confidentialité de l\'application {app} : données collectées, finalités, conservation et vos droits (RGPD).',
+    meta_privacy_desc: 'Politique de confidentialité de l\'application {app} : données collectées, finalités, conservation et tes droits (RGPD).',
     meta_terms_title: '{app} — Conditions d\'utilisation | MyIdeApp',
     meta_terms_desc: 'Conditions générales d\'utilisation de l\'application {app} : usage du service, abonnements, responsabilités.',
     meta_home_title: 'MyIdeApp — Studio d\'apps iOS respectueuses de la vie privée',

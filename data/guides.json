@@ -32,6 +32,7 @@
       "id": "running", "app": "runfree",
       "slug": {"fr": "app-course-sans-reseau-social", "en": "running-app-without-social-network", "es": "app-correr-sin-red-social"},
       "title": {"fr": "App de course sans réseau social : RunFree, Strava ou Nike Run Club ?", "en": "A running app without the social network: RunFree, Strava or Nike Run Club?", "es": "App para correr sin red social: ¿RunFree, Strava o Nike Run Club?"},
+      "seo_title": {"fr": "RunFree vs Strava vs Nike Run Club : courir sans réseau", "en": "RunFree vs Strava vs Nike Run Club: no social feed", "es": "RunFree vs Strava vs Nike Run Club: correr sin red social"},
       "description": {"fr": "Comparatif honnête pour suivre ses courses au GPS sans fil d'actualité ni classement : prix, compte obligatoire, données.", "en": "An honest comparison for tracking runs with GPS without a feed or leaderboards: price, account, data.", "es": "Comparativa honesta para registrar tus carreras con GPS sin muro ni clasificaciones: precio, cuenta, datos."},
       "answer": {
         "fr": "Si tu veux suivre tes courses au GPS sans fil d'actualité, sans abonnés ni classements, RunFree garde tout sur ton iPhone et ne demande aucun compte. Strava est le bon choix si la dimension sociale te motive (abonnés, kudos, segments). Nike Run Club est gratuit et propose des séances guidées, mais il faut un compte Nike.",
@@ -88,6 +89,7 @@
       "id": "period", "app": "rhythm",
       "slug": {"fr": "suivre-son-cycle-sans-partager-ses-donnees", "en": "track-your-period-without-sharing-data", "es": "seguir-tu-ciclo-sin-compartir-datos"},
       "title": {"fr": "Suivre son cycle sans partager ses données : Rhythm, Flo ou Clue ?", "en": "Track your period without sharing your data: Rhythm, Flo or Clue?", "es": "Seguir tu ciclo sin compartir tus datos: ¿Rhythm, Flo o Clue?"},
+      "seo_title": {"fr": "Rhythm vs Flo vs Clue : suivre son cycle en privé", "en": "Rhythm vs Flo vs Clue: track your period privately", "es": "Rhythm vs Flo vs Clue: seguir tu ciclo en privado"},
       "description": {"fr": "Où vont tes données de cycle selon l'app : comparatif factuel de Rhythm, Flo et Clue (compte, stockage, prix).", "en": "Where your cycle data goes in each app: a factual comparison of Rhythm, Flo and Clue (account, storage, price).", "es": "Adónde van tus datos del ciclo en cada app: comparativa de Rhythm, Flo y Clue (cuenta, almacenamiento, precio)."},
       "answer": {
         "fr": "Rhythm stocke ton cycle uniquement sur ton téléphone, sans compte : aucune donnée ne part sur un serveur. Flo envoie tes données sur ses serveurs, mais propose un mode anonyme gratuit qui empêche de les relier à ton identité. Clue les stocke sur des serveurs situés dans l'Union européenne si tu crées un compte, sinon elles restent sur l'appareil sans sauvegarde.",
@@ -144,6 +146,7 @@
       "id": "recipes", "app": "myfoodbook",
       "slug": {"fr": "app-recettes-hors-ligne", "en": "offline-recipe-app", "es": "app-recetas-sin-conexion"},
       "title": {"fr": "Quelle app pour garder ses recettes hors ligne ? MyFoodBook, Paprika ou Notes", "en": "Which app to keep your recipes offline? MyFoodBook, Paprika or Apple Notes", "es": "¿Qué app para guardar tus recetas sin conexión? MyFoodBook, Paprika o Notas"},
+      "seo_title": {"fr": "MyFoodBook vs Paprika vs Notes : recettes hors ligne", "en": "MyFoodBook vs Paprika vs Notes: offline recipes", "es": "MyFoodBook vs Paprika vs Notas: recetas sin conexión"},
       "description": {"fr": "Carnet de recettes sur iPhone sans connexion : comparatif de MyFoodBook, Paprika et Notes (prix, compte, fonctions).", "en": "An offline recipe book on iPhone: MyFoodBook vs Paprika vs Apple Notes (price, account, features).", "es": "Recetario sin conexión en iPhone: MyFoodBook, Paprika y Notas (precio, cuenta, funciones)."},
       "answer": {
         "fr": "MyFoodBook est un carnet de recettes gratuit, entièrement hors ligne et sans compte, pensé pour tes propres recettes avec photos, étapes et tags. Paprika, en achat unique, est plus complet si tu veux importer des recettes depuis des sites web et planifier tes repas. Notes d'Apple suffit si tu veux juste noter quelques recettes en texte libre.",
@@ -194,6 +197,7 @@
       "id": "water", "app": "hydrome",
       "slug": {"fr": "app-rappel-boire-eau-sans-compte", "en": "water-reminder-app-no-account", "es": "app-recordatorio-beber-agua-sin-cuenta"},
       "title": {"fr": "Une app pour penser à boire de l'eau, sans compte : HydroMe, WaterMinder ou Plant Nanny ?", "en": "A water reminder app with no account: HydroMe, WaterMinder or Plant Nanny?", "es": "Una app para acordarte de beber agua, sin cuenta: ¿HydroMe, WaterMinder o Plant Nanny?"},
+      "seo_title": {"fr": "HydroMe vs WaterMinder vs Plant Nanny : boire de l'eau", "en": "HydroMe vs WaterMinder vs Plant Nanny: water reminder", "es": "HydroMe vs WaterMinder vs Plant Nanny: beber agua"},
       "description": {"fr": "Trois façons de suivre son hydratation sur iPhone : minimaliste, détaillée ou ludique. Prix et approche comparés.", "en": "Three ways to track hydration on iPhone: minimalist, detailed or playful. Price and approach compared.", "es": "Tres formas de controlar tu hidratación en iPhone: minimalista, detallada o lúdica. Precio y enfoque comparados."},
       "answer": {
         "fr": "HydroMe est la plus simple : un geste pour noter une boisson, un anneau qui se remplit, une série à entretenir, gratuitement et sans compte. WaterMinder convient si tu veux un suivi très détaillé avec Apple Watch. Plant Nanny transforme l'hydratation en jeu : tu fais pousser une plante virtuelle en buvant.",
@@ -243,6 +247,7 @@
       "id": "stocks", "app": "stockwatch",
       "slug": {"fr": "s-entrainer-bourse-sans-argent-reel", "en": "practice-investing-without-real-money", "es": "practicar-bolsa-sin-dinero-real"},
       "title": {"fr": "S'entraîner à la Bourse sans argent réel : StockWatch, Investopedia ou un compte démo ?", "en": "Practice investing without real money: StockWatch, Investopedia or a broker demo?", "es": "Practicar en bolsa sin dinero real: ¿StockWatch, Investopedia o una cuenta demo?"},
+      "seo_title": {"fr": "StockWatch vs Investopedia : la Bourse sans argent réel", "en": "StockWatch vs Investopedia: practice investing for free", "es": "StockWatch vs Investopedia: bolsa sin dinero real"},
       "description": {"fr": "Portefeuille virtuel sur iPhone, simulateur web ou compte démo de courtier : lequel choisir pour apprendre à investir ?", "en": "A virtual portfolio on iPhone, a web simulator or a broker demo account: which one to learn investing?", "es": "Cartera virtual en iPhone, simulador web o cuenta demo de bróker: ¿cuál elegir para aprender a invertir?"},
       "answer": {
         "fr": "StockWatch est une app iPhone pédagogique : tu crées un portefeuille fictif avec tes propres achats, tu suis les cours en direct et tu compares ta performance au S&P 500, sans compte et sans jamais te connecter à une banque. Le simulateur d'Investopedia, gratuit sur le web, te donne 100 000 $ fictifs et permet de jouer entre amis. Un compte démo de courtier reproduit son interface réelle, mais suppose de s'inscrire chez lui.",
@@ -297,6 +302,7 @@
       "id": "food", "app": "enjoymeal",
       "slug": {"fr": "suivi-alimentaire-sans-regime", "en": "food-tracker-without-dieting", "es": "seguimiento-alimentario-sin-dieta"},
       "title": {"fr": "Suivi alimentaire sans régime ni culpabilité : EnjoyMeal, MyFitnessPal ou Yazio ?", "en": "Food tracking without dieting or guilt: EnjoyMeal, MyFitnessPal or Yazio?", "es": "Seguimiento alimentario sin dieta ni culpa: ¿EnjoyMeal, MyFitnessPal o Yazio?"},
+      "seo_title": {"fr": "EnjoyMeal vs MyFitnessPal vs Yazio : manger sans régime", "en": "EnjoyMeal vs MyFitnessPal vs Yazio: no-diet food log", "es": "EnjoyMeal vs MyFitnessPal vs Yazio: comer sin dieta"},
       "description": {"fr": "Journal alimentaire bienveillant ou compteur de calories ? Comparatif d'EnjoyMeal, MyFitnessPal et Yazio : prix, scan de codes-barres, approche.", "en": "A kind food diary or a calorie counter? EnjoyMeal vs MyFitnessPal vs Yazio: price, barcode scanning, approach.", "es": "¿Diario amable o contador de calorías? EnjoyMeal, MyFitnessPal y Yazio: precio, escáner de códigos, enfoque."},
       "answer": {
         "fr": "EnjoyMeal suit tes repas, tes calories et tes macros avec des objectifs doux et sans régime drastique, et le scan de codes-barres y est gratuit. MyFitnessPal et Yazio sont des compteurs de calories très complets, avec d'immenses bases d'aliments, mais leur scan de codes-barres est réservé aux abonnés.",

@@ -165,7 +165,8 @@ def guide_page(guide, lang):
             {"@type": "ListItem", "position": 3, "name": guide["title"][lang], "item": canonical}]},
     ]
     theme = guide["app"] if guide["app"] in THEMES else "studio"
-    return (head(lang, guide["title"][lang], guide["description"][lang], canonical, alternates, theme, ld)
+    # <title> court (≤ 60 car.) pour Google ; le titre long reste le h1 de la page.
+    return (head(lang, guide["seo_title"][lang], guide["description"][lang], canonical, alternates, theme, ld)
             + "\n" + nav(lang, alternates).replace('data-theme="studio"', f'data-theme="{theme}"') + f"""
   <main class="guide">
     <div class="container guide__container">

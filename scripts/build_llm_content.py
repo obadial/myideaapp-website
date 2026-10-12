@@ -47,7 +47,8 @@ def read_meta(app_dir: str, locale: str, field: str) -> str:
 
 
 def linkify(text: str) -> str:
-    esc = html.escape(text)
+    # Les descriptions App Store citent parfois /index.html : on lie l'URL canonique.
+    esc = re.sub(r"(https://myideapp\.com/[^\s<]*?)index\.html", r"\1", html.escape(text))
     return re.sub(r"(https://[^\s<]+)", r'<a href="\1">\1</a>', esc)
 
 
@@ -75,6 +76,9 @@ def description_to_html(desc: str) -> tuple[str, list[str]]:
             features.append(line.capitalize())
         elif line[0] in "•–-":
             body = line.lstrip("•–- ").strip()
+            if not body:  # ligne de séparation (« --- ») : pas une puce
+                flush()
+                continue
             items.append(linkify(body))
             title = re.split(r"\s[—–-]\s|:", body, maxsplit=1)[0].strip().rstrip(".")
             # Une puce sans intitulé est une phrase, pas un nom de fonction.
