@@ -1665,3 +1665,5 @@ a.lang-btn { display: inline-block; text-decoration: none; }
 .about ul { list-style: disc; padding-left: 1.4rem; margin: 0.5rem 0 0.75rem; }
 .about ul li { margin: 0.35rem 0; line-height: 1.6; color: var(--text2); }
 .about section > p a, .about .guide__checked a { color: var(--primary); }
+/* Barre au défilement : un peu plus opaque, dans la couleur du thème */
+.navbar.navbar--scrolled { background: color-mix(in srgb, var(--bg) 94%, transparent); }

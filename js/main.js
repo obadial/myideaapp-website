@@ -30,10 +30,11 @@ function initScrollAnimations() {
 function initNavbarScroll() {
   const navbar = document.querySelector('.navbar');
   if (!navbar) return;
+  /* Une classe plutôt qu'une couleur en dur : la couleur sombre d'origine
+     assombrissait la barre au défilement sur toutes les pages à thème clair
+     (accueil, Rhythm, HydroMe, mentions légales…). */
   window.addEventListener('scroll', () => {
-    navbar.style.background = window.scrollY > 20
-      ? 'rgba(8, 9, 26, 0.92)'
-      : 'rgba(8, 9, 26, 0.72)';
+    navbar.classList.toggle('navbar--scrolled', window.scrollY > 20);
   }, { passive: true });
 }
 
