@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="meta_contact_title">Contact — MyIdeApp Studio</title>
-  <meta name="description" data-i18n-content="meta_contact_desc" content="Contactez le studio MyIdeApp pour toute question sur nos 12 applications disponibles sur l'App Store.">
+  <meta name="description" data-i18n-content="meta_contact_desc" content="Contacte le studio MyIdeApp pour toute question sur nos applications iOS disponibles sur l&#x27;App Store.">
   <meta name="robots" content="index, follow">
   <meta property="og:title" data-i18n-content="meta_contact_title" content="Contact — MyIdeApp">
-  <meta property="og:description" data-i18n-content="meta_contact_desc" content="Contactez le studio MyIdeApp pour toute question sur nos applications iOS.">
+  <meta property="og:description" data-i18n-content="meta_contact_desc" content="Contacte le studio MyIdeApp pour toute question sur nos applications iOS disponibles sur l&#x27;App Store.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://myideapp.com/contact.html">
   <meta property="og:image" content="https://myideapp.com/assets/og-studio.png">
@@ -154,19 +154,17 @@
       </div>
 
       <h1 data-i18n="contact_title">Nous contacter</h1>
-      <p class="subtitle" data-i18n="contact_subtitle">
-        Une question, un bug, une suggestion ? On vous répond sous 48h.
-      </p>
+      <p class="subtitle" data-i18n="contact_subtitle">Une question, un bug, une suggestion ? On te répond sous 48 h.</p>
 
       <form id="contactForm">
         <div class="form-group">
           <label data-i18n="contact_name">Nom</label>
-          <input type="text" id="name" placeholder="Votre nom" data-i18n-placeholder="contact_name_ph" required>
+          <input type="text" id="name" placeholder="Ton nom" data-i18n-placeholder="contact_name_ph" required>
         </div>
 
         <div class="form-group">
           <label data-i18n="contact_email">Email</label>
-          <input type="email" id="email" placeholder="votre@email.com" data-i18n-placeholder="contact_email_ph" required>
+          <input type="email" id="email" placeholder="ton@email.com" data-i18n-placeholder="contact_email_ph" required>
         </div>
 
         <div class="form-group">
@@ -193,13 +191,11 @@
 
         <div class="form-group">
           <label data-i18n="contact_message">Message</label>
-          <textarea id="message" placeholder="Décrivez votre question ou problème..." data-i18n-placeholder="contact_message_ph" required></textarea>
+          <textarea id="message" placeholder="Décris ta question ou ton problème..." data-i18n-placeholder="contact_message_ph" required></textarea>
         </div>
 
         <button type="submit" class="submit-btn" data-i18n="contact_send">Envoyer le message</button>
-        <p class="note" data-i18n="contact_note">
-          Votre messagerie s'ouvrira avec le message pré-rempli.
-        </p>
+        <p class="note" data-i18n="contact_note">Ta messagerie s'ouvrira avec le message pré-rempli.</p>
       </form>
     </div>
   </main>
@@ -244,60 +240,6 @@
       window.location.href = `mailto:contact.myideapp@icloud.com?subject=${subject}&body=${body}`;
     });
 
-    // i18n minimal
-    const i18n = {
-      fr: {
-        contact_title: 'Nous contacter',
-        contact_subtitle: 'Une question, un bug, une suggestion ? On vous répond sous 48h.',
-        contact_name: 'Nom',
-        contact_email: 'Email',
-        contact_app: 'Application concernée',
-        contact_app_placeholder: 'Choisir une app...',
-        contact_app_other: 'Autre / Général',
-        contact_message: 'Message',
-        contact_send: 'Envoyer le message',
-        contact_note: 'Votre messagerie s\'ouvrira avec le message pré-rempli.',
-        back: 'Retour',
-      },
-      en: {
-        contact_title: 'Contact us',
-        contact_subtitle: 'A question, a bug, a suggestion? We reply within 48h.',
-        contact_name: 'Name',
-        contact_email: 'Email',
-        contact_app: 'App concerned',
-        contact_app_placeholder: 'Choose an app...',
-        contact_app_other: 'Other / General',
-        contact_message: 'Message',
-        contact_send: 'Send message',
-        contact_note: 'Your email client will open with the pre-filled message.',
-        back: 'Back',
-      },
-      es: {
-        contact_title: 'Contáctanos',
-        contact_subtitle: '¿Una pregunta, un error, una sugerencia? Respondemos en 48h.',
-        contact_name: 'Nombre',
-        contact_email: 'Correo',
-        contact_app: 'Aplicación',
-        contact_app_placeholder: 'Elegir una app...',
-        contact_app_other: 'Otro / General',
-        contact_message: 'Mensaje',
-        contact_send: 'Enviar mensaje',
-        contact_note: 'Tu cliente de correo se abrirá con el mensaje predefinido.',
-        back: 'Volver',
-      }
-    };
-
-    function applyLang(lang) {
-      const t = i18n[lang] || i18n['fr'];
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (t[key]) el.textContent = t[key];
-      });
-      localStorage.setItem('mia_lang', lang);
-    }
-
-    const savedLang = localStorage.getItem('mia_lang') || navigator.language.slice(0,2) || 'fr';
-    applyLang(['fr','en','es'].includes(savedLang) ? savedLang : 'fr');
   </script>
 </body>
 </html>

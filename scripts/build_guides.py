@@ -242,6 +242,7 @@ def hub():
                                                 for g in G["guides"]]}]
     page = head("fr", G["hub"]["title"]["fr"], "Comparatifs honnêtes de nos apps face à Strava, Flo, Clue, MyFitnessPal… : prix, compte obligatoire, données.", BASE + "/guides/", {}, "studio", ld)
     page = page.replace('<meta property="og:type" content="article">', '<meta property="og:type" content="website">')
+    page = page.replace("<title>", '<title data-i18n="guides_hub_title">', 1)
     return page + f"""
 <body data-theme="studio">
   <nav class="navbar guide-nav">
