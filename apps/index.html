@@ -17,7 +17,7 @@
   <link rel="alternate" hreflang="es" href="https://myideapp.com/es/apps/">
   <link rel="alternate" hreflang="x-default" href="https://myideapp.com/en/apps/">
   <link rel="stylesheet" href="/css/fonts.css?v=882d5d82">
-  <link rel="stylesheet" href="/css/style.css?v=2c71993e">
+  <link rel="stylesheet" href="/css/style.css?v=a88cb8bc">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <script type="application/ld+json">
 {
@@ -109,6 +109,46 @@
   }
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Les apps MyIdeApp sont-elles gratuites ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, toutes sont gratuites au téléchargement. Certaines proposent un Premium optionnel, à partir de 0,99 €/mois, dont le prix est affiché sur la page de l'app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Faut-il créer un compte ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Aucune de nos apps n'oblige à créer un compte : tu peux t'en servir dès l'ouverture."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Où sont stockées mes données ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sur ton téléphone. Tes données personnelles (cycle, courses, dépenses, notes…) ne sont pas envoyées sur nos serveurs et ne sont jamais revendues. Le détail est dans la politique de confidentialité de chaque app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Les apps existent-elles sur Android ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pas encore : elles sont aujourd'hui sur iPhone, et la version Android arrive bientôt sur Google Play."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body data-theme="studio">
   <nav class="navbar studio-nav">
@@ -141,40 +181,12 @@
     <div class="container">
       <p class="guide__crumbs"><a href="/">MyIdeApp</a> › Ce qu&#x27;on fait</p>
       <h1 class="guide__title"><span class="tt-hl">Nos</span> apps</h1>
-      <p class="guide__intro">Une app, un usage, fait simplement. Gratuites au téléchargement, sans compte obligatoire, et tes données restent sur ton téléphone.</p>
-      <section class="apps-section apps-section--page">
-      <div class="app-filter" role="group" aria-label="Filtrer les apps">
-        <button class="app-filter__btn active" data-filter="all" data-i18n="filter_all">Toutes</button>
-        <button class="app-filter__btn" data-filter="health" data-i18n="cat_health">Santé</button>
-        <button class="app-filter__btn" data-filter="sport" data-i18n="cat_sport">Sport</button>
-        <button class="app-filter__btn" data-filter="food" data-i18n="cat_food">Cuisine & nutrition</button>
-        <button class="app-filter__btn" data-filter="finance" data-i18n="cat_finance">Finances</button>
-        <button class="app-filter__btn" data-filter="wellbeing" data-i18n="cat_wellbeing">Bien-être & sommeil</button>
-        <button class="app-filter__btn" data-filter="relationships" data-i18n="cat_relationships">Relations</button>
-      </div>
-      <div class="apps-carousel">
-
-        <!-- StockWatch -->
-        <a href="/stockwatch/" data-category="finance" class="app-card app-card--stockwatch fade-up fade-up-delay-3">
-          <div class="app-card__content">
-            <img src="/assets/stockwatch/icon-192.png" alt="StockWatch App Icon" class="app-card__icon">
-            <div class="app-card__chip" data-i18n="stockwatch_chip">Finance & Investissement</div>
-            <div style="display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
-              <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
-              <span data-i18n="live_on_appstore">App Store</span>
-            </div>
-            <h3 class="app-card__name">StockWatch</h3>
-            <p class="app-card__subtitle" data-i18n="stockwatch_subtitle">Suivi d'actions & portefeuille virtuel</p>
-            <p class="app-card__description" data-i18n="stockwatch_description">Suis les marchés, simule des achats dans un portefeuille fictif et reçois des alertes de prix. Outil éducatif, jamais connecté à ta banque.</p>
-            <span class="app-card__cta">
-              <span data-i18n="discover">Découvrir</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </span>
-          </div>
-        </a>
-
-        <!-- Rhythm -->
-        <a href="/rhythm/" data-category="health" class="app-card app-card--rhythm fade-up fade-up-delay-2">
+      <p class="guide__intro">MyIdeApp conçoit des apps qui font une seule chose, et la font bien : suivre son cycle, courir sans réseau social, boire assez d&#x27;eau, tenir son budget… Toutes suivent la même règle : pas de compte obligatoire, et tes données personnelles restent sur ton téléphone. Elles sont gratuites au téléchargement, aujourd&#x27;hui sur iPhone.</p>
+      <section class="app-group apps-section apps-section--page" id="body">
+        <h2><span class="tt-hl">Prendre soin</span> de son corps</h2>
+        <p class="app-group__text">Comprendre son cycle, suivre sa santé intime, boire assez d&#x27;eau ou manger sans culpabiliser : des apps douces, sans jugement, où tes données de santé restent chez toi.</p>
+        <div class="apps-carousel">
+          <a href="/rhythm/" data-category="health" class="app-card app-card--rhythm">
           <div class="app-card__content">
             <img src="/assets/rhythm/icon-192.png" alt="Rhythm App Icon" class="app-card__icon">
             <div class="app-card__chip" data-i18n="rhythm_chip">Santé & Bien-être</div>
@@ -192,20 +204,17 @@
               </svg>
             </span>
           </div>
-        </a>
-
-        <!-- RunFree -->
-        <a href="/runfree/" data-category="sport" class="app-card app-card--runfree fade-up fade-up-delay-3">
+        </a><a href="/nova/" data-category="health" class="app-card app-card--nova">
           <div class="app-card__content">
-            <img src="/assets/runfree/icon-192.png" alt="RunFree App Icon" class="app-card__icon">
-            <div class="app-card__chip" data-i18n="runfree_chip">Sport & Running</div>
+            <img src="/assets/nova/icon-192.png" alt="Nova App Icon" class="app-card__icon">
+            <div class="app-card__chip" data-i18n="nova_chip">Santé sexuelle</div>
             <div style="display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
               <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
               <span data-i18n="live_on_appstore">App Store</span>
             </div>
-            <h3 class="app-card__name">RunFree</h3>
-            <p class="app-card__subtitle" data-i18n="runfree_subtitle">Tracker GPS, vie privée d'abord</p>
-            <p class="app-card__description" data-i18n="runfree_description">RunFree enregistre tes courses sans rien envoyer vers le cloud. Tes itinéraires, ton allure et tes records restent sur ton appareil — point final.</p>
+            <h3 class="app-card__name">Nova</h3>
+            <p class="app-card__subtitle" data-i18n="nova_subtitle">Suivi intime, vie privée absolue</p>
+            <p class="app-card__description" data-i18n="nova_description">Nova t'aide à suivre tes vaccinations, dépistages IST et activité intime. Bienveillant, sans jugement — toutes tes données restent sur ton appareil.</p>
             <span class="app-card__cta">
               <span data-i18n="discover">Découvrir</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -213,10 +222,7 @@
               </svg>
             </span>
           </div>
-        </a>
-
-        <!-- HydroMe -->
-        <a href="/hydrome/" data-category="health" class="app-card app-card--hydrome fade-up fade-up-delay-2">
+        </a><a href="/hydrome/" data-category="health" class="app-card app-card--hydrome">
           <div class="app-card__content">
             <img src="/assets/hydrome/icon-192.png" alt="HydroMe App Icon" class="app-card__icon">
             <div class="app-card__chip" data-i18n="hydrome_chip">Santé & Hydratation</div>
@@ -234,10 +240,7 @@
               </svg>
             </span>
           </div>
-        </a>
-
-        <!-- EnjoyMeal -->
-        <a href="/enjoymeal/" data-category="food" class="app-card app-card--enjoymeal fade-up fade-up-delay-2">
+        </a><a href="/enjoymeal/" data-category="food" class="app-card app-card--enjoymeal">
           <div class="app-card__content">
             <img src="/assets/enjoymeal/icon-192.png" alt="EnjoyMeal App Icon" class="app-card__icon">
             <div class="app-card__chip" data-i18n="enjoymeal_chip">Nutrition & Bien-être</div>
@@ -256,38 +259,23 @@
             </span>
           </div>
         </a>
-
-        <!-- MyFoodBook -->
-        <a href="/myfoodbook/" data-category="food" class="app-card app-card--myfoodbook fade-up fade-up-delay-2">
+        </div>
+      </section>
+      <section class="app-group apps-section apps-section--page" id="move">
+        <h2><span class="tt-hl">Bouger</span> à ton rythme</h2>
+        <p class="app-group__text">Courir pour soi, sans fil d&#x27;actualité ni classement : ton GPS, tes parcours et tes records restent sur ton téléphone.</p>
+        <div class="apps-carousel">
+          <a href="/runfree/" data-category="sport" class="app-card app-card--runfree">
           <div class="app-card__content">
-            <img src="/assets/myfoodbook/icon-192.png" alt="MyFoodBook App Icon" class="app-card__icon">
-            <div class="app-card__chip" data-i18n="myfoodbook_chip">Cuisine & Lifestyle</div>
+            <img src="/assets/runfree/icon-192.png" alt="RunFree App Icon" class="app-card__icon">
+            <div class="app-card__chip" data-i18n="runfree_chip">Sport & Running</div>
             <div style="display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
               <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
               <span data-i18n="live_on_appstore">App Store</span>
             </div>
-            <h3 class="app-card__name">MyFoodBook</h3>
-            <p class="app-card__subtitle" data-i18n="myfoodbook_subtitle">Ton carnet de recettes personnel</p>
-            <p class="app-card__description" data-i18n="myfoodbook_description">Note tes recettes, organise-les par tags et retrouve tes favorites en un instant. Un carnet de cuisine privé et hors-ligne.</p>
-            <span class="app-card__cta">
-              <span data-i18n="discover">Découvrir</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </span>
-          </div>
-        </a>
-
-        <!-- Chapter -->
-        <a href="/chapter/" data-category="relationships" class="app-card app-card--chapter fade-up fade-up-delay-2">
-          <div class="app-card__content">
-            <img src="/assets/chapter/icon-192.png" alt="Chapter App Icon" class="app-card__icon">
-            <div class="app-card__chip" data-i18n="chapter_chip">Journal & Dating</div>
-            <div style="display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
-              <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
-              <span data-i18n="live_on_appstore">App Store</span>
-            </div>
-            <h3 class="app-card__name">Chapter</h3>
-            <p class="app-card__subtitle" data-i18n="chapter_subtitle">Ton carnet de dating privé</p>
-            <p class="app-card__description" data-i18n="chapter_description">Chapter est l'endroit pour noter tes rencontres, tes ressentis et tes histoires amoureuses — en toute intimité. Tes chapitres restent sur ton appareil, à l'abri des regards.</p>
+            <h3 class="app-card__name">RunFree</h3>
+            <p class="app-card__subtitle" data-i18n="runfree_subtitle">Tracker GPS, vie privée d'abord</p>
+            <p class="app-card__description" data-i18n="runfree_description">RunFree enregistre tes courses sans rien envoyer vers le cloud. Tes itinéraires, ton allure et tes records restent sur ton appareil — point final.</p>
             <span class="app-card__cta">
               <span data-i18n="discover">Découvrir</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -296,30 +284,13 @@
             </span>
           </div>
         </a>
-
-        <!-- Nova -->
-        <a href="/nova/" data-category="health" class="app-card app-card--nova fade-up fade-up-delay-2">
-          <div class="app-card__content">
-            <img src="/assets/nova/icon-192.png" alt="Nova App Icon" class="app-card__icon">
-            <div class="app-card__chip" data-i18n="nova_chip">Santé sexuelle</div>
-            <div style="display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
-              <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
-              <span data-i18n="live_on_appstore">App Store</span>
-            </div>
-            <h3 class="app-card__name">Nova</h3>
-            <p class="app-card__subtitle" data-i18n="nova_subtitle">Suivi intime, vie privée absolue</p>
-            <p class="app-card__description" data-i18n="nova_description">Nova t'aide à suivre tes vaccinations, dépistages IST et activité intime. Bienveillant, sans jugement — toutes tes données restent sur ton appareil.</p>
-            <span class="app-card__cta">
-              <span data-i18n="discover">Découvrir</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </span>
-          </div>
-        </a>
-
-        <!-- LunaRest -->
-        <a href="/lunarest/" data-category="wellbeing" class="app-card app-card--lunarest fade-up fade-up-delay-3">
+        </div>
+      </section>
+      <section class="app-group apps-section apps-section--page" id="mind">
+        <h2><span class="tt-hl">Dormir, respirer,</span> se recentrer</h2>
+        <p class="app-group__text">Des sons pour s&#x27;endormir, des exercices de respiration guidés, une affirmation par jour : des moments de calme, à ton rythme.</p>
+        <div class="apps-carousel">
+          <a href="/lunarest/" data-category="wellbeing" class="app-card app-card--lunarest">
           <div class="app-card__content">
             <img src="/assets/lunarest/icon-192.png" alt="LunaRest App Icon" class="app-card__icon">
             <div class="app-card__chip" data-i18n="lunarest_chip">Sommeil & Bien-être</div>
@@ -337,10 +308,7 @@
               </svg>
             </span>
           </div>
-        </a>
-
-        <!-- Inhale -->
-        <a href="/inhale/" data-category="wellbeing" class="app-card app-card--inhale fade-up fade-up-delay-3">
+        </a><a href="/inhale/" data-category="wellbeing" class="app-card app-card--inhale">
           <div class="app-card__content">
             <img src="/assets/inhale/icon-192.png" alt="Inhale App Icon" class="app-card__icon">
             <div class="app-card__chip" data-i18n="inhale_chip">Respiration & Bien-être</div>
@@ -358,10 +326,7 @@
               </svg>
             </span>
           </div>
-        </a>
-
-        <!-- MantraMe -->
-        <a href="/mantrame/" data-category="wellbeing" class="app-card app-card--mantrame fade-up fade-up-delay-3">
+        </a><a href="/mantrame/" data-category="wellbeing" class="app-card app-card--mantrame">
           <div class="app-card__content">
             <img src="/assets/mantrame/icon-192.png" alt="MantraMe App Icon" class="app-card__icon">
             <div class="app-card__chip" data-i18n="mantrame_chip">Bien-être & Pleine conscience</div>
@@ -380,9 +345,13 @@
             </span>
           </div>
         </a>
-
-        <!-- MyBudgetBrief -->
-        <a href="/budgetbrief/" data-category="finance" class="app-card app-card--budgetbrief fade-up fade-up-delay-3">
+        </div>
+      </section>
+      <section class="app-group apps-section apps-section--page" id="money">
+        <h2><span class="tt-hl">Gérer</span> son argent</h2>
+        <p class="app-group__text">Noter ses dépenses sans connecter sa banque, ou s&#x27;entraîner à la Bourse avec un portefeuille virtuel, sans argent réel.</p>
+        <div class="apps-carousel">
+          <a href="/budgetbrief/" data-category="finance" class="app-card app-card--budgetbrief">
           <div class="app-card__content">
             <img src="/assets/budgetbrief/icon-192.png" alt="MyBudgetBrief App Icon" class="app-card__icon">
             <div class="app-card__chip" data-i18n="budgetbrief_chip">Finance & Budget</div>
@@ -400,10 +369,84 @@
               </svg>
             </span>
           </div>
+        </a><a href="/stockwatch/" data-category="finance" class="app-card app-card--stockwatch">
+          <div class="app-card__content">
+            <img src="/assets/stockwatch/icon-192.png" alt="StockWatch App Icon" class="app-card__icon">
+            <div class="app-card__chip" data-i18n="stockwatch_chip">Finance & Investissement</div>
+            <div style="display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
+              <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
+              <span data-i18n="live_on_appstore">App Store</span>
+            </div>
+            <h3 class="app-card__name">StockWatch</h3>
+            <p class="app-card__subtitle" data-i18n="stockwatch_subtitle">Suivi d'actions & portefeuille virtuel</p>
+            <p class="app-card__description" data-i18n="stockwatch_description">Suis les marchés, simule des achats dans un portefeuille fictif et reçois des alertes de prix. Outil éducatif, jamais connecté à ta banque.</p>
+            <span class="app-card__cta">
+              <span data-i18n="discover">Découvrir</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
         </a>
+        </div>
+      </section>
+      <section class="app-group apps-section apps-section--page" id="life">
+        <h2><span class="tt-hl">Cuisine et</span> vie perso</h2>
+        <p class="app-group__text">Garder ses recettes au même endroit, même hors ligne, ou tenir un carnet de rencontres privé, protégé par Face ID.</p>
+        <div class="apps-carousel">
+          <a href="/myfoodbook/" data-category="food" class="app-card app-card--myfoodbook">
+          <div class="app-card__content">
+            <img src="/assets/myfoodbook/icon-192.png" alt="MyFoodBook App Icon" class="app-card__icon">
+            <div class="app-card__chip" data-i18n="myfoodbook_chip">Cuisine & Lifestyle</div>
+            <div style="display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
+              <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
+              <span data-i18n="live_on_appstore">App Store</span>
+            </div>
+            <h3 class="app-card__name">MyFoodBook</h3>
+            <p class="app-card__subtitle" data-i18n="myfoodbook_subtitle">Ton carnet de recettes personnel</p>
+            <p class="app-card__description" data-i18n="myfoodbook_description">Note tes recettes, organise-les par tags et retrouve tes favorites en un instant. Un carnet de cuisine privé et hors-ligne.</p>
+            <span class="app-card__cta">
+              <span data-i18n="discover">Découvrir</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a><a href="/chapter/" data-category="relationships" class="app-card app-card--chapter">
+          <div class="app-card__content">
+            <img src="/assets/chapter/icon-192.png" alt="Chapter App Icon" class="app-card__icon">
+            <div class="app-card__chip" data-i18n="chapter_chip">Journal & Dating</div>
+            <div style="display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;background:rgba(61,184,112,0.25);border:1px solid rgba(61,184,112,0.55);font-size:0.72rem;font-weight:700;color:#5FDB93;letter-spacing:0.03em;margin-bottom:8px;">
+              <span style="width:6px;height:6px;border-radius:50%;background:#5FDB93;display:inline-block;"></span>
+              <span data-i18n="live_on_appstore">App Store</span>
+            </div>
+            <h3 class="app-card__name">Chapter</h3>
+            <p class="app-card__subtitle" data-i18n="chapter_subtitle">Ton carnet de dating privé</p>
+            <p class="app-card__description" data-i18n="chapter_description">Chapter est l'endroit pour noter tes rencontres, tes ressentis et tes histoires amoureuses — en toute intimité. Tes chapitres restent sur ton appareil, à l'abri des regards.</p>
+            <span class="app-card__cta">
+              <span data-i18n="discover">Découvrir</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+        </div>
+      </section>
 
-      </div>
+      <section class="apps-common">
+        <h2><span class="tt-hl">Ce que nos apps</span> ont en commun</h2>
+        <div class="apps-common__grid">
+          <div class="why__item"><h3>Gratuites au téléchargement</h3><p>Le Premium est optionnel, à partir de 0,99 €/mois, avec son prix affiché sur chaque page d&#x27;app.</p></div>
+          <div class="why__item"><h3>Sans compte obligatoire</h3><p>Tu ouvres l&#x27;app et tu t&#x27;en sers, tout de suite.</p></div>
+          <div class="why__item"><h3>Tes données sur ton téléphone</h3><p>Ton cycle, tes courses, tes dépenses ou tes notes ne sont pas stockés sur nos serveurs, et rien n&#x27;est revendu.</p></div>
+          <div class="why__item"><h3>En 9 langues</h3><p>Français, anglais, espagnol, allemand, italien, portugais (Portugal et Brésil), hindi et arabe.</p></div>
+          <div class="why__item"><h3>Aujourd&#x27;hui sur iPhone</h3><p>Compatibles iOS 15 ou 16 selon l&#x27;app. La version Android arrive bientôt sur Google Play.</p></div>
+        </div>
+      </section>
 
+      <section class="apps-faq">
+        <h2><span class="tt-hl">Questions</span> fréquentes</h2>
+        <details class="faq-item"><summary>Les apps MyIdeApp sont-elles gratuites ?</summary><p>Oui, toutes sont gratuites au téléchargement. Certaines proposent un Premium optionnel, à partir de 0,99 €/mois, dont le prix est affiché sur la page de l&#x27;app.</p></details>
+        <details class="faq-item"><summary>Faut-il créer un compte ?</summary><p>Non. Aucune de nos apps n&#x27;oblige à créer un compte : tu peux t&#x27;en servir dès l&#x27;ouverture.</p></details>
+        <details class="faq-item"><summary>Où sont stockées mes données ?</summary><p>Sur ton téléphone. Tes données personnelles (cycle, courses, dépenses, notes…) ne sont pas envoyées sur nos serveurs et ne sont jamais revendues. Le détail est dans la politique de confidentialité de chaque app.</p></details>
+        <details class="faq-item"><summary>Les apps existent-elles sur Android ?</summary><p>Pas encore : elles sont aujourd&#x27;hui sur iPhone, et la version Android arrive bientôt sur Google Play.</p></details>
       </section>
       <p class="apps-page__compare"><a href="/guides/">Tu hésites avec une autre app ? Lis nos comparatifs →</a></p>
     </div>
@@ -441,13 +484,5 @@
       </div>
     </div>
   </footer>
-  <script>
-    document.querySelectorAll('.app-filter__btn').forEach(btn => btn.addEventListener('click', () => {
-      document.querySelectorAll('.app-filter__btn').forEach(b => b.classList.toggle('active', b === btn));
-      const f = btn.dataset.filter;
-      document.querySelectorAll('.app-card[data-category]').forEach(card =>
-        card.classList.toggle('is-filtered', f !== 'all' && card.dataset.category !== f));
-    }));
-  </script>
 </body>
 </html>
