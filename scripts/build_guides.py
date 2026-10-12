@@ -96,21 +96,9 @@ def head(lang, title, desc, canonical, alternates, theme, extra_ld):
 </head>"""
 
 
-def nav(lang, lang_links):
-    links = " ".join(
-        f'<a class="lang-btn{" active" if l == lang else ""}" href="{u}" hreflang="{l}">{l.upper()}</a>'
-        for l, u in lang_links.items())
-    return f"""<body data-theme="studio">
-  <nav class="navbar guide-nav">
-    <div class="navbar__left"><a href="/" class="logo-text guide-nav__logo">MyIdeApp</a></div>
-    <div class="navbar__nav guide-nav__links">
-      <a href="/#apps">Apps</a>
-      <a href="/guides/">{e(UI['guides'][lang])}</a>
-      <a href="{ABOUT[lang]}">{ABOUT_LABEL[lang]}</a>
-      <a href="/contact.html">Contact</a>
-    </div>
-    <div class="navbar__right"><div class="lang-switcher">{links}</div></div>
-  </nav>"""
+def nav(lang, lang_links, active="guides"):
+    """Barre commune du studio (scripts/site_shell.py)."""
+    return '<body data-theme="studio">\n' + site_shell.nav(lang, lang_links, active)
 
 
 def footer(lang):
@@ -244,22 +232,7 @@ def hub():
     page = page.replace("<title>", '<title data-i18n="guides_hub_title">', 1)
     return page + f"""
 <body data-theme="studio">
-  <nav class="navbar guide-nav">
-    <div class="navbar__left"><a href="/" class="logo-text guide-nav__logo">MyIdeApp</a></div>
-    <div class="navbar__nav guide-nav__links">
-      <a href="/#apps">Apps</a>
-      <a href="/guides/" class="active">Guides</a>
-      <a href="/a-propos/" data-i18n="nav_about" data-i18n-href="nav_about_href">À propos</a>
-      <a href="/contact.html">Contact</a>
-    </div>
-    <div class="navbar__right">
-      <div class="lang-switcher">
-        <button class="lang-btn" data-lang-btn="fr">FR</button>
-        <button class="lang-btn" data-lang-btn="en">EN</button>
-        <button class="lang-btn" data-lang-btn="es">ES</button>
-      </div>
-    </div>
-  </nav>
+{site_shell.nav_multi("guides")}
   <main class="guide">
     <div class="container guide__container">
 {chr(10).join(blocks)}

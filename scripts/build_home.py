@@ -15,6 +15,10 @@ import html
 import json
 import re
 from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import site_shell  # noqa: E402
 
 SITE = Path(__file__).resolve().parent.parent
 APPS = json.loads((SITE / "data/apps.json").read_text(encoding="utf-8"))["apps"]
@@ -41,21 +45,6 @@ T = {
                    "en": "Honest comparisons with the best-known apps: price, account, data. When another app suits you better, we say so.",
                    "es": "Comparativas honestas con las apps más conocidas: precio, cuenta, datos. Si otra app te conviene más, lo decimos."},
     "guides_all": {"fr": "Tous les guides →", "en": "All guides →", "es": "Todas las guías →"},
-    "why_title": {"fr": ("Pourquoi", "nos apps"), "en": ("Why", "our apps"), "es": ("Por qué", "nuestras apps")},
-    "why": {
-        "fr": [("Aucun compte obligatoire", "Les 12 apps s'utilisent sans créer de compte. Tu ouvres, tu t'en sers."),
-               ("Tes données restent chez toi", "Ton cycle, tes courses, tes dépenses… sont stockés sur ton iPhone, pas sur un serveur. Rien n'est revendu."),
-               ("Prix affichés", "Gratuites au téléchargement. Le Premium optionnel est affiché en clair sur chaque page."),
-               ("Pensées pour tout le monde", "9 langues, dont l'arabe de droite à gauche. Des apps sans jugement ni stéréotype.")],
-        "en": [("No account required", "All 12 apps work without creating an account. Open it and go."),
-               ("Your data stays with you", "Your cycle, runs, spending… are stored on your iPhone, not on a server. Nothing is sold."),
-               ("Prices shown upfront", "Free to download. The optional Premium price is shown clearly on every page."),
-               ("Built for everyone", "9 languages, including right-to-left Arabic. Apps with no judgment and no stereotypes.")],
-        "es": [("Sin cuenta obligatoria", "Las 12 apps funcionan sin crear una cuenta. Abres y listo."),
-               ("Tus datos se quedan contigo", "Tu ciclo, tus carreras, tus gastos… se guardan en tu iPhone, no en un servidor. Nada se vende."),
-               ("Precios a la vista", "Descarga gratuita. El precio del Premium opcional aparece claro en cada página."),
-               ("Pensadas para todos", "9 idiomas, incluido el árabe de derecha a izquierda. Apps sin juicios ni estereotipos.")],
-    },
     "contact": {"fr": "Une question ? Écris-nous", "en": "A question? Write to us", "es": "¿Una pregunta? Escríbenos"},
 }
 GUIDE_SLUG_LANG = {"fr": "fr", "en": "en", "es": "es"}
@@ -138,22 +127,26 @@ def guides():
 
 
 def why():
+    """« POURQUOI MYIDEAPP ? » : photo à gauche, valeurs à droite (structure wearebluefoxes.com).
+    Valeurs et photos partagées avec la page À propos (scripts/site_shell.py)."""
     def r(l):
-        items = "\n".join(f'          <div class="why__item"><h3>{e(t)}</h3><p>{e(d)}</p></div>' for t, d in T["why"][l])
         return f"""      <div data-lang-block="{l}" lang="{l}">
-        <h2 class="section-title">{two_tone(T['why_title'][l])}</h2>
-        <div class="why__grid">
-{items}
+      <div class="split">
+        <div class="split__media">{site_shell.photo("amis-cafe", l)}</div>
+        <div class="split__text">
+          <h2 class="section-title">{two_tone(site_shell.WHY_TITLE[l])}</h2>
+          <div class="values">
+{site_shell.values_list(l)}
+          </div>
+          <p class="why__contact"><a class="hero2__btn" href="contact.html">{e(T['contact'][l])}</a></p>
         </div>
-        <p class="why__contact"><a class="hero2__btn" href="contact.html">{e(T['contact'][l])}</a></p>
+      </div>
       </div>"""
     return f"""  <section class="why">
     <div class="container">
 {blocks(r)}
     </div>
   </section>"""
-
-
 
 def put(page, name, content, fallback_pattern):
     start, end = f"<!-- home:{name}:start -->", f"<!-- home:{name}:end -->"

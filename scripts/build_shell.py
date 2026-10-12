@@ -18,7 +18,7 @@ import site_shell  # noqa: E402
 
 SITE = site_shell.SITE
 PAGES = {
-    "index.html": {"nav": None},
+    "index.html": {"nav": ""},
     "contact.html": {"nav": "contact"},
     "suppression-compte.html": {"nav": ""},
     "mentions-legales.html": {"nav": ""},
@@ -44,8 +44,11 @@ def main():
         if conf["nav"] is not None:
             nav = site_shell.nav_multi(conf["nav"] or None)
             # Ancienne « navbar minimale » remplacée, ou barre ajoutée en tête de page.
-            s = put(s, "nav", nav, r"(?:  <!-- ─── Navbar minimale ─+ -->\n)?  <nav class=\"navbar\">.*?</nav>"
-                    if '<nav class="navbar">' in s and "shell:nav" not in s else r"(?<=<body data-theme=\"studio\">\n)")
+            s = put(s, "nav", nav, r"(?:  <!-- ─── Navbar minimale ─+ -->\n)?  <nav class=\"navbar[^\"]*\">.*?</nav>"
+                    if re.search(r'<nav class="navbar[" ]', s) and "shell:nav" not in s else r"(?<=<body data-theme=\"studio\">\n)")
+        # Accueil : l'ancien menu mobile (apps par catégorie) est remplacé par le
+        # menu « burger » de la barre commune.
+        s = re.sub(r"\n  <div class=\"mobile-nav\">.*?\n  </div>\n", "\n", s, count=1, flags=re.S)
         if "<!-- shell:ig:start -->" in s:
             s = put(s, "ig", f'        <div class="site-footer__igs">{site_shell.instagram_links()}</div>', r"$^")
         p.write_text(s, encoding="utf-8")

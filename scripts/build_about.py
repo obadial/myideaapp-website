@@ -25,6 +25,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_guides as G  # noqa: E402
+import site_shell  # noqa: E402
 
 SITE = G.SITE
 BASE = G.BASE
@@ -47,25 +48,23 @@ TXT = {
     "intro": {"fr": "MyIdeApp conçoit et publie 12 apps iPhone : cycle menstruel, course à pied, hydratation, budget, Bourse, recettes, alimentation, sommeil, respiration, affirmations, santé intime et carnet de rencontres. Une app, un usage, fait simplement.",
               "en": "MyIdeApp designs and publishes 12 iPhone apps: period tracking, running, hydration, budgeting, stock market practice, recipes, food journaling, sleep, breathing, affirmations, sexual health and a dating journal. One app, one job, done simply.",
               "es": "MyIdeApp diseña y publica 12 apps para iPhone: ciclo menstrual, running, hidratación, presupuesto, bolsa, recetas, alimentación, sueño, respiración, afirmaciones, salud íntima y diario de citas. Una app, un uso, hecho con sencillez."},
-    "who_h": {"fr": ["Qui est", "derrière le studio"], "en": ["Who", "runs the studio"], "es": ["Quién está", "detrás del estudio"]},
-    "who": {"fr": "MyIdeApp est un studio basé en France, fondé et dirigé par Lucas Obadia, développeur indépendant. Il conçoit, développe et maintient lui-même chaque app, du code aux fiches App Store.",
-            "en": "MyIdeApp is a studio based in France, founded and run by Lucas Obadia, an independent developer. He designs, builds and maintains every app himself, from the code to the App Store listings.",
-            "es": "MyIdeApp es un estudio con sede en Francia, fundado y dirigido por Lucas Obadia, desarrollador independiente. Él mismo diseña, desarrolla y mantiene cada app, del código a las fichas de la App Store."},
-    "principles_h": {"fr": ["Nos", "principes"], "en": ["Our", "principles"], "es": ["Nuestros", "principios"]},
-    "principles": {
-        "fr": [("Tes données restent sur ton iPhone", "Ton cycle, tes courses, tes dépenses ou tes notes sont stockés sur ton appareil, pas sur un serveur. Rien n'est revendu."),
-               ("Pas de compte obligatoire", "Les 12 apps s'utilisent sans créer de compte."),
-               ("Des prix clairs", "Téléchargement gratuit. Le Premium optionnel est affiché en clair sur chaque page d'app."),
-               ("Sans jugement", "Des apps pensées pour tout le monde, en 9 langues, sans stéréotype ni culpabilisation.")],
-        "en": [("Your data stays on your iPhone", "Your cycle, runs, spending or notes are stored on your device, not on a server. Nothing is sold."),
-               ("No account required", "All 12 apps work without creating an account."),
-               ("Clear prices", "Free to download. The optional Premium price is shown clearly on every app page."),
-               ("No judgment", "Apps built for everyone, in 9 languages, with no stereotypes and no guilt.")],
-        "es": [("Tus datos se quedan en tu iPhone", "Tu ciclo, tus carreras, tus gastos o tus notas se guardan en tu dispositivo, no en un servidor. Nada se vende."),
-               ("Sin cuenta obligatoria", "Las 12 apps funcionan sin crear una cuenta."),
-               ("Precios claros", "Descarga gratuita. El precio del Premium opcional aparece claro en cada página de app."),
-               ("Sin juicios", "Apps pensadas para todos, en 9 idiomas, sin estereotipos ni culpa.")],
-    },
+    # Histoire racontée par Lucas le 2026-10-12 : studio créé début mai 2026, par lassitude des apps qui
+    # demandent trop de données ; idée : les infos sur le téléphone, pas de compte, esprit « mode incognito ».
+    "story_h": {"fr": ["Notre", "histoire"], "en": ["Our", "story"], "es": ["Nuestra", "historia"]},
+    "story": {
+        "fr": ["MyIdeApp est né début mai 2026 d'un ras-le-bol. Pour noter son cycle, boire assez d'eau ou suivre ses dépenses, la plupart des apps demandaient de créer un compte et de confier beaucoup trop de données, pour pas grand-chose en retour.",
+               "Lucas Obadia, développeur indépendant, a voulu changer d'approche : rendre à chacun ses informations, directement sur son téléphone, et pouvoir se servir d'une app sans créer de compte. Un peu comme en navigation privée : tu ouvres, tu utilises, et tes informations restent sur ton téléphone.",
+               "C'est devenu la règle du studio. Aujourd'hui, ce sont 12 apps en 9 langues, de la santé intime à la Bourse, avec la même promesse : simples, utiles, et tes données chez toi."],
+        "en": ["MyIdeApp was born in early May 2026 out of frustration. To track a cycle, drink enough water or follow spending, most apps asked you to create an account and hand over far too much data, for very little in return.",
+               "Lucas Obadia, an independent developer, wanted a different approach: give people their information back, right on their phone, and let them use an app without creating an account. A bit like private browsing: you open it, you use it, and your information stays on your phone.",
+               "That became the studio's rule. Today it's 12 apps in 9 languages, from sexual health to the stock market, with the same promise: simple, useful, and your data stays with you."],
+        "es": ["MyIdeApp nació a principios de mayo de 2026 de un hartazgo. Para registrar el ciclo, beber suficiente agua o seguir los gastos, la mayoría de las apps pedían crear una cuenta y ceder demasiados datos, a cambio de muy poco.",
+               "Lucas Obadia, desarrollador independiente, quiso cambiar el enfoque: devolver a cada uno su información, directamente en su teléfono, y poder usar una app sin crear una cuenta. Un poco como la navegación privada: abres, usas, y tu información se queda en tu teléfono.",
+               "Se convirtió en la regla del estudio. Hoy son 12 apps en 9 idiomas, de la salud íntima a la bolsa, con la misma promesa: sencillas, útiles y con tus datos contigo."]},
+    "everyone_h": {"fr": ["Pensées pour", "tout le monde"], "en": ["Built for", "everyone"], "es": ["Pensadas para", "todos"]},
+    "everyone": {"fr": "Quels que soient ton âge, ton corps, ta langue ou ta façon de vivre : nos apps sont pensées sans stéréotype ni culpabilisation.",
+                 "en": "Whatever your age, body, language or way of life: our apps are designed with no stereotypes and no guilt.",
+                 "es": "Sea cual sea tu edad, tu cuerpo, tu idioma o tu forma de vivir: nuestras apps están pensadas sin estereotipos ni culpa."},
     "out_h": {"fr": ["Ce qui sort", "de ton téléphone"], "en": ["What leaves", "your phone"], "es": ["Qué sale", "de tu teléfono"]},
     "out_intro": {"fr": "Pour être transparents, voici les seuls services extérieurs utilisés, selon l'app :",
                   "en": "To be transparent, these are the only outside services used, depending on the app:",
@@ -122,7 +121,7 @@ def app_path(slug, lang):
 def organization():
     return {"@type": "Organization", "@id": BASE + "/#organization", "name": "MyIdeApp", "url": BASE + "/",
             "logo": BASE + "/assets/logo-512.png", "email": "contact.myideapp@icloud.com",
-            "description": TXT["desc"]["en"], "foundingLocation": {"@type": "Country", "name": "France"},
+            "description": TXT["desc"]["en"], "foundingDate": "2026-05", "foundingLocation": {"@type": "Country", "name": "France"},
             "founder": {"@type": "Person", "name": "Lucas Obadia", "jobTitle": "Independent iOS developer"},
             "sameAs": [DEV_PAGE]}
 
@@ -133,8 +132,7 @@ def page(lang, T):
            "inLanguage": lang, "dateModified": UPDATED, "mainEntity": organization()}]
     out = G.head(lang, TXT["title"][lang], TXT["desc"][lang], BASE + PATHS[lang], alternates, "studio", ld)
     out = out.replace('content="article"', 'content="website"', 1)
-    principles = "\n".join(f'          <div class="why__item"><h3>{e(t)}</h3><p>{e(d)}</p></div>'
-                           for t, d in TXT["principles"][lang])
+    story = "\n".join(f"          <p>{e(x)}</p>" for x in TXT["story"][lang])
     outside = "\n".join(f"          <li>{e(x)}</li>" for x in TXT["out"][lang])
     apps = "\n".join(
         f'          <a class="about-app" href="{app_path(a["slug"], lang)}"><img src="/assets/{a["slug"]}/icon-192.png" alt="" width="48" height="48" loading="lazy">'
@@ -146,16 +144,28 @@ def page(lang, T):
       <h1 class="guide__title">{two_tone(TXT['h1'][lang])}</h1>
       <p class="guide__intro">{e(TXT['intro'][lang])}</p>
 
-      <section>
-        <h2>{two_tone(TXT['who_h'][lang])}</h2>
-        <p>{e(TXT['who'][lang])}</p>
+      <section class="split">
+        <div class="split__text">
+          <h2>{two_tone(TXT['story_h'][lang])}</h2>
+{story}
+        </div>
+        <div class="split__media">{site_shell.photo("amies-ville", lang)}</div>
       </section>
 
-      <section>
-        <h2>{two_tone(TXT['principles_h'][lang])}</h2>
-        <div class="why__grid">
-{principles}
+      <section class="split split--reverse">
+        <div class="split__media">{site_shell.photo("amis-dehors", lang)}</div>
+        <div class="split__text">
+          <h2>{two_tone(site_shell.WHY_TITLE[lang])}</h2>
+          <div class="values">
+{site_shell.values_list(lang)}
+          </div>
         </div>
+      </section>
+
+      <section class="everyone">
+        <h2>{two_tone(TXT['everyone_h'][lang])}</h2>
+        <p>{e(TXT['everyone'][lang])}</p>
+        <div class="everyone__photos">{site_shell.photo("selfie-amies", lang, sizes="(max-width: 820px) 100vw, 50vw")}{site_shell.photo("amis-rire", lang, sizes="(max-width: 820px) 100vw, 50vw")}</div>
       </section>
 
       <section>
@@ -180,11 +190,12 @@ def page(lang, T):
         <p>{e(TXT['contact'][lang])}</p>
         <p><a href="mailto:contact.myideapp@icloud.com">contact.myideapp@icloud.com</a> · <a href="/contact.html">{e(TXT['form'][lang])}</a></p>
         <p class="guide__checked"><a href="/mentions-legales.html">{e(TXT['legal'][lang])}</a> · {e(TXT['updated'][lang])}</p>
+        <p class="guide__checked">{e(site_shell.credits(lang))}</p>
       </section>
     </div>
   </main>
 """
-    nav = G.nav(lang, alternates).replace(f'<a href="{PATHS[lang]}">', f'<a href="{PATHS[lang]}" class="active">', 1)
+    nav = G.nav(lang, alternates, active="about")
     return out + "\n" + nav + body + G.footer(lang)
 
 

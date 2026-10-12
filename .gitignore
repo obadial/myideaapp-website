@@ -1,3 +1,4 @@
 # Fichiers internes, à ne jamais publier (repo public + GitHub Pages)
 CLAUDE.md
 .claude/
+__pycache__/

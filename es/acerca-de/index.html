@@ -35,6 +35,7 @@
     "logo": "https://myideapp.com/assets/logo-512.png",
     "email": "contact.myideapp@icloud.com",
     "description": "MyIdeApp is an independent French studio publishing 12 simple iPhone apps: data on your phone, no account required, prices shown upfront.",
+    "foundingDate": "2026-05",
     "foundingLocation": {
       "@type": "Country",
       "name": "France"
@@ -52,15 +53,29 @@
   </script>
 </head>
 <body data-theme="studio">
-  <nav class="navbar guide-nav">
-    <div class="navbar__left"><a href="/" class="logo-text guide-nav__logo">MyIdeApp</a></div>
-    <div class="navbar__nav guide-nav__links">
-      <a href="/#apps">Apps</a>
-      <a href="/guides/">Guías</a>
-      <a href="/es/acerca-de/" class="active">Acerca de</a>
-      <a href="/contact.html">Contact</a>
+  <nav class="navbar studio-nav">
+    <a href="/" class="studio-logo" aria-label="MyIdeApp"><img src="/assets/favicon.svg" alt="" width="34" height="34"><span class="studio-logo__word">My<span class="tt-hl">IdeA</span>pp</span></a>
+    <div class="studio-nav__right">
+      <div class="navbar__nav studio-nav__links">
+        <a href="/#apps">Apps</a>
+        <a href="/guides/">Guías</a>
+        <a href="/es/acerca-de/" class="active">Acerca de</a>
+        <a href="/contact.html">Contacto</a>
+      </div>
+      <details class="lang-menu">
+        <summary class="lang-menu__btn"><svg class="lang-menu__globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9s1.3-6.4 3.8-9z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span>Español</span><svg class="lang-menu__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <div class="lang-menu__list"><a class="lang-btn" href="https://myideapp.com/a-propos/" hreflang="fr" lang="fr">Français</a><a class="lang-btn" href="https://myideapp.com/en/about/" hreflang="en" lang="en">English</a><a class="lang-btn active" href="https://myideapp.com/es/acerca-de/" hreflang="es" lang="es">Español</a></div>
+      </details>
+      <details class="studio-nav__burger">
+        <summary aria-label="Menu"><span></span><span></span><span></span></summary>
+        <div class="studio-nav__panel">
+        <a href="/#apps">Apps</a>
+        <a href="/guides/">Guías</a>
+        <a href="/es/acerca-de/" class="active">Acerca de</a>
+        <a href="/contact.html">Contacto</a>
+        </div>
+      </details>
     </div>
-    <div class="navbar__right"><div class="lang-switcher"><a class="lang-btn" href="https://myideapp.com/a-propos/" hreflang="fr">FR</a> <a class="lang-btn" href="https://myideapp.com/en/about/" hreflang="en">EN</a> <a class="lang-btn active" href="https://myideapp.com/es/acerca-de/" hreflang="es">ES</a></div></div>
   </nav>
   <main class="guide about">
     <div class="container guide__inner">
@@ -68,19 +83,33 @@
       <h1 class="guide__title"><span class="tt-hl">MyIdeApp,</span> un estudio independiente de apps para iPhone</h1>
       <p class="guide__intro">MyIdeApp diseña y publica 12 apps para iPhone: ciclo menstrual, running, hidratación, presupuesto, bolsa, recetas, alimentación, sueño, respiración, afirmaciones, salud íntima y diario de citas. Una app, un uso, hecho con sencillez.</p>
 
-      <section>
-        <h2><span class="tt-hl">Quién está</span> detrás del estudio</h2>
-        <p>MyIdeApp es un estudio con sede en Francia, fundado y dirigido por Lucas Obadia, desarrollador independiente. Él mismo diseña, desarrolla y mantiene cada app, del código a las fichas de la App Store.</p>
+      <section class="split">
+        <div class="split__text">
+          <h2><span class="tt-hl">Nuestra</span> historia</h2>
+          <p>MyIdeApp nació a principios de mayo de 2026 de un hartazgo. Para registrar el ciclo, beber suficiente agua o seguir los gastos, la mayoría de las apps pedían crear una cuenta y ceder demasiados datos, a cambio de muy poco.</p>
+          <p>Lucas Obadia, desarrollador independiente, quiso cambiar el enfoque: devolver a cada uno su información, directamente en su teléfono, y poder usar una app sin crear una cuenta. Un poco como la navegación privada: abres, usas, y tu información se queda en tu teléfono.</p>
+          <p>Se convirtió en la regla del estudio. Hoy son 12 apps en 9 idiomas, de la salud íntima a la bolsa, con la misma promesa: sencillas, útiles y con tus datos contigo.</p>
+        </div>
+        <div class="split__media"><img class="photo" src="/assets/photos/amies-ville-1600.jpg" srcset="/assets/photos/amies-ville-800.jpg 800w, /assets/photos/amies-ville-1600.jpg 1600w" sizes="(max-width: 820px) 100vw, 50vw" alt="Dos amigas se ríen mirando un teléfono" loading="lazy" decoding="async"></div>
       </section>
 
-      <section>
-        <h2><span class="tt-hl">Nuestros</span> principios</h2>
-        <div class="why__grid">
-          <div class="why__item"><h3>Tus datos se quedan en tu iPhone</h3><p>Tu ciclo, tus carreras, tus gastos o tus notas se guardan en tu dispositivo, no en un servidor. Nada se vende.</p></div>
-          <div class="why__item"><h3>Sin cuenta obligatoria</h3><p>Las 12 apps funcionan sin crear una cuenta.</p></div>
-          <div class="why__item"><h3>Precios claros</h3><p>Descarga gratuita. El precio del Premium opcional aparece claro en cada página de app.</p></div>
-          <div class="why__item"><h3>Sin juicios</h3><p>Apps pensadas para todos, en 9 idiomas, sin estereotipos ni culpa.</p></div>
+      <section class="split split--reverse">
+        <div class="split__media"><img class="photo" src="/assets/photos/amis-dehors-1600.jpg" srcset="/assets/photos/amis-dehors-800.jpg 800w, /assets/photos/amis-dehors-1600.jpg 1600w" sizes="(max-width: 820px) 100vw, 50vw" alt="Dos amigos se ríen al aire libre con su teléfono" loading="lazy" decoding="async"></div>
+        <div class="split__text">
+          <h2><span class="tt-hl">¿Por qué</span> MyIdeApp?</h2>
+          <div class="values">
+          <div class="value"><h3>Modo incógnito por defecto</h3><p>Sin cuenta obligatoria: abres la app y la usas, al momento.</p></div>
+          <div class="value"><h3>Tus datos contigo</h3><p>Tu ciclo, tus carreras, tus gastos, tus notas: en tu iPhone, no en un servidor. Nada se vende.</p></div>
+          <div class="value"><h3>Una app, un uso</h3><p>Cada app hace una sola cosa, con sencillez, sin funciones inútiles.</p></div>
+          <div class="value"><h3>Claro y sin juicios</h3><p>Descarga gratuita, Premium con precio claro y apps pensadas para todos, en 9 idiomas.</p></div>
+          </div>
         </div>
+      </section>
+
+      <section class="everyone">
+        <h2><span class="tt-hl">Pensadas para</span> todos</h2>
+        <p>Sea cual sea tu edad, tu cuerpo, tu idioma o tu forma de vivir: nuestras apps están pensadas sin estereotipos ni culpa.</p>
+        <div class="everyone__photos"><img class="photo" src="/assets/photos/selfie-amies-1600.jpg" srcset="/assets/photos/selfie-amies-800.jpg 800w, /assets/photos/selfie-amies-1600.jpg 1600w" sizes="(max-width: 820px) 100vw, 50vw" alt="Cuatro amigas se hacen un selfi riendo" loading="lazy" decoding="async"><img class="photo" src="/assets/photos/amis-rire-1600.jpg" srcset="/assets/photos/amis-rire-800.jpg 800w, /assets/photos/amis-rire-1600.jpg 1600w" sizes="(max-width: 820px) 100vw, 50vw" alt="Dos amigos se ríen mirando un teléfono" loading="lazy" decoding="async"></div>
       </section>
 
       <section>
@@ -120,6 +149,7 @@
         <p>¿Una pregunta, un error, una sugerencia? Escríbenos, respondemos en 48 h.</p>
         <p><a href="mailto:contact.myideapp@icloud.com">contact.myideapp@icloud.com</a> · <a href="/contact.html">Formulario de contacto</a></p>
         <p class="guide__checked"><a href="/mentions-legales.html">Información legal: ver el aviso legal.</a> · Actualizado el 12 de octubre de 2026</p>
+        <p class="guide__checked">Fotos: Hiki App, Karthik Balakrishnan, Sandisk, Vitaly Gariev (Unsplash)</p>
       </section>
     </div>
   </main>
@@ -127,7 +157,7 @@
     <div class="container">
       <div class="site-footer__grid">
         <div class="site-footer__brand">
-          <a href="/" class="logo-text">MyIdeApp</a>
+          <a href="/" class="studio-logo" aria-label="MyIdeApp"><img src="/assets/favicon.svg" alt="" width="34" height="34"><span class="studio-logo__word">My<span class="tt-hl">IdeA</span>pp</span></a>
           <p>Estudio independiente de apps para iPhone. 12 apps sencillas, tus datos en tu teléfono.</p>
         </div>
         <div class="site-footer__col">

@@ -67,7 +67,7 @@ def instagram_links():
 def footer_inner(lang):
     return f"""      <div class="site-footer__grid">
         <div class="site-footer__brand">
-          <a href="/" class="logo-text">MyIdeApp</a>
+          {LOGO}
           <p>{e(T['tagline'][lang])}</p>
         </div>
         <div class="site-footer__col">
@@ -111,25 +111,120 @@ NAV_LABELS = {"apps": {"fr": "Apps", "en": "Apps", "es": "Apps"},
               "guides": {"fr": "Guides", "en": "Guides", "es": "Guías"},
               "about": {"fr": "À propos", "en": "About", "es": "Acerca de"},
               "contact": {"fr": "Contact", "en": "Contact", "es": "Contacto"}}
+NAV_KEYS = {"apps": "nav_apps", "guides": "nav_guides", "about": "nav_about", "contact": "nav_contact"}
+LANG_NAMES = {"fr": "Français", "en": "English", "es": "Español"}
+GLOBE = ('<svg class="lang-menu__globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" '
+         'stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9'
+         's1.3-6.4 3.8-9z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>')
+CHEVRON = ('<svg class="lang-menu__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" '
+           'stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+LOGO = ('<a href="/" class="studio-logo" aria-label="MyIdeApp"><img src="/assets/favicon.svg" alt="" width="34" height="34">'
+        '<span class="studio-logo__word">My<span class="tt-hl">IdeA</span>pp</span></a>')
+
+
+def _nav(links, lang_label, lang_items):
+    """Barre du studio, à la manière de wearebluefoxes.com : logo à gauche, menu et
+    langue (globe + liste déroulante) groupés à droite, menu « burger » sur mobile.
+    Liste déroulante et burger en <details> : ils marchent sans JavaScript (guides
+    et À propos n'en chargent pas)."""
+    return f"""  <nav class="navbar studio-nav">
+    {LOGO}
+    <div class="studio-nav__right">
+      <div class="navbar__nav studio-nav__links">
+{links}
+      </div>
+      <details class="lang-menu">
+        <summary class="lang-menu__btn">{GLOBE}{lang_label}{CHEVRON}</summary>
+        <div class="lang-menu__list">{lang_items}</div>
+      </details>
+      <details class="studio-nav__burger">
+        <summary aria-label="Menu"><span></span><span></span><span></span></summary>
+        <div class="studio-nav__panel">
+{links}
+        </div>
+      </details>
+    </div>
+  </nav>"""
+
+
+def nav(lang, lang_links, active=None, about_href=None):
+    """Pages générées dans une langue fixe : libellés écrits, langues = liens vers l'autre URL."""
+    hrefs = {"apps": "/#apps", "guides": "/guides/", "about": about_href or ABOUT[lang], "contact": "/contact.html"}
+    active_cls = ' class="active"'
+    links = "\n".join(f'        <a href="{hrefs[k]}"{active_cls if k == active else ""}>{e(NAV_LABELS[k][lang])}</a>'
+                      for k in NAV_LABELS)
+    items = "".join(f'<a class="lang-btn{" active" if l == lang else ""}" href="{u}" hreflang="{l}" lang="{l}">{LANG_NAMES[l]}</a>'
+                    for l, u in lang_links.items())
+    return _nav(links, f"<span>{LANG_NAMES[lang]}</span>", items)
 
 
 def nav_multi(active=None):
-    """Barre du studio pour les pages traduites par i18n.js (boutons de langue)."""
-    def cls(name):
-        return ' class="active"' if name == active else ""
-    return f"""  <nav class="navbar guide-nav">
-    <div class="navbar__left"><a href="/" class="logo-text guide-nav__logo">MyIdeApp</a></div>
-    <div class="navbar__nav guide-nav__links">
-      <a href="/#apps" data-i18n="nav_apps"{cls('apps')}>Apps</a>
-      <a href="/guides/" data-i18n="nav_guides"{cls('guides')}>Guides</a>
-      <a href="/a-propos/" data-i18n="nav_about" data-i18n-href="nav_about_href"{cls('about')}>À propos</a>
-      <a href="/contact.html" data-i18n="nav_contact"{cls('contact')}>Contact</a>
-    </div>
-    <div class="navbar__right">
-      <div class="lang-switcher">
-        <button class="lang-btn" data-lang-btn="fr">FR</button>
-        <button class="lang-btn" data-lang-btn="en">EN</button>
-        <button class="lang-btn" data-lang-btn="es">ES</button>
-      </div>
-    </div>
-  </nav>"""
+    """Pages traduites par i18n.js : libellés par clés, langues = boutons."""
+    hrefs = {"apps": "/#apps", "guides": "/guides/", "about": "/a-propos/", "contact": "/contact.html"}
+    def link(k):
+        extra = ' data-i18n-href="nav_about_href"' if k == "about" else ""
+        cls = ' class="active"' if k == active else ""
+        return f'        <a href="{hrefs[k]}" data-i18n="{NAV_KEYS[k]}"{extra}{cls}>{e(NAV_LABELS[k]["fr"])}</a>'
+    links = "\n".join(link(k) for k in NAV_LABELS)
+    items = "".join(f'<button type="button" class="lang-btn" data-lang-btn="{l}" lang="{l}">{LANG_NAMES[l]}</button>' for l in LANGS)
+    return _nav(links, '<span data-i18n="lang_name">Français</span>', items)
+
+
+# ─── Photos et valeurs du studio (accueil, À propos, Contact) ────────────────
+# Photos Unsplash (licence Unsplash : usage commercial gratuit, sans obligation de
+# crédit — on crédite quand même, sur la page À propos). Ce sont des illustrations :
+# jamais présentées comme de vrais utilisateurs ni comme l'équipe.
+PHOTOS = {
+    "amis-cafe": {"credit": "Vitaly Gariev", "id": "QaFcC7GtoJs",
+                  "alt": {"fr": "Quatre amis regardent un téléphone autour d'un café", "en": "Four friends looking at a phone over coffee",
+                          "es": "Cuatro amigos miran un teléfono tomando un café"}},
+    "mains-cafe": {"credit": "Vitaly Gariev", "id": "1s1zWWELg3c",
+                   "alt": {"fr": "Des mains tiennent des téléphones autour de tasses de café", "en": "Hands holding phones around cups of coffee",
+                           "es": "Manos con teléfonos alrededor de tazas de café"}},
+    "selfie-amies": {"credit": "Sandisk", "id": "pAKgXLu04CQ",
+                     "alt": {"fr": "Quatre amies prennent un selfie en riant", "en": "Four friends laughing while taking a selfie",
+                             "es": "Cuatro amigas se hacen un selfi riendo"}},
+    "amis-rire": {"credit": "Karthik Balakrishnan", "id": "Y4zNMW3pQAs",
+                  "alt": {"fr": "Deux amis rient devant un téléphone", "en": "Two friends laughing at a phone",
+                          "es": "Dos amigos se ríen mirando un teléfono"}},
+    "amies-ville": {"credit": "Vitaly Gariev", "id": "Evszshc7XWg",
+                    "alt": {"fr": "Deux amies rient en regardant un téléphone", "en": "Two friends laughing while looking at a phone",
+                            "es": "Dos amigas se ríen mirando un teléfono"}},
+    "amis-dehors": {"credit": "Hiki App", "id": "aM-BRQtrng8",
+                    "alt": {"fr": "Deux amis rient dehors devant leur téléphone", "en": "Two friends laughing outdoors at their phone",
+                            "es": "Dos amigos se ríen al aire libre con su teléfono"}},
+}
+
+
+def photo(name, lang, cls="photo", sizes="(max-width: 820px) 100vw, 50vw", eager=False):
+    p = PHOTOS[name]
+    load = "" if eager else ' loading="lazy"'
+    return (f'<img class="{cls}" src="/assets/photos/{name}-1600.jpg" srcset="/assets/photos/{name}-800.jpg 800w, '
+            f'/assets/photos/{name}-1600.jpg 1600w" sizes="{sizes}" alt="{e(p["alt"][lang])}"{load} decoding="async">')
+
+
+def credits(lang):
+    lead = {"fr": "Photos : ", "en": "Photos: ", "es": "Fotos: "}[lang]
+    names = sorted({p["credit"] for p in PHOTOS.values()})
+    return lead + ", ".join(names) + " (Unsplash)"
+
+
+VALUES = {
+    "fr": [("Mode incognito par défaut", "Pas de compte obligatoire : tu ouvres l'app et tu t'en sers, tout de suite."),
+           ("Tes données chez toi", "Ton cycle, tes courses, tes dépenses, tes notes : sur ton iPhone, pas sur un serveur. Rien n'est revendu."),
+           ("Une app, un usage", "Chaque app fait une seule chose, simplement, sans fonctions inutiles."),
+           ("Clair et sans jugement", "Gratuit au téléchargement, Premium affiché en clair, et des apps pensées pour tout le monde, en 9 langues.")],
+    "en": [("Incognito by default", "No account required: open the app and use it, right away."),
+           ("Your data stays with you", "Your cycle, runs, spending, notes: on your iPhone, not on a server. Nothing is sold."),
+           ("One app, one job", "Each app does one thing, simply, with no needless features."),
+           ("Clear and judgment-free", "Free to download, Premium price shown upfront, and apps built for everyone, in 9 languages.")],
+    "es": [("Modo incógnito por defecto", "Sin cuenta obligatoria: abres la app y la usas, al momento."),
+           ("Tus datos contigo", "Tu ciclo, tus carreras, tus gastos, tus notas: en tu iPhone, no en un servidor. Nada se vende."),
+           ("Una app, un uso", "Cada app hace una sola cosa, con sencillez, sin funciones inútiles."),
+           ("Claro y sin juicios", "Descarga gratuita, Premium con precio claro y apps pensadas para todos, en 9 idiomas.")],
+}
+WHY_TITLE = {"fr": ("Pourquoi", "MyIdeApp ?"), "en": ("Why", "MyIdeApp?"), "es": ("¿Por qué", "MyIdeApp?")}
+
+
+def values_list(lang):
+    return "\n".join(f'          <div class="value"><h3>{e(t)}</h3><p>{e(d)}</p></div>' for t, d in VALUES[lang])

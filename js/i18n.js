@@ -283,6 +283,7 @@ const TRANSLATIONS = {
     legal_back: '← Retour',
     legal_updated: 'Dernière mise à jour',
     delete_account_title: 'Supprimer mon compte et mes données',
+    lang_name: 'Français',
     studio_apps_hl: 'Nos',
     studio_apps_rest: 'apps',
     contact_title_hl: 'Nous',
@@ -703,6 +704,7 @@ const TRANSLATIONS = {
     legal_back: '← Back',
     legal_updated: 'Last updated',
     delete_account_title: 'Delete my account and data',
+    lang_name: 'English',
     studio_apps_hl: 'Our',
     studio_apps_rest: 'apps',
     contact_title_hl: 'Get in',
@@ -1122,6 +1124,7 @@ const TRANSLATIONS = {
     legal_back: '← Volver',
     legal_updated: 'Última actualización',
     delete_account_title: 'Eliminar mi cuenta y mis datos',
+    lang_name: 'Español',
     studio_apps_hl: 'Nuestras',
     studio_apps_rest: 'apps',
     contact_title_hl: 'Contáctanos',
@@ -1407,6 +1410,14 @@ const I18n = {
   },
 
   _bindButtons() {
+    /* Barre du studio : la liste des langues et le menu mobile sont des <details>
+       (utilisables sans JavaScript). Ici, on les referme après un choix ou un
+       clic ailleurs dans la page. */
+    document.addEventListener('click', ev => {
+      document.querySelectorAll('.lang-menu[open], .studio-nav__burger[open]').forEach(d => {
+        if (!d.contains(ev.target) || ev.target.closest('.lang-menu__list button, .studio-nav__panel a')) d.removeAttribute('open');
+      });
+    });
     document.querySelectorAll('[data-lang-btn]').forEach(btn => {
       /* Sur les pages d'app, les boutons sont des liens vers l'URL de l'autre
          langue : on mémorise seulement le choix, la navigation fait le reste. */

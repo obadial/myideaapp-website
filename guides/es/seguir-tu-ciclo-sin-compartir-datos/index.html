@@ -107,15 +107,29 @@
   </script>
 </head>
 <body data-theme="rhythm">
-  <nav class="navbar guide-nav">
-    <div class="navbar__left"><a href="/" class="logo-text guide-nav__logo">MyIdeApp</a></div>
-    <div class="navbar__nav guide-nav__links">
-      <a href="/#apps">Apps</a>
-      <a href="/guides/">Guías</a>
-      <a href="/es/acerca-de/">Acerca de</a>
-      <a href="/contact.html">Contact</a>
+  <nav class="navbar studio-nav">
+    <a href="/" class="studio-logo" aria-label="MyIdeApp"><img src="/assets/favicon.svg" alt="" width="34" height="34"><span class="studio-logo__word">My<span class="tt-hl">IdeA</span>pp</span></a>
+    <div class="studio-nav__right">
+      <div class="navbar__nav studio-nav__links">
+        <a href="/#apps">Apps</a>
+        <a href="/guides/" class="active">Guías</a>
+        <a href="/es/acerca-de/">Acerca de</a>
+        <a href="/contact.html">Contacto</a>
+      </div>
+      <details class="lang-menu">
+        <summary class="lang-menu__btn"><svg class="lang-menu__globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9s1.3-6.4 3.8-9z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span>Español</span><svg class="lang-menu__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <div class="lang-menu__list"><a class="lang-btn" href="https://myideapp.com/guides/fr/suivre-son-cycle-sans-partager-ses-donnees/" hreflang="fr" lang="fr">Français</a><a class="lang-btn" href="https://myideapp.com/guides/en/track-your-period-without-sharing-data/" hreflang="en" lang="en">English</a><a class="lang-btn active" href="https://myideapp.com/guides/es/seguir-tu-ciclo-sin-compartir-datos/" hreflang="es" lang="es">Español</a></div>
+      </details>
+      <details class="studio-nav__burger">
+        <summary aria-label="Menu"><span></span><span></span><span></span></summary>
+        <div class="studio-nav__panel">
+        <a href="/#apps">Apps</a>
+        <a href="/guides/" class="active">Guías</a>
+        <a href="/es/acerca-de/">Acerca de</a>
+        <a href="/contact.html">Contacto</a>
+        </div>
+      </details>
     </div>
-    <div class="navbar__right"><div class="lang-switcher"><a class="lang-btn" href="https://myideapp.com/guides/fr/suivre-son-cycle-sans-partager-ses-donnees/" hreflang="fr">FR</a> <a class="lang-btn" href="https://myideapp.com/guides/en/track-your-period-without-sharing-data/" hreflang="en">EN</a> <a class="lang-btn active" href="https://myideapp.com/guides/es/seguir-tu-ciclo-sin-compartir-datos/" hreflang="es">ES</a></div></div>
   </nav>
   <main class="guide">
     <div class="container guide__container">
@@ -183,7 +197,7 @@
     <div class="container">
       <div class="site-footer__grid">
         <div class="site-footer__brand">
-          <a href="/" class="logo-text">MyIdeApp</a>
+          <a href="/" class="studio-logo" aria-label="MyIdeApp"><img src="/assets/favicon.svg" alt="" width="34" height="34"><span class="studio-logo__word">My<span class="tt-hl">IdeA</span>pp</span></a>
           <p>Estudio independiente de apps para iPhone. 12 apps sencillas, tus datos en tu teléfono.</p>
         </div>
         <div class="site-footer__col">

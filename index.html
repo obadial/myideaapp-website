@@ -60,58 +60,34 @@
 <body data-theme="studio">
 
   <!-- ─── Navbar ─────────────────────────────────────────── -->
-  <nav class="navbar">
-    <a href="./" class="navbar__logo">
-      <span class="logo-text">MyIdeApp</span>
-    </a>
-    <div class="navbar__nav">
-      <a href="#apps" data-i18n="nav_apps">Apps</a>
-      <a href="guides/" data-i18n="nav_guides">Guides</a>
-      <a href="a-propos/" data-i18n="nav_about" data-i18n-href="nav_about_href">À propos</a>
-      <a href="contact.html" data-i18n="nav_contact">Contact</a>
-    </div>
-    <div class="navbar__right">
-      <div class="lang-switcher">
-        <button class="lang-btn" data-lang-btn="fr">FR</button>
-        <button class="lang-btn" data-lang-btn="en">EN</button>
-        <button class="lang-btn" data-lang-btn="es">ES</button>
+<!-- shell:nav:start -->
+  <nav class="navbar studio-nav">
+    <a href="/" class="studio-logo" aria-label="MyIdeApp"><img src="/assets/favicon.svg" alt="" width="34" height="34"><span class="studio-logo__word">My<span class="tt-hl">IdeA</span>pp</span></a>
+    <div class="studio-nav__right">
+      <div class="navbar__nav studio-nav__links">
+        <a href="/#apps" data-i18n="nav_apps">Apps</a>
+        <a href="/guides/" data-i18n="nav_guides">Guides</a>
+        <a href="/a-propos/" data-i18n="nav_about" data-i18n-href="nav_about_href">À propos</a>
+        <a href="/contact.html" data-i18n="nav_contact">Contact</a>
       </div>
-      <button class="hamburger" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <details class="lang-menu">
+        <summary class="lang-menu__btn"><svg class="lang-menu__globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9s1.3-6.4 3.8-9z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span data-i18n="lang_name">Français</span><svg class="lang-menu__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <div class="lang-menu__list"><button type="button" class="lang-btn" data-lang-btn="fr" lang="fr">Français</button><button type="button" class="lang-btn" data-lang-btn="en" lang="en">English</button><button type="button" class="lang-btn" data-lang-btn="es" lang="es">Español</button></div>
+      </details>
+      <details class="studio-nav__burger">
+        <summary aria-label="Menu"><span></span><span></span><span></span></summary>
+        <div class="studio-nav__panel">
+        <a href="/#apps" data-i18n="nav_apps">Apps</a>
+        <a href="/guides/" data-i18n="nav_guides">Guides</a>
+        <a href="/a-propos/" data-i18n="nav_about" data-i18n-href="nav_about_href">À propos</a>
+        <a href="/contact.html" data-i18n="nav_contact">Contact</a>
+        </div>
+      </details>
     </div>
   </nav>
+  <!-- shell:nav:end -->
 
   <!-- Menu burger -->
-  <div class="mobile-nav">
-    <p class="mobile-nav__group" data-i18n="cat_health">Santé</p>
-    <a href="rhythm/" data-app-link="rhythm">Rhythm</a>
-    <a href="hydrome/" data-app-link="hydrome">HydroMe</a>
-    <a href="nova/" data-app-link="nova">Nova</a>
-    <p class="mobile-nav__group" data-i18n="cat_sport">Sport</p>
-    <a href="runfree/" data-app-link="runfree">RunFree</a>
-    <p class="mobile-nav__group" data-i18n="cat_food">Cuisine & nutrition</p>
-    <a href="myfoodbook/" data-app-link="myfoodbook">MyFoodBook</a>
-    <a href="enjoymeal/" data-app-link="enjoymeal">EnjoyMeal</a>
-    <p class="mobile-nav__group" data-i18n="cat_finance">Finances</p>
-    <a href="stockwatch/" data-app-link="stockwatch">StockWatch</a>
-    <a href="budgetbrief/" data-app-link="budgetbrief">MyBudgetBrief</a>
-    <p class="mobile-nav__group" data-i18n="cat_wellbeing">Bien-être & sommeil</p>
-    <a href="mantrame/" data-app-link="mantrame">MantraMe</a>
-    <a href="lunarest/" data-app-link="lunarest">LunaRest</a>
-    <a href="inhale/" data-app-link="inhale">Inhale</a>
-    <p class="mobile-nav__group" data-i18n="cat_relationships">Relations</p>
-    <a href="chapter/" data-app-link="chapter">Chapter</a>
-    <p class="mobile-nav__group" data-i18n="nav_more">Plus</p>
-    <a href="guides/" data-i18n="nav_guides">Guides</a>
-    <a href="a-propos/" data-i18n="nav_about" data-i18n-href="nav_about_href">À propos</a>
-    <a href="contact.html" data-i18n="studio_contact_title">Nous contacter</a>
-    <div class="lang-switcher" style="margin-top:1.5rem">
-      <button class="lang-btn" data-lang-btn="fr">FR</button>
-      <button class="lang-btn" data-lang-btn="en">EN</button>
-      <button class="lang-btn" data-lang-btn="es">ES</button>
-    </div>
-  </div>
 
   <!-- ─── Hero ───────────────────────────────────────────── -->
 <!-- home:hero:start -->
@@ -496,34 +472,49 @@
   <section class="why">
     <div class="container">
       <div data-lang-block="fr" lang="fr">
-        <h2 class="section-title"><span class="tt-hl">Pourquoi</span> nos apps</h2>
-        <div class="why__grid">
-          <div class="why__item"><h3>Aucun compte obligatoire</h3><p>Les 12 apps s&#x27;utilisent sans créer de compte. Tu ouvres, tu t&#x27;en sers.</p></div>
-          <div class="why__item"><h3>Tes données restent chez toi</h3><p>Ton cycle, tes courses, tes dépenses… sont stockés sur ton iPhone, pas sur un serveur. Rien n&#x27;est revendu.</p></div>
-          <div class="why__item"><h3>Prix affichés</h3><p>Gratuites au téléchargement. Le Premium optionnel est affiché en clair sur chaque page.</p></div>
-          <div class="why__item"><h3>Pensées pour tout le monde</h3><p>9 langues, dont l&#x27;arabe de droite à gauche. Des apps sans jugement ni stéréotype.</p></div>
+      <div class="split">
+        <div class="split__media"><img class="photo" src="/assets/photos/amis-cafe-1600.jpg" srcset="/assets/photos/amis-cafe-800.jpg 800w, /assets/photos/amis-cafe-1600.jpg 1600w" sizes="(max-width: 820px) 100vw, 50vw" alt="Quatre amis regardent un téléphone autour d&#x27;un café" loading="lazy" decoding="async"></div>
+        <div class="split__text">
+          <h2 class="section-title"><span class="tt-hl">Pourquoi</span> MyIdeApp ?</h2>
+          <div class="values">
+          <div class="value"><h3>Mode incognito par défaut</h3><p>Pas de compte obligatoire : tu ouvres l&#x27;app et tu t&#x27;en sers, tout de suite.</p></div>
+          <div class="value"><h3>Tes données chez toi</h3><p>Ton cycle, tes courses, tes dépenses, tes notes : sur ton iPhone, pas sur un serveur. Rien n&#x27;est revendu.</p></div>
+          <div class="value"><h3>Une app, un usage</h3><p>Chaque app fait une seule chose, simplement, sans fonctions inutiles.</p></div>
+          <div class="value"><h3>Clair et sans jugement</h3><p>Gratuit au téléchargement, Premium affiché en clair, et des apps pensées pour tout le monde, en 9 langues.</p></div>
+          </div>
+          <p class="why__contact"><a class="hero2__btn" href="contact.html">Une question ? Écris-nous</a></p>
         </div>
-        <p class="why__contact"><a class="hero2__btn" href="contact.html">Une question ? Écris-nous</a></p>
+      </div>
       </div>
       <div data-lang-block="en" lang="en">
-        <h2 class="section-title"><span class="tt-hl">Why</span> our apps</h2>
-        <div class="why__grid">
-          <div class="why__item"><h3>No account required</h3><p>All 12 apps work without creating an account. Open it and go.</p></div>
-          <div class="why__item"><h3>Your data stays with you</h3><p>Your cycle, runs, spending… are stored on your iPhone, not on a server. Nothing is sold.</p></div>
-          <div class="why__item"><h3>Prices shown upfront</h3><p>Free to download. The optional Premium price is shown clearly on every page.</p></div>
-          <div class="why__item"><h3>Built for everyone</h3><p>9 languages, including right-to-left Arabic. Apps with no judgment and no stereotypes.</p></div>
+      <div class="split">
+        <div class="split__media"><img class="photo" src="/assets/photos/amis-cafe-1600.jpg" srcset="/assets/photos/amis-cafe-800.jpg 800w, /assets/photos/amis-cafe-1600.jpg 1600w" sizes="(max-width: 820px) 100vw, 50vw" alt="Four friends looking at a phone over coffee" loading="lazy" decoding="async"></div>
+        <div class="split__text">
+          <h2 class="section-title"><span class="tt-hl">Why</span> MyIdeApp?</h2>
+          <div class="values">
+          <div class="value"><h3>Incognito by default</h3><p>No account required: open the app and use it, right away.</p></div>
+          <div class="value"><h3>Your data stays with you</h3><p>Your cycle, runs, spending, notes: on your iPhone, not on a server. Nothing is sold.</p></div>
+          <div class="value"><h3>One app, one job</h3><p>Each app does one thing, simply, with no needless features.</p></div>
+          <div class="value"><h3>Clear and judgment-free</h3><p>Free to download, Premium price shown upfront, and apps built for everyone, in 9 languages.</p></div>
+          </div>
+          <p class="why__contact"><a class="hero2__btn" href="contact.html">A question? Write to us</a></p>
         </div>
-        <p class="why__contact"><a class="hero2__btn" href="contact.html">A question? Write to us</a></p>
+      </div>
       </div>
       <div data-lang-block="es" lang="es">
-        <h2 class="section-title"><span class="tt-hl">Por qué</span> nuestras apps</h2>
-        <div class="why__grid">
-          <div class="why__item"><h3>Sin cuenta obligatoria</h3><p>Las 12 apps funcionan sin crear una cuenta. Abres y listo.</p></div>
-          <div class="why__item"><h3>Tus datos se quedan contigo</h3><p>Tu ciclo, tus carreras, tus gastos… se guardan en tu iPhone, no en un servidor. Nada se vende.</p></div>
-          <div class="why__item"><h3>Precios a la vista</h3><p>Descarga gratuita. El precio del Premium opcional aparece claro en cada página.</p></div>
-          <div class="why__item"><h3>Pensadas para todos</h3><p>9 idiomas, incluido el árabe de derecha a izquierda. Apps sin juicios ni estereotipos.</p></div>
+      <div class="split">
+        <div class="split__media"><img class="photo" src="/assets/photos/amis-cafe-1600.jpg" srcset="/assets/photos/amis-cafe-800.jpg 800w, /assets/photos/amis-cafe-1600.jpg 1600w" sizes="(max-width: 820px) 100vw, 50vw" alt="Cuatro amigos miran un teléfono tomando un café" loading="lazy" decoding="async"></div>
+        <div class="split__text">
+          <h2 class="section-title"><span class="tt-hl">¿Por qué</span> MyIdeApp?</h2>
+          <div class="values">
+          <div class="value"><h3>Modo incógnito por defecto</h3><p>Sin cuenta obligatoria: abres la app y la usas, al momento.</p></div>
+          <div class="value"><h3>Tus datos contigo</h3><p>Tu ciclo, tus carreras, tus gastos, tus notas: en tu iPhone, no en un servidor. Nada se vende.</p></div>
+          <div class="value"><h3>Una app, un uso</h3><p>Cada app hace una sola cosa, con sencillez, sin funciones inútiles.</p></div>
+          <div class="value"><h3>Claro y sin juicios</h3><p>Descarga gratuita, Premium con precio claro y apps pensadas para todos, en 9 idiomas.</p></div>
+          </div>
+          <p class="why__contact"><a class="hero2__btn" href="contact.html">¿Una pregunta? Escríbenos</a></p>
         </div>
-        <p class="why__contact"><a class="hero2__btn" href="contact.html">¿Una pregunta? Escríbenos</a></p>
+      </div>
       </div>
     </div>
   </section>
@@ -535,7 +526,7 @@
     <div class="container" data-lang-block="fr" lang="fr">
       <div class="site-footer__grid">
         <div class="site-footer__brand">
-          <a href="/" class="logo-text">MyIdeApp</a>
+          <a href="/" class="studio-logo" aria-label="MyIdeApp"><img src="/assets/favicon.svg" alt="" width="34" height="34"><span class="studio-logo__word">My<span class="tt-hl">IdeA</span>pp</span></a>
           <p>Studio indépendant d&#x27;apps iPhone. 12 apps simples, tes données sur ton téléphone.</p>
         </div>
         <div class="site-footer__col">
@@ -564,7 +555,7 @@
     <div class="container" data-lang-block="en" lang="en">
       <div class="site-footer__grid">
         <div class="site-footer__brand">
-          <a href="/" class="logo-text">MyIdeApp</a>
+          <a href="/" class="studio-logo" aria-label="MyIdeApp"><img src="/assets/favicon.svg" alt="" width="34" height="34"><span class="studio-logo__word">My<span class="tt-hl">IdeA</span>pp</span></a>
           <p>Independent iPhone app studio. 12 simple apps, your data on your phone.</p>
         </div>
         <div class="site-footer__col">
@@ -593,7 +584,7 @@
     <div class="container" data-lang-block="es" lang="es">
       <div class="site-footer__grid">
         <div class="site-footer__brand">
-          <a href="/" class="logo-text">MyIdeApp</a>
+          <a href="/" class="studio-logo" aria-label="MyIdeApp"><img src="/assets/favicon.svg" alt="" width="34" height="34"><span class="studio-logo__word">My<span class="tt-hl">IdeA</span>pp</span></a>
           <p>Estudio independiente de apps para iPhone. 12 apps sencillas, tus datos en tu teléfono.</p>
         </div>
         <div class="site-footer__col">
