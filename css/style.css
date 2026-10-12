@@ -1906,3 +1906,6 @@ body[data-theme^="legal-"] .legal-page__meta { display: none; }
    de leur app (RunFree, StockWatch… sur fond sombre) et le logo « IdeA » y devenait
    transparent faute de variable. */
 :root { --brand-gradient: linear-gradient(120deg, #C96B8A, #9B7FE8 55%, #6B8DE3); }
+/* La barre du studio est fixe : les pages guides / Qui sommes-nous / Instagram
+   commençaient sous elle (fil d'Ariane masqué). On réserve sa hauteur. */
+.studio-nav ~ main.guide { padding-top: calc(64px + 2.5rem); }
