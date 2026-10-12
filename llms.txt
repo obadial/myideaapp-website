@@ -1,12 +1,12 @@
 # MyIdeApp
 
-> Independent studio publishing privacy-first iOS apps. Data stays on the device whenever possible; no social feeds. Free to download, optional subscription. Site: https://myideapp.com/
+> Independent studio publishing privacy-first iOS apps. Data stays on the device whenever possible; no social feeds. Free to download, optional subscription. Site: https://myideapp.com/ — About the studio: https://myideapp.com/en/about/
 
 ## Apps
 
 ### Rhythm - Period & Cycle
 Ovulation, fertility & moods. Rhythm helps you understand your menstrual cycle on your own terms — without judgment, without shame.
-- Page: https://myideapp.com/rhythm/
+- Page: https://myideapp.com/en/rhythm/ (also in French: https://myideapp.com/rhythm/, Spanish: https://myideapp.com/es/rhythm/)
 - App Store: https://apps.apple.com/fr/app/rhythm-cycle-wellbeing/id6767194298
 - Key features: Know your cycle; Log what matters; Medication reminders; Apple health; Home screen widget; Calendar sync; Insights; Privacy first
 - Price: free to download; optional Premium $3.99/month or $24.99/year (France €3.99/€29.99)
@@ -17,7 +17,7 @@ Ovulation, fertility & moods. Rhythm helps you understand your menstrual cycle o
 
 ### RunFree - Run Tracker & GPS
 Private jogging & pace log. Run more. Stress less. Own your data.
-- Page: https://myideapp.com/runfree/
+- Page: https://myideapp.com/en/runfree/ (also in French: https://myideapp.com/runfree/, Spanish: https://myideapp.com/es/runfree/)
 - App Store: https://apps.apple.com/fr/app/runfree-courez-lessentiel/id6772151593
 - Key features: GPS run tracking; Full run history; 5 run types; 1 built-in training plan; Personal records; Training calendar; 4 training plans; Custom plan builder
 - Price: free to download; optional Premium $3.99/month or $17.99/year (France €3.99/€19.99)
@@ -28,7 +28,7 @@ Private jogging & pace log. Run more. Stress less. Own your data.
 
 ### MyFoodBook - Recipe Keeper
 Recipes & shopping list. MyFoodBook is your personal recipe keeper — simple, warm and free to use.
-- Page: https://myideapp.com/myfoodbook/
+- Page: https://myideapp.com/en/myfoodbook/ (also in French: https://myideapp.com/myfoodbook/, Spanish: https://myideapp.com/es/myfoodbook/)
 - App Store: https://apps.apple.com/fr/app/myfoodbook-recipe-keeper/id6785071500
 - Key features: Why you'll love it; Free to use; Works offline; Organize with tags; Mark your favorites and search instantly; Light and dark mode; Available in 9 languages; Private by design
 - Price: free to download; Premium option coming soon
@@ -38,7 +38,7 @@ Recipes & shopping list. MyFoodBook is your personal recipe keeper — simple, w
 
 ### HydroMe - Water Tracker
 Daily Drink Reminder. HydroMe is a minimalist hydration tracker built around one simple idea: staying hydrated should be effortless.
-- Page: https://myideapp.com/hydrome/
+- Page: https://myideapp.com/en/hydrome/ (also in French: https://myideapp.com/hydrome/, Spanish: https://myideapp.com/es/hydrome/)
 - App Store: https://apps.apple.com/fr/app/hydrome-suivi-hydratation/id6774221997
 - Key features: Beautiful animated progress ring; Daily goal with streak counter; Weekly history view; Up to 3 daily reminders; Metric (ml) and imperial (oz) units; 9 languages supported; Privacy Policy; Support
 - Price: free to download; Premium option coming soon
@@ -48,7 +48,7 @@ Daily Drink Reminder. HydroMe is a minimalist hydration tracker built around one
 
 ### StockWatch - Stocks & Alerts
 Stocks, portfolio & alerts. StockWatch is the simple, educational way to follow the stock market — without risking a cent.
-- Page: https://myideapp.com/stockwatch/
+- Page: https://myideapp.com/en/stockwatch/ (also in French: https://myideapp.com/stockwatch/, Spanish: https://myideapp.com/es/stockwatch/)
 - App Store: https://apps.apple.com/fr/app/stockwatch-stocks-alerts/id6785483739
 - Key features: What you can do; Virtual portfolio; Price alerts (you set the threshold); Market overview; DCA simulator to learn dollar-cost averaging; Learn; Market news; Privacy first
 - Price: free to download; optional Premium $3.99/month or $24.99/year (France €3.99/€24.99)
@@ -59,7 +59,7 @@ Stocks, portfolio & alerts. StockWatch is the simple, educational way to follow 
 
 ### EnjoyMeal - Food Journal
 Intuitive Eating, No Diet. EnjoyMeal is your inclusive, science-backed nutrition companion — designed to help you eat better, not less.
-- Page: https://myideapp.com/enjoymeal/
+- Page: https://myideapp.com/en/enjoymeal/ (also in French: https://myideapp.com/enjoymeal/, Spanish: https://myideapp.com/es/enjoymeal/)
 - App Store: https://apps.apple.com/fr/app/enjoymeal-food-diary/id6768597883
 - Key features: Food diary; Calorie ring & macros; Personalized goals; Weight tracking; Insights & trends; Nutritional goals; Meal reminders; Sport coach
 - Price: free to download; optional Premium $3.99/month or $24.99/year (France €4.99/€29.99)
@@ -70,7 +70,7 @@ Intuitive Eating, No Diet. EnjoyMeal is your inclusive, science-backed nutrition
 
 ### Chapter - Dating Journal
 Remember every match & date. Never mix up the people you're dating again.
-- Page: https://myideapp.com/chapter/
+- Page: https://myideapp.com/en/chapter/ (also in French: https://myideapp.com/chapter/, Spanish: https://myideapp.com/es/chapter/)
 - App Store: https://apps.apple.com/fr/app/chapter-dating-notebook/id6774410173
 - Key features: Key features; One chapter per person; Face ID / Touch ID lock; Offline-first; Available in 9 languages; Not a tracker — a notebook; Chapter pro; Unlimited chapters
 - Price: free to download; optional Premium $0.99/month or $3.99/year (France €0.99/€4.99)
@@ -81,7 +81,7 @@ Remember every match & date. Never mix up the people you're dating again.
 
 ### Nova - Sexual Health
 Private Health Tracker. Nova is your private, non-judgmental sexual health companion — designed for adults 18+.
-- Page: https://myideapp.com/nova/
+- Page: https://myideapp.com/en/nova/ (also in French: https://myideapp.com/nova/, Spanish: https://myideapp.com/es/nova/)
 - App Store: https://apps.apple.com/fr/app/nova-sant%C3%A9-intime/id6773055145
 - Key features: Complete privacy; What you can track; Vaccination records; STI / STD tests; Contraception & treatments; Activity log; Symptom log; Health stats
 - Price: free to download; optional Premium $0.99/month or $3.99/year (France €0.99/€4.99)
@@ -92,7 +92,7 @@ Private Health Tracker. Nova is your private, non-judgmental sexual health compa
 
 ### MantraMe - Affirmations
 Daily Self-Love Routine. MantraMe delivers one powerful affirmation every day to help you build a positive mindset, boost self-confidence, and cultivate inner peace.
-- Page: https://myideapp.com/mantrame/
+- Page: https://myideapp.com/en/mantrame/ (also in French: https://myideapp.com/mantrame/, Spanish: https://myideapp.com/es/mantrame/)
 - App Store: https://apps.apple.com/app/mantrame/id6775309231
 - Key features: Features; Daily affirmation, beautifully presented; 5 themed categories; Works offline; Completely private; Mantrame pro
 - Price: free to download; optional Premium $1.99/month or $8.99/year (France €1.99/€9.99)
@@ -103,7 +103,7 @@ Daily Self-Love Routine. MantraMe delivers one powerful affirmation every day to
 
 ### LunaRest - Sleep Sounds
 White noise, tracker & alarm. LunaRest is the sleep app that adapts to YOUR internal clock — not a one-size-fits-all routine. Discover your chronotype, and LunaRest tunes your whole night around it.
-- Page: https://myideapp.com/lunarest/
+- Page: https://myideapp.com/en/lunarest/ (also in French: https://myideapp.com/lunarest/, Spanish: https://myideapp.com/es/lunarest/)
 - App Store: https://apps.apple.com/app/lunarest-sleep-sounds/id6762608744
 - Key features: Your adaptive day; Dream journal; Sleep debt bank; Jet-lag & shift planner; Sleep sounds & mixer; Bedtime routines; Breathing exercises; Sleep tracking
 - Price: free to download; optional Premium $3.99/month or $24.99/year (France €4.99/€29.99)
@@ -114,7 +114,7 @@ White noise, tracker & alarm. LunaRest is the sleep app that adapts to YOUR inte
 
 ### Inhale - Calm Breathing
 Anxiety & Stress Relief. Breathe better. Feel better.
-- Page: https://myideapp.com/inhale/
+- Page: https://myideapp.com/en/inhale/ (also in French: https://myideapp.com/inhale/, Spanish: https://myideapp.com/es/inhale/)
 - App Store: https://apps.apple.com/fr/app/inhale-respire-calme/id6770456441
 - Key features: Cardiac Coherence (5-5); Box Breathing (4-4-4-4); 4-7-8 Breathing; Physiological Sigh; 5 themed 30-day programs; SOS mode; Advanced statistics; Smart reminders
 - Price: free to download; optional Premium $3.99/month or $22.99/year (France €4.99/€24.99)
@@ -125,7 +125,7 @@ Anxiety & Stress Relief. Breathe better. Feel better.
 
 ### MyBudgetBrief - Budget
 Track spending, save more. MyBudgetBrief — Know Where Your Money Goes
-- Page: https://myideapp.com/budgetbrief/
+- Page: https://myideapp.com/en/budgetbrief/ (also in French: https://myideapp.com/budgetbrief/, Spanish: https://myideapp.com/es/budgetbrief/)
 - App Store: https://apps.apple.com/fr/app/mybudgetbrief/id6775309029
 - Key features: Smart budget dashboard; Fast expense logging; Monthly statistics; 100% private; Unlimited history (free; PDF export for any month; Recurring expenses tracking; 12-month statistics & trends
 - Price: free to download; optional Premium $3.99/month or $17.99/year (France €3.99/€19.99)

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en" data-lang-static data-theme="chapter">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-itunes-app" content="app-id=6774410173">
+  <title>Chapter — Your private dating journal | MyIdeApp</title>
+  <meta name="description" data-i18n-content="meta_chapter_desc" content="Chapter is a private dating journal for your dates, feelings and stories. Your entries stay on your device.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Chapter — Your private dating journal | MyIdeApp">
+  <meta property="og:description" data-i18n-content="meta_chapter_desc" content="Chapter is a private dating journal for your dates, feelings and stories. Your entries stay on your device.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://myideapp.com/en/chapter/">
+  <meta property="og:image" content="https://myideapp.com/assets/og/chapter-en.jpg">
+  <link rel="canonical" href="https://myideapp.com/en/chapter/">
+  <!-- lang:head:start -->
+  <link rel="alternate" hreflang="fr" href="https://myideapp.com/chapter/">
+  <link rel="alternate" hreflang="en" href="https://myideapp.com/en/chapter/">
+  <link rel="alternate" hreflang="es" href="https://myideapp.com/es/chapter/">
+  <link rel="alternate" hreflang="x-default" href="https://myideapp.com/en/chapter/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- lang:head:end -->
+  <link rel="stylesheet" href="/css/fonts.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <style>
+    /* ─── Chapter theme ─────────────────────────────────────── */
+    [data-theme="chapter"] {
+      --bg: #0E0B10;
+      --bg2: #14101A;
+      --surface: #14101A;
+      --surface2: #1B1524;
+      --border: rgba(180,130,200,0.15);
+      --text: #F0EAF5;
+      --text2: #A89AB6;
+      --text3: #6B5E78;
+      --primary: #B48CC8;
+      --primary-dark: #7A5A96;
+      --secondary: #C8A06E;
+      --accent: #B48CC8;
+      --accent-light: rgba(180,140,200,0.15);
+      --hero-grad: linear-gradient(135deg, #0E0B10 0%, #14101A 50%, #0E0B10 100%);
+    }
+
+    .store-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 24px;
+      background: #B48CC8;
+      color: #fff;
+      border-radius: 12px;
+      font-size: 0.9375rem; font-weight: 700;
+      text-decoration: none;
+      transition: all 0.22s;
+      box-shadow: 0 4px 20px rgba(180,140,200,0.4);
+      width: fit-content;
+      align-self: flex-start;
+    }
+    .store-badge:hover { background: #7A5A96; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(180,140,200,0.5); }
+    .store-badge svg { width: 20px; height: 20px; }
+
+    /* Feature chips */
+    .feature-chips {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .feature-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 14px;
+      border-radius: 100px;
+      font-size: 0.8125rem; font-weight: 600;
+      background: rgba(180,140,200,0.1);
+      border: 1px solid rgba(180,140,200,0.2);
+      color: #A89AB6;
+    }
+
+    /* Stats */
+    .stats-row {
+      display: flex; gap: 2rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(180,140,200,0.12);
+      border-bottom: 1px solid rgba(180,140,200,0.12);
+      margin: 1.5rem 0;
+    }
+    .stat { text-align: center; }
+    .stat__value { font-size: 1.75rem; font-weight: 900; color: #B48CC8; letter-spacing: -0.03em; }
+    .stat__label { font-size: 0.8125rem; color: #A89AB6; margin-top: 2px; }
+
+    /* Journal visual */
+    .chapter-visual {
+      position: relative;
+      width: 280px; height: 280px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .chapter-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(180,140,200,0.12);
+      animation: pulse-ring-ch 5s ease-in-out infinite;
+    }
+    .chapter-ring--1 { width: 200px; height: 200px; animation-delay: 0s; }
+    .chapter-ring--2 { width: 240px; height: 240px; animation-delay: 0.6s; }
+    .chapter-ring--3 { width: 275px; height: 275px; animation-delay: 1.2s; }
+    @keyframes pulse-ring-ch {
+      0%, 100% { opacity: 0.25; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.03); }
+    }
+    .chapter-circle {
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #2A1E36 0%, #B48CC8 100%);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 60px rgba(180,140,200,0.35);
+      animation: glow-ch 5s ease-in-out infinite;
+    }
+    @keyframes glow-ch {
+      0%, 100% { box-shadow: 0 0 40px rgba(180,140,200,0.25); }
+      50% { box-shadow: 0 0 80px rgba(180,140,200,0.55); }
+    }
+    .chapter-circle__inner {
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .chapter-circle__icon { width: 68px; height: 68px; border-radius: 16px; object-fit: cover; font-size: 2.5rem; display: flex; align-items: center; justify-content: center; }
+    .chapter-emoji { font-size: 2.5rem; line-height: 1; }
+    .instagram-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 24px;
+      background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+      color: #fff;
+      border-radius: 12px;
+      font-size: 0.9375rem; font-weight: 700;
+      text-decoration: none;
+      transition: all 0.22s;
+    }
+    .instagram-badge:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(221,42,123,0.35); filter: brightness(1.05); }
+    .instagram-badge svg { width: 20px; height: 20px; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Chapter",
+  "operatingSystem": "iOS",
+  "applicationCategory": "LifestyleApplication",
+  "description": "Chapter is a private dating journal for your dates, feelings and stories. Your entries stay on your device.",
+  "url": "https://myideapp.com/en/chapter/",
+  "offers": [
+    {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    {
+      "@type": "Offer",
+      "name": "Premium monthly",
+      "price": "0.99",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "0.99",
+        "priceCurrency": "USD",
+        "unitCode": "MON"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Premium annual",
+      "price": "3.99",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "3.99",
+        "priceCurrency": "USD",
+        "unitCode": "ANN"
+      }
+    }
+  ],
+  "downloadUrl": "https://apps.apple.com/app/chapter-dating-notebook/id6774410173",
+  "publisher": {
+    "@type": "Organization",
+    "name": "MyIdeApp",
+    "url": "https://myideapp.com/"
+  },
+  "alternateName": "Chapter - Dating Journal",
+  "inLanguage": [
+    "en",
+    "fr",
+    "de",
+    "es",
+    "it",
+    "pt",
+    "hi",
+    "ar"
+  ],
+  "featureList": [
+    "Key features",
+    "One chapter per person",
+    "Face ID / Touch ID lock",
+    "Offline-first",
+    "Available in 9 languages",
+    "Not a tracker — a notebook",
+    "Chapter pro",
+    "Unlimited chapters",
+    "Unlimited reminders",
+    "No ads"
+  ],
+  "sameAs": [
+    "https://apps.apple.com/app/chapter-dating-notebook/id6774410173",
+    "https://www.instagram.com/chapter.dating.app/"
+  ]
+}
+  </script>
+  <script type="application/ld+json" data-nav>
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "MyIdeApp",
+      "item": "https://myideapp.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Relationships",
+      "item": "https://myideapp.com/#apps"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Chapter",
+      "item": "https://myideapp.com/en/chapter/"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-theme="chapter">
+
+  <!-- ─── Navbar ─────────────────────────────────────────── -->
+  <nav class="navbar">
+    <div class="navbar__left">
+      <a href="//" class="navbar__back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        <span data-i18n="back_to_studio">Studio</span>
+      </a>
+      <div class="navbar__logo">
+        <span class="logo-text">Chapter</span>
+      </div>
+    </div>
+    <div class="navbar__nav">
+      <a href="#overview" class="active" data-i18n="nav_overview">Overview</a>
+      <a href="/chapter/privacy.html" data-i18n="nav_privacy">Privacy</a>
+      <a href="/chapter/terms.html" data-i18n="nav_terms">Terms</a>
+    </div>
+    <div class="navbar__right">
+      <div class="lang-switcher">
+        <a class="lang-btn" data-lang-btn="fr" href="/chapter/" hreflang="fr" lang="fr">FR</a>
+        <a class="lang-btn active" data-lang-btn="en" href="/en/chapter/" hreflang="en" lang="en">EN</a>
+        <a class="lang-btn" data-lang-btn="es" href="/es/chapter/" hreflang="es" lang="es">ES</a>
+      </div>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <a href="//" data-i18n="back_to_studio">Studio</a>
+    <a href="#overview" data-i18n="nav_overview">Overview</a>
+    <a href="/chapter/privacy.html" data-i18n="nav_privacy">Privacy</a>
+    <a href="/chapter/terms.html" data-i18n="nav_terms">Terms</a>
+    <div class="lang-switcher" style="margin-top:1.5rem">
+      <a class="lang-btn" data-lang-btn="fr" href="/chapter/" hreflang="fr" lang="fr">FR</a>
+      <a class="lang-btn active" data-lang-btn="en" href="/en/chapter/" hreflang="en" lang="en">EN</a>
+      <a class="lang-btn" data-lang-btn="es" href="/es/chapter/" hreflang="es" lang="es">ES</a>
+    </div>
+  </div>
+
+  <!-- ─── Hero ───────────────────────────────────────────── -->
+  <section id="overview" class="app-hero">
+    <div class="app-hero__orb"></div>
+    <div class="container">
+      <div class="app-hero__inner">
+        <div class="app-hero__info">
+          <div class="app-hero__icon-wrap">
+            <img src="/assets/chapter/icon-192.png" alt="Chapter icon" style="width:40px;height:40px;border-radius:10px;object-fit:cover;">
+            <span class="app-hero__app-name">Chapter</span>
+          </div>
+          <h1 class="app-hero__tagline" data-i18n="chapter_tagline">One chapter per person.</h1>
+          <p class="app-hero__subtitle" data-i18n="chapter_subtitle">Your private dating journal</p>
+          <p class="app-hero__description" data-i18n="chapter_description">Chapter is the place to note your dates, feelings, and love stories — in complete privacy. Your chapters stay on your device, away from prying eyes.</p>
+
+          <div class="feature-chips">
+            <span class="feature-chip">📖 <span data-i18n="chapter_hchip1">Private journal</span></span>
+            <span class="feature-chip">🔒 <span data-i18n="chapter_hchip2">100% private</span></span>
+            <span class="feature-chip">🔐 <span data-i18n="chapter_hchip3">Face ID &amp; Touch ID</span></span>
+            <span class="feature-chip">💬 <span data-i18n="chapter_hchip4">Notes &amp; feelings</span></span>
+            <span class="feature-chip">📅 <span data-i18n="chapter_hchip5">Timeline</span></span>
+            <span class="feature-chip">🏷️ <span data-i18n="chapter_hchip6">Tags &amp; filters</span></span>
+          </div>
+
+          <div class="stats-row">
+            <div class="stat">
+              <div class="stat__value">0</div>
+              <div class="stat__label" data-i18n="chapter_stat_cloud">Cloud data</div>
+            </div>
+            <div class="stat">
+              <div class="stat__value">17+</div>
+              <div class="stat__label" data-i18n="chapter_stat_age">Minimum age</div>
+            </div>
+            <div class="stat">
+              <div class="stat__value">iOS</div>
+              <div class="stat__label" data-i18n="chapter_stat_platform">iPhone &amp; iPad</div>
+            </div>
+          </div>
+
+          <div class="app-hero__actions">
+            <a href="https://apps.apple.com/app/chapter-dating-notebook/id6774410173" class="store-badge" target="_blank" rel="noopener" aria-label="Download Chapter on App Store">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+              </svg>
+              <span data-i18n="download_ios">Download on the App Store</span>
+            </a>
+            <a href="https://www.instagram.com/chapter.dating.app/" class="instagram-badge" target="_blank" rel="noopener" aria-label="Follow Chapter on Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+              <span data-i18n="follow_instagram">Follow on Instagram</span>
+            </a>
+            <span class="playstore-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M3.6 1.85a1.5 1.5 0 0 0-.5 1.13v18.04c0 .45.19.86.5 1.13l10-10.15-10-10.15Zm11.06 11.22 2.7 2.74-9.9 5.62 7.2-8.36Zm0-1.85-7.2-8.36 9.9 5.62-2.7 2.74Zm1.4 1.36 3.06-1.74c.83-.47.83-1.68 0-2.15l-3.06-1.74-3.34 3.4 3.34 3.4-.01-1.17Z"/>
+              </svg>
+              <span data-i18n="playstore_soon">Coming soon on Google Play</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Journal visual -->
+        <div class="app-hero__screenshots">
+          <div class="phone-frame"><div class="phone-frame__outer"><div class="phone-frame__screen"><img src="/assets/chapter/screenshots/en-US/1.png" data-i18n-shot alt="Chapter screenshot" loading="lazy"></div></div></div>
+          <div class="phone-frame"><div class="phone-frame__outer"><div class="phone-frame__screen"><img src="/assets/chapter/screenshots/en-US/2.png" data-i18n-shot alt="Chapter screenshot" loading="lazy"></div></div></div>
+          <div class="phone-frame"><div class="phone-frame__outer"><div class="phone-frame__screen"><img src="/assets/chapter/screenshots/en-US/3.png" data-i18n-shot alt="Chapter screenshot" loading="lazy"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- facts:start -->
+  <section class="section facts-section" id="en-bref">
+    <div class="container">
+      <div class="facts" data-lang-block="en" lang="en">
+        <h2 class="facts__title">Chapter at a glance</h2>
+        <dl class="facts__list">
+          <dt>Price</dt><dd>Free to download. Optional Premium: $0.99/month or $3.99/year (France: €0.99/month or €4.99/year).</dd>
+          <dt>Free features</dt><dd>5 people (&quot;chapters&quot;), free-form notes, topic tags, reminders, Face ID / Touch ID lock</dd>
+          <dt>Premium adds</dt><dd>Unlimited chapters and reminders, no ads</dd>
+          <dt>Data</dt><dd>Stored only on your device. No account required, data never sold.</dd>
+          <dt>Ads</dt><dd>Occasional full-screen ads in the free version, none with Premium.</dd>
+          <dt>Languages</dt><dd>9: English, French, German, Spanish, Italian, Portuguese (PT and BR), Hindi, Arabic</dd>
+          <dt>Platforms</dt><dd>iPhone (iOS 16.0+). Android: coming soon.</dd>
+        </dl>
+        <p class="facts__date">Information checked on October 11, 2026.</p>
+      </div>
+    </div>
+  </section>
+  <!-- facts:end -->
+
+  <!-- ─── Features ───────────────────────────────────────── -->
+
+
+
+  <section class="features-section section">
+    <div class="container">
+      <h2 class="section-title fade-up" data-i18n="chapter_feat_title">Features</h2>
+      <div class="features-grid">
+        <div class="feature-card fade-up fade-up-delay-1">
+          <div class="feature-card__icon">📖</div>
+          <h3 class="feature-card__title" data-i18n="chapter_feat1_title">Dating journal</h3>
+          <p class="feature-card__desc" data-i18n="chapter_feat1_desc">Note your dates, first impressions, and anecdotes. Each chapter tells a story — yours.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-2">
+          <div class="feature-card__icon">🔒</div>
+          <h3 class="feature-card__title" data-i18n="chapter_feat2_title">Absolute privacy</h3>
+          <p class="feature-card__desc" data-i18n="chapter_feat2_desc">All your chapters are stored locally on your iPhone. No cloud, no sharing — your stories belong to you.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-3">
+          <div class="feature-card__icon">💬</div>
+          <h3 class="feature-card__title" data-i18n="chapter_feat3_title">Notes &amp; feelings</h3>
+          <p class="feature-card__desc" data-i18n="chapter_feat3_desc">Express yourself freely: emotions, compatibility, red flags or green flags. No filter, no judgment.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-1">
+          <div class="feature-card__icon">📅</div>
+          <h3 class="feature-card__title" data-i18n="chapter_feat4_title">Timeline</h3>
+          <p class="feature-card__desc" data-i18n="chapter_feat4_desc">Find your entries in chronological order. Reread your journey and measure your growth.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-2">
+          <div class="feature-card__icon">🏷️</div>
+          <h3 class="feature-card__title" data-i18n="chapter_feat5_title">Tags &amp; filters</h3>
+          <p class="feature-card__desc" data-i18n="chapter_feat5_desc">Organise your chapters with custom tags. Search, filter, find easily.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-3">
+          <div class="feature-card__icon">✨</div>
+          <h3 class="feature-card__title" data-i18n="chapter_feat6_title">Soothing design</h3>
+          <p class="feature-card__desc" data-i18n="chapter_feat6_desc">A soft, elegant interface that invites writing. Because your journal deserves to be beautiful.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Legal ───────────────────────────────────────────── -->
+  <section class="legal-strip">
+    <div class="container">
+      <div class="legal-strip__inner">
+        <div class="legal-strip__text">
+          <h3 data-i18n="chapter_legal_title">Legal documents</h3>
+          <p data-i18n="chapter_legal_desc">Read our Privacy Policy and Terms of Service.</p>
+        </div>
+        <div class="legal-strip__links">
+          <a href="/chapter/privacy.html" class="legal-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span data-i18n="privacy_link">Privacy Policy</span>
+          </a>
+          <a href="/chapter/terms.html" class="legal-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            <span data-i18n="terms_link">Terms of Service</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─────────────────────────────────────────── -->
+  <!-- FAQ (SEO) -->
+  <section class="section">
+    <div class="container">
+      <!-- faq:start -->
+      <div data-lang-block="en" lang="en">
+      <h2 class="section-title">Frequently asked questions</h2>
+      <div class="faq" style="max-width:760px;margin:2rem auto 0;">
+        <details class="faq-item" style="border-bottom:1px solid rgba(128,128,128,0.18);padding:1.15rem 0;">
+          <summary style="cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;">What is Chapter for?</summary>
+          <p style="margin:.85rem 0 0;opacity:.82;line-height:1.65;">To write down your dates, feelings and love stories in a private dating journal, away from prying eyes.</p>
+        </details>
+        <details class="faq-item" style="border-bottom:1px solid rgba(128,128,128,0.18);padding:1.15rem 0;">
+          <summary style="cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;">Are my entries private?</summary>
+          <p style="margin:.85rem 0 0;opacity:.82;line-height:1.65;">Yes, all your chapters are stored locally on your iPhone. No cloud, no sharing.</p>
+        </details>
+        <details class="faq-item" style="border-bottom:1px solid rgba(128,128,128,0.18);padding:1.15rem 0;">
+          <summary style="cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;">Can I organize my entries?</summary>
+          <p style="margin:.85rem 0 0;opacity:.82;line-height:1.65;">Yes, with custom tags, search and a timeline to look back on your journey.</p>
+        </details>
+      </div>
+      </div>
+      <!-- faq:end -->
+    </div>
+  </section>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Chapter for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To write down your dates, feelings and love stories in a private dating journal, away from prying eyes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my entries private?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all your chapters are stored locally on your iPhone. No cloud, no sharing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I organize my entries?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, with custom tags, search and a timeline to look back on your journey."
+      }
+    }
+  ]
+}
+  </script>
+
+<!-- nav:start -->
+  <section class="app-crosslinks">
+    <div class="container">
+
+      <h2 class="app-crosslinks__title" data-lang-block="en">More apps from the studio</h2>
+      <div class="app-crosslinks__list">
+        <a href="/en/rhythm/"><img src="/assets/rhythm/icon-192.png" alt="" loading="lazy">Rhythm</a>
+        <a href="/en/runfree/"><img src="/assets/runfree/icon-192.png" alt="" loading="lazy">RunFree</a>
+        <a href="/en/myfoodbook/"><img src="/assets/myfoodbook/icon-192.png" alt="" loading="lazy">MyFoodBook</a>
+        <a href="/en/hydrome/"><img src="/assets/hydrome/icon-192.png" alt="" loading="lazy">HydroMe</a>
+        <a href="/en/stockwatch/"><img src="/assets/stockwatch/icon-192.png" alt="" loading="lazy">StockWatch</a>
+        <a href="/en/enjoymeal/"><img src="/assets/enjoymeal/icon-192.png" alt="" loading="lazy">EnjoyMeal</a>
+        <a href="/en/nova/"><img src="/assets/nova/icon-192.png" alt="" loading="lazy">Nova</a>
+        <a href="/en/mantrame/"><img src="/assets/mantrame/icon-192.png" alt="" loading="lazy">MantraMe</a>
+        <a href="/en/lunarest/"><img src="/assets/lunarest/icon-192.png" alt="" loading="lazy">LunaRest</a>
+        <a href="/en/inhale/"><img src="/assets/inhale/icon-192.png" alt="" loading="lazy">Inhale</a>
+        <a href="/en/budgetbrief/"><img src="/assets/budgetbrief/icon-192.png" alt="" loading="lazy">MyBudgetBrief</a>
+      </div>
+    </div>
+  </section>
+  <!-- nav:end -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="//"><span class="logo-text">myideapp</span></a>
+          <p data-i18n="footer_tagline">Elegant mobile apps that respect your privacy.</p>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_apps">Apps</h4>
+          <a href="/en/rhythm/">Rhythm</a>
+          <a href="/en/lunarest/">LunaRest</a>
+          <a href="/en/enjoymeal/">EnjoyMeal</a>
+          <a href="/en/inhale/">Inhale</a>
+          <a href="/en/runfree/">RunFree</a>
+          <a href="/en/nova/">Nova</a>
+          <a href="/en/mantrame/">MantraMe</a>
+          <a href="/en/budgetbrief/">MyBudgetBrief</a>
+          <a href="/en/hydrome/">HydroMe</a>
+          <a href="/en/chapter/">Chapter</a>
+          <a href="/en/stockwatch/">StockWatch</a>
+          <a href="/en/myfoodbook/">MyFoodBook</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_legal">Legal</h4>
+          <a href="/chapter/privacy.html" data-i18n="privacy_link">Privacy Policy</a>
+          <a href="/chapter/terms.html" data-i18n="terms_link">Terms of Service</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_contact">Contact</h4>
+          <a href="/contact.html">contact.myideapp@icloud.com</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p data-i18n="footer_rights">© 2026 MyIdeApp. All rights reserved.</p>
+        <div class="footer__bottom-links">
+          <a href="/chapter/privacy.html" data-i18n="privacy_link">Privacy Policy</a>
+          <a href="/chapter/terms.html" data-i18n="terms_link">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/i18n.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

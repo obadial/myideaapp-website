@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="myfoodbook">
+<html lang="fr" data-lang-static data-theme="myfoodbook">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +11,20 @@
   <meta property="og:description" data-i18n-content="meta_myfoodbook_desc" content="Save your recipes, organize by tags, mark favorites. Private, offline-first recipe notebook.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://myideapp.com/myfoodbook/">
-  <meta property="og:image" content="https://myideapp.com/assets/og-studio.png">
+  <meta property="og:image" content="https://myideapp.com/assets/og/myfoodbook-fr.jpg">
   <link rel="canonical" href="https://myideapp.com/myfoodbook/">
+  <!-- lang:head:start -->
+  <link rel="alternate" hreflang="fr" href="https://myideapp.com/myfoodbook/">
+  <link rel="alternate" hreflang="en" href="https://myideapp.com/en/myfoodbook/">
+  <link rel="alternate" hreflang="es" href="https://myideapp.com/es/myfoodbook/">
+  <link rel="alternate" hreflang="x-default" href="https://myideapp.com/en/myfoodbook/">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- lang:head:end -->
   <link rel="stylesheet" href="../css/fonts.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
@@ -158,9 +170,9 @@
     </div>
     <div class="navbar__right">
       <div class="lang-switcher">
-        <button class="lang-btn" data-lang-btn="fr">FR</button>
-        <button class="lang-btn" data-lang-btn="en">EN</button>
-        <button class="lang-btn" data-lang-btn="es">ES</button>
+        <a class="lang-btn active" data-lang-btn="fr" href="/myfoodbook/" hreflang="fr" lang="fr">FR</a>
+        <a class="lang-btn" data-lang-btn="en" href="/en/myfoodbook/" hreflang="en" lang="en">EN</a>
+        <a class="lang-btn" data-lang-btn="es" href="/es/myfoodbook/" hreflang="es" lang="es">ES</a>
       </div>
       <button class="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -172,9 +184,9 @@
     <a href="privacy.html" data-i18n="nav_privacy">Confidentialité</a>
     <a href="terms.html" data-i18n="nav_terms">Conditions</a>
     <div class="lang-switcher" style="margin-top:1.5rem">
-      <button class="lang-btn" data-lang-btn="fr">FR</button>
-      <button class="lang-btn" data-lang-btn="en">EN</button>
-      <button class="lang-btn" data-lang-btn="es">ES</button>
+      <a class="lang-btn active" data-lang-btn="fr" href="/myfoodbook/" hreflang="fr" lang="fr">FR</a>
+      <a class="lang-btn" data-lang-btn="en" href="/en/myfoodbook/" hreflang="en" lang="en">EN</a>
+      <a class="lang-btn" data-lang-btn="es" href="/es/myfoodbook/" hreflang="es" lang="es">ES</a>
     </div>
   </div>
 
@@ -445,31 +457,6 @@
     </div>
   </section>
   <!-- nav:end -->
-
-  <!-- llm-en:start -->
-  <section class="section" id="english" lang="en">
-    <div class="container" style="max-width:760px;">
-      <details class="faq-item" style="border-bottom:1px solid rgba(128,128,128,0.18);padding:1.15rem 0;">
-        <summary style="cursor:pointer;font-weight:600;">About MyFoodBook (English)</summary>
-        <div class="llm-en" style="margin-top:1rem;line-height:1.6;">
-        <p>MyFoodBook is your personal recipe keeper — simple, warm and free to use.</p>
-        <p>Save every recipe you love and find it again in seconds. Add ingredients, step-by-step instructions, prep and cook times, and your own photos of the finished dish.</p>
-        <h3>Why you&#x27;ll love it</h3>
-        <ul><li>Free to use — every feature is available to everyone, no paywalls.</li><li>Works offline — all your recipes stay on your device.</li><li>Take photos of your dishes, right from the app, and attach them to each recipe.</li><li>Organize with tags — vegan, dessert, quick, family… your rules.</li><li>Mark your favorites and search instantly.</li><li>Light and dark mode.</li><li>Available in 9 languages.</li></ul>
-        <h3>Private by design</h3>
-        <p>Your recipes stay on your device — no tracking, nothing sent to our servers.</p>
-        <h3>Go premium (optional)</h3>
-        <p>MyFoodBook is supported by ads. Want an ad-free experience? Upgrade to Premium with an optional monthly or annual subscription — every recipe feature stays free either way.</p>
-        <p>Cook, save, and build your own cookbook.</p>
-        <h3>Subscription</h3>
-        <p>MyFoodBook Premium is an auto-renewable subscription (monthly or annual). Payment is charged to your Apple Account at confirmation of purchase. It renews automatically unless cancelled at least 24 hours before the end of the current period. You can manage or cancel it anytime in your Apple Account settings.</p>
-        <p>Privacy Policy: <a href="https://myideapp.com/myfoodbook/privacy.html">https://myideapp.com/myfoodbook/privacy.html</a></p>
-        <p>Terms of Use (EULA): <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></p>
-        </div>
-      </details>
-    </div>
-  </section>
-  <!-- llm-en:end -->
 
   <footer class="footer">
     <div class="container">

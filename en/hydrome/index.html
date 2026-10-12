@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en" data-lang-static data-theme="hydrome">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-itunes-app" content="app-id=6774221997">
+  <title>HydroMe — Minimalist hydration tracker | MyIdeApp</title>
+  <meta name="description" data-i18n-content="meta_hydrome_desc" content="HydroMe: track your daily hydration effortlessly. Progress ring, streaks and smart reminders.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="HydroMe — Minimalist hydration tracker | MyIdeApp">
+  <meta property="og:description" data-i18n-content="meta_hydrome_desc" content="HydroMe: track your daily hydration effortlessly. Progress ring, streaks and smart reminders.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://myideapp.com/en/hydrome/">
+  <meta property="og:image" content="https://myideapp.com/assets/og/hydrome-en.jpg">
+  <link rel="canonical" href="https://myideapp.com/en/hydrome/">
+  <!-- lang:head:start -->
+  <link rel="alternate" hreflang="fr" href="https://myideapp.com/hydrome/">
+  <link rel="alternate" hreflang="en" href="https://myideapp.com/en/hydrome/">
+  <link rel="alternate" hreflang="es" href="https://myideapp.com/es/hydrome/">
+  <link rel="alternate" hreflang="x-default" href="https://myideapp.com/en/hydrome/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- lang:head:end -->
+  <link rel="stylesheet" href="/css/fonts.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <style>
+    .store-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 24px;
+      background: #4FC3F7;
+      color: #1A3A4A;
+      border-radius: 12px;
+      font-size: 0.9375rem; font-weight: 700;
+      text-decoration: none;
+      transition: all 0.22s;
+      box-shadow: 0 4px 20px rgba(79,195,247,0.35);
+      width: fit-content;
+      align-self: flex-start;
+    }
+    .store-badge:hover { background: #0288D1; color: #fff; transform: translateY(-2px); }
+    .store-badge svg { width: 20px; height: 20px; }
+    .store-badge--soon {
+      background: rgba(79,195,247,0.12);
+      color: #546E7A;
+      border: 1.5px solid rgba(79,195,247,0.3);
+      cursor: default;
+      box-shadow: none;
+    }
+    .store-badge--soon:hover { transform: none; }
+
+    .feature-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 1rem; }
+    .feature-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 14px;
+      border-radius: 100px;
+      font-size: 0.8125rem; font-weight: 600;
+      background: rgba(79,195,247,0.1);
+      border: 1px solid rgba(79,195,247,0.2);
+      color: #0288D1;
+    }
+
+    /* Progress ring visual */
+    .hydrome-visual {
+      position: relative;
+      width: 260px; height: 260px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .hydrome-ring-svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
+    .hydrome-ring-track { fill: none; stroke: rgba(79,195,247,0.15); stroke-width: 16; }
+    .hydrome-ring-progress {
+      fill: none; stroke: #4FC3F7; stroke-width: 16;
+      stroke-linecap: round;
+      stroke-dasharray: 659;
+      stroke-dashoffset: 105;
+      transition: stroke-dashoffset 1s ease;
+    }
+    .hydrome-center {
+      text-align: center; z-index: 1;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .hydrome-center__ml { font-size: 2.2rem; font-weight: 900; color: #0288D1; letter-spacing: -0.04em; line-height: 1; }
+    .hydrome-center__goal { font-size: 0.8125rem; color: #90A4AE; margin-top: 2px; }
+    .hydrome-center__pct { font-size: 0.9rem; font-weight: 700; color: #4FC3F7; margin-top: 4px; }
+
+    .hero__eyebrow {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.9375rem; font-weight: 700;
+      color: #4FC3F7; margin-bottom: 1rem;
+    }
+    .hero__app-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .hero__title { font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 900; color: #1A3A4A; letter-spacing: -0.04em; line-height: 1.1; margin: 0 0 1rem; }
+    .hero__subtitle { font-size: 1.0625rem; color: #546E7A; line-height: 1.65; margin: 0 0 1.5rem; max-width: 520px; }
+    .hero__inner { display: flex; align-items: center; gap: 4rem; padding: 5rem 0 4rem; flex-wrap: wrap; }
+    .hero__content { flex: 1; min-width: 280px; }
+    .hero__visual { flex-shrink: 0; }
+
+    .stats-row { display: flex; gap: 2rem; padding: 1.5rem 0; border-top: 1px solid rgba(79,195,247,0.12); border-bottom: 1px solid rgba(79,195,247,0.12); margin: 1.5rem 0; }
+    .stat { text-align: center; }
+    .stat__value { font-size: 1.75rem; font-weight: 900; color: #4FC3F7; letter-spacing: -0.03em; }
+    .stat__label { font-size: 0.8125rem; color: #90A4AE; margin-top: 2px; }
+    .instagram-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 24px;
+      background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+      color: #fff;
+      border-radius: 12px;
+      font-size: 0.9375rem; font-weight: 700;
+      text-decoration: none;
+      transition: all 0.22s;
+    }
+    .instagram-badge:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(221,42,123,0.35); filter: brightness(1.05); }
+    .instagram-badge svg { width: 20px; height: 20px; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "HydroMe",
+  "operatingSystem": "iOS",
+  "applicationCategory": "HealthApplication",
+  "description": "HydroMe: track your daily hydration effortlessly. Progress ring, streaks and smart reminders.",
+  "url": "https://myideapp.com/en/hydrome/",
+  "offers": [
+    {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  ],
+  "downloadUrl": "https://apps.apple.com/app/hydrome-suivi-hydratation/id6774221997",
+  "publisher": {
+    "@type": "Organization",
+    "name": "MyIdeApp",
+    "url": "https://myideapp.com/"
+  },
+  "alternateName": "HydroMe - Water Tracker",
+  "inLanguage": [
+    "en",
+    "fr",
+    "de",
+    "es",
+    "it",
+    "pt",
+    "hi",
+    "ar"
+  ],
+  "featureList": [
+    "Beautiful animated progress ring",
+    "Daily goal with streak counter",
+    "Weekly history view",
+    "Up to 3 daily reminders",
+    "Metric (ml) and imperial (oz) units",
+    "9 languages supported",
+    "Privacy Policy",
+    "Support"
+  ],
+  "sameAs": [
+    "https://apps.apple.com/app/hydrome-suivi-hydratation/id6774221997",
+    "https://www.instagram.com/hydrome.app/"
+  ]
+}
+  </script>
+  <script type="application/ld+json" data-nav>
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "MyIdeApp",
+      "item": "https://myideapp.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Health",
+      "item": "https://myideapp.com/#apps"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "HydroMe",
+      "item": "https://myideapp.com/en/hydrome/"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-theme="hydrome">
+
+  <nav class="navbar">
+    <div class="navbar__left">
+      <a href="//" class="navbar__back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        <span data-i18n="back_to_studio">Studio</span>
+      </a>
+      <div class="navbar__logo">
+        <img src="/assets/hydrome/icon-192.png" alt="HydroMe" class="navbar__app-icon">
+        <span class="logo-text">HydroMe</span>
+      </div>
+    </div>
+    <div class="navbar__nav">
+      <a href="/en/hydrome/" class="active" data-i18n="nav_overview">Overview</a>
+      <a href="/hydrome/privacy.html" data-i18n="nav_privacy">Privacy</a>
+      <a href="/hydrome/terms.html" data-i18n="nav_terms">Terms</a>
+    </div>
+    <div class="navbar__right">
+      <div class="lang-switcher">
+        <a class="lang-btn" data-lang-btn="fr" href="/hydrome/" hreflang="fr" lang="fr">FR</a>
+        <a class="lang-btn active" data-lang-btn="en" href="/en/hydrome/" hreflang="en" lang="en">EN</a>
+        <a class="lang-btn" data-lang-btn="es" href="/es/hydrome/" hreflang="es" lang="es">ES</a>
+      </div>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <a href="//">← MyIdeApp</a>
+    <a href="/en/hydrome/" data-i18n="nav_overview">Overview</a>
+    <a href="/hydrome/privacy.html" data-i18n="nav_privacy">Privacy</a>
+    <a href="/hydrome/terms.html" data-i18n="nav_terms">Terms</a>
+    <div class="lang-switcher" style="margin-top:1.5rem">
+      <a class="lang-btn" data-lang-btn="fr" href="/hydrome/" hreflang="fr" lang="fr">FR</a>
+      <a class="lang-btn active" data-lang-btn="en" href="/en/hydrome/" hreflang="en" lang="en">EN</a>
+      <a class="lang-btn" data-lang-btn="es" href="/es/hydrome/" hreflang="es" lang="es">ES</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner">
+        <div class="hero__content fade-up">
+          <div class="hero__eyebrow">
+            <img src="/assets/hydrome/icon-192.png" alt="HydroMe icon" class="hero__app-icon">
+            <span>HydroMe</span>
+          </div>
+          <h1 class="hero__title" data-i18n="hydrome_tagline">Stay hydrated, every day.</h1>
+          <p class="hero__subtitle" data-i18n="hydrome_description">Minimalist, privacy-first hydration tracker. One tap to log, one ring to track progress. Your data stays on your device — always.</p>
+
+          <div class="feature-chips">
+            <span class="feature-chip">💧 <span data-i18n="hydrome_hchip1">Progress ring</span></span>
+            <span class="feature-chip">🔥 <span data-i18n="hydrome_hchip2">Streak</span></span>
+            <span class="feature-chip">🔔 <span data-i18n="hydrome_hchip3">Reminders</span></span>
+            <span class="feature-chip">🍎 <span data-i18n="hydrome_hchip4">Apple Health</span></span>
+            <span class="feature-chip">📊 <span data-i18n="hydrome_hchip5">30-day stats</span></span>
+            <span class="feature-chip">🔒 <span data-i18n="hydrome_hchip6">Offline-first</span></span>
+          </div>
+
+          <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="https://apps.apple.com/app/hydrome-suivi-hydratation/id6774221997" class="store-badge" target="_blank" rel="noopener" aria-label="Download HydroMe on App Store">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              <span data-i18n="download_ios">Download on the App Store</span>
+            </a>
+            <a href="https://www.instagram.com/hydrome.app/" class="instagram-badge" target="_blank" rel="noopener" aria-label="Follow HydroMe on Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+              <span data-i18n="follow_instagram">Follow on Instagram</span>
+            </a>
+            <span class="playstore-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M3.6 1.85a1.5 1.5 0 0 0-.5 1.13v18.04c0 .45.19.86.5 1.13l10-10.15-10-10.15Zm11.06 11.22 2.7 2.74-9.9 5.62 7.2-8.36Zm0-1.85-7.2-8.36 9.9 5.62-2.7 2.74Zm1.4 1.36 3.06-1.74c.83-.47.83-1.68 0-2.15l-3.06-1.74-3.34 3.4 3.34 3.4-.01-1.17Z"/>
+              </svg>
+              <span data-i18n="playstore_soon">Coming soon on Google Play</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Visual — progress ring -->
+        <div class="hero__visual fade-up fade-up-delay-2">
+          <div class="app-hero__screenshots">
+          <div class="phone-frame"><div class="phone-frame__outer"><div class="phone-frame__screen"><img src="/assets/hydrome/screenshots/en-US/1.png" data-i18n-shot alt="HydroMe screenshot" loading="lazy"></div></div></div>
+          <div class="phone-frame"><div class="phone-frame__outer"><div class="phone-frame__screen"><img src="/assets/hydrome/screenshots/en-US/2.png" data-i18n-shot alt="HydroMe screenshot" loading="lazy"></div></div></div>
+          <div class="phone-frame"><div class="phone-frame__outer"><div class="phone-frame__screen"><img src="/assets/hydrome/screenshots/en-US/3.png" data-i18n-shot alt="HydroMe screenshot" loading="lazy"></div></div></div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- facts:start -->
+  <section class="section facts-section" id="en-bref">
+    <div class="container">
+      <div class="facts" data-lang-block="en" lang="en">
+        <h2 class="facts__title">HydroMe at a glance</h2>
+        <dl class="facts__list">
+          <dt>Price</dt><dd>Free to download. The Premium option is coming soon.</dd>
+          <dt>Free features</dt><dd>One-tap drink logging, daily goal and streak, 6 drink types with hydration coefficients, weekly history, 3 reminders, ml or oz</dd>
+          <dt>Premium (coming soon)</dt><dd>30-day statistics, widget, Apple Health sync, up to 5 smart reminders, no ads</dd>
+          <dt>Data</dt><dd>Stored only on your device. No account required, data never sold.</dd>
+          <dt>Ads</dt><dd>Occasional full-screen ads in the free version, none with Premium.</dd>
+          <dt>Languages</dt><dd>9: English, French, German, Spanish, Italian, Portuguese (PT and BR), Hindi, Arabic</dd>
+          <dt>Platforms</dt><dd>iPhone (iOS 16.0+). Android: coming soon.</dd>
+        </dl>
+        <p class="facts__date">Information checked on October 11, 2026.</p>
+      </div>
+    </div>
+  </section>
+  <!-- facts:end -->
+
+  <!-- FEATURES -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-up" data-i18n="hydrome_features_title">Simple. Beautiful. Effective.</h2>
+
+      <div class="features-grid">
+        <div class="feature-card fade-up">
+          <div class="feature-card__icon">💧</div>
+          <h3 class="feature-card__title" data-i18n="hydrome_f1_title">Log in 1 tap</h3>
+          <p class="feature-card__desc" data-i18n="hydrome_f1_desc">Quick buttons +200ml, +350ml, +500ml.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-1">
+          <div class="feature-card__icon">🔥</div>
+          <h3 class="feature-card__title" data-i18n="hydrome_f2_title">Daily streak</h3>
+          <p class="feature-card__desc" data-i18n="hydrome_f2_desc">Hit your goal every day to keep your streak alive.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-2">
+          <div class="feature-card__icon">🔒</div>
+          <h3 class="feature-card__title" data-i18n="hydrome_f3_title">100% private</h3>
+          <p class="feature-card__desc" data-i18n="hydrome_f3_desc">All data stays on your device. No account needed.</p>
+        </div>
+        <div class="feature-card fade-up">
+          <div class="feature-card__icon">📊</div>
+          <h3 class="feature-card__title" data-i18n="hydrome_f4_title">30-day stats</h3>
+          <p class="feature-card__desc" data-i18n="hydrome_f4_desc">Trends, daily average, best day.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-1">
+          <div class="feature-card__icon">🍎</div>
+          <h3 class="feature-card__title" data-i18n="hydrome_f5_title">Apple Health</h3>
+          <p class="feature-card__desc" data-i18n="hydrome_f5_desc">Sync your hydration with HealthKit automatically.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-2">
+          <div class="feature-card__icon">🔔</div>
+          <h3 class="feature-card__title" data-i18n="hydrome_f6_title">Smart reminders</h3>
+          <p class="feature-card__desc" data-i18n="hydrome_f6_desc">Up to 5 reminders, intelligently spaced throughout the day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+
+
+  <!-- FAQ (SEO) -->
+  <section class="legal-strip">
+    <div class="container">
+      <div class="legal-strip__inner">
+        <div class="legal-strip__text">
+          <h3 data-i18n="rhythm_legal_title">Legal Documents</h3>
+          <p data-i18n="rhythm_legal_desc">Read our Privacy Policy and Terms of Service.</p>
+        </div>
+        <div class="legal-strip__links">
+          <a href="/hydrome/privacy.html" class="legal-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span data-i18n="privacy_link">Privacy Policy</span>
+          </a>
+          <a href="/hydrome/terms.html" class="legal-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            <span data-i18n="terms_link">Terms of Service</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <!-- faq:start -->
+      <div data-lang-block="en" lang="en">
+      <h2 class="section-title">Frequently asked questions</h2>
+      <div class="faq" style="max-width:760px;margin:2rem auto 0;">
+        <details class="faq-item" style="border-bottom:1px solid rgba(128,128,128,0.18);padding:1.15rem 0;">
+          <summary style="cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;">How do I log my water intake with HydroMe?</summary>
+          <p style="margin:.85rem 0 0;opacity:.82;line-height:1.65;">In one tap, with quick buttons +200ml, +350ml, +500ml. The progress ring fills up instantly.</p>
+        </details>
+        <details class="faq-item" style="border-bottom:1px solid rgba(128,128,128,0.18);padding:1.15rem 0;">
+          <summary style="cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;">Does HydroMe sync with Apple Health?</summary>
+          <p style="margin:.85rem 0 0;opacity:.82;line-height:1.65;">Yes, your intake syncs automatically with HealthKit every time you log.</p>
+        </details>
+        <details class="faq-item" style="border-bottom:1px solid rgba(128,128,128,0.18);padding:1.15rem 0;">
+          <summary style="cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;">Does HydroMe require an account?</summary>
+          <p style="margin:.85rem 0 0;opacity:.82;line-height:1.65;">No. No account, no cloud: all your data stays on your device.</p>
+        </details>
+      </div>
+      </div>
+      <!-- faq:end -->
+    </div>
+  </section>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I log my water intake with HydroMe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In one tap, with quick buttons +200ml, +350ml, +500ml. The progress ring fills up instantly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does HydroMe sync with Apple Health?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, your intake syncs automatically with HealthKit every time you log."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does HydroMe require an account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. No account, no cloud: all your data stays on your device."
+      }
+    }
+  ]
+}
+  </script>
+
+<!-- nav:start -->
+  <section class="app-crosslinks">
+    <div class="container">
+      <a class="app-crosslinks__guide" data-lang-block="en" href="/guides/en/water-reminder-app-no-account/">Compare HydroMe with alternatives →</a>
+      <h2 class="app-crosslinks__title" data-lang-block="en">More apps from the studio</h2>
+      <div class="app-crosslinks__list">
+        <a href="/en/rhythm/"><img src="/assets/rhythm/icon-192.png" alt="" loading="lazy">Rhythm</a>
+        <a href="/en/nova/"><img src="/assets/nova/icon-192.png" alt="" loading="lazy">Nova</a>
+        <a href="/en/runfree/"><img src="/assets/runfree/icon-192.png" alt="" loading="lazy">RunFree</a>
+        <a href="/en/myfoodbook/"><img src="/assets/myfoodbook/icon-192.png" alt="" loading="lazy">MyFoodBook</a>
+        <a href="/en/stockwatch/"><img src="/assets/stockwatch/icon-192.png" alt="" loading="lazy">StockWatch</a>
+        <a href="/en/enjoymeal/"><img src="/assets/enjoymeal/icon-192.png" alt="" loading="lazy">EnjoyMeal</a>
+        <a href="/en/chapter/"><img src="/assets/chapter/icon-192.png" alt="" loading="lazy">Chapter</a>
+        <a href="/en/mantrame/"><img src="/assets/mantrame/icon-192.png" alt="" loading="lazy">MantraMe</a>
+        <a href="/en/lunarest/"><img src="/assets/lunarest/icon-192.png" alt="" loading="lazy">LunaRest</a>
+        <a href="/en/inhale/"><img src="/assets/inhale/icon-192.png" alt="" loading="lazy">Inhale</a>
+        <a href="/en/budgetbrief/"><img src="/assets/budgetbrief/icon-192.png" alt="" loading="lazy">MyBudgetBrief</a>
+      </div>
+    </div>
+  </section>
+  <!-- nav:end -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="//"><span class="logo-text">myideapp</span></a>
+          <p data-i18n="footer_tagline">Elegant mobile apps that respect your privacy.</p>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_apps">Apps</h4>
+          <a href="/en/rhythm/">Rhythm</a>
+          <a href="/en/lunarest/">LunaRest</a>
+          <a href="/en/enjoymeal/">EnjoyMeal</a>
+          <a href="/en/inhale/">Inhale</a>
+          <a href="/en/runfree/">RunFree</a>
+          <a href="/en/nova/">Nova</a>
+          <a href="/en/mantrame/">MantraMe</a>
+          <a href="/en/budgetbrief/">MyBudgetBrief</a>
+          <a href="/en/hydrome/">HydroMe</a>
+          <a href="/en/chapter/">Chapter</a>
+          <a href="/en/stockwatch/">StockWatch</a>
+          <a href="/en/myfoodbook/">MyFoodBook</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_legal">Legal</h4>
+          <a href="/hydrome/privacy.html" data-i18n="privacy_link">Privacy Policy</a>
+          <a href="/hydrome/terms.html" data-i18n="terms_link">Terms of Service</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_contact">Contact</h4>
+          <a href="mailto:contact.myideapp@icloud.com">contact.myideapp@icloud.com</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>HydroMe · <span data-i18n="footer_rights">© 2026 MyIdeApp. All rights reserved.</span></p>
+        <div class="footer__bottom-links">
+          <a href="/hydrome/privacy.html" data-i18n="privacy_link">Privacy Policy</a>
+          <a href="/hydrome/terms.html" data-i18n="terms_link">Terms of Service</a>
+          <a href="//">Studio</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/i18n.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

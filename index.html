@@ -16,25 +16,45 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "name": "MyIdeApp",
-        "url": "https://myideapp.com/",
-        "logo": "https://myideapp.com/assets/favicon.svg",
-        "email": "contact.myideapp@icloud.com",
-        "description": "Studio indépendant créant des applications iOS élégantes et privacy-first."
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "MyIdeApp",
+      "url": "https://myideapp.com/",
+      "logo": "https://myideapp.com/assets/logo-512.png",
+      "email": "contact.myideapp@icloud.com",
+      "description": "Studio indépendant français qui publie 12 apps iPhone simples : données sur ton téléphone, sans compte obligatoire.",
+      "@id": "https://myideapp.com/#organization",
+      "foundingLocation": {
+        "@type": "Country",
+        "name": "France"
       },
-      {
-        "@type": "WebSite",
-        "name": "MyIdeApp",
-        "url": "https://myideapp.com/",
-        "inLanguage": "fr"
+      "founder": {
+        "@type": "Person",
+        "name": "Lucas Obadia",
+        "jobTitle": "Independent iOS developer"
+      },
+      "sameAs": [
+        "https://apps.apple.com/developer/lucas-obadia/id1447668792"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "name": "MyIdeApp",
+      "url": "https://myideapp.com/",
+      "inLanguage": [
+        "fr",
+        "en",
+        "es"
+      ],
+      "publisher": {
+        "@id": "https://myideapp.com/#organization"
       }
-    ]
-  }
+    }
+  ]
+}
   </script>
 </head>
 <body data-theme="studio">
@@ -47,6 +67,7 @@
     <div class="navbar__nav">
       <a href="#apps" data-i18n="nav_apps">Apps</a>
       <a href="guides/" data-i18n="nav_guides">Guides</a>
+      <a href="a-propos/" data-i18n="nav_about" data-i18n-href="nav_about_href">À propos</a>
       <a href="contact.html" data-i18n="nav_contact">Contact</a>
     </div>
     <div class="navbar__right">
@@ -64,25 +85,26 @@
   <!-- Menu burger -->
   <div class="mobile-nav">
     <p class="mobile-nav__group" data-i18n="cat_health">Santé</p>
-    <a href="rhythm/">Rhythm</a>
-    <a href="hydrome/">HydroMe</a>
-    <a href="nova/">Nova</a>
+    <a href="rhythm/" data-app-link="rhythm">Rhythm</a>
+    <a href="hydrome/" data-app-link="hydrome">HydroMe</a>
+    <a href="nova/" data-app-link="nova">Nova</a>
     <p class="mobile-nav__group" data-i18n="cat_sport">Sport</p>
-    <a href="runfree/">RunFree</a>
+    <a href="runfree/" data-app-link="runfree">RunFree</a>
     <p class="mobile-nav__group" data-i18n="cat_food">Cuisine & nutrition</p>
-    <a href="myfoodbook/">MyFoodBook</a>
-    <a href="enjoymeal/">EnjoyMeal</a>
+    <a href="myfoodbook/" data-app-link="myfoodbook">MyFoodBook</a>
+    <a href="enjoymeal/" data-app-link="enjoymeal">EnjoyMeal</a>
     <p class="mobile-nav__group" data-i18n="cat_finance">Finances</p>
-    <a href="stockwatch/">StockWatch</a>
-    <a href="budgetbrief/">MyBudgetBrief</a>
+    <a href="stockwatch/" data-app-link="stockwatch">StockWatch</a>
+    <a href="budgetbrief/" data-app-link="budgetbrief">MyBudgetBrief</a>
     <p class="mobile-nav__group" data-i18n="cat_wellbeing">Bien-être & sommeil</p>
-    <a href="mantrame/">MantraMe</a>
-    <a href="lunarest/">LunaRest</a>
-    <a href="inhale/">Inhale</a>
+    <a href="mantrame/" data-app-link="mantrame">MantraMe</a>
+    <a href="lunarest/" data-app-link="lunarest">LunaRest</a>
+    <a href="inhale/" data-app-link="inhale">Inhale</a>
     <p class="mobile-nav__group" data-i18n="cat_relationships">Relations</p>
-    <a href="chapter/">Chapter</a>
+    <a href="chapter/" data-app-link="chapter">Chapter</a>
     <p class="mobile-nav__group" data-i18n="nav_more">Plus</p>
     <a href="guides/" data-i18n="nav_guides">Guides</a>
+    <a href="a-propos/" data-i18n="nav_about" data-i18n-href="nav_about_href">À propos</a>
     <a href="contact.html" data-i18n="studio_contact_title">Nous contacter</a>
     <div class="lang-switcher" style="margin-top:1.5rem">
       <button class="lang-btn" data-lang-btn="fr">FR</button>
@@ -132,18 +154,18 @@
           <ul class="hero2__proofs"><li>Sin cuenta obligatoria</li><li>Datos en tu iPhone</li><li>Descarga gratuita</li><li>9 idiomas</li></ul>
         </div>
         <nav class="hero-apps" aria-label="Apps">
-          <a class="hero-apps__item" href="rhythm/" title="Rhythm"><img src="assets/rhythm/icon-192.png" alt="Rhythm" width="56" height="56"><span>Rhythm</span></a>
-          <a class="hero-apps__item" href="runfree/" title="RunFree"><img src="assets/runfree/icon-192.png" alt="RunFree" width="56" height="56"><span>RunFree</span></a>
-          <a class="hero-apps__item" href="myfoodbook/" title="MyFoodBook"><img src="assets/myfoodbook/icon-192.png" alt="MyFoodBook" width="56" height="56"><span>MyFoodBook</span></a>
-          <a class="hero-apps__item" href="hydrome/" title="HydroMe"><img src="assets/hydrome/icon-192.png" alt="HydroMe" width="56" height="56"><span>HydroMe</span></a>
-          <a class="hero-apps__item" href="stockwatch/" title="StockWatch"><img src="assets/stockwatch/icon-192.png" alt="StockWatch" width="56" height="56"><span>StockWatch</span></a>
-          <a class="hero-apps__item" href="enjoymeal/" title="EnjoyMeal"><img src="assets/enjoymeal/icon-192.png" alt="EnjoyMeal" width="56" height="56"><span>EnjoyMeal</span></a>
-          <a class="hero-apps__item" href="chapter/" title="Chapter"><img src="assets/chapter/icon-192.png" alt="Chapter" width="56" height="56"><span>Chapter</span></a>
-          <a class="hero-apps__item" href="nova/" title="Nova"><img src="assets/nova/icon-192.png" alt="Nova" width="56" height="56"><span>Nova</span></a>
-          <a class="hero-apps__item" href="mantrame/" title="MantraMe"><img src="assets/mantrame/icon-192.png" alt="MantraMe" width="56" height="56"><span>MantraMe</span></a>
-          <a class="hero-apps__item" href="lunarest/" title="LunaRest"><img src="assets/lunarest/icon-192.png" alt="LunaRest" width="56" height="56"><span>LunaRest</span></a>
-          <a class="hero-apps__item" href="inhale/" title="Inhale"><img src="assets/inhale/icon-192.png" alt="Inhale" width="56" height="56"><span>Inhale</span></a>
-          <a class="hero-apps__item" href="budgetbrief/" title="MyBudgetBrief"><img src="assets/budgetbrief/icon-192.png" alt="MyBudgetBrief" width="56" height="56"><span>MyBudgetBrief</span></a>
+          <a class="hero-apps__item" href="rhythm/" data-app-link="rhythm" title="Rhythm"><img src="assets/rhythm/icon-192.png" alt="Rhythm" width="56" height="56"><span>Rhythm</span></a>
+          <a class="hero-apps__item" href="runfree/" data-app-link="runfree" title="RunFree"><img src="assets/runfree/icon-192.png" alt="RunFree" width="56" height="56"><span>RunFree</span></a>
+          <a class="hero-apps__item" href="myfoodbook/" data-app-link="myfoodbook" title="MyFoodBook"><img src="assets/myfoodbook/icon-192.png" alt="MyFoodBook" width="56" height="56"><span>MyFoodBook</span></a>
+          <a class="hero-apps__item" href="hydrome/" data-app-link="hydrome" title="HydroMe"><img src="assets/hydrome/icon-192.png" alt="HydroMe" width="56" height="56"><span>HydroMe</span></a>
+          <a class="hero-apps__item" href="stockwatch/" data-app-link="stockwatch" title="StockWatch"><img src="assets/stockwatch/icon-192.png" alt="StockWatch" width="56" height="56"><span>StockWatch</span></a>
+          <a class="hero-apps__item" href="enjoymeal/" data-app-link="enjoymeal" title="EnjoyMeal"><img src="assets/enjoymeal/icon-192.png" alt="EnjoyMeal" width="56" height="56"><span>EnjoyMeal</span></a>
+          <a class="hero-apps__item" href="chapter/" data-app-link="chapter" title="Chapter"><img src="assets/chapter/icon-192.png" alt="Chapter" width="56" height="56"><span>Chapter</span></a>
+          <a class="hero-apps__item" href="nova/" data-app-link="nova" title="Nova"><img src="assets/nova/icon-192.png" alt="Nova" width="56" height="56"><span>Nova</span></a>
+          <a class="hero-apps__item" href="mantrame/" data-app-link="mantrame" title="MantraMe"><img src="assets/mantrame/icon-192.png" alt="MantraMe" width="56" height="56"><span>MantraMe</span></a>
+          <a class="hero-apps__item" href="lunarest/" data-app-link="lunarest" title="LunaRest"><img src="assets/lunarest/icon-192.png" alt="LunaRest" width="56" height="56"><span>LunaRest</span></a>
+          <a class="hero-apps__item" href="inhale/" data-app-link="inhale" title="Inhale"><img src="assets/inhale/icon-192.png" alt="Inhale" width="56" height="56"><span>Inhale</span></a>
+          <a class="hero-apps__item" href="budgetbrief/" data-app-link="budgetbrief" title="MyBudgetBrief"><img src="assets/budgetbrief/icon-192.png" alt="MyBudgetBrief" width="56" height="56"><span>MyBudgetBrief</span></a>
         </nav>
     </div>
   </section>
@@ -166,7 +188,7 @@
       <div class="apps-carousel">
 
         <!-- StockWatch -->
-        <a href="stockwatch/" data-category="finance" class="app-card app-card--stockwatch fade-up fade-up-delay-3">
+        <a href="stockwatch/" data-app-link="stockwatch" data-category="finance" class="app-card app-card--stockwatch fade-up fade-up-delay-3">
           <div class="app-card__content">
             <img src="assets/stockwatch/icon-192.png" alt="StockWatch App Icon" class="app-card__icon">
             <div class="app-card__chip" data-i18n="stockwatch_chip">Finance & Investissement</div>
@@ -185,7 +207,7 @@
         </a>
 
         <!-- Rhythm -->
-        <a href="rhythm/" data-category="health" class="app-card app-card--rhythm fade-up fade-up-delay-2">
+        <a href="rhythm/" data-app-link="rhythm" data-category="health" class="app-card app-card--rhythm fade-up fade-up-delay-2">
           <div class="app-card__content">
             <img src="assets/rhythm/icon-192.png" alt="Rhythm App Icon" class="app-card__icon">
             <div class="app-card__chip" data-i18n="rhythm_chip">Santé & Bien-être</div>
@@ -206,7 +228,7 @@
         </a>
 
         <!-- RunFree -->
-        <a href="runfree/" data-category="sport" class="app-card app-card--runfree fade-up fade-up-delay-3">
+        <a href="runfree/" data-app-link="runfree" data-category="sport" class="app-card app-card--runfree fade-up fade-up-delay-3">
           <div class="app-card__content">
             <img src="assets/runfree/icon-192.png" alt="RunFree App Icon" class="app-card__icon">
             <div class="app-card__chip" data-i18n="runfree_chip">Sport & Running</div>
@@ -227,7 +249,7 @@
         </a>
 
         <!-- HydroMe -->
-        <a href="hydrome/" data-category="health" class="app-card app-card--hydrome fade-up fade-up-delay-2">
+        <a href="hydrome/" data-app-link="hydrome" data-category="health" class="app-card app-card--hydrome fade-up fade-up-delay-2">
           <div class="app-card__content">
             <img src="assets/hydrome/icon-192.png" alt="HydroMe App Icon" class="app-card__icon">
             <div class="app-card__chip" data-i18n="hydrome_chip">Santé & Hydratation</div>
@@ -248,7 +270,7 @@
         </a>
 
         <!-- EnjoyMeal -->
-        <a href="enjoymeal/" data-category="food" class="app-card app-card--enjoymeal fade-up fade-up-delay-2">
+        <a href="enjoymeal/" data-app-link="enjoymeal" data-category="food" class="app-card app-card--enjoymeal fade-up fade-up-delay-2">
           <div class="app-card__content">
             <img src="assets/enjoymeal/icon-192.png" alt="EnjoyMeal App Icon" class="app-card__icon">
             <div class="app-card__chip" data-i18n="enjoymeal_chip">Nutrition & Bien-être</div>
@@ -269,7 +291,7 @@
         </a>
 
         <!-- MyFoodBook -->
-        <a href="myfoodbook/" data-category="food" class="app-card app-card--myfoodbook fade-up fade-up-delay-2">
+        <a href="myfoodbook/" data-app-link="myfoodbook" data-category="food" class="app-card app-card--myfoodbook fade-up fade-up-delay-2">
           <div class="app-card__content">
             <img src="assets/myfoodbook/icon-192.png" alt="MyFoodBook App Icon" class="app-card__icon">
             <div class="app-card__chip" data-i18n="myfoodbook_chip">Cuisine & Lifestyle</div>
@@ -288,7 +310,7 @@
         </a>
 
         <!-- Chapter -->
-        <a href="chapter/" data-category="relationships" class="app-card app-card--chapter fade-up fade-up-delay-2">
+        <a href="chapter/" data-app-link="chapter" data-category="relationships" class="app-card app-card--chapter fade-up fade-up-delay-2">
           <div class="app-card__content">
             <img src="assets/chapter/icon-192.png" alt="Chapter App Icon" class="app-card__icon">
             <div class="app-card__chip" data-i18n="chapter_chip">Journal & Dating</div>
@@ -309,7 +331,7 @@
         </a>
 
         <!-- Nova -->
-        <a href="nova/" data-category="health" class="app-card app-card--nova fade-up fade-up-delay-2">
+        <a href="nova/" data-app-link="nova" data-category="health" class="app-card app-card--nova fade-up fade-up-delay-2">
           <div class="app-card__content">
             <img src="assets/nova/icon-192.png" alt="Nova App Icon" class="app-card__icon">
             <div class="app-card__chip" data-i18n="nova_chip">Santé sexuelle</div>
@@ -330,7 +352,7 @@
         </a>
 
         <!-- LunaRest -->
-        <a href="lunarest/" data-category="wellbeing" class="app-card app-card--lunarest fade-up fade-up-delay-3">
+        <a href="lunarest/" data-app-link="lunarest" data-category="wellbeing" class="app-card app-card--lunarest fade-up fade-up-delay-3">
           <div class="app-card__content">
             <img src="assets/lunarest/icon-192.png" alt="LunaRest App Icon" class="app-card__icon">
             <div class="app-card__chip" data-i18n="lunarest_chip">Sommeil & Bien-être</div>
@@ -351,7 +373,7 @@
         </a>
 
         <!-- Inhale -->
-        <a href="inhale/" data-category="wellbeing" class="app-card app-card--inhale fade-up fade-up-delay-3">
+        <a href="inhale/" data-app-link="inhale" data-category="wellbeing" class="app-card app-card--inhale fade-up fade-up-delay-3">
           <div class="app-card__content">
             <img src="assets/inhale/icon-192.png" alt="Inhale App Icon" class="app-card__icon">
             <div class="app-card__chip" data-i18n="inhale_chip">Respiration & Bien-être</div>
@@ -372,7 +394,7 @@
         </a>
 
         <!-- MantraMe -->
-        <a href="mantrame/" data-category="wellbeing" class="app-card app-card--mantrame fade-up fade-up-delay-3">
+        <a href="mantrame/" data-app-link="mantrame" data-category="wellbeing" class="app-card app-card--mantrame fade-up fade-up-delay-3">
           <div class="app-card__content">
             <img src="assets/mantrame/icon-192.png" alt="MantraMe App Icon" class="app-card__icon">
             <div class="app-card__chip" data-i18n="mantrame_chip">Bien-être & Pleine conscience</div>
@@ -393,7 +415,7 @@
         </a>
 
         <!-- MyBudgetBrief -->
-        <a href="budgetbrief/" data-category="finance" class="app-card app-card--budgetbrief fade-up fade-up-delay-3">
+        <a href="budgetbrief/" data-app-link="budgetbrief" data-category="finance" class="app-card app-card--budgetbrief fade-up fade-up-delay-3">
           <div class="app-card__content">
             <img src="assets/budgetbrief/icon-192.png" alt="MyBudgetBrief App Icon" class="app-card__icon">
             <div class="app-card__chip" data-i18n="budgetbrief_chip">Finance & Budget</div>
@@ -512,24 +534,24 @@
         </div>
         <div class="footer__col">
           <h4 data-i18n="footer_apps">Applications</h4>
-          <a href="rhythm/">Rhythm</a>
-          <a href="enjoymeal/">EnjoyMeal</a>
-          <a href="inhale/">Inhale</a>
-          <a href="nova/">Nova</a>
-          <a href="lunarest/">LunaRest</a>
-          <a href="runfree/">RunFree</a>
-          <a href="hydrome/">HydroMe</a>
-          <a href="chapter/">Chapter</a>
-          <a href="budgetbrief/">MyBudgetBrief</a>
-          <a href="mantrame/">MantraMe</a>
-          <a href="stockwatch/">StockWatch</a>
-          <a href="myfoodbook/">MyFoodBook</a>
+          <a href="rhythm/" data-app-link="rhythm">Rhythm</a>
+          <a href="enjoymeal/" data-app-link="enjoymeal">EnjoyMeal</a>
+          <a href="inhale/" data-app-link="inhale">Inhale</a>
+          <a href="nova/" data-app-link="nova">Nova</a>
+          <a href="lunarest/" data-app-link="lunarest">LunaRest</a>
+          <a href="runfree/" data-app-link="runfree">RunFree</a>
+          <a href="hydrome/" data-app-link="hydrome">HydroMe</a>
+          <a href="chapter/" data-app-link="chapter">Chapter</a>
+          <a href="budgetbrief/" data-app-link="budgetbrief">MyBudgetBrief</a>
+          <a href="mantrame/" data-app-link="mantrame">MantraMe</a>
+          <a href="stockwatch/" data-app-link="stockwatch">StockWatch</a>
+          <a href="myfoodbook/" data-app-link="myfoodbook">MyFoodBook</a>
         </div>
 <!-- home:footer-col:start -->
         <div class="footer__col footer__col--res">
-          <div data-lang-block="fr" lang="fr"><h4>Ressources</h4><a href="guides/">Guides comparatifs</a><a href="contact.html">Contact &amp; support</a><a href="suppression-compte.html">Supprimer mon compte</a><a href="mentions-legales.html">Mentions légales</a></div>
-          <div data-lang-block="en" lang="en"><h4>Resources</h4><a href="guides/">Comparison guides</a><a href="contact.html">Contact &amp; support</a><a href="suppression-compte.html">Delete my account</a><a href="mentions-legales.html">Legal notice</a></div>
-          <div data-lang-block="es" lang="es"><h4>Recursos</h4><a href="guides/">Guías comparativas</a><a href="contact.html">Contacto y soporte</a><a href="suppression-compte.html">Eliminar mi cuenta</a><a href="mentions-legales.html">Aviso legal</a></div>
+          <div data-lang-block="fr" lang="fr"><h4>Ressources</h4><a href="guides/">Guides comparatifs</a><a href="a-propos/">À propos du studio</a><a href="contact.html">Contact &amp; support</a><a href="suppression-compte.html">Supprimer mon compte</a><a href="mentions-legales.html">Mentions légales</a></div>
+          <div data-lang-block="en" lang="en"><h4>Resources</h4><a href="guides/">Comparison guides</a><a href="en/about/">About the studio</a><a href="contact.html">Contact &amp; support</a><a href="suppression-compte.html">Delete my account</a><a href="mentions-legales.html">Legal notice</a></div>
+          <div data-lang-block="es" lang="es"><h4>Recursos</h4><a href="guides/">Guías comparativas</a><a href="es/acerca-de/">Sobre el estudio</a><a href="contact.html">Contacto y soporte</a><a href="suppression-compte.html">Eliminar mi cuenta</a><a href="mentions-legales.html">Aviso legal</a></div>
         </div>
   <!-- home:footer-col:end -->
         <div class="footer__col">

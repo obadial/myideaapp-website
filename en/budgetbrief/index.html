@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en" data-lang-static data-theme="budgetbrief">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-itunes-app" content="app-id=6775309029">
+  <title>MyBudgetBrief — Privacy-first expense tracker | MyIdeApp</title>
+  <meta name="description" data-i18n-content="meta_budgetbrief_desc" content="MyBudgetBrief: log expenses in seconds, set a budget per category and watch your progress. No bank account required.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="MyBudgetBrief — Privacy-first expense tracker | MyIdeApp">
+  <meta property="og:description" data-i18n-content="meta_budgetbrief_desc" content="MyBudgetBrief: log expenses in seconds, set a budget per category and watch your progress. No bank account required.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://myideapp.com/en/budgetbrief/">
+  <meta property="og:image" content="https://myideapp.com/assets/og/budgetbrief-en.jpg">
+  <link rel="canonical" href="https://myideapp.com/en/budgetbrief/">
+  <!-- lang:head:start -->
+  <link rel="alternate" hreflang="fr" href="https://myideapp.com/budgetbrief/">
+  <link rel="alternate" hreflang="en" href="https://myideapp.com/en/budgetbrief/">
+  <link rel="alternate" hreflang="es" href="https://myideapp.com/es/budgetbrief/">
+  <link rel="alternate" hreflang="x-default" href="https://myideapp.com/en/budgetbrief/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- lang:head:end -->
+  <link rel="stylesheet" href="/css/fonts.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <style>
+    /* ─── MyBudgetBrief theme ────────────────────────────────── */
+    [data-theme="budgetbrief"] {
+      --bg: #071422;
+      --bg2: #0D1E35;
+      --surface: #0D1E35;
+      --surface2: #132840;
+      --border: rgba(33,150,243,0.15);
+      --text: #E8F4FD;
+      --text2: #90B8D8;
+      --text3: #506880;
+      --primary: #2196F3;
+      --primary-dark: #1565C0;
+      --secondary: #42A5F5;
+      --accent: #2196F3;
+      --accent-light: rgba(33,150,243,0.15);
+      --hero-grad: linear-gradient(135deg, #071422 0%, #0D1E35 50%, #071422 100%);
+    }
+
+    .store-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 24px;
+      background: #2196F3;
+      color: #fff;
+      border-radius: 12px;
+      font-size: 0.9375rem; font-weight: 700;
+      text-decoration: none;
+      transition: all 0.22s;
+      box-shadow: 0 4px 20px rgba(33,150,243,0.4);
+      width: fit-content;
+      align-self: flex-start;
+    }
+    .store-badge:hover { background: #1565C0; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(33,150,243,0.5); }
+    .store-badge svg { width: 20px; height: 20px; }
+
+    .feature-chips {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .feature-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 14px;
+      border-radius: 100px;
+      font-size: 0.8125rem; font-weight: 600;
+      background: rgba(33,150,243,0.1);
+      border: 1px solid rgba(33,150,243,0.2);
+      color: #90B8D8;
+    }
+
+    .stats-row {
+      display: flex; gap: 2rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(33,150,243,0.12);
+      border-bottom: 1px solid rgba(33,150,243,0.12);
+      margin: 1.5rem 0;
+    }
+    .stat { text-align: center; }
+    .stat__value { font-size: 1.75rem; font-weight: 900; color: #2196F3; letter-spacing: -0.03em; }
+    .stat__label { font-size: 0.8125rem; color: #90B8D8; margin-top: 2px; }
+
+    /* Budget visual */
+    .budget-visual {
+      position: relative;
+      width: 280px; height: 280px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .budget-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(33,150,243,0.12);
+      animation: pulse-ring-bb 5s ease-in-out infinite;
+    }
+    .budget-ring--1 { width: 200px; height: 200px; animation-delay: 0s; }
+    .budget-ring--2 { width: 240px; height: 240px; animation-delay: 0.6s; }
+    .budget-ring--3 { width: 275px; height: 275px; animation-delay: 1.2s; }
+    @keyframes pulse-ring-bb {
+      0%, 100% { opacity: 0.25; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.03); }
+    }
+    .budget-circle {
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #0D1E35 0%, #2196F3 100%);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 60px rgba(33,150,243,0.35);
+      animation: glow-bb 5s ease-in-out infinite;
+    }
+    @keyframes glow-bb {
+      0%, 100% { box-shadow: 0 0 40px rgba(33,150,243,0.25); }
+      50% { box-shadow: 0 0 80px rgba(33,150,243,0.55); }
+    }
+    .budget-circle__inner {
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .budget-icon {
+      width: 68px; height: 68px;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+    .instagram-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 24px;
+      background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+      color: #fff;
+      border-radius: 12px;
+      font-size: 0.9375rem; font-weight: 700;
+      text-decoration: none;
+      transition: all 0.22s;
+    }
+    .instagram-badge:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(221,42,123,0.35); filter: brightness(1.05); }
+    .instagram-badge svg { width: 20px; height: 20px; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "MyBudgetBrief",
+  "operatingSystem": "iOS",
+  "applicationCategory": "FinanceApplication",
+  "description": "MyBudgetBrief: log expenses in seconds, set a budget per category and watch your progress. No bank account required.",
+  "url": "https://myideapp.com/en/budgetbrief/",
+  "offers": [
+    {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    {
+      "@type": "Offer",
+      "name": "Premium monthly",
+      "price": "3.99",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "3.99",
+        "priceCurrency": "USD",
+        "unitCode": "MON"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Premium annual",
+      "price": "17.99",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "17.99",
+        "priceCurrency": "USD",
+        "unitCode": "ANN"
+      }
+    }
+  ],
+  "downloadUrl": "https://apps.apple.com/app/mybudgetbrief/id6775309029",
+  "publisher": {
+    "@type": "Organization",
+    "name": "MyIdeApp",
+    "url": "https://myideapp.com/"
+  },
+  "alternateName": "MyBudgetBrief - Budget",
+  "inLanguage": [
+    "en",
+    "fr",
+    "de",
+    "es",
+    "it",
+    "pt",
+    "hi",
+    "ar"
+  ],
+  "featureList": [
+    "Smart budget dashboard",
+    "Fast expense logging",
+    "Monthly statistics",
+    "100% private",
+    "Unlimited history (free",
+    "PDF export for any month",
+    "Recurring expenses tracking",
+    "12-month statistics & trends",
+    "Ad-free experience"
+  ],
+  "sameAs": [
+    "https://apps.apple.com/app/mybudgetbrief/id6775309029",
+    "https://www.instagram.com/mybudgetbrief.app/"
+  ]
+}
+  </script>
+  <script type="application/ld+json" data-nav>
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "MyIdeApp",
+      "item": "https://myideapp.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Finance",
+      "item": "https://myideapp.com/#apps"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "MyBudgetBrief",
+      "item": "https://myideapp.com/en/budgetbrief/"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-theme="budgetbrief">
+
+  <!-- ─── Navbar ─────────────────────────────────────────── -->
+  <nav class="navbar">
+    <div class="navbar__left">
+      <a href="//" class="navbar__back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        <span data-i18n="back_to_studio">Studio</span>
+      </a>
+      <div class="navbar__logo">
+        <span class="logo-text">MyBudgetBrief</span>
+      </div>
+    </div>
+    <div class="navbar__nav">
+      <a href="#overview" class="active" data-i18n="nav_overview">Overview</a>
+      <a href="/budgetbrief/privacy.html" data-i18n="nav_privacy">Privacy</a>
+      <a href="/budgetbrief/terms.html" data-i18n="nav_terms">Terms</a>
+    </div>
+    <div class="navbar__right">
+      <div class="lang-switcher">
+        <a class="lang-btn" data-lang-btn="fr" href="/budgetbrief/" hreflang="fr" lang="fr">FR</a>
+        <a class="lang-btn active" data-lang-btn="en" href="/en/budgetbrief/" hreflang="en" lang="en">EN</a>
+        <a class="lang-btn" data-lang-btn="es" href="/es/budgetbrief/" hreflang="es" lang="es">ES</a>
+      </div>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <a href="//" data-i18n="back_to_studio">Studio</a>
+    <a href="#overview" data-i18n="nav_overview">Overview</a>
+    <a href="/budgetbrief/privacy.html" data-i18n="nav_privacy">Privacy</a>
+    <a href="/budgetbrief/terms.html" data-i18n="nav_terms">Terms</a>
+    <div class="lang-switcher" style="margin-top:1.5rem">
+      <a class="lang-btn" data-lang-btn="fr" href="/budgetbrief/" hreflang="fr" lang="fr">FR</a>
+      <a class="lang-btn active" data-lang-btn="en" href="/en/budgetbrief/" hreflang="en" lang="en">EN</a>
+      <a class="lang-btn" data-lang-btn="es" href="/es/budgetbrief/" hreflang="es" lang="es">ES</a>
+    </div>
+  </div>
+
+  <!-- ─── Hero ───────────────────────────────────────────── -->
+  <section id="overview" class="app-hero">
+    <div class="app-hero__orb"></div>
+    <div class="container">
+      <div class="app-hero__inner">
+        <div class="app-hero__info">
+          <div class="app-hero__icon-wrap">
+            <img src="/assets/budgetbrief/icon-192.png" alt="MyBudgetBrief icon" style="width:40px;height:40px;border-radius:10px;object-fit:cover;">
+            <span class="app-hero__app-name">MyBudgetBrief</span>
+          </div>
+          <h1 class="app-hero__tagline" data-i18n="budgetbrief_tagline">Your finances. Your device. Always.</h1>
+          <p class="app-hero__subtitle" data-i18n="budgetbrief_subtitle">Privacy-first expense tracker</p>
+          <p class="app-hero__description" data-i18n="budgetbrief_description">Log expenses in seconds, set budgets by category and track your progress. All your financial data stays on your device — always.</p>
+
+          <div class="feature-chips">
+            <span class="feature-chip">💸 <span data-i18n="budgetbrief_hchip1">Quick log</span></span>
+            <span class="feature-chip">🔒 <span data-i18n="budgetbrief_hchip2">100% offline</span></span>
+            <span class="feature-chip">📊 <span data-i18n="budgetbrief_hchip3">Statistics</span></span>
+            <span class="feature-chip">🗂️ <span data-i18n="budgetbrief_hchip4">Budgets by category</span></span>
+            <span class="feature-chip">🔁 <span data-i18n="budgetbrief_hchip5">Recurring expenses</span></span>
+            <span class="feature-chip">📄 <span data-i18n="budgetbrief_hchip6">PDF export</span></span>
+          </div>
+
+          <div class="stats-row">
+            <div class="stat">
+              <div class="stat__value">0</div>
+              <div class="stat__label" data-i18n="budgetbrief_stat_cloud">Cloud data</div>
+            </div>
+            <div class="stat">
+              <div class="stat__value">16+</div>
+              <div class="stat__label" data-i18n="budgetbrief_stat_age">Minimum age</div>
+            </div>
+            <div class="stat">
+              <div class="stat__value">iOS</div>
+              <div class="stat__label" data-i18n="budgetbrief_stat_platform">iPhone &amp; iPad</div>
+            </div>
+          </div>
+
+          <div class="app-hero__actions">
+            <a href="https://apps.apple.com/app/mybudgetbrief/id6775309029" class="store-badge" target="_blank" rel="noopener" aria-label="Download MyBudgetBrief on App Store">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+              </svg>
+              <span data-i18n="download_ios">Download on the App Store</span>
+            </a>
+            <a href="https://www.instagram.com/mybudgetbrief.app/" class="instagram-badge" target="_blank" rel="noopener" aria-label="Follow MyBudgetBrief on Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+              <span data-i18n="follow_instagram">Follow on Instagram</span>
+            </a>
+            <span class="playstore-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M3.6 1.85a1.5 1.5 0 0 0-.5 1.13v18.04c0 .45.19.86.5 1.13l10-10.15-10-10.15Zm11.06 11.22 2.7 2.74-9.9 5.62 7.2-8.36Zm0-1.85-7.2-8.36 9.9 5.62-2.7 2.74Zm1.4 1.36 3.06-1.74c.83-.47.83-1.68 0-2.15l-3.06-1.74-3.34 3.4 3.34 3.4-.01-1.17Z"/>
+              </svg>
+              <span data-i18n="playstore_soon">Coming soon on Google Play</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Budget visual -->
+        <div class="app-hero__screenshots">
+          <div class="phone-frame"><div class="phone-frame__outer"><div class="phone-frame__screen"><img src="/assets/budgetbrief/screenshots/en-US/1.png" data-i18n-shot alt="BudgetBrief screenshot" loading="lazy"></div></div></div>
+          <div class="phone-frame"><div class="phone-frame__outer"><div class="phone-frame__screen"><img src="/assets/budgetbrief/screenshots/en-US/2.png" data-i18n-shot alt="BudgetBrief screenshot" loading="lazy"></div></div></div>
+          <div class="phone-frame"><div class="phone-frame__outer"><div class="phone-frame__screen"><img src="/assets/budgetbrief/screenshots/en-US/3.png" data-i18n-shot alt="BudgetBrief screenshot" loading="lazy"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- facts:start -->
+  <section class="section facts-section" id="en-bref">
+    <div class="container">
+      <div class="facts" data-lang-block="en" lang="en">
+        <h2 class="facts__title">MyBudgetBrief at a glance</h2>
+        <dl class="facts__list">
+          <dt>Price</dt><dd>Free to download. Optional Premium: $3.99/month or $17.99/year (France: €3.99/month or €19.99/year).</dd>
+          <dt>Free features</dt><dd>Expenses in under 5 seconds, budgets by category (8 categories), monthly stats, last 3 months of history</dd>
+          <dt>Premium adds</dt><dd>Unlimited history, PDF export, recurring expenses, 12-month stats, no ads</dd>
+          <dt>Data</dt><dd>Stored only on your device. No account required, data never sold.</dd>
+          <dt>Ads</dt><dd>Occasional full-screen ads in the free version, none with Premium.</dd>
+          <dt>Languages</dt><dd>9: English, French, German, Spanish, Italian, Portuguese (PT and BR), Hindi, Arabic</dd>
+          <dt>Platforms</dt><dd>iPhone (iOS 16.0+). Android: coming soon.</dd>
+        </dl>
+        <p class="facts__note">No bank connection.</p>
+        <p class="facts__date">Information checked on October 11, 2026.</p>
+      </div>
+    </div>
+  </section>
+  <!-- facts:end -->
+
+  <!-- ─── Features ───────────────────────────────────────── -->
+
+
+
+  <section class="features-section section">
+    <div class="container">
+      <h2 class="section-title fade-up" data-i18n="budgetbrief_feat_title">Features</h2>
+      <div class="features-grid">
+        <div class="feature-card fade-up fade-up-delay-1">
+          <div class="feature-card__icon">💸</div>
+          <h3 class="feature-card__title" data-i18n="budgetbrief_feat1_title">Log in 3 seconds</h3>
+          <p class="feature-card__desc" data-i18n="budgetbrief_feat1_desc">Add an expense instantly: amount, category, note. Zero friction, no account required.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-2">
+          <div class="feature-card__icon">🗂️</div>
+          <h3 class="feature-card__title" data-i18n="budgetbrief_feat2_title">Budgets per category</h3>
+          <p class="feature-card__desc" data-i18n="budgetbrief_feat2_desc">Set monthly limits per category (food, transport, entertainment...) and track progress in real time.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-3">
+          <div class="feature-card__icon">🔒</div>
+          <h3 class="feature-card__title" data-i18n="budgetbrief_feat3_title">100% offline</h3>
+          <p class="feature-card__desc" data-i18n="budgetbrief_feat3_desc">Your financial data never leaves your iPhone. No cloud, no server, no third-party sharing.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-1">
+          <div class="feature-card__icon">📊</div>
+          <h3 class="feature-card__title" data-i18n="budgetbrief_feat4_title">Visual statistics</h3>
+          <p class="feature-card__desc" data-i18n="budgetbrief_feat4_desc">Monthly pie charts and 12-month trends. Understand your spending habits at a glance.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-2">
+          <div class="feature-card__icon">🔁</div>
+          <h3 class="feature-card__title" data-i18n="budgetbrief_feat5_title">Recurring expenses</h3>
+          <p class="feature-card__desc" data-i18n="budgetbrief_feat5_desc">Rent, subscriptions, recurring bills — set them once and forget them.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-3">
+          <div class="feature-card__icon">✨</div>
+          <h3 class="feature-card__title" data-i18n="budgetbrief_feat6_title">Minimalist design</h3>
+          <p class="feature-card__desc" data-i18n="budgetbrief_feat6_desc">A clean, distraction-free interface. Everything you need to stay on budget, nothing you don't.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Legal ───────────────────────────────────────────── -->
+  <section class="legal-strip">
+    <div class="container">
+      <div class="legal-strip__inner">
+        <div class="legal-strip__text">
+          <h3 data-i18n="budgetbrief_legal_title">Legal documents</h3>
+          <p data-i18n="budgetbrief_legal_desc">Read our Privacy Policy and Terms of Service.</p>
+        </div>
+        <div class="legal-strip__links">
+          <a href="/budgetbrief/privacy.html" class="legal-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span data-i18n="privacy_link">Privacy Policy</span>
+          </a>
+          <a href="/budgetbrief/terms.html" class="legal-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            <span data-i18n="terms_link">Terms of Service</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─────────────────────────────────────────── -->
+  <!-- FAQ (SEO) -->
+  <section class="section">
+    <div class="container">
+      <!-- faq:start -->
+      <div data-lang-block="en" lang="en">
+      <h2 class="section-title">Frequently asked questions</h2>
+      <div class="faq" style="max-width:760px;margin:2rem auto 0;">
+        <details class="faq-item" style="border-bottom:1px solid rgba(128,128,128,0.18);padding:1.15rem 0;">
+          <summary style="cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;">Is MyBudgetBrief connected to my bank?</summary>
+          <p style="margin:.85rem 0 0;opacity:.82;line-height:1.65;">No, never. Your financial data never leaves your iPhone: no cloud, no server, no third-party sharing.</p>
+        </details>
+        <details class="faq-item" style="border-bottom:1px solid rgba(128,128,128,0.18);padding:1.15rem 0;">
+          <summary style="cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;">Can I set a budget per category?</summary>
+          <p style="margin:.85rem 0 0;opacity:.82;line-height:1.65;">Yes, you set a monthly limit per category (food, transport, leisure…) and follow your progress in real time.</p>
+        </details>
+        <details class="faq-item" style="border-bottom:1px solid rgba(128,128,128,0.18);padding:1.15rem 0;">
+          <summary style="cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;">Does MyBudgetBrief handle recurring expenses?</summary>
+          <p style="margin:.85rem 0 0;opacity:.82;line-height:1.65;">Yes, schedule your rent, subscriptions and bills once, then forget about them.</p>
+        </details>
+      </div>
+      </div>
+      <!-- faq:end -->
+    </div>
+  </section>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is MyBudgetBrief connected to my bank?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, never. Your financial data never leaves your iPhone: no cloud, no server, no third-party sharing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I set a budget per category?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you set a monthly limit per category (food, transport, leisure…) and follow your progress in real time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does MyBudgetBrief handle recurring expenses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, schedule your rent, subscriptions and bills once, then forget about them."
+      }
+    }
+  ]
+}
+  </script>
+
+<!-- nav:start -->
+  <section class="app-crosslinks">
+    <div class="container">
+
+      <h2 class="app-crosslinks__title" data-lang-block="en">More apps from the studio</h2>
+      <div class="app-crosslinks__list">
+        <a href="/en/stockwatch/"><img src="/assets/stockwatch/icon-192.png" alt="" loading="lazy">StockWatch</a>
+        <a href="/en/rhythm/"><img src="/assets/rhythm/icon-192.png" alt="" loading="lazy">Rhythm</a>
+        <a href="/en/runfree/"><img src="/assets/runfree/icon-192.png" alt="" loading="lazy">RunFree</a>
+        <a href="/en/myfoodbook/"><img src="/assets/myfoodbook/icon-192.png" alt="" loading="lazy">MyFoodBook</a>
+        <a href="/en/hydrome/"><img src="/assets/hydrome/icon-192.png" alt="" loading="lazy">HydroMe</a>
+        <a href="/en/enjoymeal/"><img src="/assets/enjoymeal/icon-192.png" alt="" loading="lazy">EnjoyMeal</a>
+        <a href="/en/chapter/"><img src="/assets/chapter/icon-192.png" alt="" loading="lazy">Chapter</a>
+        <a href="/en/nova/"><img src="/assets/nova/icon-192.png" alt="" loading="lazy">Nova</a>
+        <a href="/en/mantrame/"><img src="/assets/mantrame/icon-192.png" alt="" loading="lazy">MantraMe</a>
+        <a href="/en/lunarest/"><img src="/assets/lunarest/icon-192.png" alt="" loading="lazy">LunaRest</a>
+        <a href="/en/inhale/"><img src="/assets/inhale/icon-192.png" alt="" loading="lazy">Inhale</a>
+      </div>
+    </div>
+  </section>
+  <!-- nav:end -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="//"><span class="logo-text">myideapp</span></a>
+          <p data-i18n="footer_tagline">Elegant mobile apps that respect your privacy.</p>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_apps">Apps</h4>
+          <a href="/en/rhythm/">Rhythm</a>
+          <a href="/en/lunarest/">LunaRest</a>
+          <a href="/en/enjoymeal/">EnjoyMeal</a>
+          <a href="/en/inhale/">Inhale</a>
+          <a href="/en/runfree/">RunFree</a>
+          <a href="/en/nova/">Nova</a>
+          <a href="/en/mantrame/">MantraMe</a>
+          <a href="/en/budgetbrief/">MyBudgetBrief</a>
+          <a href="/en/hydrome/">HydroMe</a>
+          <a href="/en/chapter/">Chapter</a>
+          <a href="/en/stockwatch/">StockWatch</a>
+          <a href="/en/myfoodbook/">MyFoodBook</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_legal">Legal</h4>
+          <a href="/budgetbrief/privacy.html" data-i18n="privacy_link">Privacy Policy</a>
+          <a href="/budgetbrief/terms.html" data-i18n="terms_link">Terms of Service</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_contact">Contact</h4>
+          <a href="/contact.html">contact.myideapp@icloud.com</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p data-i18n="footer_rights">© 2026 MyIdeApp. All rights reserved.</p>
+        <div class="footer__bottom-links">
+          <a href="/budgetbrief/privacy.html" data-i18n="privacy_link">Privacy Policy</a>
+          <a href="/budgetbrief/terms.html" data-i18n="terms_link">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/i18n.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

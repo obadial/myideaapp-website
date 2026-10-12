@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es" data-lang-static data-theme="myfoodbook">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-itunes-app" content="app-id=6785071500">
+  <title>MyFoodBook — Tu cuaderno de recetas personal | MyIdeApp</title>
+  <meta name="description" data-i18n-content="meta_myfoodbook_desc" content="MyFoodBook: guarda tus recetas, organízalas con etiquetas y encuentra tus favoritas. Un recetario privado y sin conexión.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="MyFoodBook — Tu cuaderno de recetas personal | MyIdeApp">
+  <meta property="og:description" data-i18n-content="meta_myfoodbook_desc" content="MyFoodBook: guarda tus recetas, organízalas con etiquetas y encuentra tus favoritas. Un recetario privado y sin conexión.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://myideapp.com/es/myfoodbook/">
+  <meta property="og:image" content="https://myideapp.com/assets/og/myfoodbook-es.jpg">
+  <link rel="canonical" href="https://myideapp.com/es/myfoodbook/">
+  <!-- lang:head:start -->
+  <link rel="alternate" hreflang="fr" href="https://myideapp.com/myfoodbook/">
+  <link rel="alternate" hreflang="en" href="https://myideapp.com/en/myfoodbook/">
+  <link rel="alternate" hreflang="es" href="https://myideapp.com/es/myfoodbook/">
+  <link rel="alternate" hreflang="x-default" href="https://myideapp.com/en/myfoodbook/">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- lang:head:end -->
+  <link rel="stylesheet" href="/css/fonts.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <style>
+    .navbar { --bg-raw: 253,246,240; background: rgba(253,246,240,0.85); }
+    .navbar__nav a { color: #5E6F6C; }
+    .navbar__nav a:hover, .navbar__nav a.active { color: #4A7C7E; }
+    .navbar__back { color: #5E6F6C; }
+    .navbar__back:hover { color: #4A7C7E; }
+    .hamburger span { background: #22312F; }
+    .mobile-nav { background: #FDF6F0; border-top-color: rgba(74,124,126,0.15); }
+    .mobile-nav a { color: #5E6F6C; border-bottom-color: rgba(74,124,126,0.15); }
+
+    .brand-mark {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; border-radius: 11px;
+      background: linear-gradient(135deg, #4A7C7E, #E9C46A); font-size: 1.25rem;
+    }
+    .brand-mark--lg { width: 84px; height: 84px; border-radius: 22px; font-size: 2.5rem; }
+
+    .phases-strip { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 1rem; }
+    .phase-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 12px; border-radius: 100px;
+      font-size: 0.8125rem; font-weight: 600;
+      background: rgba(74,124,126,0.08); border: 1px solid rgba(74,124,126,0.18);
+      color: #22312F;
+    }
+    .phase-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+    /* Dégradé repris de la palette de l'app : --primary → --primary-dark,
+       comme sur les onze autres pages produit. */
+    .store-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #4A7C7E, #345758);
+      color: #fff;
+      border-radius: 12px;
+      font-size: 0.9375rem; font-weight: 700;
+      text-decoration: none;
+      transition: all 0.22s;
+      box-shadow: 0 4px 20px rgba(74,124,126,0.4);
+      width: fit-content;
+      align-self: flex-start;
+    }
+    .store-badge:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(74,124,126,0.55); }
+    .store-badge svg { width: 20px; height: 20px; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "MyFoodBook",
+  "operatingSystem": "iOS",
+  "applicationCategory": "LifestyleApplication",
+  "description": "MyFoodBook: guarda tus recetas, organízalas con etiquetas y encuentra tus favoritas. Un recetario privado y sin conexión.",
+  "url": "https://myideapp.com/es/myfoodbook/",
+  "offers": [
+    {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    }
+  ],
+  "downloadUrl": "https://apps.apple.com/app/myfoodbook-recipe-keeper/id6785071500",
+  "publisher": {
+    "@type": "Organization",
+    "name": "MyIdeApp",
+    "url": "https://myideapp.com/"
+  },
+  "alternateName": "MyFoodBook - Recipe Keeper",
+  "inLanguage": [
+    "en",
+    "fr",
+    "de",
+    "es",
+    "it",
+    "pt",
+    "hi",
+    "ar"
+  ],
+  "featureList": [
+    "Why you'll love it",
+    "Free to use",
+    "Works offline",
+    "Organize with tags",
+    "Mark your favorites and search instantly",
+    "Light and dark mode",
+    "Available in 9 languages",
+    "Private by design",
+    "Go premium (optional)",
+    "Subscription"
+  ],
+  "sameAs": [
+    "https://apps.apple.com/app/myfoodbook-recipe-keeper/id6785071500"
+  ]
+}
+  </script>
+  <script type="application/ld+json" data-nav>
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "MyIdeApp",
+      "item": "https://myideapp.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Food & nutrition",
+      "item": "https://myideapp.com/#apps"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "MyFoodBook",
+      "item": "https://myideapp.com/es/myfoodbook/"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-theme="myfoodbook">
+
+  <nav class="navbar">
+    <div class="navbar__left">
+      <a href="//" class="navbar__back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span data-i18n="back_to_studio">Estudio</span>
+      </a>
+      <div class="navbar__logo">
+        <img src="/assets/myfoodbook/icon-192.png" alt="MyFoodBook" class="navbar__app-icon">
+        <span class="logo-text">MyFoodBook</span>
+      </div>
+    </div>
+    <div class="navbar__nav">
+      <a href="#overview" class="active" data-i18n="nav_overview">Presentación</a>
+      <a href="/myfoodbook/privacy.html" data-i18n="nav_privacy">Privacidad</a>
+      <a href="/myfoodbook/terms.html" data-i18n="nav_terms">Términos</a>
+    </div>
+    <div class="navbar__right">
+      <div class="lang-switcher">
+        <a class="lang-btn" data-lang-btn="fr" href="/myfoodbook/" hreflang="fr" lang="fr">FR</a>
+        <a class="lang-btn" data-lang-btn="en" href="/en/myfoodbook/" hreflang="en" lang="en">EN</a>
+        <a class="lang-btn active" data-lang-btn="es" href="/es/myfoodbook/" hreflang="es" lang="es">ES</a>
+      </div>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <a href="//" data-i18n="back_to_studio">Estudio</a>
+    <a href="#overview" data-i18n="nav_overview">Presentación</a>
+    <a href="/myfoodbook/privacy.html" data-i18n="nav_privacy">Privacidad</a>
+    <a href="/myfoodbook/terms.html" data-i18n="nav_terms">Términos</a>
+    <div class="lang-switcher" style="margin-top:1.5rem">
+      <a class="lang-btn" data-lang-btn="fr" href="/myfoodbook/" hreflang="fr" lang="fr">FR</a>
+      <a class="lang-btn" data-lang-btn="en" href="/en/myfoodbook/" hreflang="en" lang="en">EN</a>
+      <a class="lang-btn active" data-lang-btn="es" href="/es/myfoodbook/" hreflang="es" lang="es">ES</a>
+    </div>
+  </div>
+
+  <section id="overview" class="app-hero">
+    <div class="app-hero__orb"></div>
+    <div class="container">
+      <div class="app-hero__inner">
+        <div class="app-hero__info">
+          <div class="app-hero__icon-wrap">
+            <img src="/assets/myfoodbook/icon-192.png" alt="MyFoodBook" class="app-hero__icon">
+            <span class="app-hero__app-name">MyFoodBook</span>
+          </div>
+          <h1 class="app-hero__tagline" data-i18n="myfoodbook_tagline">Todas tus recetas, en un solo lugar.</h1>
+          <p class="app-hero__subtitle" data-i18n="myfoodbook_subtitle">Tu cuaderno de recetas personal</p>
+          <p class="app-hero__description" data-i18n="myfoodbook_description">Guarda tus recetas, organízalas por etiquetas y encuentra tus favoritas al instante. Un cuaderno de recetas privado y sin conexión.</p>
+
+          <div class="phases-strip">
+            <span class="phase-badge"><span class="phase-dot" style="background:#4A7C7E"></span><span data-i18n="myfoodbook_tag1">Recetas</span></span>
+            <span class="phase-badge"><span class="phase-dot" style="background:#E9C46A"></span><span data-i18n="myfoodbook_tag2">Etiquetas</span></span>
+            <span class="phase-badge"><span class="phase-dot" style="background:#E76F51"></span><span data-i18n="myfoodbook_tag3">Favoritas</span></span>
+            <span class="phase-badge"><span class="phase-dot" style="background:#345758"></span><span data-i18n="myfoodbook_tag4">Sin conexión</span></span>
+          </div>
+
+          <div class="app-hero__actions" style="margin-top:1.5rem">
+            <a href="https://apps.apple.com/app/myfoodbook-recipe-keeper/id6785071500" class="store-badge" target="_blank" rel="noopener" aria-label="Download MyFoodBook on App Store">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+              </svg>
+              <span data-i18n="download_ios">Descargar en el App Store</span>
+            </a>
+            <span class="playstore-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M3.6 1.85a1.5 1.5 0 0 0-.5 1.13v18.04c0 .45.19.86.5 1.13l10-10.15-10-10.15Zm11.06 11.22 2.7 2.74-9.9 5.62 7.2-8.36Zm0-1.85-7.2-8.36 9.9 5.62-2.7 2.74Zm1.4 1.36 3.06-1.74c.83-.47.83-1.68 0-2.15l-3.06-1.74-3.34 3.4 3.34 3.4-.01-1.17Z"/>
+              </svg>
+              <span data-i18n="playstore_soon">Pronto en Google Play</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="app-hero__screenshots">
+          <div class="phone-frame"><div class="phone-frame__outer"><div class="phone-frame__screen"><img src="/assets/myfoodbook/screenshots/es-ES/1.png" data-i18n-shot alt="MyFoodBook screenshot" loading="lazy"></div></div></div>
+          <div class="phone-frame"><div class="phone-frame__outer"><div class="phone-frame__screen"><img src="/assets/myfoodbook/screenshots/es-ES/2.png" data-i18n-shot alt="MyFoodBook screenshot" loading="lazy"></div></div></div>
+          <div class="phone-frame"><div class="phone-frame__outer"><div class="phone-frame__screen"><img src="/assets/myfoodbook/screenshots/es-ES/3.png" data-i18n-shot alt="MyFoodBook screenshot" loading="lazy"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- facts:start -->
+  <section class="section facts-section" id="en-bref">
+    <div class="container">
+      <div class="facts" data-lang-block="es" lang="es">
+        <h2 class="facts__title">MyFoodBook en resumen</h2>
+        <dl class="facts__list">
+          <dt>Precio</dt><dd>Descarga gratuita. La opción Premium llegará pronto.</dd>
+          <dt>Incluido gratis</dt><dd>Todas las funciones: recetas ilimitadas con fotos, ingredientes y pasos, etiquetas, favoritos, búsqueda, modo oscuro, sin conexión</dd>
+          <dt>Premium (próximamente)</dt><dd>Solo elimina los anuncios</dd>
+          <dt>Datos</dt><dd>Guardados solo en tu dispositivo. Sin cuenta obligatoria y sin venta de datos.</dd>
+          <dt>Publicidad</dt><dd>Anuncios a pantalla completa ocasionales en la versión gratuita, ninguno con Premium.</dd>
+          <dt>Idiomas</dt><dd>9: inglés, francés, alemán, español, italiano, portugués (PT y BR), hindi, árabe</dd>
+          <dt>Plataformas</dt><dd>iPhone (iOS 15.0+). Android: próximamente.</dd>
+        </dl>
+        <p class="facts__date">Información verificada el 11 de octubre de 2026.</p>
+      </div>
+    </div>
+  </section>
+  <!-- facts:end -->
+
+  <section class="features-section section">
+    <div class="container">
+      <h2 class="section-title fade-up" data-i18n="myfoodbook_feat_title">Funcionalidades</h2>
+      <div class="features-grid">
+        <div class="feature-card fade-up fade-up-delay-1">
+          <div class="feature-card__icon">📖</div>
+          <h3 class="feature-card__title" data-i18n="myfoodbook_feat1_title">Cuaderno de recetas</h3>
+          <p class="feature-card__desc" data-i18n="myfoodbook_feat1_desc">Guarda título, descripción, ingredientes, pasos y fotos de cada receta.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-2">
+          <div class="feature-card__icon">🏷️</div>
+          <h3 class="feature-card__title" data-i18n="myfoodbook_feat2_title">Organización por etiquetas</h3>
+          <p class="feature-card__desc" data-i18n="myfoodbook_feat2_desc">Clasifica tus recetas por etiquetas (entrante, postre, vegetariano…) y encuéntralas fácilmente.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-3">
+          <div class="feature-card__icon">⭐</div>
+          <h3 class="feature-card__title" data-i18n="myfoodbook_feat3_title">Favoritas</h3>
+          <p class="feature-card__desc" data-i18n="myfoodbook_feat3_desc">Marca tus recetas preferidas para acceder con un solo toque.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-1">
+          <div class="feature-card__icon">🔒</div>
+          <h3 class="feature-card__title" data-i18n="myfoodbook_feat4_title">100% sin conexión</h3>
+          <p class="feature-card__desc" data-i18n="myfoodbook_feat4_desc">Tus recetas se almacenan en tu dispositivo. Sin conexión necesaria, privacidad respetada.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-2">
+          <div class="feature-card__icon">🚫</div>
+          <h3 class="feature-card__title" data-i18n="myfoodbook_feat5_title">Premium sin anuncios</h3>
+          <p class="feature-card__desc" data-i18n="myfoodbook_feat5_desc">Todas las funciones son gratuitas. Premium solo elimina la publicidad.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-3">
+          <div class="feature-card__icon">🌍</div>
+          <h3 class="feature-card__title" data-i18n="myfoodbook_feat6_title">9 idiomas</h3>
+          <p class="feature-card__desc" data-i18n="myfoodbook_feat6_desc">Disponible en 9 idiomas, con una interfaz cálida y limpia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="legal-strip">
+    <div class="container">
+      <div class="legal-strip__inner">
+        <div class="legal-strip__text">
+          <h3 data-i18n="myfoodbook_legal_title">Documentos legales</h3>
+          <p data-i18n="myfoodbook_legal_desc">Consulta nuestra política de privacidad y condiciones de uso.</p>
+        </div>
+        <div class="legal-strip__links">
+          <a href="/myfoodbook/privacy.html" class="legal-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span data-i18n="privacy_link">Política de privacidad</span>
+          </a>
+          <a href="/myfoodbook/terms.html" class="legal-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span data-i18n="terms_link">Términos de servicio</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (SEO) -->
+  <section class="section">
+    <div class="container">
+      <!-- faq:start -->
+      <div data-lang-block="es" lang="es">
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <div class="faq" style="max-width:760px;margin:2rem auto 0;">
+        <details class="faq-item" style="border-bottom:1px solid rgba(128,128,128,0.18);padding:1.15rem 0;">
+          <summary style="cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;">¿MyFoodBook funciona sin conexión?</summary>
+          <p style="margin:.85rem 0 0;opacity:.82;line-height:1.65;">Sí, tus recetas se guardan en tu dispositivo y no hace falta conexión.</p>
+        </details>
+        <details class="faq-item" style="border-bottom:1px solid rgba(128,128,128,0.18);padding:1.15rem 0;">
+          <summary style="cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;">¿MyFoodBook es gratis?</summary>
+          <p style="margin:.85rem 0 0;opacity:.82;line-height:1.65;">Sí, todas las funciones son gratuitas. Premium simplemente quita la publicidad.</p>
+        </details>
+        <details class="faq-item" style="border-bottom:1px solid rgba(128,128,128,0.18);padding:1.15rem 0;">
+          <summary style="cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;">¿Cómo organizo mis recetas?</summary>
+          <p style="margin:.85rem 0 0;opacity:.82;line-height:1.65;">Clasifícalas con etiquetas (entrante, postre, vegetariano…) y marca tus favoritas para encontrarlas con un toque.</p>
+        </details>
+      </div>
+      </div>
+      <!-- faq:end -->
+    </div>
+  </section>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿MyFoodBook funciona sin conexión?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, tus recetas se guardan en tu dispositivo y no hace falta conexión."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿MyFoodBook es gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, todas las funciones son gratuitas. Premium simplemente quita la publicidad."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo organizo mis recetas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Clasifícalas con etiquetas (entrante, postre, vegetariano…) y marca tus favoritas para encontrarlas con un toque."
+      }
+    }
+  ]
+}
+  </script>
+
+<!-- nav:start -->
+  <section class="app-crosslinks">
+    <div class="container">
+      <a class="app-crosslinks__guide" data-lang-block="es" href="/guides/es/app-recetas-sin-conexion/">Comparar MyFoodBook con alternativas →</a>
+      <h2 class="app-crosslinks__title" data-lang-block="es">Más apps del estudio</h2>
+      <div class="app-crosslinks__list">
+        <a href="/es/enjoymeal/"><img src="/assets/enjoymeal/icon-192.png" alt="" loading="lazy">EnjoyMeal</a>
+        <a href="/es/rhythm/"><img src="/assets/rhythm/icon-192.png" alt="" loading="lazy">Rhythm</a>
+        <a href="/es/runfree/"><img src="/assets/runfree/icon-192.png" alt="" loading="lazy">RunFree</a>
+        <a href="/es/hydrome/"><img src="/assets/hydrome/icon-192.png" alt="" loading="lazy">HydroMe</a>
+        <a href="/es/stockwatch/"><img src="/assets/stockwatch/icon-192.png" alt="" loading="lazy">StockWatch</a>
+        <a href="/es/chapter/"><img src="/assets/chapter/icon-192.png" alt="" loading="lazy">Chapter</a>
+        <a href="/es/nova/"><img src="/assets/nova/icon-192.png" alt="" loading="lazy">Nova</a>
+        <a href="/es/mantrame/"><img src="/assets/mantrame/icon-192.png" alt="" loading="lazy">MantraMe</a>
+        <a href="/es/lunarest/"><img src="/assets/lunarest/icon-192.png" alt="" loading="lazy">LunaRest</a>
+        <a href="/es/inhale/"><img src="/assets/inhale/icon-192.png" alt="" loading="lazy">Inhale</a>
+        <a href="/es/budgetbrief/"><img src="/assets/budgetbrief/icon-192.png" alt="" loading="lazy">MyBudgetBrief</a>
+      </div>
+    </div>
+  </section>
+  <!-- nav:end -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="//"><span class="logo-text">myideapp</span></a>
+          <p data-i18n="footer_tagline">Aplicaciones móviles elegantes que respetan tu privacidad.</p>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_apps">Apps</h4>
+          <a href="/es/rhythm/">Rhythm</a>
+          <a href="/es/lunarest/">LunaRest</a>
+          <a href="/es/enjoymeal/">EnjoyMeal</a>
+          <a href="/es/inhale/">Inhale</a>
+          <a href="/es/runfree/">RunFree</a>
+          <a href="/es/nova/">Nova</a>
+          <a href="/es/mantrame/">MantraMe</a>
+          <a href="/es/budgetbrief/">MyBudgetBrief</a>
+          <a href="/es/hydrome/">HydroMe</a>
+          <a href="/es/chapter/">Chapter</a>
+          <a href="/es/stockwatch/">StockWatch</a>
+          <a href="/es/myfoodbook/">MyFoodBook</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_legal">Legal</h4>
+          <a href="/myfoodbook/privacy.html" data-i18n="privacy_link">Política de privacidad</a>
+          <a href="/myfoodbook/terms.html" data-i18n="terms_link">Términos de servicio</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_contact">Contacto</h4>
+          <a href="mailto:contact.myideapp@icloud.com">contact.myideapp@icloud.com</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p data-i18n="footer_rights">© 2026 MyIdeApp. Todos los derechos reservados.</p>
+        <div class="footer__bottom-links">
+          <a href="/myfoodbook/privacy.html" data-i18n="privacy_link">Política de privacidad</a>
+          <a href="/myfoodbook/terms.html" data-i18n="terms_link">Términos de servicio</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/i18n.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

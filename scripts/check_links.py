@@ -53,7 +53,7 @@ def collect() -> set[str]:
         if "scripts" in page.parts or "docs" in page.parts:
             continue
         rel = page.relative_to(SITE)
-        for href in re.findall(r'href="([^"#:?]+)', page.read_text(encoding="utf-8")):
+        for href in re.findall(r'\shref="([^"#:?]+)', page.read_text(encoding="utf-8")):
             if href.startswith(("http", "mailto", "//")) or href.endswith((".css", ".svg", ".png")):
                 continue
             target = (Path("/") / rel.parent / href).resolve()

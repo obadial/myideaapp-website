@@ -57,9 +57,9 @@ T = {
     },
     "contact": {"fr": "Une question ? Écris-nous", "en": "A question? Write to us", "es": "¿Una pregunta? Escríbenos"},
     "res": {"fr": "Ressources", "en": "Resources", "es": "Recursos"},
-    "res_links": {"fr": ["Guides comparatifs", "Contact & support", "Supprimer mon compte", "Mentions légales"],
-                  "en": ["Comparison guides", "Contact & support", "Delete my account", "Legal notice"],
-                  "es": ["Guías comparativas", "Contacto y soporte", "Eliminar mi cuenta", "Aviso legal"]},
+    "res_links": {"fr": ["Guides comparatifs", "À propos du studio", "Contact & support", "Supprimer mon compte", "Mentions légales"],
+                  "en": ["Comparison guides", "About the studio", "Contact & support", "Delete my account", "Legal notice"],
+                  "es": ["Guías comparativas", "Sobre el estudio", "Contacto y soporte", "Eliminar mi cuenta", "Aviso legal"]},
 }
 GUIDE_SLUG_LANG = {"fr": "fr", "en": "en", "es": "es"}
 
@@ -70,7 +70,7 @@ def blocks(render):
 
 def hero():
     icons = "\n".join(
-        f'          <a class="hero-apps__item" href="{a["slug"]}/" title="{e(a["name"])}">'
+        f'          <a class="hero-apps__item" href="{a["slug"]}/" data-app-link="{a["slug"]}" title="{e(a["name"])}">'
         f'<img src="assets/{a["slug"]}/icon-192.png" alt="{e(a["name"])}" width="56" height="56">'
         f'<span>{e(a["name"])}</span></a>' for a in APPS)
 
@@ -141,9 +141,10 @@ def why():
 
 
 def footer_col():
-    hrefs = ["guides/", "contact.html", "suppression-compte.html", "mentions-legales.html"]
+    about = {"fr": "a-propos/", "en": "en/about/", "es": "es/acerca-de/"}
 
     def r(l):
+        hrefs = ["guides/", about[l], "contact.html", "suppression-compte.html", "mentions-legales.html"]
         links = "".join(f'<a href="{h}">{e(t)}</a>' for h, t in zip(hrefs, T["res_links"][l]))
         return f'          <div data-lang-block="{l}" lang="{l}"><h4>{e(T["res"][l])}</h4>{links}</div>'
     return f"""        <div class="footer__col footer__col--res">

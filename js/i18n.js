@@ -283,6 +283,8 @@ const TRANSLATIONS = {
     legal_back: '← Retour',
     legal_updated: 'Dernière mise à jour',
     delete_account_title: 'Supprimer mon compte et mes données',
+    nav_about: 'À propos',
+    nav_about_href: '/a-propos/',
     rhythm_hchip1: 'Menstruelle',
     rhythm_hchip2: 'Folliculaire',
     rhythm_hchip3: 'Ovulation',
@@ -687,6 +689,8 @@ const TRANSLATIONS = {
     legal_back: '← Back',
     legal_updated: 'Last updated',
     delete_account_title: 'Delete my account and data',
+    nav_about: 'About',
+    nav_about_href: '/en/about/',
     rhythm_hchip1: 'Menstrual',
     rhythm_hchip2: 'Follicular',
     rhythm_hchip3: 'Ovulation',
@@ -1090,6 +1094,8 @@ const TRANSLATIONS = {
     legal_back: '← Volver',
     legal_updated: 'Última actualización',
     delete_account_title: 'Eliminar mi cuenta y mis datos',
+    nav_about: 'Acerca de',
+    nav_about_href: '/es/acerca-de/',
     rhythm_hchip1: 'Menstrual',
     rhythm_hchip2: 'Folicular',
     rhythm_hchip3: 'Ovulación',
@@ -1230,11 +1236,48 @@ const I18n = {
     const saved = localStorage.getItem('mia_lang');
     const browser = navigator.language?.split('-')[0];
     const supported = ['fr', 'en', 'es'];
-    this.current = supported.includes(saved) ? saved
+    const preferred = supported.includes(saved) ? saved
       : supported.includes(browser) ? browser
       : 'fr';
-    this.apply(this.current);
+    /* Pages d'app : une URL par langue (/rhythm/, /en/rhythm/, /es/rhythm/).
+       La langue est celle de l'URL, jamais celle du navigateur : Googlebot
+       crawle en anglais et indexait sinon la page française traduite par JS.
+       On propose la bonne version au lieu de rediriger. */
+    const root = document.documentElement;
+    if (root.hasAttribute('data-lang-static')) {
+      this.current = root.lang;
+      this.apply(this.current, false);
+      if (!supported.includes(saved) && preferred !== this.current) this._suggest(preferred);
+    } else {
+      this.current = preferred;
+      this.apply(this.current);
+    }
     this._bindButtons();
+  },
+
+  /* Bandeau discret vers la version de la page dans la langue du visiteur. */
+  _suggest(lang) {
+    const alt = document.querySelector(`link[rel="alternate"][hreflang="${lang}"]`);
+    const label = { fr: 'Cette page existe en français', en: 'This page is available in English', es: 'Esta página está disponible en español' }[lang];
+    if (!alt || !label) return;
+    try { if (sessionStorage.getItem('mia_suggest_closed')) return; } catch (e) {}
+    const bar = document.createElement('div');
+    bar.className = 'lang-suggest';
+    bar.setAttribute('lang', lang);
+    const link = document.createElement('a');
+    link.href = alt.getAttribute('href');
+    link.textContent = label + ' →';
+    link.addEventListener('click', () => { try { localStorage.setItem('mia_lang', lang); } catch (e) {} });
+    const close = document.createElement('button');
+    close.type = 'button';
+    close.setAttribute('aria-label', 'Fermer');
+    close.textContent = '×';
+    close.addEventListener('click', () => {
+      bar.remove();
+      try { sessionStorage.setItem('mia_suggest_closed', '1'); } catch (e) {}
+    });
+    bar.append(link, close);
+    document.body.append(bar);
   },
 
   /* Résout une clé, en remplaçant {app} par le nom porté par l'élément.
@@ -1246,11 +1289,16 @@ const I18n = {
     return raw.replace(/\{(\w+)\}/g, (m, name) => vars[name] ?? m);
   },
 
-  apply(lang) {
+  apply(lang, persist = true) {
     if (!TRANSLATIONS[lang]) return;
     this.current = lang;
-    localStorage.setItem('mia_lang', lang);
+    if (persist) localStorage.setItem('mia_lang', lang);
     document.documentElement.lang = lang;
+
+    /* Accueil : les liens vers une app suivent la langue choisie. */
+    document.querySelectorAll('a[data-app-link]').forEach(a => {
+      a.setAttribute('href', (lang === 'fr' ? '' : lang + '/') + a.dataset.appLink + '/');
+    });
 
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const val = this.t(el.dataset.i18n, lang, el.dataset.i18nApp ? { app: el.dataset.i18nApp } : null);
@@ -1318,7 +1366,13 @@ const I18n = {
 
   _bindButtons() {
     document.querySelectorAll('[data-lang-btn]').forEach(btn => {
-      btn.addEventListener('click', () => this.apply(btn.dataset.langBtn));
+      /* Sur les pages d'app, les boutons sont des liens vers l'URL de l'autre
+         langue : on mémorise seulement le choix, la navigation fait le reste. */
+      if (btn.tagName === 'A') {
+        btn.addEventListener('click', () => { try { localStorage.setItem('mia_lang', btn.dataset.langBtn); } catch (e) {} });
+      } else {
+        btn.addEventListener('click', () => this.apply(btn.dataset.langBtn));
+      }
     });
   }
 };

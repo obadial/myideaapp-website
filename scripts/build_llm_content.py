@@ -7,8 +7,9 @@ l'index de Bing. Or le site est servi en français et traduit en JavaScript : un
 robot ne voit jamais l'anglais. Ce script injecte, depuis les descriptions App
 Store déjà validées par Apple (source unique de vérité) :
 
-1. un bloc anglais statique « About <App> (English) » dans chaque `<app>/index.html`,
-   entre les marqueurs `<!-- llm-en:start -->` / `<!-- llm-en:end -->` ;
+1. (supprimé le 2026-10-12) le bloc « About <App> (English) » : les pages ont
+   désormais leur URL anglaise, /en/<app>/ (scripts/build_lang_pages.py). Le
+   script retire le bloc s'il traîne encore entre `<!-- llm-en:* -->` ;
 2. des champs JSON-LD SoftwareApplication (`alternateName`, `featureList`,
    `inLanguage`, `sameAs`) ;
 3. `llms.txt` à la racine (index lisible par les LLM) ;
@@ -107,6 +108,11 @@ def build_block(name: str, body: str) -> str:
 
 
 def patch_jsonld(page: str, en_name: str, features: list[str], store_url: str) -> str:
+    # Comptes officiels de l'app (fiche App Store, Instagram) : aident Google et
+    # les IA à relier la page aux autres profils de la même app.
+    profiles = [store_url] if store_url else []
+    profiles += sorted(set(re.findall(r'href="(https://www\.instagram\.com/[^"]+)"', page)))
+
     def fix(m):
         try:
             data = json.loads(m.group(1))
@@ -118,8 +124,8 @@ def patch_jsonld(page: str, en_name: str, features: list[str], store_url: str) -
         data["inLanguage"] = LANGUAGES
         if features:
             data["featureList"] = features[:12]
-        if store_url:
-            data["sameAs"] = [store_url]
+        if profiles:
+            data["sameAs"] = profiles
         return ('<script type="application/ld+json">\n'
                 + json.dumps(data, ensure_ascii=False, indent=2) + "\n  </script>")
     return re.sub(r'<script type="application/ld\+json">(.*?)</script>', fix, page, flags=re.S)
@@ -129,7 +135,8 @@ def main():
     llms = ["# MyIdeApp", "",
             "> Independent studio publishing privacy-first iOS apps. Data stays on the "
             "device whenever possible; no social feeds. Free to download, optional "
-            "subscription. Site: https://myideapp.com/", "", "## Apps", ""]
+            "subscription. Site: https://myideapp.com/ — About the studio: "
+            "https://myideapp.com/en/about/", "", "## Apps", ""]
     touched = []
     for site_dir, app_dir in APPS.items():
         page_path = SITE / site_dir / "index.html"
@@ -143,19 +150,15 @@ def main():
         store = re.search(r'"downloadUrl":\s*"([^"]+)"', page)
         store_url = store.group(1) if store else ""
 
-        body, features = description_to_html(desc)
-        block = build_block(en_name.split(" - ")[0], body)
-        if START in page:
-            page = re.sub(re.escape(START) + r".*?" + re.escape(END), lambda _: block, page, flags=re.S)
-        else:
-            page = page.replace('  <footer class="footer">', block + '\n\n  <footer class="footer">', 1)
+        _, features = description_to_html(desc)
+        page = re.sub(r"\n*[ \t]*" + re.escape(START) + r".*?" + re.escape(END) + r"\n?", "\n", page, flags=re.S)
         page = patch_jsonld(page, en_name, features, store_url)
         page_path.write_text(page, encoding="utf-8")
         touched.append(f"https://myideapp.com/{site_dir}/")
 
         first = next((l for l in desc.splitlines() if l.strip() and not l.startswith("---")), "")
         llms += [f"### {en_name}", f"{subtitle}. {first.strip()}",
-                 f"- Page: https://myideapp.com/{site_dir}/"]
+                 f"- Page: https://myideapp.com/en/{site_dir}/ (also in French: https://myideapp.com/{site_dir}/, Spanish: https://myideapp.com/es/{site_dir}/)"]
         if store_url:
             llms.append(f"- App Store: {store_url}")
         if features:
@@ -177,7 +180,7 @@ def main():
 
     sm_path = SITE / "sitemap.xml"
     sm = sm_path.read_text(encoding="utf-8")
-    for url in touched + ["https://myideapp.com/"]:
+    for url in touched + [u.replace(".com/", f".com/{l}/") for u in touched for l in ("en", "es")] + ["https://myideapp.com/"]:
         sm = re.sub(r"(<loc>" + re.escape(url) + r"</loc>\s*<lastmod>)[^<]+", r"\g<1>" + TODAY, sm)
     sm_path.write_text(sm, encoding="utf-8")
     print(f"llms.txt + sitemap ({len(touched)} pages, lastmod {TODAY})")

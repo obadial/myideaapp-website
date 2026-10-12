@@ -1636,3 +1636,32 @@ a.navbar__logo { text-decoration: none; }
 [data-theme="legal-hydrome"] .logo-text { background: none; -webkit-text-fill-color: currentColor; color: #0288D1; }
 [data-theme="mantrame"] .logo-text,
 [data-theme="legal-mantrame"] .logo-text { background: none; -webkit-text-fill-color: currentColor; color: #5C7A5C; }
+
+/* ══ Pages d'app par langue (2026-10-12) ══ */
+a.lang-btn { display: inline-block; text-decoration: none; }
+.lang-suggest {
+  position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%);
+  z-index: 200; display: flex; align-items: center; gap: 0.5rem;
+  max-width: calc(100% - 32px); padding: 0.6rem 0.6rem 0.6rem 1.1rem;
+  background: #15172C; color: #fff; border-radius: 100px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25); font-size: 0.9rem; font-weight: 600;
+}
+.lang-suggest a { color: #fff; text-decoration: none; }
+.lang-suggest a:hover { text-decoration: underline; }
+.lang-suggest button {
+  width: 28px; height: 28px; border: 0; border-radius: 50%; cursor: pointer;
+  background: rgba(255, 255, 255, 0.14); color: #fff; font-size: 1.1rem; line-height: 1;
+}
+/* Page À propos (scripts/build_about.py) */
+.about .why__grid { margin: 1rem 0 0; }
+.about-apps { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 0.75rem; margin: 1rem 0; }
+.about-app { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; border: 1px solid var(--border); border-radius: var(--r-md); background: var(--surface); color: var(--text); text-decoration: none; }
+.about-app:hover { border-color: var(--primary); }
+.about-app img { width: 48px; height: 48px; border-radius: 12px; flex: none; }
+.about-app span { display: flex; flex-direction: column; line-height: 1.3; }
+.about-app small { color: var(--text2); font-size: 0.82rem; }
+.about section { margin-top: 2.5rem; }
+.about section h2 { margin-bottom: 0.75rem; }
+.about ul { list-style: disc; padding-left: 1.4rem; margin: 0.5rem 0 0.75rem; }
+.about ul li { margin: 0.35rem 0; line-height: 1.6; color: var(--text2); }
+.about section > p a, .about .guide__checked a { color: var(--primary); }

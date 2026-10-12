@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en" data-lang-static data-theme="nova">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-itunes-app" content="app-id=6773055145">
+  <title>Nova — Private health tracking, absolute privacy | MyIdeApp</title>
+  <meta name="description" data-i18n-content="meta_nova_desc" content="Nova helps you track vaccinations, STI screenings and intimate activity. Everything stays on your device.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Nova — Private health tracking, absolute privacy | MyIdeApp">
+  <meta property="og:description" data-i18n-content="meta_nova_desc" content="Nova helps you track vaccinations, STI screenings and intimate activity. Everything stays on your device.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://myideapp.com/en/nova/">
+  <meta property="og:image" content="https://myideapp.com/assets/og/nova-en.jpg">
+  <link rel="canonical" href="https://myideapp.com/en/nova/">
+  <!-- lang:head:start -->
+  <link rel="alternate" hreflang="fr" href="https://myideapp.com/nova/">
+  <link rel="alternate" hreflang="en" href="https://myideapp.com/en/nova/">
+  <link rel="alternate" hreflang="es" href="https://myideapp.com/es/nova/">
+  <link rel="alternate" hreflang="x-default" href="https://myideapp.com/en/nova/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- lang:head:end -->
+  <link rel="stylesheet" href="/css/fonts.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <style>
+    /* Nova-specific nav */
+    .navbar { --bg-raw: 15,14,12; background: rgba(15,14,12,0.88); border-bottom-color: rgba(201,164,90,0.15); }
+    .navbar__nav a { color: #A89F88; }
+    .navbar__nav a:hover, .navbar__nav a.active { color: #F2EBD7; }
+    .navbar__back { color: #A89F88; }
+    .navbar__back:hover { color: #C9A45A; }
+    .hamburger span { background: #F2EBD7; }
+    .mobile-nav { background: #0F0E0C; border-top-color: rgba(201,164,90,0.15); }
+    .mobile-nav a { color: #A89F88; border-bottom-color: rgba(201,164,90,0.1); }
+
+    /* Hero orb brass */
+    .app-hero__orb {
+      background: radial-gradient(ellipse at 70% 40%, rgba(201,164,90,0.18) 0%, transparent 65%);
+    }
+
+    /* Badge App Store */
+    .store-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 10px 22px;
+      background: #15130F;
+      border: 1px solid #3A3528;
+      border-radius: 2px;
+      color: #F2EBD7;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .store-badge:hover { background: #1C1914; transform: translateY(-2px); }
+    .store-badge svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+    /* Tags feature */
+    .nova-tags {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin-top: 1.25rem;
+    }
+    .nova-tag {
+      display: inline-flex; align-items: center;
+      padding: 4px 12px;
+      border-radius: 2px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: rgba(201,164,90,0.08);
+      border: 1px solid rgba(201,164,90,0.2);
+      color: #A89F88;
+    }
+
+    /* Stat row */
+    .nova-stats {
+      display: flex; gap: 2rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(201,164,90,0.12);
+      border-bottom: 1px solid rgba(201,164,90,0.12);
+      margin: 1.75rem 0;
+    }
+    .nova-stat__value {
+      font-size: 1.5rem; font-weight: 700;
+      color: #C9A45A; letter-spacing: -0.02em;
+      font-variant-numeric: tabular-nums;
+    }
+    .nova-stat__label { font-size: 0.8rem; color: #6B6356; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* Brass rings visual */
+    .nova-visual {
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 380px;
+    }
+    .nova-ring {
+      position: absolute; border-radius: 50%;
+      border: 1px solid transparent;
+      animation: nova-spin 24s linear infinite;
+    }
+    .nova-ring--1 {
+      width: 320px; height: 320px;
+      border-top-color: rgba(201,164,90,0.35);
+      border-right-color: rgba(201,164,90,0.12);
+    }
+    .nova-ring--2 {
+      width: 240px; height: 240px;
+      border-bottom-color: rgba(122,140,115,0.3);
+      border-left-color: rgba(122,140,115,0.1);
+      animation-direction: reverse;
+      animation-duration: 18s;
+    }
+    .nova-ring--3 {
+      width: 160px; height: 160px;
+      border-top-color: rgba(201,164,90,0.5);
+      animation-duration: 12s;
+    }
+    @keyframes nova-spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .nova-circle {
+      width: 110px; height: 110px;
+      background: linear-gradient(135deg, #1C1914, #252118);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid rgba(201,164,90,0.3);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.6), 0 0 40px rgba(201,164,90,0.1);
+      position: relative; z-index: 1;
+    }
+    .nova-circle__inner {
+      width: 88px; height: 88px;
+      background: #15130F;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nova-circle__icon {
+      width: 60px; height: 60px;
+      border-radius: 14px;
+    }
+
+    /* Feature cards override for dark theme */
+    .features-section { background: #0F0E0C; }
+    .feature-card {
+      background: #15130F;
+      border: 1px solid rgba(201,164,90,0.12);
+    }
+    .feature-card:hover { border-color: rgba(201,164,90,0.3); }
+    .feature-card__title { color: #F2EBD7; }
+    .feature-card__desc { color: #A89F88; }
+
+    /* Feature icon — brass dot */
+    .feature-card__icon {
+      width: 36px; height: 36px;
+      background: rgba(201,164,90,0.1);
+      border: 1px solid rgba(201,164,90,0.2);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      color: #C9A45A;
+      font-size: 1rem;
+      margin-bottom: 0.875rem;
+    }
+
+    /* RGPD strip */
+    .nova-rgpd {
+      background: #15130F;
+      border-top: 1px solid rgba(201,164,90,0.12);
+      border-bottom: 1px solid rgba(201,164,90,0.12);
+      padding: 3rem 0;
+    }
+    .nova-rgpd__inner {
+      display: flex; gap: 3rem; align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .nova-rgpd__badge {
+      flex-shrink: 0;
+      width: 56px; height: 56px;
+      background: rgba(201,164,90,0.1);
+      border: 1px solid rgba(201,164,90,0.25);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      color: #C9A45A;
+    }
+    .nova-rgpd__text h3 { font-size: 1rem; font-weight: 600; color: #F2EBD7; margin-bottom: 0.5rem; }
+    .nova-rgpd__text p { font-size: 0.9rem; color: #A89F88; line-height: 1.65; }
+    .nova-rgpd__items {
+      flex: 1; min-width: 280px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .nova-rgpd__item {
+      display: flex; gap: 10px; align-items: flex-start;
+    }
+    .nova-rgpd__item-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: #C9A45A; flex-shrink: 0;
+      margin-top: 6px;
+    }
+    .nova-rgpd__item-text { font-size: 0.875rem; color: #A89F88; line-height: 1.5; }
+
+    /* Legal strip override */
+    .legal-strip { background: #15130F; border-top: 1px solid rgba(201,164,90,0.12); }
+    .legal-strip__text h3 { color: #F2EBD7; }
+    .legal-strip__text p { color: #A89F88; }
+    .legal-link { color: #A89F88; border: 1px solid rgba(201,164,90,0.2); background: rgba(201,164,90,0.05); }
+    .legal-link:hover { color: #C9A45A; border-color: rgba(201,164,90,0.4); background: rgba(201,164,90,0.1); }
+
+    /* Section title */
+    .section-title { color: #F2EBD7; }
+
+    /* Footer override */
+    .footer { background: #0F0E0C; border-top: 1px solid rgba(201,164,90,0.1); }
+    .footer .logo-text { color: #A89F88; }
+    .footer p, .footer a { color: #6B6356; }
+    .footer a:hover { color: #C9A45A; }
+    .footer h4 { color: #A89F88; }
+    .footer__bottom { border-top-color: rgba(201,164,90,0.08); }
+    .footer__bottom p { color: #3D3830; }
+    .instagram-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 24px;
+      background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+      color: #fff;
+      border-radius: 12px;
+      font-size: 0.9375rem; font-weight: 700;
+      text-decoration: none;
+      transition: all 0.22s;
+    }
+    .instagram-badge:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(221,42,123,0.35); filter: brightness(1.05); }
+    .instagram-badge svg { width: 20px; height: 20px; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Nova",
+  "operatingSystem": "iOS",
+  "applicationCategory": "HealthApplication",
+  "description": "Nova helps you track vaccinations, STI screenings and intimate activity. Everything stays on your device.",
+  "url": "https://myideapp.com/en/nova/",
+  "offers": [
+    {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    {
+      "@type": "Offer",
+      "name": "Premium monthly",
+      "price": "0.99",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "0.99",
+        "priceCurrency": "USD",
+        "unitCode": "MON"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Premium annual",
+      "price": "3.99",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "3.99",
+        "priceCurrency": "USD",
+        "unitCode": "ANN"
+      }
+    }
+  ],
+  "downloadUrl": "https://apps.apple.com/app/nova-sant%C3%A9-intime/id6773055145",
+  "publisher": {
+    "@type": "Organization",
+    "name": "MyIdeApp",
+    "url": "https://myideapp.com/"
+  },
+  "alternateName": "Nova - Sexual Health",
+  "inLanguage": [
+    "en",
+    "fr",
+    "de",
+    "es",
+    "it",
+    "pt",
+    "hi",
+    "ar"
+  ],
+  "featureList": [
+    "Complete privacy",
+    "What you can track",
+    "Vaccination records",
+    "STI / STD tests",
+    "Contraception & treatments",
+    "Activity log",
+    "Symptom log",
+    "Health stats",
+    "Discreet partner suggestion",
+    "Pdf export",
+    "9 languages",
+    "About this app"
+  ],
+  "sameAs": [
+    "https://apps.apple.com/app/nova-sant%C3%A9-intime/id6773055145",
+    "https://www.instagram.com/nova.myideapp/"
+  ]
+}
+  </script>
+  <script type="application/ld+json" data-nav>
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "MyIdeApp",
+      "item": "https://myideapp.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Health",
+      "item": "https://myideapp.com/#apps"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Nova",
+      "item": "https://myideapp.com/en/nova/"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-theme="nova">
+
+  <!-- ─── Navbar ─────────────────────────────────────────── -->
+  <nav class="navbar">
+    <div class="navbar__left">
+      <a href="//" class="navbar__back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        <span data-i18n="back_to_studio">Studio</span>
+      </a>
+      <div class="navbar__logo">
+        <img src="/assets/nova/icon-192.png" alt="Nova" class="navbar__app-icon">
+        <span class="logo-text">Nova</span>
+      </div>
+    </div>
+    <div class="navbar__nav">
+      <a href="#overview" class="active" data-i18n="nav_overview">Overview</a>
+      <a href="/nova/privacy.html" data-i18n="nav_privacy">Privacy</a>
+      <a href="/nova/terms.html" data-i18n="nav_terms">Terms</a>
+    </div>
+    <div class="navbar__right">
+      <div class="lang-switcher">
+        <a class="lang-btn" data-lang-btn="fr" href="/nova/" hreflang="fr" lang="fr">FR</a>
+        <a class="lang-btn active" data-lang-btn="en" href="/en/nova/" hreflang="en" lang="en">EN</a>
+        <a class="lang-btn" data-lang-btn="es" href="/es/nova/" hreflang="es" lang="es">ES</a>
+      </div>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile nav -->
+  <div class="mobile-nav">
+    <a href="//" data-i18n="back_to_studio">Studio</a>
+    <a href="#overview" data-i18n="nav_overview">Overview</a>
+    <a href="/nova/privacy.html" data-i18n="nav_privacy">Privacy</a>
+    <a href="/nova/terms.html" data-i18n="nav_terms">Terms</a>
+    <div class="lang-switcher" style="margin-top:1.5rem">
+      <a class="lang-btn" data-lang-btn="fr" href="/nova/" hreflang="fr" lang="fr">FR</a>
+      <a class="lang-btn active" data-lang-btn="en" href="/en/nova/" hreflang="en" lang="en">EN</a>
+      <a class="lang-btn" data-lang-btn="es" href="/es/nova/" hreflang="es" lang="es">ES</a>
+    </div>
+  </div>
+
+  <!-- ─── Hero ───────────────────────────────────────────── -->
+  <section id="overview" class="app-hero">
+    <div class="app-hero__orb"></div>
+    <div class="container">
+      <div class="app-hero__inner">
+        <div class="app-hero__info">
+          <div class="app-hero__icon-wrap">
+            <img src="/assets/nova/icon-192.png" alt="Nova" class="app-hero__icon">
+            <span class="app-hero__app-name">Nova</span>
+          </div>
+
+          <h1 class="app-hero__tagline" data-i18n="nova_tagline">Your intimate health record.</h1>
+          <p class="app-hero__subtitle" data-i18n="nova_subtitle">Private health tracking, absolute privacy</p>
+          <p class="app-hero__description" data-i18n="nova_description">Nova helps you track vaccinations, STI screenings and intimate activity. Caring, non-judgmental — all your data stays on your device.</p>
+
+          <div class="nova-tags">
+            <span class="nova-tag" data-i18n="nova_tag_vaccines">Vaccinations</span>
+            <span class="nova-tag" data-i18n="nova_tag_sti">STI screenings</span>
+            <span class="nova-tag" data-i18n="nova_tag_journal">Private journal</span>
+            <span class="nova-tag" data-i18n="nova_tag_prep">PrEP / PEP</span>
+          </div>
+
+          <div class="nova-stats">
+            <div>
+              <div class="nova-stat__value">0</div>
+              <div class="nova-stat__label" data-i18n="nova_stat_servers">Servers</div>
+            </div>
+            <div>
+              <div class="nova-stat__value">10</div>
+              <div class="nova-stat__label" data-i18n="nova_stat_languages">Languages</div>
+            </div>
+            <div>
+              <div class="nova-stat__value">100%</div>
+              <div class="nova-stat__label" data-i18n="nova_stat_local">Local</div>
+            </div>
+          </div>
+
+          <div class="app-hero__actions" style="margin-top:1.75rem;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+            <a href="https://apps.apple.com/app/nova-sant%C3%A9-intime/id6773055145" class="store-badge" target="_blank" rel="noopener" aria-label="Télécharger Nova sur l'App Store">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            <span data-i18n="download_ios">Download on the App Store</span>
+          </a>
+            <a href="https://www.instagram.com/nova.myideapp/" class="instagram-badge" target="_blank" rel="noopener" aria-label="Follow Nova on Instagram">
+
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+
+            <span data-i18n="follow_instagram">Follow on Instagram</span>
+
+          </a>
+            <span class="playstore-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M3.6 1.85a1.5 1.5 0 0 0-.5 1.13v18.04c0 .45.19.86.5 1.13l10-10.15-10-10.15Zm11.06 11.22 2.7 2.74-9.9 5.62 7.2-8.36Zm0-1.85-7.2-8.36 9.9 5.62-2.7 2.74Zm1.4 1.36 3.06-1.74c.83-.47.83-1.68 0-2.15l-3.06-1.74-3.34 3.4 3.34 3.4-.01-1.17Z"/>
+              </svg>
+              <span data-i18n="playstore_soon">Coming soon on Google Play</span>
+            </span>
+          </div>
+
+
+        </div>
+
+        <!-- Nova visual -->
+        <div class="app-hero__screenshots">
+          <div class="phone-frame"><div class="phone-frame__outer"><div class="phone-frame__screen"><img src="/assets/nova/screenshots/en-US/1.png" data-i18n-shot alt="Nova screenshot" loading="lazy"></div></div></div>
+          <div class="phone-frame"><div class="phone-frame__outer"><div class="phone-frame__screen"><img src="/assets/nova/screenshots/en-US/2.png" data-i18n-shot alt="Nova screenshot" loading="lazy"></div></div></div>
+          <div class="phone-frame"><div class="phone-frame__outer"><div class="phone-frame__screen"><img src="/assets/nova/screenshots/en-US/3.png" data-i18n-shot alt="Nova screenshot" loading="lazy"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- facts:start -->
+  <section class="section facts-section" id="en-bref">
+    <div class="container">
+      <div class="facts" data-lang-block="en" lang="en">
+        <h2 class="facts__title">Nova at a glance</h2>
+        <dl class="facts__list">
+          <dt>Price</dt><dd>Free to download. Optional Premium: $0.99/month or $3.99/year (France: €0.99/month or €4.99/year).</dd>
+          <dt>Free features</dt><dd>Vaccinations with reminders, STI tests and results, contraception, PrEP and PEP, journal (30 entries), symptoms, stats</dd>
+          <dt>Premium adds</dt><dd>Unlimited journal, PDF export for your doctor, discreet partner screening suggestion, no ads</dd>
+          <dt>Data</dt><dd>Stored only on your device. No account required, data never sold.</dd>
+          <dt>Ads</dt><dd>Occasional full-screen ads in the free version, none with Premium.</dd>
+          <dt>Languages</dt><dd>9: English, French, German, Spanish, Italian, Portuguese (PT and BR), Hindi, Arabic</dd>
+          <dt>Platforms</dt><dd>iPhone (iOS 15.0+). Android: coming soon.</dd>
+        </dl>
+        <p class="facts__note">Adults 18+ only. No explicit content.</p>
+        <p class="facts__date">Information checked on October 11, 2026.</p>
+      </div>
+    </div>
+  </section>
+  <!-- facts:end -->
+
+  <!-- ─── Features ───────────────────────────────────────── -->
+
+
+
+  <section class="features-section section">
+    <div class="container">
+      <h2 class="section-title fade-up" data-i18n="nova_feat_title">Features</h2>
+      <div class="features-grid">
+        <div class="feature-card fade-up fade-up-delay-1">
+          <div class="feature-card__icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="feature-card__title" data-i18n="nova_feat1_title">Vaccination tracker</h3>
+          <p class="feature-card__desc" data-i18n="nova_feat1_desc">Track your vaccines (HPV, Hepatitis B, COVID-19...) and get reminders for upcoming doses.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-2">
+          <div class="feature-card__icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="feature-card__title" data-i18n="nova_feat2_title">STI screenings</h3>
+          <p class="feature-card__desc" data-i18n="nova_feat2_desc">Log your screening results and schedule reminders to stay up to date.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-3">
+          <div class="feature-card__icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <h3 class="feature-card__title" data-i18n="nova_feat3_title">Private journal</h3>
+          <p class="feature-card__desc" data-i18n="nova_feat3_desc">Keep a private record of your sexual activity. Everything stays on your device.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-1">
+          <div class="feature-card__icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h3 class="feature-card__title" data-i18n="nova_feat4_title">PrEP &amp; Contraception</h3>
+          <p class="feature-card__desc" data-i18n="nova_feat4_desc">Track your PrEP, PEP and contraception programs with precise daily reminders.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-2">
+          <div class="feature-card__icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3 class="feature-card__title" data-i18n="nova_feat5_title">Suggest a screening</h3>
+          <p class="feature-card__desc" data-i18n="nova_feat5_desc">Discreetly suggest STI screening to a partner, anonymously and with care.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-3">
+          <div class="feature-card__icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+          <h3 class="feature-card__title" data-i18n="nova_feat6_title">Absolute privacy</h3>
+          <p class="feature-card__desc" data-i18n="nova_feat6_desc">No health data is sent to any server. Everything stays on your device, encrypted.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── RGPD highlight ──────────────────────────────────── -->
+  <section class="nova-rgpd">
+    <div class="container">
+      <div class="nova-rgpd__inner">
+        <div>
+          <div class="nova-rgpd__badge">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="nova-rgpd__text" style="margin-top:1rem; max-width:280px;">
+            <h3 data-i18n="nova_rgpd_title">Sensitive health data</h3>
+            <p data-i18n="nova_rgpd_desc">Sexual health data is special category data under GDPR Art. 9. Nova applies the strictest protections.</p>
+          </div>
+        </div>
+        <div class="nova-rgpd__items">
+          <div class="nova-rgpd__item">
+            <div class="nova-rgpd__item-dot"></div>
+            <div class="nova-rgpd__item-text" data-i18n="nova_rgpd1">Zero data sent to any server</div>
+          </div>
+          <div class="nova-rgpd__item">
+            <div class="nova-rgpd__item-dot"></div>
+            <div class="nova-rgpd__item-text" data-i18n="nova_rgpd2">Encrypted local SQLite storage</div>
+          </div>
+          <div class="nova-rgpd__item">
+            <div class="nova-rgpd__item-dot"></div>
+            <div class="nova-rgpd__item-text" data-i18n="nova_rgpd3">Explicit GDPR consent</div>
+          </div>
+          <div class="nova-rgpd__item">
+            <div class="nova-rgpd__item-dot"></div>
+            <div class="nova-rgpd__item-text" data-i18n="nova_rgpd4">Full deletion on demand</div>
+          </div>
+          <div class="nova-rgpd__item">
+            <div class="nova-rgpd__item-dot"></div>
+            <div class="nova-rgpd__item-text" data-i18n="nova_rgpd5">No ads, no behavioral tracking</div>
+          </div>
+          <div class="nova-rgpd__item">
+            <div class="nova-rgpd__item-dot"></div>
+            <div class="nova-rgpd__item-text" data-i18n="nova_rgpd6">Open to all, without judgment</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Legal ───────────────────────────────────────────── -->
+  <section class="legal-strip">
+    <div class="container">
+      <div class="legal-strip__inner">
+        <div class="legal-strip__text">
+          <h3 data-i18n="nova_legal_title">Legal documents</h3>
+          <p data-i18n="nova_legal_desc">Review our privacy policy and terms of use.</p>
+        </div>
+        <div class="legal-strip__links">
+          <a href="/nova/privacy.html" class="legal-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span data-i18n="privacy_link">Privacy Policy</span>
+          </a>
+          <a href="/nova/terms.html" class="legal-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            <span data-i18n="terms_link">Terms of Service</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─────────────────────────────────────────── -->
+  <!-- FAQ (SEO) -->
+  <section class="section">
+    <div class="container">
+      <!-- faq:start -->
+      <div data-lang-block="en" lang="en">
+      <h2 class="section-title">Frequently asked questions</h2>
+      <div class="faq" style="max-width:760px;margin:2rem auto 0;">
+        <details class="faq-item" style="border-bottom:1px solid rgba(128,128,128,0.18);padding:1.15rem 0;">
+          <summary style="cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;">Is my sexual health data protected?</summary>
+          <p style="margin:.85rem 0 0;opacity:.82;line-height:1.65;">Yes. This is special-category data (GDPR Art. 9): Nova stores it only locally, never on a server.</p>
+        </details>
+        <details class="faq-item" style="border-bottom:1px solid rgba(128,128,128,0.18);padding:1.15rem 0;">
+          <summary style="cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;">What can I track with Nova?</summary>
+          <p style="margin:.85rem 0 0;opacity:.82;line-height:1.65;">Your vaccinations (HPV, hepatitis B, mpox…), STI tests, PrEP/PEP tracking and a private intimate activity log.</p>
+        </details>
+        <details class="faq-item" style="border-bottom:1px solid rgba(128,128,128,0.18);padding:1.15rem 0;">
+          <summary style="cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;">Does Nova send reminders?</summary>
+          <p style="margin:.85rem 0 0;opacity:.82;line-height:1.65;">Yes, for your next vaccine doses, your tests and your PrEP and PEP preventive treatments.</p>
+        </details>
+      </div>
+      </div>
+      <!-- faq:end -->
+    </div>
+  </section>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is my sexual health data protected?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. This is special-category data (GDPR Art. 9): Nova stores it only locally, never on a server."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What can I track with Nova?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your vaccinations (HPV, hepatitis B, mpox…), STI tests, PrEP/PEP tracking and a private intimate activity log."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Nova send reminders?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, for your next vaccine doses, your tests and your PrEP and PEP preventive treatments."
+      }
+    }
+  ]
+}
+  </script>
+
+<!-- nav:start -->
+  <section class="app-crosslinks">
+    <div class="container">
+
+      <h2 class="app-crosslinks__title" data-lang-block="en">More apps from the studio</h2>
+      <div class="app-crosslinks__list">
+        <a href="/en/rhythm/"><img src="/assets/rhythm/icon-192.png" alt="" loading="lazy">Rhythm</a>
+        <a href="/en/hydrome/"><img src="/assets/hydrome/icon-192.png" alt="" loading="lazy">HydroMe</a>
+        <a href="/en/runfree/"><img src="/assets/runfree/icon-192.png" alt="" loading="lazy">RunFree</a>
+        <a href="/en/myfoodbook/"><img src="/assets/myfoodbook/icon-192.png" alt="" loading="lazy">MyFoodBook</a>
+        <a href="/en/stockwatch/"><img src="/assets/stockwatch/icon-192.png" alt="" loading="lazy">StockWatch</a>
+        <a href="/en/enjoymeal/"><img src="/assets/enjoymeal/icon-192.png" alt="" loading="lazy">EnjoyMeal</a>
+        <a href="/en/chapter/"><img src="/assets/chapter/icon-192.png" alt="" loading="lazy">Chapter</a>
+        <a href="/en/mantrame/"><img src="/assets/mantrame/icon-192.png" alt="" loading="lazy">MantraMe</a>
+        <a href="/en/lunarest/"><img src="/assets/lunarest/icon-192.png" alt="" loading="lazy">LunaRest</a>
+        <a href="/en/inhale/"><img src="/assets/inhale/icon-192.png" alt="" loading="lazy">Inhale</a>
+        <a href="/en/budgetbrief/"><img src="/assets/budgetbrief/icon-192.png" alt="" loading="lazy">MyBudgetBrief</a>
+      </div>
+    </div>
+  </section>
+  <!-- nav:end -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="//"><span class="logo-text">myideapp</span></a>
+          <p data-i18n="footer_tagline">Elegant mobile apps that respect your privacy.</p>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_apps">Apps</h4>
+          <a href="/en/rhythm/">Rhythm</a>
+          <a href="/en/lunarest/">LunaRest</a>
+          <a href="/en/enjoymeal/">EnjoyMeal</a>
+          <a href="/en/inhale/">Inhale</a>
+          <a href="/en/runfree/">RunFree</a>
+          <a href="/en/nova/">Nova</a>
+          <a href="/en/mantrame/">MantraMe</a>
+          <a href="/en/budgetbrief/">MyBudgetBrief</a>
+          <a href="/en/hydrome/">HydroMe</a>
+          <a href="/en/chapter/">Chapter</a>
+          <a href="/en/stockwatch/">StockWatch</a>
+          <a href="/en/myfoodbook/">MyFoodBook</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_legal">Legal</h4>
+          <a href="/nova/privacy.html" data-i18n="privacy_link">Privacy Policy</a>
+          <a href="/nova/terms.html" data-i18n="terms_link">Terms of Service</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_contact">Contact</h4>
+          <a href="mailto:contact.myideapp@icloud.com">contact.myideapp@icloud.com</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p data-i18n="footer_rights">© 2026 MyIdeApp. All rights reserved.</p>
+        <div class="footer__bottom-links">
+          <a href="/nova/privacy.html" data-i18n="privacy_link">Privacy Policy</a>
+          <a href="/nova/terms.html" data-i18n="terms_link">Terms of Service</a>
+          <a href="//">Studio</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/i18n.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

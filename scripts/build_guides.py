@@ -30,6 +30,8 @@ MONTHS = {
     "es": "enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre".split(),
 }
 e = html.escape
+ABOUT = {"fr": "/a-propos/", "en": "/en/about/", "es": "/es/acerca-de/"}
+ABOUT_LABEL = {"fr": "À propos", "en": "About", "es": "Acerca de"}
 
 
 def human_date(iso, lang):
@@ -50,6 +52,11 @@ def price(app, lang):
 
 def url(guide, lang):
     return f"{BASE}/guides/{lang}/{guide['slug'][lang]}/"
+
+
+def app_path(slug, lang):
+    """Page de l'app dans la langue du guide (/rhythm/, /en/rhythm/, /es/rhythm/)."""
+    return f"/{slug}/" if lang == "fr" else f"/{lang}/{slug}/"
 
 
 def store_url(slug):
@@ -95,6 +102,7 @@ def nav(lang, lang_links):
     <div class="navbar__nav guide-nav__links">
       <a href="/#apps">Apps</a>
       <a href="/guides/">{e(UI['guides'][lang])}</a>
+      <a href="{ABOUT[lang]}">{ABOUT_LABEL[lang]}</a>
       <a href="/contact.html">Contact</a>
     </div>
     <div class="navbar__right"><div class="lang-switcher">{links}</div></div>
@@ -106,9 +114,10 @@ def footer(lang):
     return f"""  <footer class="footer">
     <div class="container">
       <div class="footer__bottom">
-        <p>© 2026 MyIdeApp — Lucas Obadia.</p>
+        <p>© 2026 MyIdeApp.</p>
         <div class="footer__bottom-links">
           <a href="/guides/">{e(UI['guides'][lang])}</a>
+          <a href="{ABOUT[lang]}">{ABOUT_LABEL[lang]}</a>
           <a href="/contact.html">Contact</a>
           <a href="/mentions-legales.html">{legal}</a>
         </div>
@@ -155,7 +164,7 @@ def guide_page(guide, lang):
          "author": {"@type": "Organization", "name": "MyIdeApp", "url": BASE + "/"},
          "publisher": {"@type": "Organization", "name": "MyIdeApp", "url": BASE + "/"},
          "about": {"@type": "SoftwareApplication", "name": name, "operatingSystem": "iOS",
-                   "url": f"{BASE}/{guide['app']}/"}},
+                   "url": f"{BASE}{app_path(guide['app'], lang)}"}},
         {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": f["q"][lang], "acceptedAnswer": {"@type": "Answer", "text": f["a"][lang]}}
             for f in guide["faq"]]},
@@ -198,7 +207,7 @@ def guide_page(guide, lang):
         </ul>
         <p class="guide__cta">
           <a class="btn-store" href="{store_url(guide['app'])}">{e(UI['cta'][lang].format(app=name))}</a>
-          <a class="guide__more" href="/{guide['app']}/">{e(UI['more'][lang].format(app=name))} →</a>
+          <a class="guide__more" href="{app_path(guide['app'], lang)}">{e(UI['more'][lang].format(app=name))} →</a>
         </p>
       </section>
 
@@ -251,6 +260,7 @@ def hub():
     <div class="navbar__nav guide-nav__links">
       <a href="/#apps">Apps</a>
       <a href="/guides/" class="active">Guides</a>
+      <a href="/a-propos/" data-i18n="nav_about" data-i18n-href="nav_about_href">À propos</a>
       <a href="/contact.html">Contact</a>
     </div>
     <div class="navbar__right">
