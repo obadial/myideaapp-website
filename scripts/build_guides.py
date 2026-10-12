@@ -240,7 +240,7 @@ def hub():
     ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": G["hub"]["title"]["en"],
            "url": BASE + "/guides/", "hasPart": [{"@type": "Article", "headline": g["title"]["en"], "url": url(g, "en")}
                                                 for g in G["guides"]]}]
-    page = head("fr", G["hub"]["title"]["fr"], G["hub"]["intro"]["fr"], BASE + "/guides/", {}, "studio", ld)
+    page = head("fr", G["hub"]["title"]["fr"], "Comparatifs honnêtes de nos apps face à Strava, Flo, Clue, MyFitnessPal… : prix, compte obligatoire, données.", BASE + "/guides/", {}, "studio", ld)
     page = page.replace('<meta property="og:type" content="article">', '<meta property="og:type" content="website">')
     return page + f"""
 <body data-theme="studio">
